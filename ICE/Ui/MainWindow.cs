@@ -1,4 +1,4 @@
-﻿using Dalamud.Interface;
+using Dalamud.Interface;
 using Dalamud.Interface.Colors;
 using Dalamud.Interface.Textures;
 using Dalamud.Interface.Utility.Raii;
@@ -29,7 +29,7 @@ namespace ICE.Ui
                 MinimumSize = new Vector2(500, 500),
                 MaximumSize = new Vector2(4000, 4000),
             };
-            TitleBarButtons.Add(new() { ShowTooltip = () => ImGui.SetTooltip("♥ Ko-fi (Buy me an ice coffee)"), Icon = FontAwesomeIcon.Heart, IconOffset = new(1, 1), Click = _ => GenericHelpers.ShellStart("https://ko-fi.com/ice643269") });
+            TitleBarButtons.Add(new() { ShowTooltip = () => ImGui.SetTooltip("♥ Ko-fi（给我买杯冰咖啡）"), Icon = FontAwesomeIcon.Heart, IconOffset = new(1, 1), Click = _ => GenericHelpers.ShellStart("https://ko-fi.com/ice643269") });
 
             P.windowSystem.AddWindow(this);
 
@@ -94,7 +94,7 @@ namespace ICE.Ui
             }
             else
             {
-                ImGui.Text("Hehe");
+                ImGui.Text("呵呵");
             }
         }
 
@@ -106,35 +106,35 @@ namespace ICE.Ui
             bool goldMode = C.SelectedMode == ModeSelect.MissionGoldMode;
             bool agendaMode = C.SelectedMode == ModeSelect.AgendaMode;
 
-            ImGui.Text("Select Mode");
+            ImGui.Text("选择模式");
             ImGui.Separator();
 
-            if (ImGui.RadioButton("Standard", standard))
+            if (ImGui.RadioButton("标准模式", standard))
             {
                 C.SelectedMode = ModeSelect.Standard;
                 C.Save();
             }
             ImGuiEx.HelpMarker(HelpInfoText(ModeSelect.Standard));
-            if (ImGui.RadioButton("Relic Grind", relicMode))
+            if (ImGui.RadioButton("辉煌武器刷取", relicMode))
             {
                 C.SelectedMode = ModeSelect.RelicMode;
                 C.Save();
             }
             ImGuiEx.HelpMarker(HelpInfoText(ModeSelect.RelicMode));
 
-            if (ImGui.RadioButton("Leveling Grind", xpLeveling))
+            if (ImGui.RadioButton("练级刷取", xpLeveling))
             {
                 C.SelectedMode = ModeSelect.LevelMode;
                 C.Save();
             }
             ImGuiEx.HelpMarker(HelpInfoText(ModeSelect.LevelMode));
-            if (ImGui.RadioButton("Gold Completion Grind", goldMode))
+            if (ImGui.RadioButton("金牌完成刷取", goldMode))
             {
                 C.SelectedMode = ModeSelect.MissionGoldMode;
                 C.Save();
             }
             ImGuiEx.HelpMarker(HelpInfoText(ModeSelect.MissionGoldMode));
-            if (ImGui.RadioButton("Agenda Mode", agendaMode))
+            if (ImGui.RadioButton("日程模式", agendaMode))
             {
                 C.SelectedMode = ModeSelect.AgendaMode;
                 C.Save();
@@ -146,34 +146,33 @@ namespace ICE.Ui
             return mode switch
             {
                 ModeSelect.Standard =>
-                    "Stand Mode \n" +
-                    "-> Used to select which missions you want to grind. It'll priortize in the following order:\n" +
-                    "-> Critical -> Provisional [Sequence/Timed/Weather] -> Standard [A->D]\n" +
-                    "-> Select which missions you want to do, and go at it.",
+                    "标准模式\n" +
+                    "-> 用于选择你想刷的任务。优先级如下：\n" +
+                    "-> 紧急任务 -> 临时任务[连续/限时/天气] -> 标准任务[A→D]\n" +
+                    "-> 选择你想做的任务，然后开始吧。",
                 ModeSelect.LevelMode =>
-                    "Leveling Grind\n" +
-                    "-> Will automatically select which mission is the best for leveling your current class based on what level bracket you're in\n" +
-                    "-> These are hand picked by me, and determined by the time it takes to complete it\n" +
-                    "-> For crafters it's whatever missions take the least amount of progress" +
-                    "-> For gathering, it's whatever is the least pain to do w/ the minimum amount of skills\n" +
-                    "**These will automatically set settings for using these modes temporarily**",
+                    "练级刷取\n" +
+                    "-> 会根据你当前所在等级区间自动选择最适合练级的任务\n" +
+                    "-> 这些任务由我手动挑选，依据是完成所需时间\n" +
+                    "-> 对制作职业来说，是所需进展最少的任务；对采集职业来说，是技能需求最少、最轻松的任务\n" +
+                    "**这些会临时自动设置使用这些模式所需的设置**",
                 ModeSelect.RelicMode =>
-                    "Relic Grind\n" +
-                    "-> Automatically select which missions that are best to finish up your relic\n" +
-                    "-> These are weighed based on what is needed to complete the tool to the next step\n" +
-                    "-> If you want to only do certain missions, enable the option and select which ones you want to do",
+                    "辉煌武器刷取\n" +
+                    "-> 自动选择最有利于完成辉煌武器的任务\n" +
+                    "-> 这些任务根据完成工具下一阶段所需条件进行权衡\n" +
+                    "-> 如果你只想做特定任务，请启用该选项并选择要做的任务",
                 ModeSelect.AgendaMode =>
-                    "This mode is if you want to do a series of things in a particular order. So for example, if you wanted to grind out all the relics on all the classes back to back\n" +
-                    "Or if you wanted to do the relic on WVR -> Then farm score on BTN -> Farm credits on BSM\n" +
-                    "Really is the \"I want to do this order of things\" kind of thing.\n" +
-                    "Note. I'm not responsible if you leave this on and get banned for it. I'm not one for leaving things at their pc, but people are watching always. Keep this in mind",
+                    "如果你想按特定顺序执行一系列操作，请使用此模式。例如，如果你想连续刷取所有职业的辉煌武器\n" +
+                    "或者你想先完成裁衣匠的辉煌武器 -> 然后去园艺工刷分 -> 再去锻铁匠刷信用点\n" +
+                    "这本质上就是“我想按这个顺序做事”的模式。\n" +
+                    "注意：如果你一直开着它并因此被封号，我不负责。我不是那种会把东西丢在电脑上不管的人，但总会有人盯着。请记住这一点",
                 ModeSelect.MissionGoldMode =>
-                    "Gold Completion Mode\n" +
-                    "-> Will automatically pick all the missions that you do not have currently gold, AND ONLY THOSE MISSIONS.\n" +
-                    "-> If it is apart of a sequence chain, it will grab the mission that are needed previously to help complete it, and the missions post if necessary\n" +
-                    "-> If it runs out of missions to reroll, it will just continually swap tabs until the mission is available (via provisional or critical)\n" +
-                    "**This will respect the want to grind off class provisionals, and criticals if you have those enabled",
-                _ => "???? For some reason we're missing this. Please Report this to I"
+                    "金牌完成模式\n" +
+                    "-> 会自动选择你当前尚未获得金牌的所有任务，且只做这些任务。\n" +
+                    "-> 如果属于连续任务链，它会接取前置任务以帮助完成，必要时也会接取后续任务\n" +
+                    "-> 如果没有可刷新的任务，它会不断切换标签页直到任务可用（通过临时或紧急任务）\n" +
+                    "**这会尊重你启用跨职业临时任务和紧急任务的设置**",
+                _ => "???? 不知何故这里缺失了。请向我报告"
             };
         }
     }

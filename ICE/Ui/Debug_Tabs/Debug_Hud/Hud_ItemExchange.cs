@@ -1,4 +1,4 @@
-﻿using Lumina.Excel.Sheets;
+using Lumina.Excel.Sheets;
 using System.Text;
 using static ECommons.UIHelpers.AddonMasterImplementations.AddonMaster;
 
@@ -22,7 +22,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Hud
 
                 ImGui.Text($"Currency Amount: {itemExchange.CurrencyAmount}");
 
-                if (ImGui.BeginTable("Item Exchange Window", 3, tableFlags))
+                if (ImGui.BeginTable("项目交换窗口", 3, tableFlags))
                 {
                     ImGui.TableSetupColumn("##ItemId");
                     ImGui.TableSetupColumn("##ItemName");
@@ -57,7 +57,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Hud
                         }
                         ImGui.Text($"{cost}");
                         ImGui.SameLine();
-                        if (ImGui.Button("Buy Item"))
+                        if (ImGui.Button("购买物品"))
                         {
                             entry.Select();
                         }
@@ -72,8 +72,8 @@ namespace ICE.Ui.Debug_Tabs.Debug_Hud
                 var currencyIcon = sheet.GetRow(shopExchange.CurrencyId).Icon;
                 Svc.Texture.TryGetFromGameIcon((int)currencyIcon, out var texture);
                 ImGui.Text($"{shopExchange.CurrencyAmount}");
-                ImGui.InputInt("Tab #", ref Tab);
-                if (ImGui.Button("Copy Item List"))
+                ImGui.InputInt("标签#", ref Tab);
+                if (ImGui.Button("复制项目列表"))
                 {
                     var sb = new StringBuilder();
                     for (int i = 0; i < shopExchange.NumEntries; i++)
@@ -95,7 +95,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Hud
 
                 ImGui.Text($"Number of entries: {shopExchange.NumEntries}");
 
-                if (ImGui.BeginTable("Item Exchange Window", 5, tableFlags))
+                if (ImGui.BeginTable("项目交换窗口", 5, tableFlags))
                 {
                     ImGui.TableSetupColumn("##ItemId");
                     ImGui.TableSetupColumn("##ItemName");
@@ -126,15 +126,15 @@ namespace ICE.Ui.Debug_Tabs.Debug_Hud
                         ImGui.Text($"{entry.CostAmount}");
 
                         ImGui.TableNextColumn();
-                        if (ImGui.Button("Buy 1 Item"))
+                        if (ImGui.Button("购买 1 件商品"))
                         {
                             entry.Select();
                         }
 
                         ImGui.TableNextColumn();
-                        if (ImGui.Button("Buy Max"))
+                        if (ImGui.Button("BuyMax"))
                         {
-                            if (EzThrottler.Throttle("Buying from shop throttle"))
+                            if (EzThrottler.Throttle("从商店节气门购买"))
                             {
                                 var amount = shopExchange.CurrencyAmount;
                                 var buyAmount = amount / cost;
@@ -159,7 +159,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Hud
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text($"{amount}");
 
-                if (ImGui.Button("Copy Item List"))
+                if (ImGui.Button("复制项目列表"))
                 {
                     var sb = new StringBuilder();
                     for (int i = 0; i < Shop.NumEntries; i++)
@@ -177,7 +177,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Hud
                     ImGui.SetClipboardText(sb.ToString());
                 }
 
-                if (ImGui.BeginTable("Item Exchange Window", 5, tableFlags))
+                if (ImGui.BeginTable("项目交换窗口", 5, tableFlags))
                 {
                     ImGui.TableSetupColumn("##ItemId");
                     ImGui.TableSetupColumn("##ItemName");
@@ -208,15 +208,15 @@ namespace ICE.Ui.Debug_Tabs.Debug_Hud
                         ImGui.Text($"{entry.CostAmount}");
 
                         ImGui.TableNextColumn();
-                        if (ImGui.Button("Buy 1 Item"))
+                        if (ImGui.Button("购买 1 件商品"))
                         {
                             entry.Select();
                         }
 
                         ImGui.TableNextColumn();
-                        if (ImGui.Button("Buy Max"))
+                        if (ImGui.Button("BuyMax"))
                         {
-                            if (EzThrottler.Throttle("Buying from shop throttle"))
+                            if (EzThrottler.Throttle("从商店节气门购买"))
                             {
                                 var buyAmount = amount / cost;
                                 entry.Select((int)buyAmount);
@@ -230,7 +230,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Hud
             }
             else
             {
-                ImGui.Text("Waiting for a shop exchange window to be open");
+                ImGui.Text("等待商店兑换窗口出现打开");
             }
         }
     }

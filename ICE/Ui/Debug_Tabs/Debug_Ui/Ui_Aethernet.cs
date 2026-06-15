@@ -1,4 +1,4 @@
-﻿using Dalamud.Interface;
+using Dalamud.Interface;
 using Dalamud.Interface.Utility.Raii;
 using ECommons.GameHelpers;
 using FFXIVClientStructs.FFXIV.Client.Game.UI;
@@ -58,12 +58,12 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
 
         public static void Draw()
         {
-            if (ImGui.Button("Get Active List"))
+            if (ImGui.Button("获取活动列表"))
             {
                 TeleportList();
             }
 
-            if (ImGui.BeginTable("Aethershard Unlocked", 2, ImGuiTableFlags.RowBg | ImGuiTableFlags.Borders))
+            if (ImGui.BeginTable("以太碎片解锁", 2, ImGuiTableFlags.RowBg | ImGuiTableFlags.Borders))
             {
                 foreach (var zone in Task_NavmeshMove.PlanetAethernet)
                 {

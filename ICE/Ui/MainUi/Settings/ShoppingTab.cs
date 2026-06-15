@@ -1,4 +1,4 @@
-﻿using Dalamud.Interface;
+using Dalamud.Interface;
 using Dalamud.Interface.Utility;
 using Dalamud.Interface.Utility.Raii;
 using Dalamud.Utility;
@@ -26,7 +26,7 @@ namespace ICE.Ui.MainUi.Settings
 
             bool BuyItems = C.BuyItems;
 
-            if (ImGui.Checkbox("Buy Items", ref BuyItems))
+            if (ImGui.Checkbox("购买物品", ref BuyItems))
             {
                 C.BuyItems = BuyItems;
                 C.StopOnceHitCosmoCredits = false;
@@ -37,14 +37,14 @@ namespace ICE.Ui.MainUi.Settings
             if (ImGui.IsItemHovered())
             {
                 ImGui.BeginTooltip();
-                ImGui.Text("This is your personalized shopping list that you can create that it will run when you hit a certain amount of credits.");
-                ImGui.Text("Here's what each of the following does:");
-                ImGui.BulletText("Keep: Will buy up to that many items to make sure that you have in your inventory. This count doesn't go down between runs.\n" +
-                                 "Useful for things like cordials where you want to always have a certain amount on hand");
-                ImGui.BulletText("Buy: Will buy X amount of those items, as it buys it from the vendor, the number will decrease until it hits 0.\n" +
-                                 "Good for one off buys, or something that you only need a particular amount of");
-                ImGui.BulletText("Keep Buying: Once the other 2 have been met (Keep/Buy), it will constantly buy this item if it has the credits to do so.\n" +
-                                 "This can only be set to 1 item, and gererally used for things you want to just spend your credits on");
+                ImGui.Text("这是您可以创建的个性化购物清单，当您达到一定数量的积分时它将运行。");
+                ImGui.Text("以下是以下各项的作用：");
+                ImGui.BulletText("保持：将购买最多数量的物品，以确保您的库存中有足够的物品。此计数在运行之间不会减少。\n" +
+                                 "对于像强心剂之类的东西很有用，你想要手头上总是有一定数量的");
+                ImGui.BulletText("购买：将购买 X 数量的这些物品，当它从供应商处购买时，数量会减少，直到达到 0.\n" +
+                                 "适合一次性购买，或者您只需要特定数量的");
+                ImGui.BulletText("保持 Buying：一旦满足其他2个（保留/购买），如果有积分，它将不断购买该物品。\n" +
+                                 "这只能设置为 1 个项目，通常用于您只想花费积分的东西");
                 ImGui.EndTooltip();
             }
             ImGui.NewLine();
@@ -53,14 +53,14 @@ namespace ICE.Ui.MainUi.Settings
             int CosmoKeepAmount = C.CosmoKeepAmount;
 
             ImGui.SetNextItemWidth(150);
-            if (ImGui.SliderInt("Go buy items when you reach", ref buyAtAmount, 0, 30000))
+            if (ImGui.SliderInt("当你购买物品时达到", ref buyAtAmount, 0, 30000))
             {
                 C.CosmoBuyAtAmount = buyAtAmount;
                 C.SaveDebounced();
             }
 
             ImGui.SetNextItemWidth(150);
-            if (ImGui.SliderInt("Keep this much Cosmocredits", ref CosmoKeepAmount, 0, buyAtAmount))
+            if (ImGui.SliderInt("保留这么多Cosmocredits", ref CosmoKeepAmount, 0, buyAtAmount))
             {
                 C.CosmoKeepAmount = CosmoKeepAmount;
                 C.SaveDebounced();
@@ -69,28 +69,28 @@ namespace ICE.Ui.MainUi.Settings
             CheckConfigState();
             if (Task_BuyCosmoItems.CanPurchaseAnyItem())
             {
-                ImGui.Text("You can buy cosmocredit items from the list!");
+                ImGui.Text("您可以从列表中购买宇宙信用项目！");
             }
             else
             {
-                ImGui.Text("You can't buy any items with your current credit value/items (tis fine, this just a test)");
+                ImGui.Text("您无法使用当前的信用值/项目购买任何项目（很好，这只是一个测试）");
             }
 
-            if (ImGui.Button("Add Material/Dyes/Items"))
+            if (ImGui.Button("添加材质/染料/物品"))
             {
                 ImGui.OpenPopup("CosmocreditMateriaPopup");
             }
 
             ImGui.SameLine();
 
-            if (ImGui.Button("Add Armor/Housing/Mounts"))
+            if (ImGui.Button("添加装甲/房屋/坐骑"))
             {
                 ImGui.OpenPopup("Cosmocredit_MountArmorPopup");
             }
 
             ImGui.SameLine();
             
-            if (ImGui.Button("Clear shopping list"))
+            if (ImGui.Button("清除购物清单"))
             {
                 C.CosmoShopping.Clear();
                 C.CosmoShoppingOrder.Clear();
@@ -124,10 +124,10 @@ namespace ICE.Ui.MainUi.Settings
 
                 ImGui.Spacing();
 
-                if (ImGui.BeginTable("Cosmo Materia Shop", 2, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.ScrollY | ImGuiTableFlags.RowBg, new Vector2(0, 250)))
+                if (ImGui.BeginTable("Cosmo材料店", 2, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.ScrollY | ImGuiTableFlags.RowBg, new Vector2(0, 250)))
                 {
-                    ImGui.TableSetupColumn("Icons", ImGuiTableColumnFlags.WidthFixed, 20);
-                    ImGui.TableSetupColumn("Names", ImGuiTableColumnFlags.WidthStretch);
+                    ImGui.TableSetupColumn("图标", ImGuiTableColumnFlags.WidthFixed, 20);
+                    ImGui.TableSetupColumn("名称", ImGuiTableColumnFlags.WidthStretch);
 
                     foreach (var item in Shop_Cosmocredits.Shop_MateriaDye)
                     {
@@ -146,10 +146,10 @@ namespace ICE.Ui.MainUi.Settings
 
                 ImGui.Spacing();
 
-                if (ImGui.BeginTable("Cosmo Gear Shop", 2, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.ScrollY | ImGuiTableFlags.RowBg, new Vector2(0, 250)))
+                if (ImGui.BeginTable("Cosmo装备店", 2, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.ScrollY | ImGuiTableFlags.RowBg, new Vector2(0, 250)))
                 {
-                    ImGui.TableSetupColumn("Icons", ImGuiTableColumnFlags.WidthFixed, 20);
-                    ImGui.TableSetupColumn("Names", ImGuiTableColumnFlags.WidthStretch);
+                    ImGui.TableSetupColumn("图标", ImGuiTableColumnFlags.WidthFixed, 20);
+                    ImGui.TableSetupColumn("名称", ImGuiTableColumnFlags.WidthStretch);
 
                     foreach (var item in Shop_Cosmocredits.Shop_MountsCards)
                     {
@@ -209,15 +209,15 @@ namespace ICE.Ui.MainUi.Settings
 
             if (ImGui.BeginTable($"Shopping_{tableName}", 10, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.RowBg | ImGuiTableFlags.Borders))
             {
-                ImGui.TableSetupColumn("Order", ImGuiTableColumnFlags.WidthFixed);
-                ImGui.TableSetupColumn("Name");
-                ImGui.TableSetupColumn("Have", ImGuiTableColumnFlags.WidthFixed);
-                ImGui.TableSetupColumn("Cost", ImGuiTableColumnFlags.WidthFixed);
-                ImGui.TableSetupColumn("Kind", ImGuiTableColumnFlags.WidthFixed);
-                ImGui.TableSetupColumn("Unlocked", ImGuiTableColumnFlags.WidthFixed);
-                ImGui.TableSetupColumn("Keep", ImGuiTableColumnFlags.WidthFixed);
-                ImGui.TableSetupColumn("Buy", ImGuiTableColumnFlags.WidthFixed);
-                ImGui.TableSetupColumn("Keep Buying", ImGuiTableColumnFlags.WidthFixed);
+                ImGui.TableSetupColumn("命令", ImGuiTableColumnFlags.WidthFixed);
+                ImGui.TableSetupColumn("姓名");
+                ImGui.TableSetupColumn("有", ImGuiTableColumnFlags.WidthFixed);
+                ImGui.TableSetupColumn("成本", ImGuiTableColumnFlags.WidthFixed);
+                ImGui.TableSetupColumn("种类", ImGuiTableColumnFlags.WidthFixed);
+                ImGui.TableSetupColumn("解锁", ImGuiTableColumnFlags.WidthFixed);
+                ImGui.TableSetupColumn("保持", ImGuiTableColumnFlags.WidthFixed);
+                ImGui.TableSetupColumn("买", ImGuiTableColumnFlags.WidthFixed);
+                ImGui.TableSetupColumn("继续购买", ImGuiTableColumnFlags.WidthFixed);
                 ImGui.TableSetupColumn("", ImGuiTableColumnFlags.WidthFixed);
 
                 ImGui.TableHeadersRow();

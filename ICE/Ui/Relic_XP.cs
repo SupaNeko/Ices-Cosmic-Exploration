@@ -1,4 +1,4 @@
-﻿using FFXIVClientStructs.FFXIV.Client.Game.WKS;
+using FFXIVClientStructs.FFXIV.Client.Game.WKS;
 using ICE.Utilities.Cosmic_Helper;
 using System.Collections.Generic;namespace ICE.Ui
 {
@@ -53,7 +53,7 @@ using System.Collections.Generic;namespace ICE.Ui
             if (MaxStage)
             {
                 ImGui.SameLine();
-                ImGui.Text("[MAX]");
+                ImGui.Text("[最大限度]");
             }
             foreach (var type in XPTable)
             {

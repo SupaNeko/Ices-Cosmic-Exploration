@@ -1,4 +1,4 @@
-﻿using FFXIVClientStructs.FFXIV.Client.Game.UI;
+using FFXIVClientStructs.FFXIV.Client.Game.UI;
 using ICE.Ui.MainUi.HelpFolder.Tips_Folder;
 using System;
 using System.Collections.Generic;
@@ -23,8 +23,8 @@ namespace ICE.Ui.MainUi.HelpFolder
             return tipSelected switch
             {
                 Help_Selection.Welcome => "Welcome",
-                Help_Selection.ModeSelection => "Mode Selection",
-                Help_Selection.AgendaMode => "Cosmic Agenda",
+                Help_Selection.ModeSelection => "模式选择",
+                Help_Selection.AgendaMode => "宇宙议程",
                 _ => tipSelected.ToString()
             };
         }
@@ -42,7 +42,7 @@ namespace ICE.Ui.MainUi.HelpFolder
             float rightPanelWidth = ImGui.GetContentRegionAvail().X - leftPanelWidth - spacing;
             float childHeight = ImGui.GetContentRegionAvail().Y;
 
-            if (ImGui.BeginChild("Tip Selector", new Vector2(leftPanelWidth, childHeight), true))
+            if (ImGui.BeginChild("提示选择器", new Vector2(leftPanelWidth, childHeight), true))
             {
                 foreach (Help_Selection tip in Enum.GetValues<Help_Selection>())
                 {
@@ -64,7 +64,7 @@ namespace ICE.Ui.MainUi.HelpFolder
                 }
                 else
                 {
-                    ImGui.Text("Unknown Tip View");
+                    ImGui.Text("未知提示查看");
                 }
             }
             ImGui.EndChild();
@@ -72,8 +72,8 @@ namespace ICE.Ui.MainUi.HelpFolder
 
         private static void ScoreMax()
         {
-            ImGui.TextWrapped("Each planet has a dedicated set of missions are deemed the most \"Optimal\" when it comes to farming score." +
-                "\nThere's certain missions that are worth grinding more than others. Weather/time also plays a part of it all. Below is what I would recommend on a per class basis.");
+            ImGui.TextWrapped("每个星球都有一组专门的任务，在农业得分方面被认为是最“最佳”的。" +
+                "\n有某些任务比其他任务更值得磨练。天气/时间也是其中的一部分。以下是我针对每个职业的建议。");
             ImGui.TextWrapped("");
         }
     }

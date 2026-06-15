@@ -1,4 +1,4 @@
-﻿using Dalamud.Interface;
+using Dalamud.Interface;
 using Dalamud.Interface.Utility.Raii;
 using ECommons.Reflection;
 using FFXIVClientStructs;
@@ -16,7 +16,7 @@ namespace ICE.Ui
 {
     internal class InfoWindow : Window
     {
-        public InfoWindow() : base($"Ice's Cosmic Exploration - Info")
+        public InfoWindow() : base($"Ice 的宇宙探索 - 信息")
         {
             Flags = ImGuiWindowFlags.None;
             SizeConstraints = new()
@@ -39,23 +39,23 @@ namespace ICE.Ui
 
         public override void Draw()
         {
-            ImGui.Text("Hi! Welcome to Ice's Cosmic Exploration [Short form, I.C.E.]");
+            ImGui.Text("嗨！欢迎来到 Ice 的宇宙探索 [简写形式，I.C.E.]");
             ImGui.Bullet();
-            ImGui.TextWrapped("This plugin is meant to help you with your cosmic exploration needs, " +
-                              "from automating the gathering and crafting process, to the buying of shop items or spending those planetary credits away.");
+            ImGui.TextWrapped("这个插件旨在帮助您满足宇宙探索需求， " +
+                              "从自动化收集和制作过程，到购买商店物品或花费这些行星积分。");
 
             helpSelect_Required.Draw();
 
             ImGui.Separator();
 
-            ImGuiEx.IconWithText(FontAwesomeIcon.Feather, "Gathering Setup");
+            ImGuiEx.IconWithText(FontAwesomeIcon.Feather, "采集设置");
             ImGui.Dummy(new Vector2(0, 5));
 
-            ImGui.Text("If you would like to auto setup gathering to where all missions have their gathering buffs to what I would recommend");
+            ImGui.Text("如果你想自动设置收集到所有任务都有我推荐的收集增益的地方");
 
             if (!HasGatheringSetup)
             {
-                if (ImGui.Button("Setup Gathering Profiles"))
+                if (ImGui.Button("设置采集配置文件"))
                 {
                     foreach (var profile in C.GatherProfiles)
                     {
@@ -96,7 +96,7 @@ namespace ICE.Ui
             }
             else
             {
-                ImGui.Text("All gathering profile have been updated/automatically applied");
+                ImGui.Text("所有采集配置文件已更新/自动应用");
             }
         }
     }

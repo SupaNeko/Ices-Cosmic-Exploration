@@ -17,28 +17,28 @@ namespace ICE.Ui.MainUi.Settings
 
         public static void Draw()
         {
-            ImGuiEx.IconWithText(FontAwesomeIcon.ExclamationTriangle, "Safety Settings");
+            ImGuiEx.IconWithText(FontAwesomeIcon.ExclamationTriangle, "安全设置");
             ImGui.Dummy(new Vector2(0, 5));
 
-            if (ImGui.Checkbox("Ignore non-Cosmic prompts", ref rejectUnknownYesNo))
+            if (ImGui.Checkbox("忽略非宇宙提示", ref rejectUnknownYesNo))
             {
                 C.RejectUnknownYesno = rejectUnknownYesNo;
                 C.Save();
             }
             ImGuiEx.HelpMarker(
-                "Warning! This is a safety feature to avoid joining random parties!\n" +
-                "If you you uncheck this, YOU WILL JOIN random party invites.\n" +
-                "You have been warned. Disable at your own risk."
+                "警告！这是避免加入随机队伍的安全功能！\n" +
+                "如果你取消选中此功能，你将加入随机聚会邀请。\n" +
+                "您已被警告。禁用后果自负。"
             );
-            if (ImGui.Checkbox("Add delay to mission menu", ref delayGrabMission))
+            if (ImGui.Checkbox("添加延迟任务菜单", ref delayGrabMission))
             {
                 C.DelayGrabMission = delayGrabMission;
                 C.Save();
             }
             ImGuiEx.HelpMarker(
-                "This is here for safety! If you want to decrease the delay between missions be my guest.\n" +
-                "Safety is around... 250? If you're having animation locks you can absolutely increase it higher\n" +
-                "Or if you're feeling daredevil. Lower it. I'm not your dad (will tell dad jokes though.");
+                "这是为了安全！如果您想减少任务之间的延迟，请成为我的客人。\n" +
+                "安全性约为... 250？如果你有动画锁，你绝对可以把它调高\n" +
+                "上的农场积分或者如果你感觉很勇敢。降低它。我不是你爸爸（不过会讲爸爸笑话。");
             if (delayGrabMission)
             {
                 ImGui.SetNextItemWidth(150);
@@ -52,15 +52,15 @@ namespace ICE.Ui.MainUi.Settings
                     }
                 }
             }
-            if (ImGui.Checkbox("Add delay to crafting menu", ref delayCraft))
+            if (ImGui.Checkbox("添加制作菜单延迟", ref delayCraft))
             {
                 C.DelayCraft = delayCraft;
                 C.Save();
             }
             ImGuiEx.HelpMarker(
-                "This is here for safety! If you want to decrease the delay before turnin be my guest.\n" +
-                "Safety is around... 2500? If you're having animation locks you can absolutely increase it higher\n" +
-                "Or if you're feeling daredevil. Lower it. I'm not your dad (will tell dad jokes though.");
+                "这是为了安全起见！如果您想在成为我的客人之前减少延迟。\n" +
+                "安全性约为... 2500？如果您有动画锁，您绝对可以将其提高更高\n" +
+                "上的农场积分或者如果你感觉很勇敢。降低它。我不是你爸爸（不过会讲爸爸笑话。");
             if (delayCraft)
             {
                 ImGui.SetNextItemWidth(150);
@@ -76,19 +76,19 @@ namespace ICE.Ui.MainUi.Settings
             }
             int delayRelic = C.DelayPostRelic;
             ImGui.SetNextItemWidth(150);
-            if (ImGui.SliderInt("Delay Post Relic Turnin", ref delayRelic, 0, 5000))
+            if (ImGui.SliderInt("延迟遗物上交后", ref delayRelic, 0, 5000))
             {
                 C.DelayPostRelic = delayRelic;
                 C.SaveDebounced();
             }
             bool gatherDelay = C.Delay_Gather;
-            if (ImGui.Checkbox("Add delay to gather", ref gatherDelay))
+            if (ImGui.Checkbox("添加采集延迟", ref gatherDelay))
             {
                 C.Delay_Gather = gatherDelay;
                 C.Save();
             }
             bool closeRewardPopup = C.HideRewardWindow;
-            if (ImGui.Checkbox("Auto Close Reward Popups", ref closeRewardPopup))
+            if (ImGui.Checkbox("自动关闭奖励弹出窗口", ref closeRewardPopup))
             {
                 C.HideRewardWindow = closeRewardPopup;
                 C.Save();

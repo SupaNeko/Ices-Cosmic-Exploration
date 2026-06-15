@@ -1,4 +1,4 @@
-﻿using Lumina.Excel.Sheets;
+using Lumina.Excel.Sheets;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,39 +20,39 @@ namespace ICE.Ui.DebugWindowTabs
                             ImGuiTableFlags.Hideable |
                             ImGuiTableFlags.SizingFixedFit;
 
-            if (ImGui.BeginTable("Mission Reward Sheet", 18, tableFlags))
+            if (ImGui.BeginTable("任务奖励表", 18, tableFlags))
             {
                 // Setup columns - these names won't be directly visible
-                ImGui.TableSetupColumn("Mission ID");
-                ImGui.TableSetupColumn("Column 0");
-                ImGui.TableSetupColumn("Column 1");
-                ImGui.TableSetupColumn("Column 2");
-                ImGui.TableSetupColumn("Column 3");
-                ImGui.TableSetupColumn("Column 4");
-                ImGui.TableSetupColumn("Column 5");
-                ImGui.TableSetupColumn("Column 6");
-                ImGui.TableSetupColumn("Column 7");
-                ImGui.TableSetupColumn("Column 8");
-                ImGui.TableSetupColumn("Column 9");
-                ImGui.TableSetupColumn("Column 10");
-                ImGui.TableSetupColumn("Column 11");
-                ImGui.TableSetupColumn("Column 12");
-                ImGui.TableSetupColumn("Column 13");
-                ImGui.TableSetupColumn("Column 14");
-                ImGui.TableSetupColumn("Column 15");
-                ImGui.TableSetupColumn("Column 16");
-                ImGui.TableSetupColumn("Column 17");
+                ImGui.TableSetupColumn("任务ID");
+                ImGui.TableSetupColumn("列0");
+                ImGui.TableSetupColumn("列1");
+                ImGui.TableSetupColumn("列 2");
+                ImGui.TableSetupColumn("列 3");
+                ImGui.TableSetupColumn("列 4");
+                ImGui.TableSetupColumn("列 5");
+                ImGui.TableSetupColumn("列 6");
+                ImGui.TableSetupColumn("列 7");
+                ImGui.TableSetupColumn("列 8");
+                ImGui.TableSetupColumn("列 9");
+                ImGui.TableSetupColumn("列10");
+                ImGui.TableSetupColumn("列11");
+                ImGui.TableSetupColumn("列12");
+                ImGui.TableSetupColumn("列13");
+                ImGui.TableSetupColumn("列14");
+                ImGui.TableSetupColumn("列15");
+                ImGui.TableSetupColumn("列 16");
+                ImGui.TableSetupColumn("列 17");
 
                 // Draw custom header row with tooltips
                 ImGui.TableNextRow(ImGuiTableRowFlags.Headers);
 
                 // Column 0: Mission ID
                 ImGui.TableSetColumnIndex(0);
-                ImGui.TableHeader("Mission ID");
+                ImGui.TableHeader("任务ID");
                 if (ImGui.IsItemHovered())
                 {
                     ImGui.BeginTooltip();
-                    ImGui.Text("Row ID");
+                    ImGui.Text("行ID");
                     ImGui.EndTooltip();
                 }
 
@@ -62,7 +62,7 @@ namespace ICE.Ui.DebugWindowTabs
                 if (ImGui.IsItemHovered())
                 {
                     ImGui.BeginTooltip();
-                    ImGui.Text("Unknown0");
+                    ImGui.Text("未知0");
                     ImGui.EndTooltip();
                 }
 
@@ -72,7 +72,7 @@ namespace ICE.Ui.DebugWindowTabs
                 if (ImGui.IsItemHovered())
                 {
                     ImGui.BeginTooltip();
-                    ImGui.Text("Unknown1");
+                    ImGui.Text("未知1");
                     ImGui.EndTooltip();
                 }
 
@@ -82,7 +82,7 @@ namespace ICE.Ui.DebugWindowTabs
                 if (ImGui.IsItemHovered())
                 {
                     ImGui.BeginTooltip();
-                    ImGui.Text("Unknown2");
+                    ImGui.Text("未知2");
                     ImGui.EndTooltip();
                 }
 
@@ -92,7 +92,7 @@ namespace ICE.Ui.DebugWindowTabs
                 if (ImGui.IsItemHovered())
                 {
                     ImGui.BeginTooltip();
-                    ImGui.Text("Unknown3");
+                    ImGui.Text("未知3");
                     ImGui.EndTooltip();
                 }
 
@@ -102,17 +102,17 @@ namespace ICE.Ui.DebugWindowTabs
                 if (ImGui.IsItemHovered())
                 {
                     ImGui.BeginTooltip();
-                    ImGui.Text("Unknown4");
+                    ImGui.Text("未知4");
                     ImGui.EndTooltip();
                 }
 
                 // Column 6
                 ImGui.TableSetColumnIndex(6);
-                ImGui.TableHeader("Reward Amount");
+                ImGui.TableHeader("奖励金额");
                 if (ImGui.IsItemHovered())
                 {
                     ImGui.BeginTooltip();
-                    ImGui.Text("Unknown8");
+                    ImGui.Text("未知8");
                     ImGui.EndTooltip();
                 }
 
@@ -122,7 +122,7 @@ namespace ICE.Ui.DebugWindowTabs
                 if (ImGui.IsItemHovered())
                 {
                     ImGui.BeginTooltip();
-                    ImGui.Text("Unknown9");
+                    ImGui.Text("未知9");
                     ImGui.EndTooltip();
                 }
 
@@ -132,7 +132,7 @@ namespace ICE.Ui.DebugWindowTabs
                 if (ImGui.IsItemHovered())
                 {
                     ImGui.BeginTooltip();
-                    ImGui.Text("Unknown10");
+                    ImGui.Text("未知10");
                     ImGui.EndTooltip();
                 }
 
@@ -142,7 +142,7 @@ namespace ICE.Ui.DebugWindowTabs
                 if (ImGui.IsItemHovered())
                 {
                     ImGui.BeginTooltip();
-                    ImGui.Text("Unknown11");
+                    ImGui.Text("未知11");
                     ImGui.EndTooltip();
                 }
 
@@ -152,7 +152,7 @@ namespace ICE.Ui.DebugWindowTabs
                 if (ImGui.IsItemHovered())
                 {
                     ImGui.BeginTooltip();
-                    ImGui.Text("Unknown12");
+                    ImGui.Text("未知12");
                     ImGui.EndTooltip();
                 }
 
@@ -162,7 +162,7 @@ namespace ICE.Ui.DebugWindowTabs
                 if (ImGui.IsItemHovered())
                 {
                     ImGui.BeginTooltip();
-                    ImGui.Text("Unknown13");
+                    ImGui.Text("未知13");
                     ImGui.EndTooltip();
                 }
 
@@ -172,17 +172,17 @@ namespace ICE.Ui.DebugWindowTabs
                 if (ImGui.IsItemHovered())
                 {
                     ImGui.BeginTooltip();
-                    ImGui.Text("Unknown14");
+                    ImGui.Text("未知14");
                     ImGui.EndTooltip();
                 }
 
                 // Column 13
                 ImGui.TableSetColumnIndex(13);
-                ImGui.TableHeader("Reward ItemID");
+                ImGui.TableHeader("奖励物品ID");
                 if (ImGui.IsItemHovered())
                 {
                     ImGui.BeginTooltip();
-                    ImGui.Text("Unknown15");
+                    ImGui.Text("未知15");
                     ImGui.EndTooltip();
                 }
 
@@ -192,7 +192,7 @@ namespace ICE.Ui.DebugWindowTabs
                 if (ImGui.IsItemHovered())
                 {
                     ImGui.BeginTooltip();
-                    ImGui.Text("Unknown16");
+                    ImGui.Text("未知16");
                     ImGui.EndTooltip();
                 }
 
@@ -202,7 +202,7 @@ namespace ICE.Ui.DebugWindowTabs
                 if (ImGui.IsItemHovered())
                 {
                     ImGui.BeginTooltip();
-                    ImGui.Text("Unknown17");
+                    ImGui.Text("未知17");
                     ImGui.EndTooltip();
                 }
 
@@ -212,7 +212,7 @@ namespace ICE.Ui.DebugWindowTabs
                 if (ImGui.IsItemHovered())
                 {
                     ImGui.BeginTooltip();
-                    ImGui.Text("Unknown18");
+                    ImGui.Text("未知18");
                     ImGui.EndTooltip();
                 }
 
@@ -222,7 +222,7 @@ namespace ICE.Ui.DebugWindowTabs
                 if (ImGui.IsItemHovered())
                 {
                     ImGui.BeginTooltip();
-                    ImGui.Text("Unknown19");
+                    ImGui.Text("未知19");
                     ImGui.EndTooltip();
                 }
 

@@ -35,32 +35,32 @@ namespace ICE.Ui.MainUi.Settings
 
         public static void OverlaySettings()
         {
-            ImGuiEx.IconWithText(FontAwesomeIcon.WindowMaximize, "Overlay Window");
+            ImGuiEx.IconWithText(FontAwesomeIcon.WindowMaximize, "叠加窗口");
             ImGui.Dummy(new (0, 5));
 
             bool showOverlay = C.ShowOverlay;
-            if (ImGui.Checkbox("Show Overlay", ref showOverlay))
+            if (ImGui.Checkbox("显示叠加", ref showOverlay))
             {
                 C.ShowOverlay = showOverlay;
                 C.Save();
             }
             ImGui.SameLine();
             bool useCogsIcon = C.Overlay_UseCogsIcon;
-            if (ImGui.Checkbox("Use cogs button instead of home", ref useCogsIcon))
+            if (ImGui.Checkbox("使用齿轮按钮而不是home", ref useCogsIcon))
             {
                 C.Overlay_UseCogsIcon = useCogsIcon;
                 C.Save();
             }
 
             bool ShowSeconds = C.ShowSeconds;
-            if (ImGui.Checkbox("Show Seconds", ref ShowSeconds))
+            if (ImGui.Checkbox("显示秒", ref ShowSeconds))
             {
                 C.ShowSeconds = ShowSeconds;
                 C.Save();
             }
 
             bool showExpOverlay = C.ShowExpBars;
-            if (ImGui.Checkbox("Show Experience Bars on Overlay", ref showExpOverlay))
+            if (ImGui.Checkbox("在叠加层上显示经验条", ref showExpOverlay))
             {
                 C.ShowExpBars = showExpOverlay;
                 C.Save();
@@ -69,7 +69,7 @@ namespace ICE.Ui.MainUi.Settings
             {
                 ImGui.SameLine();
                 bool hideWhenMaxed = C.ShowExpBars_HideWhenMaxed;
-                if (ImGui.Checkbox("Until maxed only", ref hideWhenMaxed))
+                if (ImGui.Checkbox("Until仅最大", ref hideWhenMaxed))
                 {
                     C.ShowExpBars_HideWhenMaxed = hideWhenMaxed;
                     C.Save();
@@ -77,21 +77,21 @@ namespace ICE.Ui.MainUi.Settings
             }
 
             bool showClassScore = C.ShowCurrentScore;
-            if (ImGui.Checkbox("Show Current Class Score", ref showClassScore))
+            if (ImGui.Checkbox("显示当前职业分数", ref showClassScore))
             {
                 C.ShowCurrentScore = showClassScore;
                 C.Save();
             }
             ImGui.SameLine();
             bool showTotalScore = C.ShowTotalScore;
-            if (ImGui.Checkbox("Show Total Score", ref showTotalScore))
+            if (ImGui.Checkbox("显示总分", ref showTotalScore))
             {
                 C.ShowTotalScore = showTotalScore;
                 C.Save();
             }
 
             bool AutoResize = C.Overlay_AutoResize;
-            if (ImGui.Checkbox("Auto Resize Overlay", ref AutoResize))
+            if (ImGui.Checkbox("自动调整大小覆盖", ref AutoResize))
             {
                 C.Overlay_AutoResize = AutoResize;
                 C.Save();
@@ -99,21 +99,21 @@ namespace ICE.Ui.MainUi.Settings
 
 
             bool highlightTokenWeather = C.Overlay_HighlightTokenWeather;
-            if (ImGui.Checkbox("Highlight EX+ token weathers", ref highlightTokenWeather))
+            if (ImGui.Checkbox("突出显示 EX+ 代币天气", ref highlightTokenWeather))
             {
                 C.Overlay_HighlightTokenWeather = highlightTokenWeather;
                 C.Save();
             }
 
             bool showSelectedWeatherMissions = C.Overlay_WeatherSelected;
-            if (ImGui.Checkbox($"Show enabled missions on weather hover", ref showSelectedWeatherMissions))
+            if (ImGui.Checkbox($"在天气悬停时显示已启用的任务", ref showSelectedWeatherMissions))
             {
                 C.Overlay_WeatherSelected = showSelectedWeatherMissions;
                 C.Save();
             }
 
             bool filterByCurrentJob = C.Overlay_FilterByCurrentJob;
-            if (ImGui.Checkbox("Filter by current job only", ref filterByCurrentJob))
+            if (ImGui.Checkbox("仅按当前作业过滤", ref filterByCurrentJob))
             {
                 C.Overlay_FilterByCurrentJob = filterByCurrentJob;
                 C.Save();
@@ -151,53 +151,53 @@ namespace ICE.Ui.MainUi.Settings
             }
 
             bool disableHudClipping = C.DisableHudClipping;
-            if (ImGui.Checkbox("Disable HUD Clipping", ref disableHudClipping))
+            if (ImGui.Checkbox("禁用HUD剪裁", ref disableHudClipping))
             {
                 C.DisableHudClipping = disableHudClipping;
                 C.Save();
             }
             if (ImGui.IsItemHovered())
             {
-                ImGui.SetTooltip("When enabled, overlays will render over the native UI elements");
+                ImGui.SetTooltip("启用后，叠加层将在原生 UI 元素上渲染");
             }
 
         }
         private static void AutoUse()
         {
-            ImGuiEx.IconWithText(FontAwesomeIcon.PersonRays, "Auto-Use");
+            ImGuiEx.IconWithText(FontAwesomeIcon.PersonRays, "自动使用");
             ImGui.Dummy(new Vector2(0, 5));
 
             bool DisableLunarAura = C.RemoveStellarStatus;
-            if (ImGui.Checkbox("Auto-Remove Stellar Status", ref DisableLunarAura))
+            if (ImGui.Checkbox("自动移除恒星状态", ref DisableLunarAura))
             {
                 C.RemoveStellarStatus = DisableLunarAura;
                 C.Save();
             }
             ImGui.SameLine();
             ImGuiEx.IconWithTooltip(FontAwesomeIcon.InfoCircle,
-                                   "Automatically removes the Star Contributor visual effect (the glow you get for being a top contributor).\n" +
-                                   "The buff restores itself when you re-enter the zone.");
+                                   "自动移除明星贡献者视觉效果（作为顶级贡献者所获得的光芒）.\n" +
+                                   "当您重新进入区域时，buff会自行恢复。");
 
             bool autoStartOnMoonEnter = C.StartUponEnterMoon;
-            if (ImGui.Checkbox("Auto start upon entering a Cosmic Exploration area", ref autoStartOnMoonEnter))
+            if (ImGui.Checkbox("输入时自动启动宇宙探索区", ref autoStartOnMoonEnter))
             {
                 C.StartUponEnterMoon = autoStartOnMoonEnter;
                 C.Save();
             }
             ImGui.SameLine();
             ImGuiEx.IconWithTooltip(FontAwesomeIcon.QuestionCircle,
-                                   "This will check to see if you're on a gathering/crafting class upon first entering the moon.\n" +
-                                   "If you are, it will automatically start as if you had pressed the start button yourself\n" +
-                                   "Really useful if you have a tool to auto-log you in/if you just want to enter the moon and go\n" +
-                                   "This will ONLY run upon first entry.");
+                                   "这将检查是否有第一次进入月球时，你正在参加采集/制作课程。\n" +
+                                   "如果你是，它会自动启动，就像你一样你自己按下了开始按钮\n" +
+                                   "如果你有一个自动登录的工具/如果你只想进入月球然后去\n" +
+                                   "这只会在第一次进入时运行。");
             ImGui.Dummy(Vector2.Zero);
         }
         private static void GoldMissionRemover()
         {
-            ImGuiEx.IconWithText(FontAwesomeIcon.Medal, "Post Mission Settings");
+            ImGuiEx.IconWithText(FontAwesomeIcon.Medal, "任务后设置");
 
             bool removeGold = C.RemoveAfterGold;
-            if (ImGui.Checkbox("Remove Mission Upon Gold Completion", ref removeGold))
+            if (ImGui.Checkbox("黄金完成后删除任务", ref removeGold))
             {
                 C.RemoveAfterGold = removeGold;
                 C.Save();
@@ -206,7 +206,7 @@ namespace ICE.Ui.MainUi.Settings
             using (ImRaii.Disabled(!removeGold))
             {
                 bool keepARanks = C.KeepARanks;
-                if (ImGui.Checkbox("Keep \"A Rank\" missions and below", ref keepARanks))
+                if (ImGui.Checkbox("保持“A Rank”任务及以下", ref keepARanks))
                 {
                     C.KeepARanks = keepARanks;
                     C.Save();
@@ -215,12 +215,12 @@ namespace ICE.Ui.MainUi.Settings
         }
         private static void TimeRecords()
         {
-            ImGuiEx.IconWithText(FontAwesomeIcon.Clock, "Record Settings");
+            ImGuiEx.IconWithText(FontAwesomeIcon.Clock, "录音设置");
             ImGui.Dummy(new Vector2(0, 5));
 
             int TimeHistory = C.TimeHistoryLimit;
             ImGui.SetNextItemWidth(100);
-            if (ImGui.InputInt("Average Time History to keep", ref TimeHistory))
+            if (ImGui.InputInt("要保留的平均时间历史", ref TimeHistory))
             {
                 C.TimeHistoryLimit = TimeHistory;
                 C.Save();
@@ -229,20 +229,20 @@ namespace ICE.Ui.MainUi.Settings
             ImGui.TextDisabled("?");
             if (ImGui.IsItemHovered())
             {
-                ImGui.SetTooltip("Anything below 0 to keep all logs\n" +
-                                 "Above 0 to keep a set limit");
+                ImGui.SetTooltip("任何低于0的东西以保留所有日志\n" +
+                                 "高于 0以保留一组上限");
             }
         }
         private static void PostMissionCommands()
         {
-            ImGuiEx.IconWithText(FontAwesomeIcon.Play, "Post Mission Commands");
+            ImGuiEx.IconWithText(FontAwesomeIcon.Play, "任务后命令");
             ImGui.Dummy(new Vector2(0, 5));
 
-            ImGui.TextWrapped("Input below a list of commands that you would like to run after a run has been completed. \n" +
-                              "This is kind of my way of letting you somewhat script/set up a sequence of other things that you would like to do that might not be included in the plugin itself. \n" +
-                              "If you want something more complex, just make an SND script at that point. And have this run that script post lol.");
+            ImGui.TextWrapped("在运行完成后要运行的命令列表下方输入。 \n" +
+                              "这是我的一种方式，让您编写/设置一系列您想做的其他事情，这些事情可能不包含在插件本身中。 \n" +
+                              "如果你想要更复杂的东西，只需在此时创建一个 SND 脚本即可。并让它运行该脚本后哈哈。");
 
-            if (ImGui.Button("Add New Command"))
+            if (ImGui.Button("添加新命令"))
             {
                 C.PostMissionCommands.Add(new MissionCommand
                 {
@@ -255,11 +255,11 @@ namespace ICE.Ui.MainUi.Settings
             MissionCommand? toRemove = null;
             int entryCounter = 0;
 
-            if (ImGui.BeginTable("Mission Commands", 3, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders))
+            if (ImGui.BeginTable("任务命令", 3, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders))
             {
-                ImGui.TableSetupColumn("Command");
-                ImGui.TableSetupColumn("Delay");
-                ImGui.TableSetupColumn("Remove");
+                ImGui.TableSetupColumn("命令");
+                ImGui.TableSetupColumn("延迟");
+                ImGui.TableSetupColumn("删除");
 
                 ImGui.TableHeadersRow();
 
@@ -306,24 +306,24 @@ namespace ICE.Ui.MainUi.Settings
         }
         private static void FunSettings()
         {
-            ImGuiEx.IconWithText(FontAwesomeIcon.Heart, "Dev Favorites");
+            ImGuiEx.IconWithText(FontAwesomeIcon.Heart, "Dev favorites");
             var crazyEnabled = C.CrazyTaxiArrow;
-            if (ImGui.Checkbox("Show Crazy Taxi Arrow when navmeshing", ref crazyEnabled))
+            if (ImGui.Checkbox("导航时显示疯狂出租车箭头", ref crazyEnabled))
             {
                 C.CrazyTaxiArrow = crazyEnabled;
                 C.Save();
             }
 
             var placiboEffect = C.PlaceboCheckbox;
-            if (ImGui.Checkbox("Increase Gathering & Crafting Speed", ref placiboEffect))
+            if (ImGui.Checkbox("提高采集和制作速度", ref placiboEffect))
             {
                 C.PlaceboCheckbox = placiboEffect;
                 C.Save();
             }
             ImGui.SameLine();
-            ImGuiEx.IconWithTooltip(FontAwesomeIcon.QuestionCircle, "This does abosolutely nothing\n" +
-                "But I know there's going to be people who enable this and don't read, so it's a tehe.\n" +
-                "Thanks for using my plugin though, it means a lot <3");
+            ImGuiEx.IconWithTooltip(FontAwesomeIcon.QuestionCircle, "这绝对没有任何作用\n" +
+                "但我知道会有人启用此功能但不阅读，所以这是一个tehe.\n" +
+                "不过，感谢使用我的插件，这意味着很多<3");
         }
         private static void Separator()
         {

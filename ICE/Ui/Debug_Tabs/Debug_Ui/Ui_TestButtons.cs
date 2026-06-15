@@ -1,4 +1,4 @@
-﻿using ECommons.GameHelpers;
+using ECommons.GameHelpers;
 using FFXIVClientStructs.FFXIV.Client.Game.WKS;
 using System.Collections.Generic;
 using System.Text;
@@ -201,7 +201,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
 
         public static unsafe void Draw()
         {
-            ImGui.Text($"Current Mission: {CosmicHelper.CurrentLunarMission}");
+            ImGui.Text($"当前任务： {CosmicHelper.CurrentLunarMission}");
             ImGui.Text($"Artisan Endurance: {P.Artisan.GetEnduranceStatus()}");
 
             if (ImGui.Button($"Set Location: {WorldPos}##SetPositionForDraw"))
@@ -244,28 +244,28 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
 
             ImGui.Text($"{WKSManager.Instance()->State.CurrentMission.MissionUnitRowId}");
 
-            if (ImGui.Button("Test Drone Buy"))
+            if (ImGui.Button("测试无人机购买"))
             {
                 Task_ArtifactSearch.EnqueueBuy();
             }
 
-            if (ImGui.Button("Find Mission"))
+            if (ImGui.Button("查找任务"))
             {
                 // TaskMissionFind.Enqueue();
             }
-            if (ImGui.Button("Clear Task"))
+            if (ImGui.Button("清除任务"))
             {
                 P.TaskManager.Abort();
             }
-            if (ImGui.Button("Artisan Craft"))
+            if (ImGui.Button("Artisan工艺"))
             {
                 P.Artisan.CraftItem(36176, 1);
             }
-            if (ImGui.Button("RecipeNote"))
+            if (ImGui.Button("食谱笔记"))
             {
                 AddonHelper.OpenRecipeNote();
             }
-            if (ImGui.TreeNode("All Current objects"))
+            if (ImGui.TreeNode("所有当前对象"))
             {
                 if (Player.Available)
                 {
@@ -288,7 +288,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
             float gameObjectDistance = 0;
             if (gameObject is not null)
                 gameObjectDistance = Player.DistanceTo(gameObject);
-            if (ImGui.Button("Click Nearest EventObject"))
+            if (ImGui.Button("单击最近的事件对象"))
             {
                 Utils.TargetgameObjectTask(gameObject);
                 Utils.InteractWithObject(gameObject);
@@ -300,7 +300,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
             float collectionPointDistance = 0;
             if (collectionPoint is not null)
                 collectionPointDistance = Player.DistanceTo(collectionPoint);
-            if (ImGui.Button("Click Nearest Collection Point"))
+            if (ImGui.Button("单击最近的收集点"))
             {
                 Utils.TargetgameObjectTask(collectionPoint);
                 Utils.InteractWithObject(collectionPoint);
@@ -308,7 +308,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
             ImGui.SameLine();
             ImGui.Text($"Distance to nearest: {collectionPointDistance}");
 
-            if (ImGui.Button("Print GatheringPoint Info"))
+            if (ImGui.Button("打印收集点信息"))
             {
                 var gatheringPoint = Player.Object?.TargetObject;
                 if (gatheringPoint is not null)
@@ -331,29 +331,29 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
                 }
                 else
                 {
-                    Svc.Chat.Print("No GatheringPoint targeted.");
+                    Svc.Chat.Print("没有目标聚集点。");
                 }
             }
 
-            if (ImGui.Button("Switch class to CRP"))
+            if (ImGui.Button("切换职业到CRP"))
             {
                 GearsetHandler.TaskClassChange(Job.CRP);
             }
-            if (ImGui.Button("Switch class to MIN"))
+            if (ImGui.Button("切换职业到MIN"))
             {
                 GearsetHandler.TaskClassChange(Job.MIN);
             }
-            if (ImGui.Button("Relic Turnin"))
+            if (ImGui.Button("Relic上交"))
             {
                 Task_RelicTurnin.Enqueue();
             }
 
-            if (ImGui.CollapsingHeader("Square custom font"))
+            if (ImGui.CollapsingHeader("方形自定义字体"))
             {
                 DrawIconSelector();
             }
 
-            if (ImGui.CollapsingHeader("Font Test"))
+            if (ImGui.CollapsingHeader("字体测试"))
             {
                 for (int i = 0xE000; i <= 0xE0FF; i++)
                 {
@@ -378,7 +378,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
                 DrawExportWindow();
             }
 
-            if (ImGui.CollapsingHeader("View All SE Custom Fonts (That's known"))
+            if (ImGui.CollapsingHeader("查看所有SE自定义字体（这是已知的"))
             {
                 foreach (var fontIcon in Icons)
                 {
@@ -386,7 +386,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
                 }
             }
             ImGui.Text($"Mission Timer: {AddonHelper.GetNodeText("WKSMissionInfomation", 24)}");
-            if (ImGui.Button("Move Item"))
+            if (ImGui.Button("移动项目"))
             {
                 MoveItem();
             }
@@ -394,14 +394,14 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
 
         private static void DrawIconSelector()
         {
-            if (ImGui.Button("Export Selected to Dictionary"))
+            if (ImGui.Button("将选定的任务导出到字典"))
             {
                 ExportSelectedIcons();
                 showExportWindow = true;
             }
 
             ImGui.SameLine();
-            if (ImGui.Button("Clear All Selections"))
+            if (ImGui.Button("清除所有选择"))
             {
                 selectedIcons.Clear();
                 iconNames.Clear();
@@ -454,11 +454,11 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
                         iconNames[i] = name;
                     }
                     ImGui.SameLine();
-                    ImGui.TextDisabled("(optional custom name)");
+                    ImGui.TextDisabled("（可选自定义名称）");
                 }
                 else
                 {
-                    ImGui.TextDisabled("(select to add optional name)");
+                    ImGui.TextDisabled("（选择添加可选名称）");
                 }
             }
 
@@ -495,12 +495,12 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
 
         private static void DrawExportWindow()
         {
-            ImGui.Begin("Exported Icon Dictionary", ref showExportWindow);
+            ImGui.Begin("导出图标字典", ref showExportWindow);
 
-            if (ImGui.Button("Copy to Clipboard"))
+            if (ImGui.Button("复制到剪贴板"))
             {
                 ImGui.SetClipboardText(exportedCode);
-                Svc.Chat.Print("Dictionary code copied to clipboard!");
+                Svc.Chat.Print("字典代码复制到剪贴板！");
             }
 
             ImGui.Separator();

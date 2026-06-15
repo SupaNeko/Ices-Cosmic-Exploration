@@ -1,4 +1,4 @@
-﻿using ICE.Utilities.Cosmic_Helper;
+using ICE.Utilities.Cosmic_Helper;
 using System.Collections.Generic;
 using System.Reflection;
 
@@ -8,10 +8,10 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
     {
         public static void Draw()
         {
-            if (ImGui.BeginTable("Leveling Table", 14, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingStretchSame))
+            if (ImGui.BeginTable("调平表", 14, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingStretchSame))
             {
-                ImGui.TableSetupColumn("Planet");
-                ImGui.TableSetupColumn("Lv");
+                ImGui.TableSetupColumn("行星");
+                ImGui.TableSetupColumn("左");
                 for (int i = 1; i < 12; i++)
                 {
                     ImGui.TableSetupColumn($"##icon_{i}", ImGuiTableColumnFlags.WidthStretch);
@@ -21,11 +21,11 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
 
                 // Column 0 — "Planet" with proper header styling
                 ImGui.TableSetColumnIndex(0);
-                ImGui.TableHeader("Planet");
+                ImGui.TableHeader("行星");
 
                 // Column 1 — "Lv"
                 ImGui.TableNextColumn();
-                ImGui.TableHeader("Lv");
+                ImGui.TableHeader("左");
 
                 // Icon columns
                 for (uint i = 8; i < 19; i++)

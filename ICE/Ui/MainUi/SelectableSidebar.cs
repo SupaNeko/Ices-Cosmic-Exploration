@@ -1,4 +1,4 @@
-﻿using Dalamud.Interface;
+using Dalamud.Interface;
 using Dalamud.Interface.Utility;
 using Dalamud.Interface.Utility.Raii;
 using ECommons.GameHelpers;
@@ -34,15 +34,15 @@ namespace ICE.Ui.MainUi
                 bool autoSelectedJob = C.AutoPickCurrentJob;
                 AutoSelectClass(autoSelectedJob);
 
-                if (ImGui_Ice.Sidebar_CollaspableHeader("Cosmic Helper", SidebarTabs.CosmicHelper, icon: FontAwesomeIcon.ListAlt))
+                if (ImGui_Ice.Sidebar_CollaspableHeader("宇宙助手", SidebarTabs.CosmicHelper, icon: FontAwesomeIcon.ListAlt))
                 {
-                    ImGui_Ice.DrawSelectable_Icon(FontAwesomeIcon.List, "Mission Setup", WindowSelection.MissionSetup);
-                    ImGui_Ice.DrawSelectable_Icon(FontAwesomeIcon.ClipboardList, "Cosmic Agenda", WindowSelection.CosmicAgenda);
-                    ImGui_Ice.DrawSelectable_Icon(FontAwesomeIcon.Trophy, "Expedition Log", WindowSelection.ExpeditionLogs);
+                    ImGui_Ice.DrawSelectable_Icon(FontAwesomeIcon.List, "任务设置", WindowSelection.MissionSetup);
+                    ImGui_Ice.DrawSelectable_Icon(FontAwesomeIcon.ClipboardList, "宇宙议程", WindowSelection.CosmicAgenda);
+                    ImGui_Ice.DrawSelectable_Icon(FontAwesomeIcon.Trophy, "远征日志", WindowSelection.ExpeditionLogs);
                 }
-                if (ImGui_Ice.Sidebar_CollaspableHeader("Planet Selection", SidebarTabs.PlanetSelection, FontAwesomeIcon.Moon))
+                if (ImGui_Ice.Sidebar_CollaspableHeader("行星选择", SidebarTabs.PlanetSelection, FontAwesomeIcon.Moon))
                 {
-                    if (ImGui_Ice.SliderButton("AutoSelectMoon", "Auto Select", ref autoSelectMoon))
+                    if (ImGui_Ice.SliderButton("AutoSelectMoon", "自动选择", ref autoSelectMoon))
                     {
                         C.AutoSelectMoon = autoSelectMoon;
                         C.Save();
@@ -95,22 +95,22 @@ namespace ICE.Ui.MainUi
                         }
                     }
                 }
-                if (ImGui_Ice.Sidebar_CollaspableHeader("Hub Activities", SidebarTabs.HubActivites, icon: FontAwesomeIcon.Home))
+                if (ImGui_Ice.Sidebar_CollaspableHeader("Hub活动", SidebarTabs.HubActivites, icon: FontAwesomeIcon.Home))
                 {
-                    ImGui_Ice.DrawSelectable_Image(65112, "Credit Shopping", WindowSelection.CreditShopping);
-                    ImGui_Ice.DrawSelectable_Image(65127, "Gambling Settings", WindowSelection.GambaShopping);
+                    ImGui_Ice.DrawSelectable_Image(65112, "信用购物", WindowSelection.CreditShopping);
+                    ImGui_Ice.DrawSelectable_Image(65127, "赌博设置", WindowSelection.GambaShopping);
 
                     if (ShowDronebitSettings())
-                        ImGui_Ice.DrawSelectable_Image(65138, "Dronebit Settings", WindowSelection.DroneShopping);
+                        ImGui_Ice.DrawSelectable_Image(65138, "Dronebit设置", WindowSelection.DroneShopping);
                 }
-                if (ImGui_Ice.Sidebar_CollaspableHeader("Settings", SidebarTabs.Settings, icon: FontAwesomeIcon.Cog))
+                if (ImGui_Ice.Sidebar_CollaspableHeader("设置", SidebarTabs.Settings, icon: FontAwesomeIcon.Cog))
                 {
-                    ImGui_Ice.DrawSelectable_Icon(FontAwesomeIcon.Stop, "Stop When...", WindowSelection.StopWhen);
-                    ImGui_Ice.DrawSelectable_Icon(FontAwesomeIcon.Leaf, "Gathering Profile", WindowSelection.GatheringProfiles);
-                    ImGui_Ice.DrawSelectable_Icon(FontAwesomeIcon.SortAmountUp, "Mission Priority", WindowSelection.MissionPriority);
-                    ImGui_Ice.DrawSelectable_Icon(FontAwesomeIcon.Route, "Travel & Pathfinding", WindowSelection.TravelSettings);
-                    ImGui_Ice.DrawSelectable_Icon(FontAwesomeIcon.PersonBurst, "Character Settings", WindowSelection.CharacterSettings);
-                    ImGui_Ice.DrawSelectable_Icon(FontAwesomeIcon.UserCog, "Misc Settings", WindowSelection.MiscSettings);
+                    ImGui_Ice.DrawSelectable_Icon(FontAwesomeIcon.Stop, "停止时...", WindowSelection.StopWhen);
+                    ImGui_Ice.DrawSelectable_Icon(FontAwesomeIcon.Leaf, "采集配置文件", WindowSelection.GatheringProfiles);
+                    ImGui_Ice.DrawSelectable_Icon(FontAwesomeIcon.SortAmountUp, "任务优先级", WindowSelection.MissionPriority);
+                    ImGui_Ice.DrawSelectable_Icon(FontAwesomeIcon.Route, "旅行与寻路", WindowSelection.TravelSettings);
+                    ImGui_Ice.DrawSelectable_Icon(FontAwesomeIcon.PersonBurst, "角色设置", WindowSelection.CharacterSettings);
+                    ImGui_Ice.DrawSelectable_Icon(FontAwesomeIcon.UserCog, "杂项设置", WindowSelection.MiscSettings);
                 }
 
                 var currentClass = C.SelectedJob;
@@ -126,7 +126,7 @@ namespace ICE.Ui.MainUi
 
 
                 var classIcon = ImGui_Ice.GetGreyscaleJob(currentClass);
-                if (ImGui_Ice.Sidebar_CollaspableHeader("Select Class", SidebarTabs.ClassSelection, imageTexture: classIcon))
+                if (ImGui_Ice.Sidebar_CollaspableHeader("选择职业", SidebarTabs.ClassSelection, imageTexture: classIcon))
                 {
                     int itemsPerRow = 4;
                     int currentItem = 0;
@@ -135,7 +135,7 @@ namespace ICE.Ui.MainUi
                     float iconSpacing = 4;
                     float leftOffset = 10f; // Simple offset from the current position
 
-                    if (ImGui_Ice.SliderButton("AutoSelectJob", "Auto Select Job", ref autoSelectedJob))
+                    if (ImGui_Ice.SliderButton("AutoSelectJob", "自动选择作业", ref autoSelectedJob))
                     {
                         C.AutoPickCurrentJob = autoSelectedJob;
                         C.Save();
@@ -157,16 +157,16 @@ namespace ICE.Ui.MainUi
                             ImGui.SameLine(0, iconSpacing);
                     }
                 }
-                if (ImGui_Ice.Sidebar_CollaspableHeader("Current Tool XP", SidebarTabs.ExpInfo, FontAwesomeIcon.ArrowUpRightDots))
+                if (ImGui_Ice.Sidebar_CollaspableHeader("当前工具XP", SidebarTabs.ExpInfo, FontAwesomeIcon.ArrowUpRightDots))
                 {
                     ImGui_Ice.Draw_ExpTable(currentClass);
                 }
-                if (ImGui_Ice.Sidebar_CollaspableHeader("Need Help?", SidebarTabs.HelpInfo, FontAwesomeIcon.QuestionCircle))
+                if (ImGui_Ice.Sidebar_CollaspableHeader("需要帮助？", SidebarTabs.HelpInfo, FontAwesomeIcon.QuestionCircle))
                 {
                  // ImGui_Ice.DrawSelectable_Icon(FontAwesomeIcon.HandHoldingHand, "Plugin Tips", WindowSelection.Plugin_Tips);
-                    ImGui_Ice.DrawSelectable_Icon(FontAwesomeIcon.QuestionCircle, "Plugin Requirements", WindowSelection.Plugin_Install);
-                    ImGui_Ice.DrawSelectable_Icon(FontAwesomeIcon.Book, "Plugin Logs", WindowSelection.Plugin_Logs);
-                    if (ImGuiEx.IconButtonWithText(FontAwesomeIcon.Toolbox, "Refresh Class info", size: new(ImGui.GetContentRegionAvail().X, 30)))
+                    ImGui_Ice.DrawSelectable_Icon(FontAwesomeIcon.QuestionCircle, "Plugin 要求", WindowSelection.Plugin_Install);
+                    ImGui_Ice.DrawSelectable_Icon(FontAwesomeIcon.Book, "插件日志", WindowSelection.Plugin_Logs);
+                    if (ImGuiEx.IconButtonWithText(FontAwesomeIcon.Toolbox, "刷新类信息", size: new(ImGui.GetContentRegionAvail().X, 30)))
                     {
                         CosmicHelper.Task_UpdateRelicMissionInfo();
                     }

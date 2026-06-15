@@ -15,7 +15,7 @@ namespace ICE.Ui
 {
     internal class OverlayWindow : Window
     {
-        public OverlayWindow() : base("ICE Overlay")
+        public OverlayWindow() : base("ICE覆盖")
         {
             Flags = ImGuiWindowFlags.None;
             RespectCloseHotkey = false;
@@ -24,10 +24,10 @@ namespace ICE.Ui
             TitleBarButtons.Add(
                 new()
                 {
-                    ShowTooltip = () => ImGui.SetTooltip("Overlay Settings"),
+                    ShowTooltip = () => ImGui.SetTooltip("叠加设置"),
                     Icon = FontAwesomeIcon.Cog,
                     IconOffset = new(1, 1),
-                    Click = _ => ImGui.OpenPopup("OverlaySettingsPopup")
+                    Click = _ => ImGui.OpenPopup("叠加设置弹出​​窗口")
                 });
         }
 
@@ -57,7 +57,7 @@ namespace ICE.Ui
 
         public override void Draw()
         {
-            if (ImGui.BeginPopup("OverlaySettingsPopup"))
+            if (ImGui.BeginPopup("叠加设置弹出​​窗口"))
             {
                 Misc_Settings.OverlaySettings();
                 ImGui.EndPopup();
@@ -68,12 +68,12 @@ namespace ICE.Ui
 
             MissionDetails();
 
-            if (ImGui.BeginTable("Weather/Time Info", 4, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders))
+            if (ImGui.BeginTable("天气/时间信息", 4, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders))
             {
                 ImGui.TableSetupColumn("##Planets");
                 ImGui.TableSetupColumn("##Icons");
-                ImGui.TableSetupColumn("Current");
-                ImGui.TableSetupColumn("Next");
+                ImGui.TableSetupColumn("当前的");
+                ImGui.TableSetupColumn("下一个");
 
                 ImGui.TableHeadersRow();
 
@@ -117,21 +117,21 @@ namespace ICE.Ui
             if (ImGui.IsItemHovered())
             {
                 ImGui.BeginTooltip();
-                ImGui.Text("Open ICE");
+                ImGui.Text("打开ICE");
                 ImGui.EndTooltip();
             }
             ImGui.SameLine();
             if (ImGuiEx.IconButton(FontAwesomeIcon.ListUl, "##OverlayModeSelect", buttonSize))
             {
-                ImGui.OpenPopup("Overlay Mode Select");
+                ImGui.OpenPopup("叠加模式选择");
             }
             if (ImGui.IsItemHovered())
             {
                 ImGui.BeginTooltip();
-                ImGui.Text("Change mode");
+                ImGui.Text("更改模式");
                 ImGui.EndTooltip();
             }
-            DrawModeSelectPopup("Overlay Mode Select");
+            DrawModeSelectPopup("叠加模式选择");
             // Cosmodrome drone search — any hub with HasCosmodrome (Oizys, Auxesia); same button logic for all
             if (CosmicMoonRegistry.TryGetMoon(Player.Territory.RowId, out var hubMoon) && hubMoon.HasCosmodrome)
             {
@@ -151,7 +151,7 @@ namespace ICE.Ui
                 if (ImGui.IsItemHovered())
                 {
                     ImGui.BeginTooltip();
-                    ImGui.Text(droneActive ? "Stop Drone Finder" : "Run Drone Finder");
+                    ImGui.Text(droneActive ? "停止无人机探测器" : "运行无人机Finder");
                     ImGui.EndTooltip();
                 }
             }
@@ -159,11 +159,11 @@ namespace ICE.Ui
 
             var modeName = C.SelectedMode switch
             {
-                ModeSelect.Standard => "Standard",
-                ModeSelect.RelicMode => "Relic Grind",
-                ModeSelect.LevelMode => "Leveling Grind",
-                ModeSelect.AgendaMode => "Cosmic Agenda",
-                ModeSelect.MissionGoldMode => "Gold Completion Grind",
+                ModeSelect.Standard => "标准",
+                ModeSelect.RelicMode => "遗物研磨",
+                ModeSelect.LevelMode => "调平研磨",
+                ModeSelect.AgendaMode => "宇宙议程",
+                ModeSelect.MissionGoldMode => "黄金完成研磨",
                 _ => C.SelectedMode.ToString(),
             };
             ImGui.Text($"{modeName} - {SchedulerMain.State}");
@@ -184,7 +184,7 @@ namespace ICE.Ui
             if (ImGui.IsItemHovered())
             {
                 ImGui.BeginTooltip();
-                ImGui.Text(running ? "Stop" : "Start");
+                ImGui.Text(running ? "停止" : "开始");
                 ImGui.EndTooltip();
             }
 
@@ -202,7 +202,7 @@ namespace ICE.Ui
             if (ImGui.IsItemHovered())
             {
                 ImGui.BeginTooltip();
-                ImGui.Text(Mission_Settings.StopAfterCurrent ? "Stop after current mission: ON" : "Stop after current mission: OFF");
+                ImGui.Text(Mission_Settings.StopAfterCurrent ? "当前任务后停止：ON" : "当前任务后停止：OFF");
                 ImGui.EndTooltip();
             }
 
@@ -217,7 +217,7 @@ namespace ICE.Ui
             }
             else
             {
-                ImGui.Text("No mission");
+                ImGui.Text("没有任务");
             }
 #if DEBUG
             if (C.ShowDebugGatherInfo)
@@ -317,11 +317,11 @@ namespace ICE.Ui
                     if (enabledWeathers.Count > 0)
                     {
                         ImGui.Separator();
-                        if (ImGui.BeginTable($"Enabled Mission Table", 3, ImGuiTableFlags.RowBg | ImGuiTableFlags.Borders | ImGuiTableFlags.SizingFixedFit))
+                        if (ImGui.BeginTable($"启用任务表", 3, ImGuiTableFlags.RowBg | ImGuiTableFlags.Borders | ImGuiTableFlags.SizingFixedFit))
                         {
-                            ImGui.TableSetupColumn("Icon");
-                            ImGui.TableSetupColumn("Mission");
-                            ImGui.TableSetupColumn("Name");
+                            ImGui.TableSetupColumn("图标");
+                            ImGui.TableSetupColumn("任务");
+                            ImGui.TableSetupColumn("姓名");
                             foreach (var mission in enabledWeathers)
                             {
                                 var sheetInfo = CosmicHelper.SheetMissionDict[mission];
@@ -507,7 +507,7 @@ namespace ICE.Ui
             if (ImGui.IsItemHovered())
             {
                 ImGui.BeginTooltip();
-                ImGui.Text(icon == FontAwesomeIcon.Cloud ? "Weather" : "Timed");
+                ImGui.Text(icon == FontAwesomeIcon.Cloud ? "天气" : "定时");
                 ImGui.EndTooltip();
             }
         }
@@ -641,7 +641,7 @@ namespace ICE.Ui
             {
                 var currentJobId = (uint)Player.Job;
                 var flags = C.Overlay_RelicXpExpanded ? ImGuiTreeNodeFlags.DefaultOpen : ImGuiTreeNodeFlags.None;
-                var open = ImGui.CollapsingHeader("Relic Tool XP", flags);
+                var open = ImGui.CollapsingHeader("Relic 工具XP", flags);
                 if (open != C.Overlay_RelicXpExpanded)
                 {
                     C.Overlay_RelicXpExpanded = open;
@@ -650,7 +650,7 @@ namespace ICE.Ui
                 if (open)
                 {
                     bool stopWhen = C.StopAtRelicLv;
-                    if (ImGui.Checkbox("Stop At Relic Lv.", ref stopWhen))
+                    if (ImGui.Checkbox("停止于圣物等级", ref stopWhen))
                     {
                         C.StopAtRelicLv = stopWhen;
                         C.Save();

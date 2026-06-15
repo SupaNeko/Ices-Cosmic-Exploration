@@ -1,4 +1,4 @@
-﻿using FFXIVClientStructs.FFXIV.Client.Game.UI;
+using FFXIVClientStructs.FFXIV.Client.Game.UI;
 using FFXIVClientStructs.FFXIV.Client.System.Framework;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_CS
     {
         public static void Draw()
         {
-            ImGui.Text("All world timers:");
+            ImGui.Text("所有世界计时器：");
             TimerUpdate();
 
             if (CosmicHandler.EventInfo() is { } info)

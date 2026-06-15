@@ -1,4 +1,4 @@
-﻿using Dalamud.Interface;
+using Dalamud.Interface;
 using ICE.Ui.Debug_Tabs.Debug_CS;
 using ICE.Ui.Debug_Tabs.Debug_Hud;
 using ICE.Ui.Debug_Tabs.Debug_Tables;
@@ -29,7 +29,7 @@ internal class DebugWindow : Window
             Icon = FontAwesomeIcon.Bars,
             IconOffset = new Vector2(2, 1),
             Click = _ => _showSidebar = !_showSidebar,
-            ShowTooltip = () => ImGui.SetTooltip(_showSidebar ? "Hide tab list" : "Show tab list"),
+            ShowTooltip = () => ImGui.SetTooltip(_showSidebar ? "隐藏选项卡列表" : "显示选项卡列表"),
         });
 
         P.windowSystem.AddWindow(this);
@@ -42,58 +42,58 @@ internal class DebugWindow : Window
 
     private readonly Dictionary<string, Action> DebugViews = new()
     {
-        ["Ui: Table V3"] = () => Table_MissionsV3.Draw(),
+        ["Ui：表格V3"] = () => Table_MissionsV3.Draw(),
 
         // HUD Elements
-        ["Hud: Moon Main"] = () => Hud_MainMoon.Draw(),
-        ["Hud: Mission"] = () => Hud_Mission.Draw(),
-        ["Hud: Mission Info"] = () => Hud_MissionInfo.Draw(),
-        ["Hud: Wheel of fortune!"] = () => Hud_WheelofFortune.Draw(),
-        ["Hud: Moon Recipe"] = () => Hud_MoonRecipe.Draw(),
-        ["Hud: Gather Collectable"] = () => Hud_CollectableGathering.Draw(),
-        ["Hud: Item Exchange"] = () => Hud_ItemExchange.Draw(),
+        ["Hud：月球主"] = () => Hud_MainMoon.Draw(),
+        ["Hud：任务"] = () => Hud_Mission.Draw(),
+        ["Hud：任务信息"] = () => Hud_MissionInfo.Draw(),
+        ["Hud：命运之轮！"] = () => Hud_WheelofFortune.Draw(),
+        ["Hud：月球食谱"] = () => Hud_MoonRecipe.Draw(),
+        ["Hud：收集收藏品"] = () => Hud_CollectableGathering.Draw(),
+        ["Hud：物品交换"] = () => Hud_ItemExchange.Draw(),
 
         // Table Elements
-        ["Table: Mission Info"] = () => Table_MissionInfo.Draw(),
-        ["Table: Gathering Missions"] = () => Table_GatheringInfo.Draw(),
-        ["Table: Special Missions"] = () => Table_TimeWeather.Draw(),
-        ["Table: Mission Text"] = () => Table_MissionText.Draw(),
-        ["Table: Recipies"] = () => Table_MoonRecipies.Draw(),
-        ["Table: Fish Info"] = () => Table_FishInfo.Draw(),
+        ["Table：任务信息"] = () => Table_MissionInfo.Draw(),
+        ["Table：收集任务"] = () => Table_GatheringInfo.Draw(),
+        ["表：特殊任务"] = () => Table_TimeWeather.Draw(),
+        ["Table：任务文本"] = () => Table_MissionText.Draw(),
+        ["表：食谱"] = () => Table_MoonRecipies.Draw(),
+        ["Table：鱼类信息"] = () => Table_FishInfo.Draw(),
 
         // UI Elements
-        ["Ui: Select String"] = () => Ui_RedAlertString.Draw(),
-        ["Ui: Fishing Hole Editor"] = () => Ui_Fish_HoleEditor.Draw(),
-        ["Ui: Fishing Preset Editor"] = () => Ui_FishPresets.Draw(),
-        ["Ui: Gather Editor"] = () => Ui_GatherEditor.Draw(),
-        ["Ui: Log Viewer"] = () => helpSelect_Logs.Draw_Debug(),
-        ["Ui: Player Gearsets"] = () => Ui_Gearsets.Draw(),
+        ["Ui：选择字符串"] = () => Ui_RedAlertString.Draw(),
+        ["Ui：钓场编辑器"] = () => Ui_Fish_HoleEditor.Draw(),
+        ["Ui：钓鱼预设编辑器"] = () => Ui_FishPresets.Draw(),
+        ["Ui：收集编辑器"] = () => Ui_GatherEditor.Draw(),
+        ["Ui：日志查看器"] = () => helpSelect_Logs.Draw_Debug(),
+        ["Ui：玩家齿轮组"] = () => Ui_Gearsets.Draw(),
 
         // Non-labeled Elements
-        ["CS: Tiemr Info"] = () => CS_TimerInfo.Draw(),
-        ["CS: Available Missions"] = () => CS_Missions.Draw(),
-        ["Player Info"] = () => Ui_PlayerInfo.Draw(),
-        ["Test Buttons"] = () => Ui_TestButtons.Draw(),
-        ["IPC Testing"] = () => Ui_IPCTesting.Draw(),
+        ["CS：Tiemr信息"] = () => CS_TimerInfo.Draw(),
+        ["CS：可用任务"] = () => CS_Missions.Draw(),
+        ["玩家信息"] = () => Ui_PlayerInfo.Draw(),
+        ["测试按钮"] = () => Ui_TestButtons.Draw(),
+        ["IPC 测试"] = () => Ui_IPCTesting.Draw(),
         ["Map Test"] = () => Ui_MapTesting.Draw(),
-        ["Navmesh Testing"] = () => Ui_NavmeshTesting.Draw(),
-        ["Relic Info"] = () => Ui_RelicInfo.Draw(),
-        ["TaskManager Testing"] = () => Ui_TaskManagerInfo.Draw(),
-        ["NPC Box Viewer"] = () => Ui_NpcViewer.Draw(),
-        ["ImGui Testing"] = () => UI_Test.Draw(),
-        ["Relic Info V2"] = () => Ui_ClassInfo.Draw(),
+        ["Navmesh 测试"] = () => Ui_NavmeshTesting.Draw(),
+        ["文物信息"] = () => Ui_RelicInfo.Draw(),
+        ["TaskManager 测试"] = () => Ui_TaskManagerInfo.Draw(),
+        ["NPC 盒子查看器"] = () => Ui_NpcViewer.Draw(),
+        ["ImGui测试"] = () => UI_Test.Draw(),
+        ["文物信息V2"] = () => Ui_ClassInfo.Draw(),
 
         // Sheet Viewer Info
-        ["Sheet: Mission Rewards"] = () => Sheet_MissionRewards.Draw(),
-        ["Table: Leveling Missions"] = () => Table_LevelingMissions.Draw(),
-        ["Table: Mission Select"] = () => Table_MissionSelect.Draw(),
-        ["Oizyr Map Stuff"] = () => Ui_OyzinMap.Draw(),
-        ["Aethernet Test"] = () => Ui_Aethernet.Draw(),
+        ["职业表：任务奖励"] = () => Sheet_MissionRewards.Draw(),
+        ["Table：升级任务"] = () => Table_LevelingMissions.Draw(),
+        ["Table：任务选择"] = () => Table_MissionSelect.Draw(),
+        ["奥伊济尔地图资料"] = () => Ui_OyzinMap.Draw(),
+        ["以太之光测试"] = () => Ui_Aethernet.Draw(),
 
-        ["IPC: Artisan"] = () => Ipc_Artisan.Draw()
+        ["IPC：Artisan"] = () => Ipc_Artisan.Draw()
     };
 
-    private string selectedDebugView = "Hud: Moon Main"; // Store the name instead of index
+    private string selectedDebugView = "Hud：月球主"; // Store the name instead of index
 
     public override unsafe void Draw()
     {
@@ -131,7 +131,7 @@ internal class DebugWindow : Window
             }
             else
             {
-                ImGui.Text("Unknown Debug View");
+                ImGui.Text("未知调试视图");
             }
         }
         ImGui.EndChild();

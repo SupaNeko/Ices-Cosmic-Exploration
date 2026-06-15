@@ -1,4 +1,4 @@
-﻿using FFXIVClientStructs.FFXIV.Client.Game.WKS;
+using FFXIVClientStructs.FFXIV.Client.Game.WKS;
 using ICE.Utilities.Cosmic_Helper;
 using static ECommons.UIHelpers.AddonMasterImplementations.AddonMaster;
 
@@ -35,7 +35,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Hud
                     ImGui.TableNextRow();
 
                     ImGui.TableSetColumnIndex(0);
-                    ImGui.Text("Current Mission:");
+                    ImGui.Text("当前任务：");
                     ImGui.TableNextColumn();
                     ImGui.Text($"{missionId}");
 
@@ -43,14 +43,14 @@ namespace ICE.Ui.Debug_Tabs.Debug_Hud
                     {
                         ImGui.TableNextColumn();
                         ImGui.TableSetColumnIndex(0);
-                        ImGui.Text("Current Score:");
+                        ImGui.Text("当前分数：");
                         ImGui.TableNextColumn();
 
                         ImGui.Text($"{CosmicHandler.GetScore()}");
 
                         ImGui.TableNextRow();
                         ImGui.TableSetColumnIndex(0);
-                        ImGui.Text($"Current State");
+                        ImGui.Text($"当前状态");
 
                         ImGui.TableNextColumn();
                         ImGui.Text($"{Task_CheckScore.CurrentRank()}");
@@ -58,7 +58,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Hud
 
                         ImGui.TableNextRow();
                         ImGui.TableSetColumnIndex(0);
-                        ImGui.Text("Is Mission Timed out");
+                        ImGui.Text("任务超时");
 
                         ImGui.TableNextColumn();
                         ImGui.Text($"{CosmicHandler.IsMissionTimedOut()}");
@@ -67,7 +67,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Hud
                     {
                         ImGui.TableNextRow();
                         ImGui.TableSetColumnIndex(0);
-                        ImGui.Text("Critical Value:");
+                        ImGui.Text("危急值：");
 
                         ImGui.TableNextColumn();
                         ImGui.Text($"{x.CriticalScore}");
@@ -77,7 +77,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Hud
                     {
                         ImGui.TableNextRow();
                         ImGui.TableSetColumnIndex(0);
-                        ImGui.Text("Current Bait");
+                        ImGui.Text("当前诱饵");
 
                         ImGui.TableNextColumn();
                         ImGui.Text($"{CosmicHelper.CurrentBait()
@@ -85,46 +85,46 @@ namespace ICE.Ui.Debug_Tabs.Debug_Hud
                     }
                     ImGui.TableNextRow();
                     ImGui.TableSetColumnIndex(0);
-                    ImGui.Text("Collected Individual");
+                    ImGui.Text("收集的个体");
                     ImGui.TableNextColumn();
                     ImGui.Text($"{CosmicHelper.CurrentIndividual()}");
 
                     ImGui.TableNextRow();
                     ImGui.TableSetColumnIndex(0);
-                    ImGui.Text($"Collected Total");
+                    ImGui.Text($"收集的总计");
                     ImGui.TableNextColumn();
                     ImGui.Text($"{CosmicHelper.CurrentTotal()}");
                     ImGui.TableNextRow();
                     ImGui.TableSetColumnIndex(0);
-                    if (ImGui.Button("Cosmo Pouch"))
+                    if (ImGui.Button("CosmoPouch"))
                     {
                         x.CosmoPouch();
                     }
 
                     ImGui.TableNextRow();
                     ImGui.TableSetColumnIndex(0);
-                    if (ImGui.Button("Cosmo Crafting Log"))
+                    if (ImGui.Button("Cosmo制作日志"))
                     {
                         x.CosmoCraftingLog();
                     }
 
                     ImGui.TableNextRow();
                     ImGui.TableSetColumnIndex(0);
-                    if (ImGui.Button("Steller Reduction"))
+                    if (ImGui.Button("斯特勒还原"))
                     {
                         x.StellerReduction();
                     }
 
                     ImGui.TableNextRow();
                     ImGui.TableSetColumnIndex(0);
-                    if (ImGui.Button("Report"))
+                    if (ImGui.Button("报告"))
                     {
                         x.Report();
                     }
 
                     ImGui.TableNextRow();
                     ImGui.TableSetColumnIndex(0);
-                    if (ImGui.Button("Abandon"))
+                    if (ImGui.Button("放弃"))
                     {
                         x.Abandon();
                     }
@@ -137,7 +137,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Hud
 
                     ImGui.TableNextRow();
                     ImGui.TableSetColumnIndex(0);
-                    ImGui.Text("Score 1");
+                    ImGui.Text("得分 1");
                     ImGui.TableNextColumn();
                     ImGui.Text($"{scores.Length}");
 
@@ -166,7 +166,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Hud
             }
             else
             {
-                ImGui.Text("Waiting for \"WKSMissionInfomation\" to be visible");
+                ImGui.Text("等待“WKSMissionInfomation”可见");
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿using FFXIVClientStructs.FFXIV.Client.Game.WKS;
+using FFXIVClientStructs.FFXIV.Client.Game.WKS;
 using System.Collections.Generic;
 
 namespace ICE.Ui.Debug_Tabs.Debug_Ui
@@ -27,17 +27,17 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
             if (wksManager == null || wksManager->ResearchModule == null || !wksManager->ResearchModule->IsLoaded)
                 return;
 
-            if (ImGui.BeginTable("Relic Info", 15, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders))
+            if (ImGui.BeginTable("文物信息", 15, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders))
             {
-                ImGui.TableSetupColumn("Class");
-                ImGui.TableSetupColumn("Stage");
+                ImGui.TableSetupColumn("职业");
+                ImGui.TableSetupColumn("阶段");
                 for (int i = 0; i < XPtypes.Count; i++)
                 {
                     ImGui.TableSetupColumn($"{XPtypes[i]} - Current");
                     ImGui.TableSetupColumn($"{XPtypes[i]} - Need");
                     ImGui.TableSetupColumn($"{XPtypes[i]} - Max");
                 }
-                ImGui.TableSetupColumn("Score");
+                ImGui.TableSetupColumn("分数");
 
                 ImGui.TableHeadersRow();
 

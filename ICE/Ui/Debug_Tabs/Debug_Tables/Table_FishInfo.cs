@@ -1,4 +1,4 @@
-﻿using Dalamud.Interface;
+using Dalamud.Interface;
 using ICE.Utilities.Cosmic_Helper;
 using Lumina.Excel.Sheets;
 
@@ -12,14 +12,14 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
                 .OrderBy(x => x.Key)
                 .ToDictionary();
 
-            if (ImGui.BeginTable("Fishing Info", 6, ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders))
+            if (ImGui.BeginTable("钓鱼信息", 6, ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders))
             {
-                ImGui.TableSetupColumn("MissionID");
-                ImGui.TableSetupColumn("Mission Name");
-                ImGui.TableSetupColumn("Attribute");
-                ImGui.TableSetupColumn("Specific");
-                ImGui.TableSetupColumn("Total Req");
-                ImGui.TableSetupColumn("Variety Req", ImGuiTableColumnFlags.WidthStretch);
+                ImGui.TableSetupColumn("任务ID");
+                ImGui.TableSetupColumn("任务名称");
+                ImGui.TableSetupColumn("属性");
+                ImGui.TableSetupColumn("具体的");
+                ImGui.TableSetupColumn("总要求");
+                ImGui.TableSetupColumn("品种要求", ImGuiTableColumnFlags.WidthStretch);
 
                 ImGui.TableHeadersRow();
 
@@ -43,7 +43,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
                         {
                             ImGui.BeginTooltip();
 
-                            if (ImGui.BeginTable("Fish Item Info", 3, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.RowBg | ImGuiTableFlags.Borders))
+                            if (ImGui.BeginTable("鱼项信息", 3, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.RowBg | ImGuiTableFlags.Borders))
                             {
                                 foreach (var fishItem in mission.Value.Gathering_Min)
                                 {

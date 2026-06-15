@@ -1,4 +1,4 @@
-﻿using Dalamud.Interface;
+using Dalamud.Interface;
 using Dalamud.Interface.Utility;
 using Dalamud.Interface.Utility.Raii;
 using ECommons.GameHelpers;
@@ -43,9 +43,9 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
 
         public static void Draw()
         {
-            if (ImGui.BeginTabBar("Agenda Mode: Tabs"))
+            if (ImGui.BeginTabBar("议程模式：选项卡"))
             {
-                if (ImGui.BeginTabItem("Current Agenda"))
+                if (ImGui.BeginTabItem("Current议程"))
                 {
                     float scale = ImGuiHelpers.GlobalScale;
 
@@ -63,25 +63,25 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
 
 
                     if (standard)
-                        modeType = "Standard";
+                        modeType = "标准";
                     else if (relicMode)
                     {
-                        modeType = "Relic Grind";
+                        modeType = "遗物研磨";
                         modeIcon = FontAwesomeIcon.ArrowUpRightDots;
                     }
                     else if (xpLeveling)
                     {
-                        modeType = "Leveling Grind";
+                        modeType = "调平研磨";
                         modeIcon = FontAwesomeIcon.Leaf;
                     }
                     else if (goldMode)
                     {
-                        modeType = "Gold Completion Grind";
+                        modeType = "黄金完成研磨";
                         modeIcon = FontAwesomeIcon.Trophy;
                     }
                     else if (agendaMode)
                     {
-                        modeType = "Cosmic Agenda";
+                        modeType = "宇宙议程";
                         modeIcon = FontAwesomeIcon.ClipboardList;
                     }
 
@@ -95,11 +95,11 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
                     float yOffset = (textHeight - buttonHeight) / 2f;
                     ImGui.SetCursorPosY(ImGui.GetCursorPosY() + yOffset);
 
-                    if (ImGuiEx.IconButtonWithText(FontAwesomeIcon.Play, "Mode Selection"))
+                    if (ImGuiEx.IconButtonWithText(FontAwesomeIcon.Play, "模式选择"))
                     {
-                        ImGui.OpenPopup("Mode Select | Select Mode Window");
+                        ImGui.OpenPopup("模式选择 |选择模式窗口");
                     }
-                    if (ImGui.BeginPopup("Mode Select | Select Mode Window"))
+                    if (ImGui.BeginPopup("模式选择 |选择模式窗口"))
                     {
                         MainWindow.ModeSelection();
 
@@ -121,8 +121,8 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
                         {
                             if (table)
                             {
-                                ImGui.TableSetupColumn("Icon", ImGuiTableColumnFlags.WidthFixed, 24);
-                                ImGui.TableSetupColumn("Name", ImGuiTableColumnFlags.WidthStretch);
+                                ImGui.TableSetupColumn("图标", ImGuiTableColumnFlags.WidthFixed, 24);
+                                ImGui.TableSetupColumn("姓名", ImGuiTableColumnFlags.WidthStretch);
 
                                 foreach (var jobId in JobOptions)
                                 {
@@ -184,7 +184,7 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
                     ImGui.SameLine();
                     using (ImRaii.Disabled(SelectedOption == PlaylistOptions.None))
                     {
-                        if (ImGui.Button("Add to Cosmic Agenda"))
+                        if (ImGui.Button("添加到宇宙议程"))
                         {
                             var mode = ModeSelect.Standard;
                             if (SelectedOption is PlaylistOptions.SelectedRelicLv
@@ -213,18 +213,18 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
                     var validAgenda = C.Cosmic_Agenda.Count() > 0;
                     using (ImRaii.Disabled(!validAgenda))
                     {
-                        if (ImGui.Button("Save to Favorites"))
+                        if (ImGui.Button("保存到收藏夹"))
                         {
-                            ImGui.OpenPopup("Agenda Info: Profile Save");
+                            ImGui.OpenPopup("Agenda信息：配置文件保存");
                         }
                     }
-                    if (ImGui.BeginPopup("Agenda Info: Profile Save"))
+                    if (ImGui.BeginPopup("Agenda信息：配置文件保存"))
                     {
-                        ImGui.InputText("Name", ref profileName);
-                        ImGui.InputTextMultiline("Description", ref profileDescription);
+                        ImGui.InputText("姓名", ref profileName);
+                        ImGui.InputTextMultiline("描述", ref profileDescription);
                         using (ImRaii.Disabled(profileName == string.Empty))
                         {
-                            if (ImGui.Button("Save"))
+                            if (ImGui.Button("节省"))
                             {
                                 AgendaProfileInfo newProfile = new()
                                 {
@@ -250,12 +250,12 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
                     ImGui.EndTabItem();
                 }
 
-                if (ImGui.BeginTabItem("Saved Agenda's"))
+                if (ImGui.BeginTabItem("保存议程的"))
                 {
                     List<AgendaProfileInfo> listToRemove = new();
 
                     // Export button — copies to clipboard
-                    if (ImGui.Button("Export to Clipboard"))
+                    if (ImGui.Button("导出到剪贴板"))
                     {
                         ImGui.SetClipboardText(ExportProfile(SelectedAgenda));
                     }
@@ -266,7 +266,7 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
                     ImGui.SetNextItemWidth(300);
                     ImGui.InputText("##ImportBox", ref _importBuffer, 5028);
                     ImGui.SameLine();
-                    if (ImGui.Button("Import"))
+                    if (ImGui.Button("进口"))
                     {
                         if (TryImportProfile(_importBuffer, out var imported))
                         {
@@ -279,7 +279,7 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
                         else
                         {
                             // Optional: show an error notification
-                            Notify.Error("Invalid import string.");
+                            Notify.Error("Invalid importstring.");
                         }
                     }
 
@@ -290,7 +290,7 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
                         float rightPanelWidth = ImGui.GetContentRegionAvail().X - leftPanelWidth - spacing;
                         float childHeight = ImGui.GetContentRegionAvail().Y;
 
-                        if (ImGui.BeginChild("Agenda List Viewer", new Vector2(leftPanelWidth, childHeight), true))
+                        if (ImGui.BeginChild("Agenda列表查看器", new Vector2(leftPanelWidth, childHeight), true))
                         {
                             for (int i = 0; i < C.Agenda_Profiles.Count; i++)
                             {
@@ -312,7 +312,7 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
                         ImGui.EndChild();
 
                         ImGui.SameLine(0, spacing);
-                        if (ImGui.BeginChild("Agenda Viewer: Details", new(rightPanelWidth, childHeight), true))
+                        if (ImGui.BeginChild("议程查看器：详细信息", new(rightPanelWidth, childHeight), true))
                         {
                             var agenda = SelectedAgenda;
                             ImGui.Text($"Profile Name: {agenda.Name}");
@@ -321,7 +321,7 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
                             bool held = ImGui.IsKeyDown(ImGuiKey.LeftShift) || ImGui.IsKeyDown(ImGuiKey.RightShift);
                             using (ImRaii.Disabled(!held))
                             {
-                                if (ImGui.Button("Apply to agenda"))
+                                if (ImGui.Button("适用于议程"))
                                 {
                                     C.Cosmic_Agenda = agenda.MissionList.Select(a => a.Clone()).ToList();
                                     C.Save();
@@ -329,27 +329,27 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
                             }
                             if (!held && ImGui.IsItemHovered(ImGuiHoveredFlags.AllowWhenDisabled))
                             {
-                                ImGui.SetTooltip("Hold shift to allow applying");
+                                ImGui.SetTooltip("Hold shift允许申请");
                             }
 
                             ImGui.SameLine();
                             bool cntrlHeld = ImGui.IsKeyDown(ImGuiKey.LeftCtrl) || ImGui.IsKeyDown(ImGuiKey.RightCtrl);
                             using (ImRaii.Disabled(!cntrlHeld))
                             {
-                                if (ImGui.Button("Delete Profile"))
+                                if (ImGui.Button("删除配置文件"))
                                     listToRemove.Add(SelectedAgenda);
                             }
                             if (!cntrlHeld && ImGui.IsItemHovered(ImGuiHoveredFlags.AllowWhenDisabled))
                             {
-                                ImGui.SetTooltip("Hold Control to delete profile");
+                                ImGui.SetTooltip("按住 Control 删除个人资料");
                             }
 
-                            if (ImGui.BeginTable("Agenda Missions Table: Favorites Info", 4, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingFixedFit))
+                            if (ImGui.BeginTable("议程任务表：收藏夹信息", 4, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingFixedFit))
                             {
-                                ImGui.TableSetupColumn("Job");
-                                ImGui.TableSetupColumn("Agenda");
-                                ImGui.TableSetupColumn("Run Until..");
-                                ImGui.TableSetupColumn("Mode Select");
+                                ImGui.TableSetupColumn("作业");
+                                ImGui.TableSetupColumn("议程");
+                                ImGui.TableSetupColumn("运行 直到..");
+                                ImGui.TableSetupColumn("模式选择");
 
                                 for (int i = 0; i < agenda.MissionList.Count; i++)
                                 {
@@ -400,7 +400,7 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
                     }
                     else
                     {
-                        ImGui.TextWrapped("You currently don't have any profiles saved! Please either make one and save, or import if you would like to populate this listing");
+                        ImGui.TextWrapped("您目前没有保存任何配置文件！请制作一个并保存，或者如果您想填充此列表，请导入");
                     }
 
                     ImGui.EndTabItem();
@@ -414,12 +414,12 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
         {
             return mode switch
             {
-                ModeSelect.Standard => "Standard",
-                ModeSelect.RelicMode => "Relic Grind Mode",
-                ModeSelect.LevelMode => "Leveling Mode",
+                ModeSelect.Standard => "标准",
+                ModeSelect.RelicMode => "Relic 研磨模式",
+                ModeSelect.LevelMode => "调平模式",
                 // ModeSelect.ScoreMode => "Scoring Mode",
-                ModeSelect.MissionGoldMode => "Gold Completion Mode",
-                ModeSelect.AgendaMode => "Cosmic Agenda Mode",
+                ModeSelect.MissionGoldMode => "黄金完成模式",
+                ModeSelect.AgendaMode => "宇宙议程模式",
                 _ => $"??? {mode}"
             };
         }
@@ -436,17 +436,17 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
 
             _dragDrop.Begin(); // Step 1: Begin drag/drop tracking
 
-            using (var PlaylistTable = ImRaii.Table("Cosmic Agenda Table", 7, ImGuiTableFlags.Borders | ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.RowBg))
+            using (var PlaylistTable = ImRaii.Table("宇宙议程表", 7, ImGuiTableFlags.Borders | ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.RowBg))
             {
                 if (PlaylistTable)
                 {
                     ImGui.TableSetupColumn("##Reorder");
-                    ImGui.TableSetupColumn("Job");
-                    ImGui.TableSetupColumn("Agenda");
-                    ImGui.TableSetupColumn("Run Until..");
-                    ImGui.TableSetupColumn("Mode Select");
-                    ImGui.TableSetupColumn("Remove");
-                    ImGui.TableSetupColumn("Progress", ImGuiTableColumnFlags.WidthStretch);
+                    ImGui.TableSetupColumn("作业");
+                    ImGui.TableSetupColumn("议程");
+                    ImGui.TableSetupColumn("运行 直到..");
+                    ImGui.TableSetupColumn("模式选择");
+                    ImGui.TableSetupColumn("删除");
+                    ImGui.TableSetupColumn("进度", ImGuiTableColumnFlags.WidthStretch);
 
                     ImGui.TableHeadersRow();
 
@@ -471,14 +471,14 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
 
                         if (ImGui.ImageButton(jobImage.GetWrapOrEmpty().Handle,new Vector2(20, 20), new Vector2(zoom, zoom), new Vector2(1 - zoom, 1 - zoom)))
                         {
-                            ImGui.OpenPopup("Job Selection");
+                            ImGui.OpenPopup("作业选择");
                         }
-                        if (ImGui.BeginPopup("Job Selection"))
+                        if (ImGui.BeginPopup("作业选择"))
                         {
                             if (ImGui.BeginTable("JobTable", 2, ImGuiTableFlags.BordersInnerV))
                             {
-                                ImGui.TableSetupColumn("Icon", ImGuiTableColumnFlags.WidthFixed, 24);
-                                ImGui.TableSetupColumn("Name", ImGuiTableColumnFlags.WidthStretch);
+                                ImGui.TableSetupColumn("图标", ImGuiTableColumnFlags.WidthFixed, 24);
+                                ImGui.TableSetupColumn("姓名", ImGuiTableColumnFlags.WidthStretch);
 
                                 foreach (var jobId in JobOptions)
                                 {
@@ -596,11 +596,11 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
                                 var classScore = CosmicHelper.Cosmic_ClassInfo();
                                 if (classScore.TryGetValue(agendaInfo.SelectedJob, out var job))
                                 {
-                                    ImGui.SetTooltip($"Current Score: {job.Score:N0}");
+                                    ImGui.SetTooltip($"当前分数： {job.Score:N0}");
                                 }
                                 else
                                 {
-                                    ImGui.SetTooltip($"No score can be loaded");
+                                    ImGui.SetTooltip($"无法加载乐谱");
                                 }
                             }
                         }
@@ -646,8 +646,8 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
 
                                 if (standardCount == 0)
                                 {
-                                    var tooltip = "Hey! You seem to not have any standardard missions enabled on the planet/moon you're currently on.\n" +
-                                        "Please make sure to do so for this job if you don't want it to stall out when there is no timed/weather missions.\n" +
+                                    var tooltip = "Hey！您似乎没有在当前所在的行星/月球上启用任何标准任务。\n" +
+                                        "如果您不想让这项职业陷入停滞，请务必这样做当没有定时/天气任务时。\n" +
                                         $"Currently enabled on {currentMoon.DisplayName}: {standardCount}";
 
                                     ImGui.SameLine();

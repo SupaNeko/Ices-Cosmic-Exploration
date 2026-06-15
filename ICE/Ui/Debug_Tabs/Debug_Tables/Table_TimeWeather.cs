@@ -1,4 +1,4 @@
-﻿using Lumina.Excel.Sheets;
+using Lumina.Excel.Sheets;
 
 namespace ICE.Ui.Debug_Tabs.Debug_Tables
 {
@@ -8,12 +8,12 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
         {
             var timeSheet = Svc.Data.GetExcelSheet<WKSMissionLotterySpecialCond>();
 
-            if (ImGui.BeginTable($"WKSMission Time Sheet", 4, ImGuiTableFlags.SizingFixedFit))
+            if (ImGui.BeginTable($"WKSMission时间表", 4, ImGuiTableFlags.SizingFixedFit))
             {
-                ImGui.TableSetupColumn("Key");
-                ImGui.TableSetupColumn("Weather Required");
-                ImGui.TableSetupColumn("Start Hour");
-                ImGui.TableSetupColumn("End Hour");
+                ImGui.TableSetupColumn("钥匙");
+                ImGui.TableSetupColumn("需要天气");
+                ImGui.TableSetupColumn("开始时间");
+                ImGui.TableSetupColumn("结束时间");
 
                 ImGui.TableHeadersRow();
 

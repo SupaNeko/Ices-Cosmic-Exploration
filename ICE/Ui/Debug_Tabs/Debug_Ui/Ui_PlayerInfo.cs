@@ -1,4 +1,4 @@
-﻿using ECommons.GameHelpers;
+using ECommons.GameHelpers;
 using FFXIVClientStructs.FFXIV.Client.Game;
 using FFXIVClientStructs.FFXIV.Client.Game.UI;
 using FFXIVClientStructs.FFXIV.Client.Game.WKS;
@@ -23,28 +23,28 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
         public static unsafe void Draw()
         {
             ImGui.SetNextItemWidth(200);
-            ImGui.InputInt("Current XP", ref currentXp);
+            ImGui.InputInt("当前XP", ref currentXp);
             ImGui.SetNextItemWidth(200);
-            ImGui.InputInt("Needed XP", ref neededXp);
+            ImGui.InputInt("需要XP", ref neededXp);
             ImGui.SetNextItemWidth(200);
-            ImGui.InputInt("Max XP", ref maxXp);
+            ImGui.InputInt("MaxXP", ref maxXp);
             ImGui_Ice.Draw_XPBar(currentXp, neededXp, maxXp, size: new Vector2(200, 10));
 
             ImGui.Separator();
             var currentProgress = WorldProgress();
             ImGui.Text($"World Stage: {currentProgress}");
 
-            ImGui.Text("Need to actually put the player info here. It got lost");
+            ImGui.Text("需要在此处实际放置玩家信息。它丢失了");
             ImGui.Spacing();
             ImGui.AlignTextToFramePadding();
             ImGui.Text($"Player Position: X:{Player.Position.X:N2}, Y:{Player.Position.Y:N2}, Z:{Player.Position.Z:N2}");
             ImGui.SameLine();
-            if (ImGui.Button("Copy Vector2"))
+            if (ImGui.Button("复制向量2"))
             {
                 ImGui.SetClipboardText($"{Player.Position.X:N2}f, {Player.Position.Z:N2}f");
             }
             ImGui.SameLine();
-            if (ImGui.Button("Copy Vector3"))
+            if (ImGui.Button("复制向量3"))
             {
                 ImGui.SetClipboardText($"{Player.Position.X:N2}f, {Player.Position.Y:N2}f, {Player.Position.Z:N2}f");
             }
@@ -56,7 +56,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
                 var manager = WKSManager.Instance();
                 var currentMission = manager->State.CurrentMission.MissionUnitRowId;
 
-                ImGui.Text($"Current Mission: {currentMission}");
+                ImGui.Text($"当前任务： {currentMission}");
             }
             if (Svc.Targets.Target != null)
             {
@@ -76,17 +76,17 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
                 ImGui.Text($"Distance: {Player.DistanceTo(currentTarget):N2}");
             }
 
-            ImGui.Text($"Items on person: ");
+            ImGui.Text($"人身上的项目： ");
             foreach (var item in ConsumableInfo.GatherFood)
             {
                 if (PlayerHelper.GetItemCount(item.Id, out var count) && count > 0)
                     ImGui.Text($"{item.Name} | {item.Id}");
             }
-            if (ImGui.Button("Use Gathering Food"))
+            if (ImGui.Button("使用采集食物"))
             {
                 P.TaskManager.Enqueue(() => Task_Gather.UseFood());
             }
-            if (ImGui.Button("Set all leveling missions"))
+            if (ImGui.Button("设置所有升级任务"))
             {
                 foreach (var mission in C.MissionConfig)
                 {
@@ -98,7 +98,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
                 C.SaveDebounced();
             }
 
-            ImGui.SliderUInt("Player Level", ref playerLevel, 10, 100);
+            ImGui.SliderUInt("玩家等级", ref playerLevel, 10, 100);
             if (ImGui.Button("Update best mission"))
             {
                 best_LevelMission = LevelTest();
@@ -110,18 +110,18 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
 
             DroidCheck();
 
-            if (ImGui.CollapsingHeader("Test Picto"))
+            if (ImGui.CollapsingHeader("测试图片"))
             {
                 PictoManager.DrawPicto();
             }
 
             ImGui.Text($"Drone Ready: {DroneReady()}");
 
-            if (ImGui.Button("Use Drone"))
+            if (ImGui.Button("使用无人机"))
             {
                 UseDrone();
             }
-            if (ImGui.Button("Test Pathing to position"))
+            if (ImGui.Button("测试路径到位置"))
             {
                 P.TaskManager.Enqueue(() => MovetoFlag());
             }
@@ -130,7 +130,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
             {
                 customDestination = Player.Position;
             }
-            if (ImGui.Button("Cordial Test"))
+            if (ImGui.Button("强心剂测试"))
             {
                 UseCordial();
             }
@@ -139,7 +139,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
 
         private static unsafe void ClassInfo()
         {
-            ImGui.Text("Manipulation Check");
+            ImGui.Text("操作检查");
             Dictionary<uint, uint> ManipClassInfo = new()
             {
                 [8] = 4574,
@@ -207,7 +207,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
 
         private static void DroidCheck()
         {
-            if (ImGui.CollapsingHeader("Object info"))
+            if (ImGui.CollapsingHeader("对象信息"))
             {
                 foreach (var obect in Svc.Objects.OrderBy(x => Player.DistanceTo(x.Position)))
                 {
@@ -301,7 +301,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
         }
         public static unsafe bool UseCordial()
         {
-            string tag = "Cordial Check";
+            string tag = "强心剂的检查";
 
             if (!PlayerHelper.CustomIsBusy)
             {
@@ -311,10 +311,10 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
                 Dictionary<uint, (string Name, int GpGain)> cordials = new()
                 {
                     [12669] = ("Hi-Cordial", 400),
-                    [1006141] = ("HQ Regular Cordial", 350),
-                    [6141] = ("NQ Regular Cordial", 300),
-                    [1016911] = ("HQ Watered Cordial", 200),
-                    [16911] = ("NQ Watered Cordial", 150),
+                    [1006141] = ("HQ普通强心剂", 350),
+                    [6141] = ("NQ 普通强心剂", 300),
+                    [1016911] = ("HQ 兑水强心剂", 200),
+                    [16911] = ("NQ 兑水强心剂", 150),
                 };
 
                 foreach (var cordial in C.inverseCordialPrio ? cordials.Reverse() : cordials)
@@ -359,7 +359,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
             }
             else
             {
-                if (EzThrottler.Throttle("Cordial Busy"))
+                if (EzThrottler.Throttle("强心剂的忙碌"))
                     IceLogging.Debug("Player is busy, skipping cordial check", tag);
                 return false;
             }

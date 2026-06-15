@@ -1,4 +1,4 @@
-﻿using Dalamud.Game.ClientState.Objects.SubKinds;
+using Dalamud.Game.ClientState.Objects.SubKinds;
 using ECommons.GameHelpers;
 using ICE.Utilities.Cosmic_Helper;
 using Pictomancy;
@@ -27,13 +27,13 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
                     List<Vector3> pictoCircles = new();
 
 
-                    if (ImGui.BeginTable("NPC Info Debugger", 5, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.RowBg | ImGuiTableFlags.Borders))
+                    if (ImGui.BeginTable("NPC 信息调试器", 5, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.RowBg | ImGuiTableFlags.Borders))
                     {
-                        ImGui.TableSetupColumn("Name");
-                        ImGui.TableSetupColumn("Position");
-                        ImGui.TableSetupColumn("MoveTo Spot");
-                        ImGui.TableSetupColumn("Move To");
-                        ImGui.TableSetupColumn("Set To Current");
+                        ImGui.TableSetupColumn("姓名");
+                        ImGui.TableSetupColumn("位置");
+                        ImGui.TableSetupColumn("移动到点");
+                        ImGui.TableSetupColumn("移动到");
+                        ImGui.TableSetupColumn("设置为当前");
 
                         foreach (var npcEntry in moonNpcs.Values)
                         {
@@ -62,7 +62,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
                                 Vector3 currentPos = Player.Position;
                                 npcEntry.Location_Circle = currentPos;
                             }
-                            if (ImGui.Button($"Copy current set##CopyCurrent_{npcEntry.NpcId}"))
+                            if (ImGui.Button($"复制当前集##CopyCurrent_{npcEntry.NpcId}"))
                             {
                                 ImGui.SetClipboardText($"{npcEntry.Location_Circle.X:N2}f, {npcEntry.Location_Circle.Y:N2}f, {npcEntry.Location_Circle.Z:N2}f");
                             }

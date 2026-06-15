@@ -1,4 +1,4 @@
-﻿using FFXIVClientStructs.FFXIV.Client.UI.Misc;
+using FFXIVClientStructs.FFXIV.Client.UI.Misc;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -38,16 +38,16 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
 
         public static void Draw()
         {
-            if (ImGui.Button("Update Gearsets"))
+            if (ImGui.Button("更新齿轮组"))
             {
                 UpdateGearsets();
             }
 
-            if (ImGui.BeginTable("Gearset Viewer", 3, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.RowBg | ImGuiTableFlags.Borders))
+            if (ImGui.BeginTable("齿轮组查看器", 3, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.RowBg | ImGuiTableFlags.Borders))
             {
                 ImGui.TableSetupColumn("ID");
-                ImGui.TableSetupColumn("Name");
-                ImGui.TableSetupColumn("JobID");
+                ImGui.TableSetupColumn("姓名");
+                ImGui.TableSetupColumn("作业ID");
 
                 ImGui.TableHeadersRow();
 

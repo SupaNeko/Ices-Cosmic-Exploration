@@ -1,4 +1,4 @@
-﻿using Dalamud.Interface.ImGuiFileDialog;
+using Dalamud.Interface.ImGuiFileDialog;
 using Dalamud.Interface.Textures;
 using FFXIVClientStructs.FFXIV.Client.Game;
 using FFXIVClientStructs.FFXIV.Client.Game.WKS;
@@ -41,20 +41,20 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
         {
             var itemSheet = ExcelHelper.ItemSheet;
             ImGui.SetNextItemWidth(250);
-            ImGui.InputText("Search by Name", ref CraftingTableSearchText, 100);
+            ImGui.InputText("按名称搜索", ref CraftingTableSearchText, 100);
             ImGui.SetNextItemWidth(250);
-            ImGui.InputText("Search by Attribute", ref AttributeSearchText, 100);
+            ImGui.InputText("按属性搜索", ref AttributeSearchText, 100);
             ImGui.SetNextItemWidth(250);
             ImGui.SliderUInt("Rank ID", ref RankSearch, 0, 6);
             ImGui.SetNextItemWidth(250);
-            ImGui.SliderUInt("Class Selection", ref jobSearch, 7, 18);
-            if (ImGui.Button("Copy Scores"))
+            ImGui.SliderUInt("Class选择", ref jobSearch, 7, 18);
+            if (ImGui.Button("复制分数"))
             {
                 ImGui.SetClipboardText(GenerateMissionScoreDictionaryCode());
             }
             ImGui.SameLine();
 
-            if (ImGui.Button("Copy Missing CSV"))
+            if (ImGui.Button("复制缺失的CSV"))
             {
                 var text = MissionScoresGenerator.BuildCsvText(includeHeader: true);
                 var count = MissionScoresGenerator.CountMissing();
@@ -64,19 +64,19 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
                     statusMessage = $"Copied {count} missing MissionScores rows (bronze) to clipboard";
                 }
                 else
-                    statusMessage = "No missing rows — embedded CSV covers all missions with bronze scores.";
+                    statusMessage = "没有丢失行 — 嵌入的 CSV 涵盖了所有具有青铜分数的任务。";
             }
             if (ImGui.IsItemHovered())
             {
                 ImGui.BeginTooltip();
-                ImGui.Text("Rows for missions not in MissionScores.csv, using BronzeScore from sheets.");
+                ImGui.Text("未在MissionScores.csv中的任务的行，使用表格中的BronzeScore。");
                 ImGui.Text("Paste at end of Resources/MissionScores.csv");
                 ImGui.EndTooltip();
             }
 
             ImGui.SameLine();
 
-            if (ImGui.Button("Copy Auxesia CSV"))
+            if (ImGui.Button("复制Auxesia CSV"))
             {
                 var text = MissionScoresGenerator.BuildCsvText(CosmicMoonRegistry.Auxesia.TerritoryId, includeHeader: false);
                 var count = MissionScoresGenerator.CountMissing(CosmicMoonRegistry.Auxesia.TerritoryId);
@@ -86,12 +86,12 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
                     statusMessage = $"Copied {count} Auxesia rows to clipboard";
                 }
                 else
-                    statusMessage = "No missing Auxesia MissionScores rows.";
+                    statusMessage = "没有丢失 Auxesia MissionScores 行。";
             }
 
             ImGui.SameLine();
 
-            if (ImGui.Button("Export Fishing Missions"))
+            if (ImGui.Button("导出钓鱼任务"))
             {
                 var fishingMissions = CosmicHelper.SheetMissionDict
                     .Where(kvp => kvp.Value.Attributes.HasFlag(MissionAttributes.Fish)) // Adjust flag name as needed
@@ -112,13 +112,13 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
                 }
                 else
                 {
-                    ImGui.SetTooltip("No fishing missions found!");
+                    ImGui.SetTooltip("没有找到钓鱼任务！");
                 }
             }
 
             ImGui.SameLine();
 
-            if (ImGui.Button("Clear stored scores"))
+            if (ImGui.Button("清除存储的分数"))
             {
                 C.ScoreKeeper.Clear();
                 C.Save();
@@ -128,10 +128,10 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
             ImGui.InputText("##ExportPath", ref exportPath, 500);
 
             ImGui.SameLine();
-            if (ImGui.Button("Browse..."))
+            if (ImGui.Button("浏览..."))
             {
                 fileDialogManager.SaveFileDialog(
-                    "Select Export Location",
+                    "选择导出位置",
                     ".csv",
                     "mission_scores.csv",
                     ".csv",
@@ -146,10 +146,10 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
             }
 
             ImGui.SameLine();
-            if (ImGui.Button("Export Missing CSV"))
+            if (ImGui.Button("导出缺失的CSV"))
             {
                 if (string.IsNullOrWhiteSpace(exportPath))
-                    statusMessage = "Set export path first (or use Copy Missing CSV)";
+                    statusMessage = "先设置导出路径（或使用复制缺失的CSV）";
                 else if (MissionScoresGenerator.TryExportMissingRows(exportPath, out var msg))
                     statusMessage = msg;
                 else
@@ -157,7 +157,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
             }
 
             ImGui.SameLine();
-            if (ImGui.Button("Export CSV"))
+            if (ImGui.Button("导出CSV"))
             {
                 ExportToCsv();
             }
@@ -177,20 +177,20 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
                             ImGuiTableFlags.Reorderable |         // Allow column reordering
                             ImGuiTableFlags.Hideable;             // Allow hiding columns via right-click
 
-            if (ImGui.BeginTable("Moon Mission Information Table", 35, tableFlags)) // Increased column count by 1
+            if (ImGui.BeginTable("月球任务信息表", 35, tableFlags)) // Increased column count by 1
             {
                 ImGui.TableSetupColumn("ID");
-                ImGui.TableSetupColumn("Jobs");
+                ImGui.TableSetupColumn("职业机会");
 
-                ImGui.TableSetupColumn("Mission Name");
-                ImGui.TableSetupColumn("Job");
-                ImGui.TableSetupColumn("2nd Job");
-                ImGui.TableSetupColumn("Rank");
-                ImGui.TableSetupColumn("ToDo ID");
-                ImGui.TableSetupColumn("Bronze");
-                ImGui.TableSetupColumn("Silver");
-                ImGui.TableSetupColumn("Gold");
-                ImGui.TableSetupColumn("Attribute Flags");
+                ImGui.TableSetupColumn("任务名称");
+                ImGui.TableSetupColumn("作业");
+                ImGui.TableSetupColumn("第二职业");
+                ImGui.TableSetupColumn("秩");
+                ImGui.TableSetupColumn("待办事项 ID");
+                ImGui.TableSetupColumn("铜牌");
+                ImGui.TableSetupColumn("银");
+                ImGui.TableSetupColumn("黄金");
+                ImGui.TableSetupColumn("属性标志");
 
                 IOrderedEnumerable<KeyValuePair<int, string>> orderedExp = CosmicHelper.ExpDictionary.ToList().OrderBy(exp => exp.Key);
                 var agent = AgentMap.Instance();
@@ -201,26 +201,26 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
                     ImGui.TableSetupColumn($"{exp.Value}", ImGuiTableColumnFlags.WidthFixed, -1);
                 }
 
-                ImGui.TableSetupColumn("Test Flag");
+                ImGui.TableSetupColumn("测试标志");
 
-                ImGui.TableSetupColumn("Score");
+                ImGui.TableSetupColumn("分数");
 
-                ImGui.TableSetupColumn("Main Item 1");
-                ImGui.TableSetupColumn("Amount #1");
-                ImGui.TableSetupColumn("Main Item 2");
-                ImGui.TableSetupColumn("Amount #2");
-                ImGui.TableSetupColumn("Main Item 3");
-                ImGui.TableSetupColumn("Amount #3");
-                ImGui.TableSetupColumn("Pre-Craft Item");
-                ImGui.TableSetupColumn("Pre-Craft Amount");
-                ImGui.TableSetupColumn("Export"); // New column for export button
+                ImGui.TableSetupColumn("主项目 1");
+                ImGui.TableSetupColumn("金额 #1");
+                ImGui.TableSetupColumn("主项目 2");
+                ImGui.TableSetupColumn("金额 #2");
+                ImGui.TableSetupColumn("主项目 3");
+                ImGui.TableSetupColumn("金额 #3");
+                ImGui.TableSetupColumn("预制物品");
+                ImGui.TableSetupColumn("预制数量");
+                ImGui.TableSetupColumn("出口"); // New column for export button
                 for (int i = 1; i < 4; i++)
                 {
                     ImGui.TableSetupColumn($"Gather [{i}]");
                     ImGui.TableSetupColumn($"Amount [G-{i}]");
                 }
-                ImGui.TableSetupColumn("Completion");
-                ImGui.TableSetupColumn("Activate Mission");
+                ImGui.TableSetupColumn("完成");
+                ImGui.TableSetupColumn("激活任务");
 
                 ImGui.TableHeadersRow();
 
@@ -352,7 +352,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
                     ImGui.TableNextColumn();
                     if (entry.Value.MarkerId != 0)
                     {
-                        if (ImGui.Button($"Flag###Flag-{entry.Key}"))
+                        if (ImGui.Button($"旗帜###Flag-{entry.Key}"))
                         {
                             Utils.SetGatheringRing(entry.Value.TerritoryId, (int)entry.Value.MapPosition.X, (int)entry.Value.MapPosition.Y, entry.Value.Radius);
                         }
@@ -363,7 +363,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
                             ImGui.EndTooltip();
                         }
                         ImGui.SameLine();
-                        if (ImGui.Button($"Copy Flag##Flag-{entry.Key}"))
+                        if (ImGui.Button($"复制标志##Flag-{entry.Key}"))
                         {
                             ImGui.SetClipboardText($"{entry.Value.MapPosition.X}, {entry.Value.MapPosition.Y}");
                         }
@@ -409,19 +409,19 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
                     ImGui.TableSetColumnIndex(34);
                     if (CosmicHelper.CurrentLunarMission != 0)
                     {
-                        if (ImGui.Button("Turn in"))
+                        if (ImGui.Button("上交"))
                         {
                             ReportMission();
                         }
                         ImGui.SameLine();
-                        if (ImGui.Button("Abandon"))
+                        if (ImGui.Button("放弃"))
                         {
                             AbandonMission();
                         }
                     }
                     else
                     {
-                        if (ImGui.Button("Initiate"))
+                        if (ImGui.Button("发起"))
                         {
                             InitiateMission(entry.Key);
                         }
@@ -503,7 +503,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
             {
                 if (string.IsNullOrWhiteSpace(exportPath))
                 {
-                    statusMessage = "Error: Please specify an export path";
+                    statusMessage = "错误：请指定导出路径";
                     return;
                 }
 
@@ -525,7 +525,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
                     string classes = info.Jobs != null && info.Jobs.Any()
                         ? string.Join(";", info.Jobs.Select(jobId =>
                             JobAbbreviations.TryGetValue(jobId, out var abbr) ? abbr : jobId.ToString()))
-                        : "None";
+                        : "无";
 
                     string missionName = EscapeCsvField(RemovePrivateUseChars(info.Name ?? ""));
 

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using static ECommons.UIHelpers.AddonMasterImplementations.AddonMaster;
@@ -23,7 +23,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
             }
             else
             {
-                ImGui.Text("Select string not visible");
+                ImGui.Text("选择不可见的字符串");
             }
         }
     }

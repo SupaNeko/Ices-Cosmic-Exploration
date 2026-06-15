@@ -1,4 +1,4 @@
-﻿using ECommons.ExcelServices.TerritoryEnumeration;
+using ECommons.ExcelServices.TerritoryEnumeration;
 using FFXIVClientStructs.FFXIV.Client.UI.Agent;
 using ICE.Utilities.Cosmic_Helper;
 using System.Collections.Generic;
@@ -31,19 +31,19 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
         {
             ImGui.Text($"Artisan Is Busy? {P.Artisan.IsBusy()}");
             ImGui.Text($"{EzThrottler.GetRemainingTime("[Main Item(s)] Starting Main Craft")}");
-            if (ImGui.Button("Artisan, craft this"))
+            if (ImGui.Button("Artisan，制作这个"))
             {
                 P.Artisan.CraftItem(36026, 1);
             }
 
             ImGui.SetNextItemWidth(125);
-            ImGui.InputInt("Radius", ref Radius);
+            ImGui.InputInt("半径", ref Radius);
             ImGui.SetNextItemWidth(125);
-            ImGui.InputInt("X Location", ref XLoc);
+            ImGui.InputInt("X 位置", ref XLoc);
             ImGui.SetNextItemWidth(125);
-            ImGui.InputInt("Y Location", ref YLoc);
+            ImGui.InputInt("Y位置", ref YLoc);
 
-            if (ImGui.Button($"Test Radius"))
+            if (ImGui.Button($"测试半径"))
             {
                 var agent = AgentMap.Instance();
 
@@ -51,39 +51,39 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
             }
 
             ImGui.Separator();
-            ImGui.InputText("Pandora Feature", ref PandoraFeature);
-            if (ImGui.Button("Pause Feature"))
+            ImGui.InputText("Pandora功能", ref PandoraFeature);
+            if (ImGui.Button("暂停功能"))
             {
                 P.Pandora.PauseFeature(PandoraFeature, amount);
             }
 
             ImGui.Separator();
-            ImGui.Text("AutoHook");
+            ImGui.Text("自动挂钩");
             ImGui.SetNextItemWidth(150);
-            ImGui.InputText("Preset String", ref importString, 2048);
-            if (ImGui.Button("Import"))
+            ImGui.InputText("预设字符串", ref importString, 2048);
+            if (ImGui.Button("进口"))
             {
                 P.AutoHook.ImportAndSelectPreset(importString);
                 importString = string.Empty;
             }
             ImGui.SetNextItemWidth(150);
-            ImGui.InputText("Swap to preset", ref SwapToPreset);
-            if (ImGui.Button("Swap"))
+            ImGui.InputText("交换到预设", ref SwapToPreset);
+            if (ImGui.Button("交换"))
             {
                 P.AutoHook.SetPreset(SwapToPreset);
             }
-            if (ImGui.Button("Apply Temp"))
+            if (ImGui.Button("应用临时"))
             {
                 P.AutoHook.CreateAndSelectAnonymousPreset(importString);
             }
             ImGui.SetNextItemWidth(200);
-            ImGui.InputUInt("Select mission to import", ref missionId);
+            ImGui.InputUInt("选择要导入的任务", ref missionId);
             ImGui.InputUInt("Bait ID", ref baitId);
-            if (ImGui.Button("Swap to bait"))
+            if (ImGui.Button("Swap to诱饵"))
             {
                  SwapBait(baitId);
             }
-            if (ImGui.Button("Swap Bait... simple"))
+            if (ImGui.Button("交换诱饵...简单"))
             {
                 if (CosmicHelper.CurrentBait() == 0)
                 {
@@ -92,7 +92,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
 
                 P.AutoHook.SwapBaitById(baitId);
             }
-            if (ImGui.Button("Stupid Test"))
+            if (ImGui.Button("愚蠢的测试"))
             {
                 if (CosmicHelper.CurrentBait() == 0)
                 {
@@ -108,23 +108,23 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
                 }
             }
 
-            if (ImGui.Button("Enable AutoHook"))
+            if (ImGui.Button("启用AutoHook"))
             {
                 P.AutoHook.Ah_State(true);
             }
-            if (ImGui.Button("Disable Autohook"))
+            if (ImGui.Button("DisableAutohook"))
             {
                 P.AutoHook.Ah_State(false);
             }
 
             ImGui.Separator();
             ImGui.Text($"Is ICE Running? | {P.IceIpc.IsRunning()}");
-            if (ImGui.Button("Only Missions Via IPC"))
+            if (ImGui.Button("仅通过IPC执行任务"))
             {
                 HashSet<uint> missionListIds = new() { 1, 3, 4, 7, 9, 11 };
                 P.IceIpc.OnlyMissions(missionListIds);
             }
-            if (ImGui.Button("Change to gamba"))
+            if (ImGui.Button("更改为抽奖"))
             {
                 SchedulerMain.State = IceState.Gambling;
             }
@@ -132,65 +132,65 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
             ImGui.Separator();
 
             ImGui.SetNextItemWidth(150);
-            ImGui.InputText("Setting Name", ref SettingChange);
-            ImGui.Checkbox("Setting Bool", ref SettingState);
+            ImGui.InputText("设置名称", ref SettingChange);
+            ImGui.Checkbox("设置布尔", ref SettingState);
 
-            if (ImGui.Button("Toggle Setting"))
+            if (ImGui.Button("切换设置"))
             {
                 P.IceIpc.ChangeSetting(SettingChange, SettingState);
             }
-            if (ImGui.Button("Set temp setting"))
+            if (ImGui.Button("设置临时设置"))
             {
-                P.Artisan.ChangeSolver(37084, "Progress Only Solver", true);
+                P.Artisan.ChangeSolver(37084, "仅进度求解器", true);
             }
-            if (ImGui.Button("Set raphael solver"))
+            if (ImGui.Button("设置拉斐尔解算器"))
             {
-                P.Artisan.ChangeSolver(37084, "Raphael Recipe Solver", true);
+                P.Artisan.ChangeSolver(37084, "拉斐尔配方求解器", true);
             }
-            if (ImGui.Button("Set current mission to Raphael"))
-            {
-                if (CosmicHelper.CurrentLunarMission != 0)
-                {
-                    foreach (var craftItem in CosmicHelper.CurrentMissionInfo.Crafts_Main)
-                    {
-                        P.Artisan.ChangeSolver(craftItem.Value.RecipeId, "Raphael Recipe Solver", true);
-                    }
-                    foreach (var preCraft in CosmicHelper.CurrentMissionInfo.Crafts_Pre)
-                    {
-                        P.Artisan.ChangeSolver(preCraft.Value.RecipeId, "Raphael Recipe Solver", true);
-                    }
-                }
-            }
-            if (ImGui.Button("Set current mission to Progress"))
+            if (ImGui.Button("设置当前任务为拉斐尔"))
             {
                 if (CosmicHelper.CurrentLunarMission != 0)
                 {
                     foreach (var craftItem in CosmicHelper.CurrentMissionInfo.Crafts_Main)
                     {
-                        P.Artisan.ChangeSolver(craftItem.Value.RecipeId, "Progress Only Solver", true);
+                        P.Artisan.ChangeSolver(craftItem.Value.RecipeId, "拉斐尔配方求解器", true);
                     }
                     foreach (var preCraft in CosmicHelper.CurrentMissionInfo.Crafts_Pre)
                     {
-                        P.Artisan.ChangeSolver(preCraft.Value.RecipeId, "Progress Only Solver", true);
+                        P.Artisan.ChangeSolver(preCraft.Value.RecipeId, "拉斐尔配方求解器", true);
                     }
                 }
             }
-            ImGui.DragUInt("MM Step Use", ref MMSAmount, 1, 0, 20);
-            ImGui.DragUInt("MM Recipe Usage", ref MMMaxUse, 1, 0, 3);
-            ImGui.Checkbox("Set MM Temp", ref tempMM);
-            if (ImGui.Button("Set Miracle Solver"))
+            if (ImGui.Button("设置当前任务为进度"))
+            {
+                if (CosmicHelper.CurrentLunarMission != 0)
+                {
+                    foreach (var craftItem in CosmicHelper.CurrentMissionInfo.Crafts_Main)
+                    {
+                        P.Artisan.ChangeSolver(craftItem.Value.RecipeId, "仅进度求解器", true);
+                    }
+                    foreach (var preCraft in CosmicHelper.CurrentMissionInfo.Crafts_Pre)
+                    {
+                        P.Artisan.ChangeSolver(preCraft.Value.RecipeId, "仅进度求解器", true);
+                    }
+                }
+            }
+            ImGui.DragUInt("MM 步骤使用", ref MMSAmount, 1, 0, 20);
+            ImGui.DragUInt("MM 配方用法", ref MMMaxUse, 1, 0, 3);
+            ImGui.Checkbox("设置MM温度", ref tempMM);
+            if (ImGui.Button("设置奇迹解算器"))
             {
                 P.Artisan.ChangeStandardMinimumStepsBeforeMiracle(MMSAmount, tempMM);
                 P.Artisan.ChangeStandardMaxMaterialMiracleUses(MMMaxUse, tempMM);
             }
             ImGui.SameLine();
-            if (ImGui.Button("Restore Temp MM"))
+            if (ImGui.Button("恢复温度MM"))
             {
                 P.Artisan.SetTempStandardMinimumStepsBeforeMiracleBackToNormal();
                 P.Artisan.SetTempStandardMaxMaterialMiracleUsesBackToNormal();
             }
 
-            if (ImGui.Button("Return back to normal"))
+            if (ImGui.Button("恢复正常"))
             {
                 if (CosmicHelper.CurrentLunarMission != 0)
                 {
@@ -204,14 +204,14 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
                     }
                 }
             }
-            if (ImGui.Button("Disable Endurance"))
+            if (ImGui.Button("禁用耐力"))
             {
                 P.Artisan.SetEnduranceStatus(false);
             }
-            if (ImGui.Button("Test Toast"))
+            if (ImGui.Button("测试Toast"))
             {
                 string message = "[I.C.E.] You didn't read the little warning in the mission setup\n" +
-                    "You need to update autohook for you to be able to fish here on Auxesia. Please swap to testing version";
+                    "你需要更新 autohook 才能在 Auxesia 上钓鱼。请切换到测试版本";
                 Svc.Chat.Print(new()
                 {
                     Type = Dalamud.Game.Text.XivChatType.ErrorMessage,
@@ -219,15 +219,15 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
                 });
                 Svc.Toasts.ShowNormal($"{message}");
             }
-            if (ImGui.Button("Test Glamour"))
+            if (ImGui.Button("测试魅力"))
             {
                 P.GlamourIpc.SetClownHead();
             }
-            if (ImGui.Button("Test Hat"))
+            if (ImGui.Button("测试帽子"))
             {
                 P.GlamourIpc.SetHat();
             }
-            if (ImGui.Button("Test Visor"))
+            if (ImGui.Button("测试遮阳板"))
             {
                 P.GlamourIpc.SetVisor();
             }

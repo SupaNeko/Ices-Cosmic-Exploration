@@ -1,4 +1,4 @@
-﻿using ECommons.GameHelpers;
+using ECommons.GameHelpers;
 using FFXIVClientStructs.FFXIV.Client.UI.Agent;
 using ICE.Utilities;
 using ICE.Utilities.Cosmic_Helper;
@@ -14,11 +14,11 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
 
         public static unsafe void Draw()
         {
-            ImGui.InputInt("TableId", ref TableRow);
+            ImGui.InputInt("表ID", ref TableRow);
 
             var MapInfo = ExcelHelper.MarkerSheet;
 
-            if (ImGui.Button($"Test Radius"))
+            if (ImGui.Button($"测试半径"))
             {
                 var agent = AgentMap.Instance();
 
@@ -34,14 +34,14 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
                 Utils.SetGatheringRing(territoryId, _x, _y, _radius);
             }
             ImGui.SetNextItemWidth(125);
-            ImGui.InputInt("Map X (Sheet)", ref posX);
+            ImGui.InputInt("地图X（图纸）", ref posX);
             ImGui.SameLine();
             ImGui.SetNextItemWidth(125);
-            ImGui.InputInt("Map Y (Sheet)", ref posY);
+            ImGui.InputInt("地图Y（图纸）", ref posY);
             ImGui.SameLine();
             ImGui.SetNextItemWidth(125);
-            ImGui.InputInt("Map Radius", ref posRadius);
-            if (ImGui.Button($"Test Map Marker from coords"))
+            ImGui.InputInt("地图半径", ref posRadius);
+            if (ImGui.Button($"坐标中的测试地图标记"))
             {
                 var agent = AgentMap.Instance();
                 int _x = posX - 1024;

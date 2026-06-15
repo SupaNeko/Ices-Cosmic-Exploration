@@ -1,4 +1,4 @@
-﻿using ECommons.GameHelpers;
+using ECommons.GameHelpers;
 using ICE.Ui.MainUi.ModeSelect_Modes.CosmicTable;
 using ICE.Utilities.Cosmic_Helper;
 using System;
@@ -25,7 +25,7 @@ internal class Table_MissionsV3
         if (ImGui.BeginChild("###MissionTableV3", size, false))
         {
             var showRedAlert = C.MissionFilter.HasFlag(MissionFilter.RedAlert);
-            if (ImGui.Checkbox("Red Alert", ref showRedAlert))
+            if (ImGui.Checkbox("红色警戒", ref showRedAlert))
             {
                 C.MissionFilter = showRedAlert
                     ? C.MissionFilter | MissionFilter.RedAlert

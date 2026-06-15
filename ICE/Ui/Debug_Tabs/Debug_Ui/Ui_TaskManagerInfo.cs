@@ -1,4 +1,4 @@
-﻿using ICE.Utilities.Cosmic_Helper;
+using ICE.Utilities.Cosmic_Helper;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -17,41 +17,41 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
             ImGui.Text($"Current task running: {currentTask}");
             ImGui.Text($"Current State: {SchedulerMain.State}");
             ImGui.Text($"Task Count: {P.TaskManager.Tasks.Count}");
-            if (ImGui.Button("Set State to Idle"))
+            if (ImGui.Button("将状态设置为空闲"))
             {
                 SchedulerMain.State = IceState.Idle; 
             }
 
-            if (ImGui.Button("Stop Task"))
+            if (ImGui.Button("停止任务"))
             {
                 P.TaskManager.Tasks.Clear();
                 P.TaskManager.Abort();
             }
 
             ImGui.SetNextItemWidth(100);
-            ImGui.InputUInt("Mission", ref mission);
+            ImGui.InputUInt("任务", ref mission);
 
-            if (ImGui.Button("Abandon Mission"))
+            if (ImGui.Button("放弃任务"))
             {
                 Task_AbandonMission.Enqueue();
             }
-            if (ImGui.Button("Path to repair NPC"))
+            if (ImGui.Button("修复路径NPC"))
             {
-                P.TaskManager.Enqueue(() => Task_Repair.Repair_PathTo(), "Pathing to repair NPC");
+                P.TaskManager.Enqueue(() => Task_Repair.Repair_PathTo(), "修复路径NPC");
             }
-            if (ImGui.Button("Test Repair Function"))
+            if (ImGui.Button("测试修复功能"))
             {
                 Task_Repair.Enqueue();
             }
             ImGui.Text($"Current waypoint list count: {pathTo.Count}");
 
             ImGui.SetNextItemWidth(250);
-            ImGui.InputFloat3("Destination", ref pathToArea);
-            if (ImGui.Button("Set Area"))
+            ImGui.InputFloat3("目的地", ref pathToArea);
+            if (ImGui.Button("设置区域"))
             {
                 pathToArea = ECommons.GameHelpers.Player.Position;
             }
-            if (ImGui.Button("Create waypoint list"))
+            if (ImGui.Button("创建航路点列表"))
             {
                 Vector3 currentPos = ECommons.GameHelpers.Player.Position;
 
@@ -61,24 +61,24 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
                     pathTo = await FindTask(currentPos);
                 });
             }
-            if (ImGui.Button("Test Crafting"))
+            if (ImGui.Button("测试制作"))
             {
                 Task_Craft.Enqueue();
             }
-            if (ImGui.Button("Test Gather Targeting"))
+            if (ImGui.Button("测试收集目标"))
             {
                 Task_Gather.Enqueue();
             }
-            if (ImGui.Button("Buy Items from shop"))
+            if (ImGui.Button("从商店购买物品"))
             {
                 Task_BuyCosmoItems.Enqueue();
             }
 
-            if (ImGui.Button("Test Drone Buy Item"))
+            if (ImGui.Button("测试无人机购买物品"))
             {
                 Task_ArtifactSearch.EnqueueBuy();
             }
-            if (ImGui.Button("Test Drone Pathing"))
+            if (ImGui.Button("测试无人机路径"))
             {
                 P.TaskManager.Enqueue(() => Task_ArtifactSearch.CheckBoxStatus());
             }

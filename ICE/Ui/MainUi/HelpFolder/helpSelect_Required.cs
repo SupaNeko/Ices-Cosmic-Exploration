@@ -1,4 +1,4 @@
-﻿using Dalamud.Interface;
+using Dalamud.Interface;
 using Dalamud.Interface.Utility.Raii;
 using ECommons.Reflection;
 using System;
@@ -13,28 +13,28 @@ namespace ICE.Ui.MainUi.HelpFolder
     {
         public static void Draw()
         {
-            ImGui.TextWrapped("These are a list of the following plugins that are required for the plugin to function. If you don't have these installed, it will not function properly");
+            ImGui.TextWrapped("这些是插件运行所需的以下插件的列表。如果您没有安装这些，它将无法正常运行");
 
             ImGui.Separator();
-            ImGuiEx.IconWithText(FontAwesomeIcon.Hammer, "Crafting");
+            ImGuiEx.IconWithText(FontAwesomeIcon.Hammer, "制作");
             HasPlugin("https://love.puni.sh/ment.json", "Artisan");
 
             ImGui.Separator();
-            ImGuiEx.IconWithText(FontAwesomeIcon.Feather, "Gathering");
-            ImGui.Text("For botanist/miner/fisher");
+            ImGuiEx.IconWithText(FontAwesomeIcon.Feather, "收集");
+            ImGui.Text("For 植物学家/矿工/渔民");
             HasPlugin("https://puni.sh/api/repository/veyn", "vnavmesh");
             ImGui.Dummy(new Vector2(0, 10));
-            ImGui.Text("For fisher only");
-            HasPlugin("https://love.puni.sh/ment.json", "AutoHook");
+            ImGui.Text("仅适用于渔民");
+            HasPlugin("https://love.puni.sh/ment.json", "自动挂钩");
 
             ImGui.Separator();
-            ImGuiEx.IconWithText(FontAwesomeIcon.Running, "Automating Hub Activities");
+            ImGuiEx.IconWithText(FontAwesomeIcon.Running, "自动化中心活动");
             HasPlugin("https://puni.sh/api/repository/veyn", "vnavmesh");
 
             ImGui.Separator();
-            ImGui.TextWrapped("This isn't required, but highly recommended for leveling up characters. It will auto equip gear from your armory/inventory, and swap it out when running Leveling Grind Mode");
-            ImGuiEx.IconWithText(FontAwesomeIcon.Leaf, "Stylist");
-            HasPlugin("https://raw.githubusercontent.com/NightmareXIV/MyDalamudPlugins/main/pluginmaster.json", "Stylist");
+            ImGui.TextWrapped("这不是必需的，但强烈建议用于升级角色。它将自动从你的军械库/库存中装备装备，并在运行练级研磨模式时将其更换");
+            ImGuiEx.IconWithText(FontAwesomeIcon.Leaf, "造型师");
+            HasPlugin("https://raw.githubusercontent.com/NightmareXIV/MyDalamudPlugins/main/pluginmaster.json", "造型师");
         }
 
         public static void HasPlugin(string repo, string pluginName)

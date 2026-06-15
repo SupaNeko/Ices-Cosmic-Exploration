@@ -1,4 +1,4 @@
-﻿using static ECommons.UIHelpers.AddonMasterImplementations.AddonMaster;
+using static ECommons.UIHelpers.AddonMasterImplementations.AddonMaster;
 
 namespace ICE.Ui.Debug_Tabs.Debug_Hud
 {
@@ -10,26 +10,26 @@ namespace ICE.Ui.Debug_Tabs.Debug_Hud
             {
                 ImGui.Text(x.SelectedCraftingItem);
 
-                if (ImGui.Button("Fill NQ"))
+                if (ImGui.Button("填写NQ"))
                 {
                     x.NQItemInput();
                 }
                 ImGui.SameLine();
 
-                if (ImGui.Button("Fill HQ"))
+                if (ImGui.Button("填写HQ"))
                 {
                     x.HQItemInput();
                 }
                 ImGui.SameLine();
 
-                if (ImGui.Button("Fill Both"))
+                if (ImGui.Button("两者都填写"))
                 {
                     x.NQItemInput();
                     x.HQItemInput();
                 }
                 ImGui.SameLine();
 
-                if (ImGui.Button("Synthesize"))
+                if (ImGui.Button("合成"))
                 {
                     x.Synthesize();
                 }
@@ -46,7 +46,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Hud
             }
             else
             {
-                ImGui.Text("Waiting for \"WKSRecipeNotebook\" to be visible");
+                ImGui.Text("等待“WKSRecipeNotebook”可见");
             }
         }
     }

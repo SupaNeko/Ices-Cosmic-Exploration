@@ -1,4 +1,4 @@
-﻿using Lumina.Excel.Sheets;
+using Lumina.Excel.Sheets;
 using System.Collections.Generic;
 
 namespace ICE.Ui.Debug_Tabs.Debug_Tables
@@ -12,17 +12,17 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
         public static void Draw()
         {
             // Search filter input
-            ImGui.Text("Search missions:");
+            ImGui.Text("搜索任务：");
             ImGui.SetNextItemWidth(200);
             ImGui.InputText("##searchFilter", ref searchFilter, 256);
 
-            if (ImGui.Button("Update all mission text"))
+            if (ImGui.Button("更新所有任务文本"))
             {
                 UpdateText();
             }
 
             ImGui.SameLine();
-            if (ImGui.Button("Clear"))
+            if (ImGui.Button("清除"))
             {
                 searchFilter = "";
             }
@@ -51,7 +51,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
                 foreach (var text in filteredMissions)
                 {
                     // Create unique button ID using the text key
-                    if (ImGui.Button($"Copy Ids##{text.Key}"))
+                    if (ImGui.Button($"复制ID##{text.Key}"))
                     {
                         // Convert HashSet to comma-separated string
                         string idsString = string.Join(", ", text.Value);

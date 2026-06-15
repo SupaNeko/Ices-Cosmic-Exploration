@@ -1,4 +1,4 @@
-﻿using Dalamud.Interface;
+using Dalamud.Interface;
 using ICE.Utilities.Cosmic_Helper;
 using ICE.Utilities.ImGuiTools;
 
@@ -8,23 +8,23 @@ namespace ICE.Ui.MainUi.Settings
     {
         public static void Draw()
         {
-            if (ImGui.BeginTabBar("Mission Priority Settings"))
+            if (ImGui.BeginTabBar("任务优先级设置"))
             {
-                if (ImGui.BeginTabItem("Mission Priority Order"))
+                if (ImGui.BeginTabItem("任务优先顺序"))
                 {
                     MissionTypeOrderUi();
 
                     ImGui.EndTabItem();
                 }
 
-                if (ImGui.BeginTabItem("Provisional: Type Order"))
+                if (ImGui.BeginTabItem("临时：类型订单"))
                 {
                     TypePriorityUi();
 
                     ImGui.EndTabItem();
                 }
 
-                if (ImGui.BeginTabItem("Provisional: Job Order"))
+                if (ImGui.BeginTabItem("临时：职业订单"))
                 {
                     JobPriorityUi();
 
@@ -47,11 +47,11 @@ namespace ICE.Ui.MainUi.Settings
 
             _dragDrop_ProvisionalType.Begin();
 
-            if (ImGui.BeginTable("Type Priority Table", 3, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.RowBg | ImGuiTableFlags.Borders))
+            if (ImGui.BeginTable("类型优先级表", 3, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.RowBg | ImGuiTableFlags.Borders))
             {
-                ImGui.TableSetupColumn("ReOrder");
-                ImGui.TableSetupColumn("Icon");
-                ImGui.TableSetupColumn("Type");
+                ImGui.TableSetupColumn("重新订购");
+                ImGui.TableSetupColumn("图标");
+                ImGui.TableSetupColumn("类型");
 
                 ImGui.TableHeadersRow();
 
@@ -83,9 +83,9 @@ namespace ICE.Ui.MainUi.Settings
                     ImGui.AlignTextToFramePadding();
                     string type = entry switch
                     {
-                        ProvisionalTypes.ProvisionalTimed => "Timed",
+                        ProvisionalTypes.ProvisionalTimed => "定时",
                         ProvisionalTypes.ProvisionalSequential => "Sequence",
-                        ProvisionalTypes.ProvisionalWeather => "Weather",
+                        ProvisionalTypes.ProvisionalWeather => "天气",
                         _ => entry.ToString()
                     };
                     ImGui.Text($"{type}");
@@ -103,11 +103,11 @@ namespace ICE.Ui.MainUi.Settings
 
         private static void MissionTypeOrderUi()
         {
-            ImGui.Text("Mission Search Priority");
+            ImGui.Text("任务搜索优先级");
             ImGui_Ice.IconWithTooltip(
                 FontAwesomeIcon.InfoCircle, 
-                "Order you would like to do the actions. It will work from the top down.\n" +
-                "So if you Have Red Arert -> Drone Search, if a red alert isn't available, it will proceed to use a drone box if it can");
+                "Order你想要执行的操作。它将从顶部开始职业down.\n" +
+                "所以如果你有红色警戒->无人机搜索，如果红色警报不可用，它会继续使用无人机箱（如果可以的话）");
 
             _dragDrop_MissionType ??= new ImGuiEx.RealtimeDragDrop<MissionTypes>(
                 "MissionTypeDragDrop",
@@ -117,11 +117,11 @@ namespace ICE.Ui.MainUi.Settings
 
             _dragDrop_MissionType.Begin();
 
-            if (ImGui.BeginTable("Mission Type Table", 3, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.RowBg | ImGuiTableFlags.Borders))
+            if (ImGui.BeginTable("任务类型表", 3, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.RowBg | ImGuiTableFlags.Borders))
             {
-                ImGui.TableSetupColumn("ReOrder");
-                ImGui.TableSetupColumn("Icon");
-                ImGui.TableSetupColumn("Type");
+                ImGui.TableSetupColumn("重新订购");
+                ImGui.TableSetupColumn("图标");
+                ImGui.TableSetupColumn("类型");
 
                 ImGui.TableHeadersRow();
 
@@ -154,8 +154,8 @@ namespace ICE.Ui.MainUi.Settings
                     ImGui.AlignTextToFramePadding();
                     string name = entry switch
                     {
-                        MissionTypes.DroneSearch => "Drone Search",
-                        MissionTypes.Critical => "Red Alert",
+                        MissionTypes.DroneSearch => "无人机搜索",
+                        MissionTypes.Critical => "红色警戒",
                         MissionTypes.Provisional => "Provisional Missions [Weather/Timed/Sequence]",
                         MissionTypes.Standard => "Standard Missions [A->D]",
                         _ => $"{entry}"
@@ -165,7 +165,7 @@ namespace ICE.Ui.MainUi.Settings
                     {
                         ImGui.SameLine();
                         ImGui_Ice.IconWithTooltip(FontAwesomeIcon.ExclamationTriangle,
-                            "Finding drone locations is turned off, so we're just going to ignore this. If you want to run this, please enable it");
+                            "查找无人机位置已关闭，因此我们将忽略它。如果您想运行此功能，请启用");
                     }
 
                     ImGui.PopID();
@@ -181,12 +181,12 @@ namespace ICE.Ui.MainUi.Settings
 
         private static void JobPriorityUi()
         {
-            ImGui.Text("Provisional Job Priority");
+            ImGui.Text("临时职业优先级");
             ImGui_Ice.IconWithTooltip(FontAwesomeIcon.InfoCircle,
-                "Order you would like to do the provisional mission in, if multiple are selected and the option to do multiple classes is enabled");
+                "如果选择了多个并且启用了执行多个类的选项，则您想要执行临时任务的顺序");
 
             bool provisionalAllJobs = C.GrindAllProvisionals;
-            if (ImGui_Ice.SliderButton("##Provisional_AllJobsToggle", "Allow for all Provisional Jobs", ref provisionalAllJobs))
+            if (ImGui_Ice.SliderButton("##Provisional_AllJobsToggle", "允许所有临时职业", ref provisionalAllJobs))
             {
                 C.GrindAllProvisionals = provisionalAllJobs;
                 C.Save();
@@ -200,11 +200,11 @@ namespace ICE.Ui.MainUi.Settings
 
             _dragDrop_JobPrio.Begin();
 
-            if (ImGui.BeginTable("Job Priority Order", 3, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.RowBg | ImGuiTableFlags.Borders))
+            if (ImGui.BeginTable("作业优先顺序", 3, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.RowBg | ImGuiTableFlags.Borders))
             {
-                ImGui.TableSetupColumn("ReOrder");
-                ImGui.TableSetupColumn("Icon");
-                ImGui.TableSetupColumn("Type");
+                ImGui.TableSetupColumn("重新订购");
+                ImGui.TableSetupColumn("图标");
+                ImGui.TableSetupColumn("类型");
 
                 ImGui.TableHeadersRow();
 
@@ -255,7 +255,7 @@ namespace ICE.Ui.MainUi.Settings
                 16 => "Miner",
                 17 => "Botanist",
                 18 => "Fisher",
-                _ => "Unknown Job"
+                _ => "未知作业"
             };
         }
     }

@@ -1,4 +1,4 @@
-﻿using ICE.Utilities.Cosmic_Helper;
+using ICE.Utilities.Cosmic_Helper;
 
 namespace ICE.Ui.Debug_Tabs.Debug_Tables
 {
@@ -9,7 +9,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
         public static unsafe void Draw()
         {
             ImGui.SetNextItemWidth(250);
-            ImGui.InputText("Search by Name", ref RecipeTableSearchText, 100);
+            ImGui.InputText("按名称搜索", ref RecipeTableSearchText, 100);
 
             ImGuiTableFlags tableFlags = ImGuiTableFlags.RowBg |
                             ImGuiTableFlags.Borders |
@@ -18,22 +18,22 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
                             ImGuiTableFlags.Reorderable |         // Allow column reordering
                             ImGuiTableFlags.Hideable;             // Allow hiding columns via right-click
 
-            if (ImGui.BeginTable("Mission Info List", 14, tableFlags))
+            if (ImGui.BeginTable("任务信息列表", 14, tableFlags))
             {
-                ImGui.TableSetupColumn("Key");
-                ImGui.TableSetupColumn("Mission Name");
-                ImGui.TableSetupColumn("Main-Craft 1");
-                ImGui.TableSetupColumn("Amount [1]");
-                ImGui.TableSetupColumn("Main-Craft 2");
-                ImGui.TableSetupColumn("Amount [2]");
-                ImGui.TableSetupColumn("Main-Craft 3");
-                ImGui.TableSetupColumn("Amount [3]");
-                ImGui.TableSetupColumn("Pre-Craft [1]");
-                ImGui.TableSetupColumn("Amount [1]");
-                ImGui.TableSetupColumn("Pre-Craft [2]");
-                ImGui.TableSetupColumn("Amount [2]");
-                ImGui.TableSetupColumn("Pre-Craft [3]");
-                ImGui.TableSetupColumn("Amount [3]");
+                ImGui.TableSetupColumn("钥匙");
+                ImGui.TableSetupColumn("任务名称");
+                ImGui.TableSetupColumn("主工艺1");
+                ImGui.TableSetupColumn("金额 [1]");
+                ImGui.TableSetupColumn("主工艺2");
+                ImGui.TableSetupColumn("金额 [2]");
+                ImGui.TableSetupColumn("主工艺3");
+                ImGui.TableSetupColumn("金额 [3]");
+                ImGui.TableSetupColumn("预制[1]");
+                ImGui.TableSetupColumn("金额 [1]");
+                ImGui.TableSetupColumn("前期制作 [2]");
+                ImGui.TableSetupColumn("金额 [2]");
+                ImGui.TableSetupColumn("前期制作 [3]");
+                ImGui.TableSetupColumn("金额 [3]");
 
                 ImGui.TableHeadersRow();
 
@@ -63,14 +63,14 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
                                 ImGui.BeginTooltip();
                                 ImGui.Text($"RecipeID: {mainCraft.Key}");
                                 string itemName = ExcelHelper.ItemSheet.GetRow(mainCraft.Value.ItemId).Name.ToString();
-                                ImGui.Text($"Item Name: {itemName}");
+                                ImGui.Text($"项目名称： {itemName}");
                                 ImGui.Separator();
-                                ImGui.Text($"Item ID: {mainCraft.Value.ItemId}");
+                                ImGui.Text($"项目ID： {mainCraft.Value.ItemId}");
                                 ImGui.Text($"Necessary Amount: {mainCraft.Value.RequiredAmount}");
                                 ImGui.Text($"Recipe ID: {mainCraft.Value.RecipeId}");
                                 ImGui.Text($"Expert Craft: {mainCraft.Value.ExpertCraft}");
                                 ImGui.Separator();
-                                ImGui.Text($"Required Item");
+                                ImGui.Text($"必需项目");
                                 foreach (var item in mainCraft.Value.RequiredItems)
                                 {
                                     ImGui.Text($"Id: {item.Key}");
@@ -96,14 +96,14 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
                                     ImGui.BeginTooltip();
                                     ImGui.Text($"RecipeID: {preCraft.Key}");
                                     string itemName = ExcelHelper.ItemSheet.GetRow(preCraft.Value.ItemId).Name.ToString();
-                                    ImGui.Text($"Item Name: {itemName}");
+                                    ImGui.Text($"项目名称： {itemName}");
                                     ImGui.Separator();
-                                    ImGui.Text($"Item ID: {preCraft.Value.ItemId}");
+                                    ImGui.Text($"项目ID： {preCraft.Value.ItemId}");
                                     ImGui.Text($"Necessary Amount: {preCraft.Value.RequiredAmount}");
                                     ImGui.Text($"Recipe ID: {preCraft.Value.RecipeId}");
                                     ImGui.Text($"Expert Craft: {preCraft.Value.ExpertCraft}");
                                     ImGui.Separator();
-                                    ImGui.Text($"Required Item");
+                                    ImGui.Text($"必需项目");
                                     foreach (var item in preCraft.Value.RequiredItems)
                                     {
                                         string itemNameC = ExcelHelper.ItemSheet.GetRow(item.Key).Name.ToString();

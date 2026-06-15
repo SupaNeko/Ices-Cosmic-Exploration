@@ -9,19 +9,19 @@ public static unsafe partial class CosmicHelper
     public static string PlaylistOptionString(PlaylistOptions option)
     {
         if (CosmicMoonRegistry.TryGetMoonForMaxRelicOption(option, out var moon))
-            return $"Max {moon.DisplayName} Relic [Lv. {moon.MaxRelicStage}]";
+            return $"最大 {moon.DisplayName} 辉煌武器 [等级 {moon.MaxRelicStage}]";
 
         return option switch
         {
-            PlaylistOptions.None => "None",
-            PlaylistOptions.SelectedRelicLv => "Selected Relic Level",
-            PlaylistOptions.CreditAmount => "Credit Amount",
-            PlaylistOptions.PlanetAmount => "Planetary Credit Amount",
-            PlaylistOptions.DronebitAmount => "Planetary Dronebit Amount",
-            PlaylistOptions.ClassLevel => "Class Level",
-            PlaylistOptions.ClassScore => "Class Score",
-            PlaylistOptions.GoldClassMissions => "All Missions Golded",
-            PlaylistOptions.ToolMaxExp => "Max Tool Exp",
+            PlaylistOptions.None => "无",
+            PlaylistOptions.SelectedRelicLv => "已选辉煌武器等级",
+            PlaylistOptions.CreditAmount => "宇宙信用点数量",
+            PlaylistOptions.PlanetAmount => "行星信用点数量",
+            PlaylistOptions.DronebitAmount => "行星无人机代币数量",
+            PlaylistOptions.ClassLevel => "职业等级",
+            PlaylistOptions.ClassScore => "职业分数",
+            PlaylistOptions.GoldClassMissions => "全部任务金牌",
+            PlaylistOptions.ToolMaxExp => "工具经验最大值",
             _ => "???"
         };
     }

@@ -1,4 +1,4 @@
-﻿using ICE.Utilities.Cosmic_Helper;
+using ICE.Utilities.Cosmic_Helper;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -30,7 +30,7 @@ namespace ICE.Ui.DebugWindowTabs
         {
             ImGui.Text($"Selected Food: [{SelectedFood.Id}] {SelectedFood.Name}");
             ImGui.SameLine();
-            if (ImGui.Button("Select Food"))
+            if (ImGui.Button("选择食物"))
             {
                 PotentialCrafterFood.Clear();
                 foreach (var food in ConsumableInfo.CrafterFood)
@@ -40,10 +40,10 @@ namespace ICE.Ui.DebugWindowTabs
                         PotentialCrafterFood.Add(new() { Id = food.Id, Name = food.Name });
                     }
                 }
-                ImGui.OpenPopup("Select Crafter Food");
+                ImGui.OpenPopup("选择能工巧匠食物");
             }
 
-            if (ImGui.BeginPopup("Select Crafter Food"))
+            if (ImGui.BeginPopup("选择能工巧匠食物"))
             {
                 foreach (var item in PotentialCrafterFood)
                 {
@@ -55,7 +55,7 @@ namespace ICE.Ui.DebugWindowTabs
 
             ImGui.Text($"Selected Pot: [{SelectedPot.Id}] {SelectedPot.Name}");
             ImGui.SameLine();
-            if (ImGui.Button("Select Pot"))
+            if (ImGui.Button("选择药水"))
             {
                 PotentialPots.Clear();
                 foreach (var pot in ConsumableInfo.Pots)
@@ -65,10 +65,10 @@ namespace ICE.Ui.DebugWindowTabs
                         PotentialPots.Add(new() { Id = pot.Id, Name = pot.Name });
                     }
                 }
-                ImGui.OpenPopup("Select Pot");
+                ImGui.OpenPopup("选择药水");
             }
 
-            if (ImGui.BeginPopup("Select Pot"))
+            if (ImGui.BeginPopup("选择药水"))
             {
                 foreach (var item in PotentialPots)
                 {
@@ -80,7 +80,7 @@ namespace ICE.Ui.DebugWindowTabs
 
             ImGui.Text($"Selected Manual: [{SelectedManual.Id}] {SelectedManual.Name}");
             ImGui.SameLine();
-            if (ImGui.Button("Select Manual"))
+            if (ImGui.Button("选择手动"))
             {
                 PotentialManuals.Clear();
                 foreach (var manual in ConsumableInfo.Manuals)
@@ -90,10 +90,10 @@ namespace ICE.Ui.DebugWindowTabs
                         PotentialManuals.Add(new() { Id = manual.Id, Name = manual.Name });
                     }
                 }
-                ImGui.OpenPopup("Select Manual");
+                ImGui.OpenPopup("选择手动");
             }
 
-            if (ImGui.BeginPopup("Select Manual"))
+            if (ImGui.BeginPopup("选择手动"))
             {
                 foreach (var item in PotentialManuals)
                 {
@@ -105,7 +105,7 @@ namespace ICE.Ui.DebugWindowTabs
 
             ImGui.Text($"Selected Squadron Manual: [{SelectedSquadronManual.Id}] {SelectedSquadronManual.Name}");
             ImGui.SameLine();
-            if (ImGui.Button("Select Squadron Manual"))
+            if (ImGui.Button("选择中队手册"))
             {
                 PotentialSquadronManuals.Clear();
                 foreach (var manual in ConsumableInfo.SquadronManuals)
@@ -115,10 +115,10 @@ namespace ICE.Ui.DebugWindowTabs
                         PotentialSquadronManuals.Add(new() { Id = manual.Id, Name = manual.Name });
                     }
                 }
-                ImGui.OpenPopup("Select Squadron Manual");
+                ImGui.OpenPopup("选择中队手册");
             }
 
-            if (ImGui.BeginPopup("Select Squadron Manual"))
+            if (ImGui.BeginPopup("选择中队手册"))
             {
                 foreach (var item in PotentialSquadronManuals)
                 {
@@ -131,7 +131,7 @@ namespace ICE.Ui.DebugWindowTabs
             ImGui.Separator();
             ImGui.InputUInt("Recipe Id", ref RecipeId);
 
-            if (ImGui.Button("Reset Temp"))
+            if (ImGui.Button("重置温度"))
             {
                 P.Artisan.SetTempFoodBackToNormal(RecipeId);
                 P.Artisan.SetTempPotionBackToNormal(RecipeId);
@@ -139,32 +139,32 @@ namespace ICE.Ui.DebugWindowTabs
                 P.Artisan.SetTempSquadronManualBackToNormal(RecipeId);
             }
 
-            if (ImGui.Button("Food [HQ]"))
+            if (ImGui.Button("食物 [HQ]"))
             {
                 P.Artisan.ChangeFood(RecipeId, SelectedFood.Id, true, true);
             }
             ImGui.SameLine();
-            if (ImGui.Button("Food [NQ]"))
+            if (ImGui.Button("食物 [NQ]"))
             {
                 P.Artisan.ChangeFood(RecipeId, SelectedFood.Id, false, true);
             }
 
-            if (ImGui.Button("Potion [HQ]"))
+            if (ImGui.Button("药水[HQ]"))
             {
                 P.Artisan.ChangePotion(RecipeId, SelectedPot.Id, true, true);
             }
             ImGui.SameLine();
-            if (ImGui.Button("Potion [NQ]"))
+            if (ImGui.Button("药水[NQ]"))
             {
                 P.Artisan.ChangePotion(RecipeId, SelectedPot.Id, false, true);
             }
 
-            if (ImGui.Button("Manual"))
+            if (ImGui.Button("手动"))
             {
                 P.Artisan.ChangeManual(RecipeId, SelectedManual.Id, true);
             }
             ImGui.SameLine();
-            if (ImGui.Button("Squad Manual"))
+            if (ImGui.Button("冒险者小队手册"))
             {
                 P.Artisan.ChangeSquadronManual(RecipeId, SelectedSquadronManual.Id, true);
             }
@@ -187,7 +187,7 @@ namespace ICE.Ui.DebugWindowTabs
                     ImGui.Text($"{name}");
 
                     ImGui.SliderUInt("Max Usage", ref MaxSkillUsage, 0, 2);
-                    if (ImGui.Button("Apply Temp"))
+                    if (ImGui.Button("应用临时"))
                     {
                         if (sheetInfo.TemporaryActionId == 41269)
                         {

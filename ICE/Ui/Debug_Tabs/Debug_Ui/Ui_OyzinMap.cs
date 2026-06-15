@@ -1,4 +1,4 @@
-﻿using ECommons.GameHelpers;
+using ECommons.GameHelpers;
 using FFXIVClientStructs.FFXIV.Client.UI.Agent;
 using ICE.Scheduler.Handlers.PictoStuff;
 using Lumina.Excel.Sheets;
@@ -17,11 +17,11 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
             var agentMap = AgentMap.Instance();
             if (agentMap == null)
             {
-                ImGui.Text("AgentMap is null!");
+                ImGui.Text("AgentMap为空！");
                 return;
             }
 
-            if (ImGui.CollapsingHeader("Event Markers"))
+            if (ImGui.CollapsingHeader("事件标记"))
             {
                 DrawEventMarkersTable(GetAllEventMarkers());
             }
@@ -77,11 +77,11 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
         {
             if (markers.Count == 0)
             {
-                ImGui.Text("No markers found!");
+                ImGui.Text("未找到标记！");
                 return;
             }
 
-            if (ImGui.Button("Stop Current Task"))
+            if (ImGui.Button("停止当前任务"))
             {
                 P.TaskManager.AbortCurrent();
                 P.Navmesh.Stop();
@@ -90,12 +90,12 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
             ImGui.SameLine();
             ImGui.Text($"Player Moving: {Player.IsMoving}");
 
-            if (ImGui.BeginTable("Event Markers", 3, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg))
+            if (ImGui.BeginTable("事件标记", 3, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg))
             {
-                ImGui.TableSetupColumn("Position");
-                ImGui.TableSetupColumn("Icon ID");
-                ImGui.TableSetupColumn("Territory");
-                ImGui.TableSetupColumn("SubLevel");
+                ImGui.TableSetupColumn("位置");
+                ImGui.TableSetupColumn("图标 ID");
+                ImGui.TableSetupColumn("领土");
+                ImGui.TableSetupColumn("子级别");
                 ImGui.TableHeadersRow();
 
                 foreach (var marker in markers)
@@ -115,7 +115,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
                     ImGui.TableNextColumn();
                     if (ImGui.Button($"Move to##{marker.Position:N2}"))
                     {
-                        P.TaskManager.Enqueue(() => Task_NavmeshMove.Task_NavTo(marker.Position), "Marker move task");
+                        P.TaskManager.Enqueue(() => Task_NavmeshMove.Task_NavTo(marker.Position), "标记移动任务");
                     }
 
 

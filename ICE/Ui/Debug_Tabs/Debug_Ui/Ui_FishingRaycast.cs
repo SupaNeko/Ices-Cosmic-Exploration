@@ -1,4 +1,4 @@
-﻿using ECommons.GameHelpers;
+using ECommons.GameHelpers;
 using FFXIVClientStructs.FFXIV.Client.System.Framework;
 using FFXIVClientStructs.FFXIV.Common.Component.BGCollision;
 using ICE.Utilities.Cosmic_Helper;
@@ -18,8 +18,8 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
         {
             try
             {
-                _raycastSimple = (delegate* unmanaged<BGCollisionModule*, RaycastHit*, Vector3*, Vector3*, float, int, byte>)Svc.SigScanner.ScanText("E8 ?? ?? ?? ?? 84 C0 75 58 FF C3");
-                Svc.Log.Info("Fishing raycast initialized successfully");
+                _raycastSimple = (delegate* unmanaged<BGCollisionModule*, RaycastHit*, Vector3*, Vector3*, float, int, byte>)Svc.SigScanner.ScanText("E8 ????????84 C0 75 58 FF C3");
+                Svc.Log.Info("钓鱼光线投射初始化成功");
             }
             catch (Exception ex)
             {
@@ -273,7 +273,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
 
             if (_raycastSimple == null)
             {
-                ImGui.TextColored(new Vector4(1, 0, 0, 1), "Raycast not initialized!");
+                ImGui.TextColored(new Vector4(1, 0, 0, 1), "Raycast未初始化！");
                 return;
             }
 

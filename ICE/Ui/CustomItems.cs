@@ -1,4 +1,4 @@
-﻿using Dalamud.Interface.Textures;
+using Dalamud.Interface.Textures;
 using Dalamud.Interface.Textures.TextureWraps;
 
 namespace ICE.Ui;

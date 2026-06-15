@@ -1,4 +1,4 @@
-﻿using Dalamud.Interface;
+using Dalamud.Interface;
 using Dalamud.Interface.Utility.Raii;
 using FFXIVClientStructs.FFXIV.Common.Lua;
 using ICE.Utilities.Cosmic_Helper;
@@ -18,16 +18,16 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
 
         public static void Draw()
         {
-            if (ImGui.BeginTable("Fish Editor | Window Selector", 2, ImGuiTableFlags.Borders | ImGuiTableFlags.SizingFixedFit, ImGui.GetContentRegionAvail()))
+            if (ImGui.BeginTable("Fish Editor |窗口选择器", 2, ImGuiTableFlags.Borders | ImGuiTableFlags.SizingFixedFit, ImGui.GetContentRegionAvail()))
             {
-                ImGui.TableSetupColumn("Mission Selector");
-                ImGui.TableSetupColumn("Mission Details", ImGuiTableColumnFlags.WidthStretch);
+                ImGui.TableSetupColumn("任务选择器");
+                ImGui.TableSetupColumn("任务详细信息", ImGuiTableColumnFlags.WidthStretch);
 
                 ImGui.TableNextRow();
                 ImGui.TableSetColumnIndex(0);
-                ImGui.InputText("Search Name", ref search_MissionName, 100);
+                ImGui.InputText("搜索名称", ref search_MissionName, 100);
                 ImGui.InputUInt("Search ID", ref search_MissionId);
-                using (var missionSelection = ImRaii.Child("Mission Selection Child", new(300, ImGui.GetContentRegionAvail().Y)))
+                using (var missionSelection = ImRaii.Child("任务选择子项", new(300, ImGui.GetContentRegionAvail().Y)))
                 {
                     ImGui.Separator();
 
@@ -35,7 +35,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
                 }
 
                 ImGui.TableNextColumn();
-                using (var missionDetails = ImRaii.Child("Mission Selection Info", ImGui.GetContentRegionAvail()))
+                using (var missionDetails = ImRaii.Child("任务选择信息", ImGui.GetContentRegionAvail()))
                 {
                     Mission_DetailedView();
                 }
@@ -79,20 +79,20 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
         {
             if (CosmicHelper.SheetMissionDict.TryGetValue(selectedMission, out var missionInfo))
             {
-                if (ImGui.Button("Export All Presets"))
+                if (ImGui.Button("导出所有预设"))
                 {
                     var clipboard = ExportAllMissions();
                     ImGui.SetClipboardText(clipboard);
                 }
 
-                if (ImGui.Button("Export Selected Mission"))
+                if (ImGui.Button("导出选定的任务"))
                 {
                     var clipboard = ExportSelected();
                     ImGui.SetClipboardText(clipboard);
                 }
 
                 ImGui.Text($"[{selectedMission}] {missionInfo.Name}");
-                if (ImGui.Button("Import New Preset"))
+                if (ImGui.Button("导入新预设"))
                 {
                     var clipboard = ImGui.GetClipboardText();
                     if (clipboard.StartsWith("AH"))
@@ -107,7 +107,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
                     }
                 }
                 ImGui.SameLine(0, 10);
-                if (ImGui.Button("Temp Set Presets"))
+                if (ImGui.Button("临时设置预设"))
                 {
                     P.AutoHook.DeleteAllAnonymousPresets();
                     foreach (var preset in missionInfo.Fish_Presets)
@@ -115,7 +115,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
                         P.AutoHook.CreateAndSelectAnonymousPreset(preset);
                     }
                 }
-                if (ImGui.BeginTable("Autohook Presets", 3, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg))
+                if (ImGui.BeginTable("Autohook预设", 3, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg))
                 {
                     for (int i = 0; i < missionInfo.Fish_Presets.Count; i++)
                     {

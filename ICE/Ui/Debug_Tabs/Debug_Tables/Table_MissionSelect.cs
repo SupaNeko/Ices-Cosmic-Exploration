@@ -1,4 +1,4 @@
-﻿using Dalamud.Interface.Utility.Raii;
+using Dalamud.Interface.Utility.Raii;
 using ICE.Utilities.Cosmic_Helper;
 using System.Collections.Generic;
 
@@ -29,7 +29,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
 
         public static void Draw()
         {
-            if (ImGui.Button("Copy Selected"))
+            if (ImGui.Button("复制选定的"))
             {
                 var ordered = MissionList.OrderBy(x => x);
                 var c = string.Join(", ", ordered);
@@ -38,7 +38,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
             }
 
             ImGui.SameLine();
-            if (ImGui.Button("Clear"))
+            if (ImGui.Button("清除"))
             {
                 MissionList.Clear();
             }
@@ -49,18 +49,18 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
             ImGui.Text($"1, 2, 3, 4, 5");
             ImGui.Text("2, 3, 5, 6, 7");
 
-            using (var missionTable = ImRaii.Child("Mission Selection Window", new Vector2(0, 0)))
+            using (var missionTable = ImRaii.Child("任务选择窗口", new Vector2(0, 0)))
             {
                 if (!missionTable.Success)
                     return;
 
-                if (ImGui.BeginTable("Quick Mission Add", 5, ImGuiTableFlags.RowBg | ImGuiTableFlags.Borders | ImGuiTableFlags.SizingFixedFit))
+                if (ImGui.BeginTable("快速任务添加", 5, ImGuiTableFlags.RowBg | ImGuiTableFlags.Borders | ImGuiTableFlags.SizingFixedFit))
                 {
                     ImGui.TableSetupColumn("ID");
-                    ImGui.TableSetupColumn("Job");
-                    ImGui.TableSetupColumn("Added");
-                    ImGui.TableSetupColumn("Level");
-                    ImGui.TableSetupColumn("Name");
+                    ImGui.TableSetupColumn("作业");
+                    ImGui.TableSetupColumn("额外");
+                    ImGui.TableSetupColumn("等级");
+                    ImGui.TableSetupColumn("姓名");
 
                     ImGui.TableHeadersRow();
 
