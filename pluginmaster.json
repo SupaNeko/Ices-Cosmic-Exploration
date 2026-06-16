@@ -1,15 +1,17 @@
-[
+﻿[
   {
     "Author": "Ice",
-    "Name": "Ice's Cosmic Exploration",
-    "InternalName": "ICE",
-    "AssemblyVersion": "0.78.15",
+    "Name": "Ice's Cosmic Exploration (ICE)",
     "Punchline": "宇宙探索自动化插件（个人 AI 汉化版）",
     "Description": "ICE 插件的中文本地化版本，支持宇宙工具升级、达成金星、自动寻路、信用点兑换等功能。本项目为个人 AI 部分汉化，已对部分名词进行校准，不保证完全翻译与完全正确，请以 fork 上游仓库为准。",
-    "ApplicableVersion": "any",
-    "DalamudApiLevel": 11,
+    "Tags": ["Gatherers"],
+    "InternalName": "ICE",
     "RepoUrl": "https://github.com/SupaNeko/Ices-Cosmic-Exploration",
-    "DownloadLinkInstall": "https://supaneko.github.io/Ices-Cosmic-Exploration/latest/ICE-v0.78.15.zip",
-    "DownloadLinkUpdate": "https://supaneko.github.io/Ices-Cosmic-Exploration/latest/ICE-v0.78.15.zip"
+    "DownloadLinkInstall": "https://supaneko.github.io/Ices-Cosmic-Exploration/latest/ICE-v0.0.78.16.zip",
+    "DownloadLinkUpdate": "https://supaneko.github.io/Ices-Cosmic-Exploration/latest/ICE-v0.0.78.16.zip",
+    "AssemblyVersion": "0.0.78.16",
+    "ApplicableVersion": "any",
+    "DalamudApiLevel": "15",
+    "IconUrl": "https://puni.sh/api/plugins/icon/70"
   }
 ]
