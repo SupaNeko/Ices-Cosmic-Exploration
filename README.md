@@ -1,5 +1,7 @@
 # Ices Cosmic Exploration (ICE)
 
+> **自定义仓库：** `https://supaneko.github.io/Ices-Cosmic-Exploration/pluginmaster.json`
+>
 > **⚠️ 重要声明 / 免责声明**
 >
 > **本项目仅为个人使用 AI 进行的部分汉化版本，已对部分名词进行校准，但不保证全部 UI 文本均已翻译，不保证翻译内容完全准确，不保证与上游版本同步更新，也不保证随游戏版本更新而及时维护。**
