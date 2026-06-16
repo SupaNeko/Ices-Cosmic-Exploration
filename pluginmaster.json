@@ -1,9 +1,9 @@
 ﻿[
   {
-    "Author": "Ice",
+    "Author": "Ice, SupaNeko(汉化)",
     "Name": "Ice's Cosmic Exploration (ICE)",
-    "Punchline": "宇宙探索自动化插件（个人 AI 汉化版）",
-    "Description": "ICE 插件的中文本地化版本，支持宇宙工具升级、达成金星、自动寻路、信用点兑换等功能。本项目为个人 AI 部分汉化，已对部分名词进行校准，不保证完全翻译与完全正确，请以 fork 上游仓库为准。",
+    "Punchline": "宇宙探索自动化插件（汉化版）",
+    "Description": "ICE 插件的汉化版本，支持宇宙工具升级、达成金星、信用点兑换等功能。本项目为 AI 汉化，已对部分名词进行校准，不保证完全翻译与完全正确，功能请以 fork 上游仓库为准。",
     "Tags": ["Gatherers"],
     "InternalName": "ICE",
     "RepoUrl": "https://github.com/SupaNeko/Ices-Cosmic-Exploration",
