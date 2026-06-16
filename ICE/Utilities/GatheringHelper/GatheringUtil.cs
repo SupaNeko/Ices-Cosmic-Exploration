@@ -179,7 +179,7 @@ public static unsafe partial class GatheringUtil
             { "FieldMasteryTemp", new GatheringActions
             {
                 // 15% increase [temp]
-                ActionName = "Clear Vision | Flora Mastery",
+                ActionName = "明晰视野 | 植被专精",
                 ClassAction = new()
                 {
                     [16] = 4072,

@@ -470,7 +470,7 @@ namespace ICE.Ui.MainUi.Settings
 
                 #region Boon Increase 2
 
-                if (ImGui.CollapsingHeader("登山者的礼物II"))
+                if (ImGui.CollapsingHeader("富矿的馈赠II"))
                 {
                     string buffName = "BoonIncrease2";
 
@@ -512,7 +512,7 @@ namespace ICE.Ui.MainUi.Settings
 
                 #region Boon Increase 1
 
-                if (ImGui.CollapsingHeader("登山者的礼物I"))
+                if (ImGui.CollapsingHeader("富矿的馈赠I"))
                 {
                     string buffName = "BoonIncrease1";
 
@@ -556,7 +556,7 @@ namespace ICE.Ui.MainUi.Settings
 
                 #region Nophica's / Nald'thal's Tidings
 
-                if (ImGui.CollapsingHeader("诺菲卡/纳尔塔尔的消息增益"))
+                if (ImGui.CollapsingHeader("诺菲卡/纳尔塔尔福音"))
                 {
                     string buffName = "Tidings";
 
@@ -600,7 +600,7 @@ namespace ICE.Ui.MainUi.Settings
 
                 #region Blessed / Kings Yield II
 
-                if (ImGui.CollapsingHeader("祝福/国王产量 II"))
+                if (ImGui.CollapsingHeader("天赐收成/莫非王土 II"))
                 {
                     string buffName = "YieldII";
 
@@ -656,7 +656,7 @@ namespace ICE.Ui.MainUi.Settings
 
                 #region Blessed / Kings Yield I
 
-                if (ImGui.CollapsingHeader("祝福/国王产量 I"))
+                if (ImGui.CollapsingHeader("天赐收成/莫非王土 I"))
                 {
                     string buffName = "YieldI";
 
@@ -712,7 +712,7 @@ namespace ICE.Ui.MainUi.Settings
 
                 #region Bonus Integrity
 
-                if (ImGui.CollapsingHeader("永恒的话语/坚实的理由"))
+                if (ImGui.CollapsingHeader("农夫之智/石工之理"))
                 {
                     string buffName = "BonusIntegrity";
 
@@ -765,7 +765,7 @@ namespace ICE.Ui.MainUi.Settings
 
                 #region Bountiful Yield II
 
-                if (ImGui.CollapsingHeader("丰沛产量 II / 丰收 II"))
+                if (ImGui.CollapsingHeader("高产 II / 丰收 II"))
                 {
                     string buffName = "BountifulYieldII";
 
@@ -821,7 +821,7 @@ namespace ICE.Ui.MainUi.Settings
 
                 #region Field Mastery III
 
-                if (ImGui.CollapsingHeader("领域掌握|Sharp Vision III"))
+                if (ImGui.CollapsingHeader("环境探知/敏锐视野 III"))
                 {
                     string buffName = "FieldMasteryIII";
 
@@ -867,7 +867,7 @@ namespace ICE.Ui.MainUi.Settings
 
                 #region Field Mastery II
 
-                if (ImGui.CollapsingHeader("领域掌握|敏锐视野II"))
+                if (ImGui.CollapsingHeader("环境探知/敏锐视野 II"))
                 {
                     string buffName = "FieldMasteryII";
 
@@ -913,7 +913,7 @@ namespace ICE.Ui.MainUi.Settings
 
                 #region Field Mastery I
 
-                if (ImGui.CollapsingHeader("领域掌握|敏锐的视野I"))
+                if (ImGui.CollapsingHeader("环境探知/敏锐视野 I"))
                 {
                     string buffName = "FieldMasteryI";
 
@@ -959,7 +959,7 @@ namespace ICE.Ui.MainUi.Settings
 
                 #region Field Mastery [Temp]
 
-                if (ImGui.CollapsingHeader("Flora Mastery |清除 Vision [Temp]"))
+                if (ImGui.CollapsingHeader("植被专精/明晰视野 [Temp]"))
                 {
                     string buffName = "FieldMasteryTemp";
 
@@ -970,7 +970,7 @@ namespace ICE.Ui.MainUi.Settings
                     int minActionGp = GatheringUtil.GathActionDict[buffName].RequiredGp;
                     int maxActionUsage = entry.GatherBuffs.Buffs[buffName].MaxUse;
                     string ActionInfo = "采集几率提高 15%\n" +
-                                        "这可以应用于正常的领域掌握，但仅适用于每次命中";
+                                        "这可以应用于正常的环境探知，但仅适用于每次命中";
 
                     ImGui.Text($"动作信息： ");
                     ImGuiEx.HelpMarker(ActionInfo);

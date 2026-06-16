@@ -56,9 +56,14 @@
 | Score Farming | 刷分 | 以获取任务高分为目标 |
 | Master | 工匠任务 | 工匠类型的额外任务 |
 | Tool Mastery | 工具精通 | 工具精通类任务标签 |
+| Mountaineer's Gift / Pioneer's Gift | 富矿的馈赠 | 提升采集点恩赐触发几率的技能 |
+| Nophica's / Nald'thal's Tidings | 诺菲卡/纳尔塔尔福音 | 提升采集恩赐物品产量的技能 |
+| Blessed Harvest / King's Yield | 天赐收成/莫非王土 | 提升采集获得数量的技能 |
+| Ageless Words / Solid Reason | 农夫之智/石工之理 | 提升采集点完整性的技能 |
+| Bountiful Yield / Bountiful Harvest | 高产 / 丰收 | 提升采集获得数量的技能 |
+| Field Mastery / Sharp Vision | 环境探知/敏锐视野 | 提升采集成功率的技能 |
+| Flora Mastery / Clear Vision | 植被专精/明晰视野 | 提升采集成功率的技能（临时） |
 | Artisan / AutoHook / Stylist | Artisan / AutoHook / Stylist | 第三方插件名称，保留英文原文 |
-
-> 共提取 **1377** 条玩家可见英文文本。
 
 | 英文原文 | 中文翻译 | 英文原意/上下文 | 修改意见 |
 |---|---|---|---|
@@ -150,7 +155,7 @@
 | Aethernet Test | 以太之光测试 | UI string \| ICE\Ui\DebugWindow.cs:91 |  |
 | Aethershard Unlocked | 以太碎片解锁 | UI string \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_Aethernet.cs:66 |  |
 | after | 后 | UI text \| ICE\Ui\MainUi\Settings\TravelSettings.cs:221 |  |
-| Ageless Words / Solid Reason | 永恒的话语/坚实的理由 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:715 |  |
+| Ageless Words / Solid Reason | 农夫之智/石工之理 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:715 |  |
 | Agenda | 议程 | Table column \| ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:350; ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:445 |  |
 | Agenda Info: Profile Save | Agenda信息：配置文件保存 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:218; ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:221 |  |
 | Agenda List Viewer | Agenda列表查看器 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:293 |  |
@@ -243,11 +248,11 @@
 | between missions — enable the multi-class setting to allow switching classes for these as well. | 任务之间 - 启用多职业设置以允许切换这些职业。 | UI string \| ICE\Ui\MainUi\HelpFolder\Tips_Folder\ModeSelection.cs:52 |  |
 | Black Mage | 黑法师 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:43; ICE\Ui\MainUi\Settings\Character_Settings.cs:1057 |  |
 | Blacksmith (BSM) | 铁匠（BSM） | UI string \| ICE\Ui\MainUi\Settings\Settings_TableColumns.cs:65 |  |
-| Blessed / Kings Yield I | 祝福/国王产量 I | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:659 |  |
-| Blessed / Kings Yield II | 祝福/国王产量 II | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:603 |  |
+| Blessed / Kings Yield I | 天赐收成/莫非王土 I | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:659 |  |
+| Blessed / Kings Yield II | 天赐收成/莫非王土 II | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:603 |  |
 | Boon Scoring | 恩赐得分 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:37 |  |
 | Botanist (BTN) | 园艺工 (BTN) | UI string \| ICE\Ui\MainUi\Settings\Settings_TableColumns.cs:73 |  |
-| Bountiful Yield II / Bountiful Harvest II | 丰沛产量 II / 丰收 II | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:768 |  |
+| Bountiful Yield II / Bountiful Harvest II | 高产 II / 丰收 II | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:768 |  |
 | Brazen Power | 黄铜力量 | UI text \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_CollectableGathering.cs:109 |  |
 | Bronze | 铜星 | Table column \| Radio button \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:190; ICE\Ui\MainUi\Settings\Settings_TableColumns.cs:132 |  |
 | Bronze Requirement | 铜星要求 | UI text \| ICE\Ui\Window_ExternalDetails.cs:202 |  |
@@ -495,9 +500,9 @@
 | Face toward spot | 面向点 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_Fish_HoleEditor.cs:190 |  |
 | Failed to deserialize profile | 反序列化失败轮廓 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:86; ICE\Ui\MainUi\Settings\GatherSettings.cs:133 |  |
 | Fan Height | 扇形高度 | UI string \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_GatherEditor.cs:335 |  |
-| Field Mastery \| Sharp Vision I | 领域掌握\|敏锐的视野I | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:916 |  |
-| Field Mastery \| Sharp Vision II | 领域掌握\|敏锐视野II | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:870 |  |
-| Field Mastery \| Sharp Vision III | 领域掌握\|Sharp Vision III | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:824 |  |
+| Field Mastery \| Sharp Vision I | 环境探知/敏锐视野 I | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:916 |  |
+| Field Mastery \| Sharp Vision II | 环境探知/敏锐视野 II | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:870 |  |
+| Field Mastery \| Sharp Vision III | 环境探知/敏锐视野 III | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:824 |  |
 | Fill Both | 两者都填写 | Button \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_MoonRecipe.cs:25 |  |
 | Fill HQ | 填写HQ | Button \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_MoonRecipe.cs:19 |  |
 | Fill NQ | 填写NQ | Button \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_MoonRecipe.cs:13 |  |
@@ -520,7 +525,7 @@
 | Fishing raycast initialized successfully | 钓鱼光线投射初始化成功 | UI string \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_FishingRaycast.cs:22 |  |
 | Fishing Settings | 钓鱼设置 | Button \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:1258 |  |
 | Flag | 旗帜 | Table column \| Button \| ICE\Ui\Debug_Tabs\Debug_CS\CS_Missions.cs:42; ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:355 |  |
-| Flora Mastery \| Clear Vision [Temp] | Flora Mastery \|清除 Vision [Temp] | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:962 |  |
+| Flora Mastery \| Clear Vision [Temp] | 植被专精/明晰视野 [Temp] | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:962 |  |
 | Font Test | 字体测试 | UI string \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_TestButtons.cs:356 |  |
 | Food | 食物 | UI text \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:1705; ICE\Ui\MainUi\Settings\Character_Settings.cs:464 |  |
 | Food Item | 食品项目 | Table column \| ICE\Ui\MainUi\Settings\GatherSettings.cs:274 |  |
@@ -850,7 +855,7 @@
 | Node Text: {0} | 节点文本：{0} | UI text \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_MissionInfo.cs:17 |  |
 | Node: {0} | 节点：{0} | UI text \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_GatherEditor.cs:274 |  |
 | None | 无 | UI text \| ICE\Ui\Window_ExternalDetails.cs:306 |  |
-| Nophica's / Nald'thal's Tidings Buff | 诺菲卡/纳尔塔尔的消息增益 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:559 |  |
+| Nophica's / Nald'thal's Tidings Buff | 诺菲卡/纳尔塔尔福音 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:559 |  |
 | Not a valid autohook preset. | 不是有效的自动挂接预设。 | UI string \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_FishPresets.cs:104 |  |
 | Not Completed | Not已完成 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:357 |  |
 | Note. I'm not responsible if you leave this on and get banned for it. I'm not one for leaving things at their pc, but people are watching always. Keep this in mind | 注。如果您保留此功能并因此被禁止，我不承担任何责任。我不喜欢把东西留在他们的电脑上，但人们总是在看着。请记住这一点 | UI string \| ICE\Ui\MainWindow.cs:169 |  |
@@ -898,8 +903,8 @@
 | Pause Feature | 暂停功能 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_IPCTesting.cs:55 |  |
 | Personalized Fishing Spots | 个性化钓场 | Section header \| ICE\Ui\MainUi\Settings\TravelSettings.cs:275 |  |
 | Phaenna — Rank V Max | 法恩娜行星 — 等级V Max | UI string \| ICE\Ui\MainUi\HelpFolder\Tips_Folder\ModeSelection.cs:69 |  |
-| Pioneer's \| Mountaineer's Gift I | 登山者的礼物I | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:515 |  |
-| Pioneer's \| Mountaineer's Gift II | 登山者的礼物II | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:473 |  |
+| Pioneer's \| Mountaineer's Gift I | 富矿的馈赠I | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:515 |  |
+| Pioneer's \| Mountaineer's Gift II | 富矿的馈赠II | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:473 |  |
 | Planet | 行星 | Table column \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_LevelingMissions.cs:13 |  |
 | Planet Selection | 行星选择 | UI string \| ICE\Ui\MainUi\SelectableSidebar.cs:43 |  |
 | Planet: {0} | 行星：{0} | UI text \| ICE\Ui\MainUi\Settings\TravelSettings.cs:287 |  |
@@ -1240,7 +1245,7 @@
 | There will be another warning to pop up if you try and run this still and it selects a fishing mission... | 如果您尝试运行此任务并且它选择了钓鱼任务，将会弹出另一个警告... | UI text \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:216 |  |
 | There's certain missions that are worth grinding more than others. Weather/time also plays a part of it all. Below is what I would recommend on a per class basis. | 有某些任务比其他任务更值得磨练。天气/时间也是其中的一部分。以下是我针对每个职业的建议。 | UI string \| ICE\Ui\MainUi\HelpFolder\helpSelect_Tips.cs:76 |  |
 | These are a list of the following plugins that are required for the plugin to function. If you don't have these installed, it will not function properly | 这些是插件运行所需的以下插件的列表。如果您没有安装这些，它将无法正常运行 | UI text (wrapped) \| ICE\Ui\MainUi\HelpFolder\helpSelect_Required.cs:16 |  |
-| This can be applied with normal field mastery, but will only apply per hit | 这可以应用于正常的领域掌握，但仅适用于每次命中 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:973 |  |
+| This can be applied with normal field mastery, but will only apply per hit | 这可以应用于正常的环境探知，但仅适用于每次命中 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:973 |  |
 | This can only be set to 1 item, and gererally used for things you want to just spend your credits on | 这只能设置为 1 个项目，通常用于您只想花费信用点的东西 | UI string \| ICE\Ui\MainUi\Settings\ShoppingTab.cs:47 |  |
 | This does abosolutely nothing | 这绝对没有任何作用 | Icon tooltip \| ICE\Ui\MainUi\Settings\Misc_Settings.cs:324 |  |
 | This gives you full control over what missions to run, making it ideal for: | 这使您可以完全控制要运行的任务，使其非常适合： | UI text (wrapped) \| ICE\Ui\MainUi\HelpFolder\Tips_Folder\ModeSelection.cs:45 |  |
