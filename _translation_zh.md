@@ -6,6 +6,8 @@
 
 - `ICE/ICE.cs`
 - `ICE/Ui/` 及其所有子目录下的 `.cs` 文件
+- `ICE/Scheduler/Tasks/` 中向玩家发送的聊天提示、Toast 与任务队列（TaskManager）显示名称
+- `ICE/Utilities/ImGuiTools/` 中复用 UI 助手产生的玩家可见文本
 
 ## 技术定位方式
 
