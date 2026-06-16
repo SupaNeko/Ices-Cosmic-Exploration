@@ -19,8 +19,8 @@ namespace ICE.Scheduler
 
         public static void Enqueue()
         {
-            P.TaskManager.Enqueue(RegisterCraftingPosition, "Registering crafting position for later");
-            P.TaskManager.Enqueue(Task_Repair.HubCheck, "Checking to see if we're in hub area");
+            P.TaskManager.Enqueue(RegisterCraftingPosition, "记录制作位置供后续使用");
+            P.TaskManager.Enqueue(Task_Repair.HubCheck, "检查是否在中心区域");
             if (RepairNpc)
             {
                 P.TaskManager.EnqueueMulti
@@ -56,8 +56,8 @@ namespace ICE.Scheduler
             (
                 new(() => ResetAll(), "Setting all task to false"),
                 new(() => IceLogging.Info("Checking to see if we need to path back to the spot")),
-                new(PathBackToCraftingSpot, "Pathing back to our crafting spot", Utils.TaskConfig),
-                new(() => SchedulerMain.State = IceState.Start, "Swapping back to start")
+                new(PathBackToCraftingSpot, "寻路返回制作位置", Utils.TaskConfig),
+                new(() => SchedulerMain.State = IceState.Start, "返回开始状态")
             );
         }
 

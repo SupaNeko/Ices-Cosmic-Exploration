@@ -47,7 +47,7 @@ namespace ICE.Scheduler.Tasks
             {
                 IceLogging.Info("We're currently in the middle of fishing, so we're going to wait for us to complete");
                 StartedFishing = 0;
-                P.TaskManager.Enqueue(() => FinishFishing(), "Waiting for fishing to complete");
+                P.TaskManager.Enqueue(() => FinishFishing(), "等待钓鱼完成");
                 SafetyThrottle = 0;
                 return true;
             }
@@ -174,7 +174,7 @@ namespace ICE.Scheduler.Tasks
                         {
                             IceLogging.Info($"We found another fishing spot to move to! {nextFishingSpot.FishingSpot} | moving to it");
                             P.TaskManager.Tasks.Clear();
-                            P.TaskManager.Enqueue(() => InitiateMoving(nextFishingSpot.FishingSpot), "Vnav moving to fishing");
+                            P.TaskManager.Enqueue(() => InitiateMoving(nextFishingSpot.FishingSpot), "自动寻路至钓场");
                             SafetyThrottle = 0;
                             return true;
                         }
@@ -289,7 +289,7 @@ namespace ICE.Scheduler.Tasks
                         {
                             IceLogging.Info($"We found another fishing spot to move to! {nextFishingSpot.FishingSpot} | moving to it");
                             P.TaskManager.Tasks.Clear();
-                            P.TaskManager.Enqueue(() => InitiateMoving(nextFishingSpot.FishingSpot), "Vnav moving to fishing");
+                            P.TaskManager.Enqueue(() => InitiateMoving(nextFishingSpot.FishingSpot), "自动寻路至钓场");
                             return true;
                         }
                     }

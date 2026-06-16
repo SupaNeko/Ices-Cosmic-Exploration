@@ -13,17 +13,17 @@ namespace ICE.Scheduler.Tasks
     {
         public static void Enqueue()
         {
-            P.TaskManager.Enqueue(Credit_PathToVendor, "Pathing to the credit vendor");
+            P.TaskManager.Enqueue(Credit_PathToVendor, "寻路至信用点兑换商");
 
             if (CanPurchaseFromShop(C.CosmoShoppingOrder_Gear, Shop_Cosmocredits.Shop_MountsCards))
             {
                 P.TaskManager.EnqueueMulti
                     (
-                        new(TalkToCreditNPC, "Npc Talk: Cosmogear"),
-                        new(() => SelectShop(0), "Selecting Cosmocredit Exchange"),
-                        new(BuyGearItems, "Buying items from the vendor"),
-                        new(CloseShop, "Closing the shop menu"),
-                        new(DelayInsert, "Delaying between next interaction")
+                        new(TalkToCreditNPC, "NPC 对话：宇宙装备"),
+                        new(() => SelectShop(0), "选择宇宙信用点兑换"),
+                        new(BuyGearItems, "从兑换商购买物品"),
+                        new(CloseShop, "关闭商店菜单"),
+                        new(DelayInsert, "下次交互前延迟")
                     );
             }
 
@@ -31,10 +31,10 @@ namespace ICE.Scheduler.Tasks
             {
                 P.TaskManager.EnqueueMulti
                     (
-                        new(TalkToCreditNPC, "Npc Talk: Material Exchange"),
-                        new(() => SelectShop(1), "Selecting Material Exchange"),
-                        new(BuyMaterialItems, "Buying items from the vendor", Utils.TaskConfig),
-                        new(CloseShop, "Closing the shop menu")
+                        new(TalkToCreditNPC, "NPC 对话：材料兑换"),
+                        new(() => SelectShop(1), "选择材料兑换"),
+                        new(BuyMaterialItems, "从兑换商购买物品", Utils.TaskConfig),
+                        new(CloseShop, "关闭商店菜单")
                     );
             }
         }

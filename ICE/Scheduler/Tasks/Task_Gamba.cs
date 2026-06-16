@@ -112,8 +112,8 @@ namespace ICE.Scheduler.Tasks
             {
                 P.TaskManager.EnqueueMulti
                     (
-                        new(GamblingTime, "Time to go gambling!", Utils.TaskConfig),
-                        new(CloseTalk, "Closing the talk window"),
+                        new(GamblingTime, "抽奖时间！", Utils.TaskConfig),
+                        new(CloseTalk, "关闭对话窗口"),
                         new(() => SchedulerMain.State = IceState.Idle)
                     );
             }
@@ -122,11 +122,11 @@ namespace ICE.Scheduler.Tasks
                 // If this is the case, then we're here to initalize the gamba
                 P.TaskManager.EnqueueMulti
                     (
-                        new(Gamba_PathTo, "Pathing to the gamba NPC"),
-                        new(TalkToGambaNpc, "Talk to the Gamba NPC"),
-                        new(SelectGamba, "Selecting the options to go to gamba"),
-                        new(GamblingTime, "Time to go gambling!", Utils.TaskConfig),
-                        new(CloseTalk, "Closing the talk window")
+                        new(Gamba_PathTo, "寻路至抽奖 NPC"),
+                        new(TalkToGambaNpc, "与抽奖 NPC 对话"),
+                        new(SelectGamba, "选择前往抽奖的选项"),
+                        new(GamblingTime, "抽奖时间！", Utils.TaskConfig),
+                        new(CloseTalk, "关闭对话窗口")
                     );
             }
         }

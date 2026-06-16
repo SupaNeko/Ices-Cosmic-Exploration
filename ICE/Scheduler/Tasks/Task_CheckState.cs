@@ -11,7 +11,7 @@ namespace ICE.Scheduler.Tasks
     {
         public static void Enqueue()
         {
-            P.TaskManager.Enqueue(() => CheckStateV2(), "Checking to see what state we should be in");
+            P.TaskManager.Enqueue(() => CheckStateV2(), "检查应处于什么状态");
         }
 
         private static void UpdateMissionState(uint missionId)
@@ -175,7 +175,7 @@ namespace ICE.Scheduler.Tasks
                 if (C.Cosmic_Agenda.Count > 0)
                 {
                     IceLogging.Verbose($"We have a task list that we need to complete! Going to swap over to check and see what goal we need to complete");
-                    P.TaskManager.Enqueue(() => AgendaCheck(), "Start Mode: Agenda Check");
+                    P.TaskManager.Enqueue(() => AgendaCheck(), "启动模式：议程检查");
                     return true;
                 }
                 else
@@ -366,7 +366,7 @@ namespace ICE.Scheduler.Tasks
                 }
 
                 IceLogging.Info("We have passed all stop when checks. So going to just do a general check on what we need to do", tag);
-                P.TaskManager.Enqueue(() => HubActivityCheck(), "Checking for reasons to go to hub");
+                P.TaskManager.Enqueue(() => HubActivityCheck(), "检查返回中心原因");
             }
 
             return true;
@@ -465,7 +465,7 @@ namespace ICE.Scheduler.Tasks
                     IceLogging.Debug($"[Goal Check] {goal}: {progress} (achieved={achieved})", tag);
                     Mission_Settings.Mode = entry.SelectedMode;
                     Mission_Settings.SelectedJob = entry.SelectedJob;
-                    P.TaskManager.Enqueue(() => HubActivityCheck(), "Checking for reason to go to hub");
+                    P.TaskManager.Enqueue(() => HubActivityCheck(), "检查返回中心原因");
                     return true;
                 }
                 else

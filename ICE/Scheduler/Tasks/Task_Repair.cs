@@ -16,9 +16,9 @@ namespace ICE.Scheduler.Tasks
             {
                 P.TaskManager.EnqueueMulti
                 (
-                    new(OpenSelfRepair, "Opening the self repair window"),
-                    new(SelfRepair_All, "Executing the self repair"),
-                    new(CloseRepair, "Closing Self Repair"),
+                    new(OpenSelfRepair, "打开自助修复窗口"),
+                    new(SelfRepair_All, "执行自助修复"),
+                    new(CloseRepair, "关闭自助修复"),
                     new(() => SchedulerMain.State = IceState.GrabMission)
                 );
             }
@@ -28,9 +28,9 @@ namespace ICE.Scheduler.Tasks
 
                 P.TaskManager.EnqueueMulti
                 (
-                    new(OpenSelfRepair, "Opening the self repair window"),
-                    new(SelfRepair, "Executing the self repair"),
-                    new(CloseRepair, "Closing Self Repair"),
+                    new(OpenSelfRepair, "打开自助修复窗口"),
+                    new(SelfRepair, "执行自助修复"),
+                    new(CloseRepair, "关闭自助修复"),
                     new(() =>  SchedulerMain.State = IceState.GrabMission)
                 );
             }

@@ -25,7 +25,7 @@ namespace ICE.Scheduler.Tasks
             {
                 IceLogging.Debug("Current in a gathering session");
                 Task_CheckScore.Enqueue();
-                P.TaskManager.Enqueue(() => GatherInteractV2(), "Interacting with gathering menu", Utils.TaskConfig);
+                P.TaskManager.Enqueue(() => GatherInteractV2(), "与采集菜单交互", Utils.TaskConfig);
             }
             else
             {
@@ -34,7 +34,7 @@ namespace ICE.Scheduler.Tasks
                 if (CosmicHelper.SheetMissionDict[CosmicHelper.CurrentLunarMission].Attributes.HasFlag(MissionAttributes.ReducedItems))
                 {
                     Task_CheckScore.Enqueue();
-                    P.TaskManager.Enqueue(() => CheckReduceMission(), "Checking to see if we need to reduce items");
+                    P.TaskManager.Enqueue(() => CheckReduceMission(), "检查是否需要分解物品");
                     P.TaskManager.EnqueueDelay(500);
                     Task_CheckScore.Enqueue();
                 }
@@ -44,7 +44,7 @@ namespace ICE.Scheduler.Tasks
                 }
                 P.TaskManager.Enqueue(() => Mission_Settings.ResetCollectableState());
                 P.TaskManager.Enqueue(() => UseFood());
-                P.TaskManager.Enqueue(() => CheckCurrentLocation(), "Checking to see if gathering flags needs updated");
+                P.TaskManager.Enqueue(() => CheckCurrentLocation(), "检查采集标记是否需要更新");
                 P.TaskManager.Enqueue(() => PathandCheckNode());
             }
         }

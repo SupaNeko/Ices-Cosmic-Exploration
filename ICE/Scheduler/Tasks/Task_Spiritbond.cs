@@ -40,7 +40,7 @@ namespace ICE.Scheduler.Tasks
 
         public static void Enqueue()
         {
-            P.TaskManager.Enqueue(() => ExtractMateria(), "Extracting materia");
+            P.TaskManager.Enqueue(() => ExtractMateria(), "提取魔晶石");
         }
 
         public static unsafe bool? ExtractMateria()

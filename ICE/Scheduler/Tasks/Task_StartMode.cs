@@ -10,7 +10,7 @@ namespace ICE.Scheduler.Tasks
     {
         public static void Enqueue()
         {
-            P.TaskManager.Enqueue(() => CheckStartState(), "Checking for initial starting state");
+            P.TaskManager.Enqueue(() => CheckStartState(), "检查初始启动状态");
         }
 
         private static bool? CheckStartState()
@@ -30,7 +30,7 @@ namespace ICE.Scheduler.Tasks
                 if (C.Cosmic_Agenda.Count > 0)
                 {
                     IceLogging.Verbose($"We have a task list that we need to complete! Going to swap over to check and see what goal we need to complete");
-                    P.TaskManager.Enqueue(() => AgendaCheck(), "Start Mode: Agenda Check");
+                    P.TaskManager.Enqueue(() => AgendaCheck(), "启动模式：议程检查");
                     return true;
                 }
                 else

@@ -343,7 +343,7 @@ namespace ICE.Scheduler.Tasks
                         {
                             if (MissionLibrary[MissionKind.Critical].Count > 0)
                             {
-                                P.TaskManager.Enqueue(() => CheckMissions(MissionLibrary[MissionKind.Critical], type), "Checking Critical tab for missions");
+                                P.TaskManager.Enqueue(() => CheckMissions(MissionLibrary[MissionKind.Critical], type), "检查紧急任务标签");
                             }
                             break;
                         }
@@ -377,7 +377,7 @@ namespace ICE.Scheduler.Tasks
                             }
                             if (provisionals.Count > 0)
                             {
-                                P.TaskManager.Enqueue(() => CheckMissions(provisionals, type), "Checking Provisional tab for missions");
+                                P.TaskManager.Enqueue(() => CheckMissions(provisionals, type), "检查临时任务标签");
                             }
                             break;
                         }
@@ -426,7 +426,7 @@ namespace ICE.Scheduler.Tasks
                                         }
                                     }
                                 }
-                                P.TaskManager.Enqueue(() => CheckMissions(basicMissions, type), "Checking Basic Mission tab for missions");
+                                P.TaskManager.Enqueue(() => CheckMissions(basicMissions, type), "检查基础任务标签");
                                 break;
                             }
                         }
@@ -434,7 +434,7 @@ namespace ICE.Scheduler.Tasks
                         {
                             if (C.Cosmodrone_Run && CosmicMoonRegistry.TryGetMoon(Player.Territory.RowId, out var hub) && hub.HasCosmodrome)
                             {
-                                P.TaskManager.Enqueue(() => Task_ArtifactSearch.RefreshMapInfo(), "Inserting Drone Task");
+                                P.TaskManager.Enqueue(() => Task_ArtifactSearch.RefreshMapInfo(), "插入无人机任务");
                             }
                             break;
                         }
@@ -442,7 +442,7 @@ namespace ICE.Scheduler.Tasks
                         {
                             if (MissionLibrary[MissionKind.Master].Count > 0)
                             {
-                                P.TaskManager.Enqueue(() => CheckMissions(MissionLibrary[MissionKind.Master], type), "Checking for master missions");
+                                P.TaskManager.Enqueue(() => CheckMissions(MissionLibrary[MissionKind.Master], type), "检查工匠任务");
                             }
                             break;
                         }
@@ -453,10 +453,10 @@ namespace ICE.Scheduler.Tasks
                 // so handle them explicitly regardless of MissionTypePrio ordering.
                 if (MissionLibrary[MissionKind.Master].Count > 0)
                 {
-                    P.TaskManager.Enqueue(() => CheckMissions(MissionLibrary[MissionKind.Master], MissionTypes.ToolMastery), "Checking Tool Mastery tab for missions");
+                    P.TaskManager.Enqueue(() => CheckMissions(MissionLibrary[MissionKind.Master], MissionTypes.ToolMastery), "检查工具精通标签");
                 }
 
-                P.TaskManager.Enqueue(() => FindReroll(), "Find mission to reroll for");
+                P.TaskManager.Enqueue(() => FindReroll(), "寻找可刷新任务");
             }
             else
             {
@@ -848,7 +848,7 @@ namespace ICE.Scheduler.Tasks
                 if (CosmicHelper.SheetMissionDict.TryGetValue(missionId, out var nextMission) && nextMission.Rank < 6)
                 {
                     IceLogging.Info($"Next mission rank {nextMission.Rank} is below EX+, extracting materia first");
-                    P.TaskManager.Enqueue(() => Task_Spiritbond.ExtractMateria(), "Extracting materia before next mission");
+                    P.TaskManager.Enqueue(() => Task_Spiritbond.ExtractMateria(), "下个任务前提取魔晶石");
                 }
             }
 

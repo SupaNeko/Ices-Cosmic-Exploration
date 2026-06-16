@@ -59,7 +59,7 @@ internal static unsafe class PlayerHandlers
             {
                 PlayerFirstCosmicZone = true;
                 P.TaskManager.EnqueueDelay(1000);
-                P.TaskManager.Enqueue(() => InitiateFirstCosmic(), "Waiting for player to be available");
+                P.TaskManager.Enqueue(() => InitiateFirstCosmic(), "等待玩家可用");
             }
             if (PlayerFirstCosmicZone && !PlayerHelper.IsInCosmicZone())
                 PlayerFirstCosmicZone = false;

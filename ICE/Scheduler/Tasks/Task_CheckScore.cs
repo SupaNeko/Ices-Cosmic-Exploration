@@ -18,14 +18,14 @@ namespace ICE.Scheduler.Tasks
 
             if (CosmicHelper.CrafterJobList.Any(x => jobs.Contains(x)) && CosmicHelper.GatheringJobList.Any(x => jobs.Contains(x)))
             {
-                P.TaskManager.Enqueue(() => DualClass(), "Checking dual class score");
-                P.TaskManager.Enqueue(() => SchedulerMain.State = IceState.DualClass, "Setting state to dual class");
+                P.TaskManager.Enqueue(() => DualClass(), "检查双职业分数");
+                P.TaskManager.Enqueue(() => SchedulerMain.State = IceState.DualClass, "设置为双职业状态");
             }
             else if (CosmicHelper.CrafterJobList.Any(x => jobs.Contains(x)))
             {
                 IceLogging.Info("Currently on a crafting job, checking for crafting scoring", "Task: Score Check");
                 P.TaskManager.Enqueue(() => SchedulerMain.State = IceState.Craft);
-                P.TaskManager.Enqueue(() => Craft_V2(), "Checking for crafting score mission");
+                P.TaskManager.Enqueue(() => Craft_V2(), "检查制作分数任务");
             }
             else if (CosmicHelper.GatheringJobList.Any(x => jobs.Contains(x)))
             {
@@ -35,12 +35,12 @@ namespace ICE.Scheduler.Tasks
                 if (jobId == (Job)18)
                 {
                     P.TaskManager.Enqueue(() => SchedulerMain.State = IceState.Fish);
-                    P.TaskManager.Enqueue(() => Fish(), "Checking fishing missions for score");
+                    P.TaskManager.Enqueue(() => Fish(), "检查钓鱼分数任务");
                 }
                 else
                 {
                     P.TaskManager.Enqueue(() => SchedulerMain.State = IceState.Gather);
-                    P.TaskManager.Enqueue(() => Gather_V2(), "Checking the gathering score");
+                    P.TaskManager.Enqueue(() => Gather_V2(), "检查采集分数");
                 }
             }
         }

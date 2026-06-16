@@ -9,9 +9,9 @@ namespace ICE.Scheduler.Tasks
     {
         public static void Enqueue()
         {
-            P.TaskManager.Enqueue(() => AbandonMission(), "Abandoning the current mission");
-            P.TaskManager.Enqueue(() => Task_TurninMission.GoldCheck(), "Checking post mission state + gold state condition");
-            P.TaskManager.Enqueue(() => Task_TurninMission.CommandCheck(), "Checking for post mission commands");
+            P.TaskManager.Enqueue(() => AbandonMission(), "放弃当前任务");
+            P.TaskManager.Enqueue(() => Task_TurninMission.GoldCheck(), "检查任务后状态与金星条件");
+            P.TaskManager.Enqueue(() => Task_TurninMission.CommandCheck(), "检查任务后命令");
             if (C.DelayGrabMission)
                 P.TaskManager.EnqueueDelay(C.DelayIncrease);
         }

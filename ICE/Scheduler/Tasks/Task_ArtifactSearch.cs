@@ -18,11 +18,11 @@ namespace ICE.Scheduler.Tasks
         {
             P.TaskManager.EnqueueMulti
                 (
-                    new(Drone_PathToVendor, "Drone NPC: Path to"),
-                    new(TalkToDroneNpc, "Drone NPC: Talk"),
-                    new(SelectShop, "Drone NPC: Select Shop"),
-                    new(BuyDroneCrates, "Drone NPC: Buying"),
-                    new(ExitDroneShop, "Drone NPC: Leaving Shop")
+                    new(Drone_PathToVendor, "无人机 NPC：寻路"),
+                    new(TalkToDroneNpc, "无人机 NPC：对话"),
+                    new(SelectShop, "无人机 NPC：选择商店"),
+                    new(BuyDroneCrates, "无人机 NPC：购买"),
+                    new(ExitDroneShop, "无人机 NPC：离开商店")
                 );
         }
         private static bool? Drone_PathToVendor()
@@ -202,10 +202,10 @@ namespace ICE.Scheduler.Tasks
         {
             P.TaskManager.EnqueueMulti
                 (
-                    new(CloseMapInfo, "Making sure map is close"),
-                    new(OpenMapInfo, "Re-opening map to refresh"),
-                    new(CloseMapInfo, "Closing one more time cause we don't need it"),
-                    new(CheckBoxStatus, "Checking Box Status")
+                    new(CloseMapInfo, "确保地图关闭"),
+                    new(OpenMapInfo, "重新打开地图以刷新"),
+                    new(CloseMapInfo, "再次关闭，因为我们不需要它"),
+                    new(CheckBoxStatus, "检查箱子状态")
                 );
         }
         public class TempMapMarkerData
@@ -243,10 +243,10 @@ namespace ICE.Scheduler.Tasks
         {
             P.TaskManager.InsertMulti
                 (
-                    new(CloseMapInfo, "Making sure map is close"),
-                    new(OpenMapInfo, "Re-opening map to refresh"),
-                    new(CloseMapInfo, "Closing one more time cause we don't need it"),
-                    new(CheckBoxStatus, "Checking Box Status")
+                    new(CloseMapInfo, "确保地图关闭"),
+                    new(OpenMapInfo, "重新打开地图以刷新"),
+                    new(CloseMapInfo, "再次关闭，因为我们不需要它"),
+                    new(CheckBoxStatus, "检查箱子状态")
                 );
             return true;
         }

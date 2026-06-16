@@ -16,7 +16,7 @@ namespace ICE.Scheduler.Tasks
         public static void Enqueue()
         {
             Task_CheckScore.Enqueue();
-            P.TaskManager.Enqueue(() => CheckMaterials(), "Checking status for dual craft missions", Utils.TaskConfig);
+            P.TaskManager.Enqueue(() => CheckMaterials(), "检查双职业制作任务状态", Utils.TaskConfig);
         }
 
         private static unsafe bool? CheckMaterials()
@@ -163,7 +163,7 @@ namespace ICE.Scheduler.Tasks
             else if (GenericHelpers.TryGetAddonMaster<Gathering>("Gathering", out var gatheringAddon))
             {
                 IceLogging.Info($"We're currently in the middle of gathering, so going to just swap over to interacting with the gathering node", handle);
-                P.TaskManager.Enqueue(() => GatheringInteraction(), "Interacting with the gathering node");
+                P.TaskManager.Enqueue(() => GatheringInteraction(), "与采集点交互");
                 return true;
             }
             else if ((uint)Player.Job != gatheringJobId)
@@ -189,8 +189,8 @@ namespace ICE.Scheduler.Tasks
 
                 // Us getting here means that we're fresh into the node gathering. So just going to queue up the rest of the gathering process.
                 IceLogging.Info("You've gotten to this point so. Queueing up checking the gathering location, pathing to node, and navmesh movement", handle);
-                P.TaskManager.Enqueue(() => Task_Gather.CheckCurrentLocation(), "Checking Gathering Location Info");
-                P.TaskManager.Enqueue(() => Task_Gather.PathandCheckNode(), "Pathing to the gathering node");
+                P.TaskManager.Enqueue(() => Task_Gather.CheckCurrentLocation(), "检查采集位置信息");
+                P.TaskManager.Enqueue(() => Task_Gather.PathandCheckNode(), "寻路至采集点");
                 return true;
             }
             else if ((uint)Player.Job == 18)
@@ -209,7 +209,7 @@ namespace ICE.Scheduler.Tasks
                     );
                 }
 
-                P.TaskManager.Enqueue(() => FishingCheck(), "Checking to see what to fish for");
+                P.TaskManager.Enqueue(() => FishingCheck(), "检查要钓什么鱼");
                 return true;
             }
 
@@ -412,7 +412,7 @@ namespace ICE.Scheduler.Tasks
                         {
                             IceLogging.Info($"We found another fishing spot to move to! {nextFishingSpot.FishingSpot} | moving to it");
                             P.TaskManager.Tasks.Clear();
-                            P.TaskManager.Enqueue(() => Task_Fishing.InitiateMoving(nextFishingSpot.FishingSpot), "Vnav moving to fishing");
+                            P.TaskManager.Enqueue(() => Task_Fishing.InitiateMoving(nextFishingSpot.FishingSpot), "自动寻路至钓场");
                             return true;
                         }
                     }

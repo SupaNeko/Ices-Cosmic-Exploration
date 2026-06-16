@@ -6,7 +6,7 @@ namespace ICE.Scheduler.Tasks
     {
         public static void Enqueue()
         {
-            P.TaskManager.Enqueue(() => WaitForNextMission(), "Waiting for mission to not be 0", Utils.TaskConfig);
+            P.TaskManager.Enqueue(() => WaitForNextMission(), "等待任务编号非零", Utils.TaskConfig);
         }
 
         private static bool? WaitForNextMission()

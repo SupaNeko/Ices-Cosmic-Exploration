@@ -7,7 +7,7 @@ namespace ICE.Scheduler.Tasks
     {
         public static void Enqueue()
         {
-            P.TaskManager.Enqueue(() => ExecuteMission(), "Finding proper mission state");
+            P.TaskManager.Enqueue(() => ExecuteMission(), "寻找合适的任务状态");
         }
 
         private static bool? ExecuteMission()
@@ -107,7 +107,7 @@ namespace ICE.Scheduler.Tasks
 
         public static void FishingTask(uint missionId)
         {
-            P.TaskManager.Enqueue(() => ClearFishingPreset(), "Clearing All Fishing Presets");
+            P.TaskManager.Enqueue(() => ClearFishingPreset(), "清除所有钓鱼预设");
             P.TaskManager.EnqueueDelay(150);
             P.TaskManager.Enqueue(() => ImportPresetsSequentially(missionId));
         }

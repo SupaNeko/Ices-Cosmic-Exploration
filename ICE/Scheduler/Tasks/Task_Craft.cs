@@ -14,13 +14,13 @@ namespace ICE.Scheduler.Tasks
         {
             if (P.Artisan.IsBusy())
             {
-                P.TaskManager.Enqueue(() => WaitingForArtisan(), "Waiting for artisan to finish crafting");
-                P.TaskManager.Enqueue(() => Task_CheckScore.Enqueue(), "Checking score");
+                P.TaskManager.Enqueue(() => WaitingForArtisan(), "等待 Artisan 完成制作");
+                P.TaskManager.Enqueue(() => Task_CheckScore.Enqueue(), "检查分数");
             }
             else
             {
-                P.TaskManager.Enqueue(() => Task_CheckScore.Enqueue(), "Checking Score");
-                P.TaskManager.Enqueue(() => CheckMaterials(), "Checking materials", Utils.TaskConfig);
+                P.TaskManager.Enqueue(() => Task_CheckScore.Enqueue(), "检查分数");
+                P.TaskManager.Enqueue(() => CheckMaterials(), "检查材料", Utils.TaskConfig);
             }
         }
 

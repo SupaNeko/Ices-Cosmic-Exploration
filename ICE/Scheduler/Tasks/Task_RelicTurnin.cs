@@ -17,12 +17,12 @@ namespace ICE.Scheduler.Tasks
         {
             P.TaskManager.EnqueueMulti
             (
-                new(RegisterJob, "Register Job Swap Class"),
-                new(CheckJobSwap, "Checking to see if we need to swap jobs", Utils.TaskConfig),
-                new(Relic_PathTo, "Heading to the relic NPC for turnin"),
-                new(TalkToResearchWay, "Talk to researchway"),
-                new(SelectReport, "Selecting Report", Utils.TaskConfig),
-                new(SelectRelicClass, "Selecting the class to turnin on", Utils.TaskConfig)
+                new(RegisterJob, "注册职业切换"),
+                new(CheckJobSwap, "检查是否需要切换职业", Utils.TaskConfig),
+                new(Relic_PathTo, "前往宇宙工具上交 NPC"),
+                new(TalkToResearchWay, "与 Researchway 对话"),
+                new(SelectReport, "选择报告", Utils.TaskConfig),
+                new(SelectRelicClass, "选择上交职业", Utils.TaskConfig)
             );
         }
         public static bool? RegisterJob()
@@ -211,11 +211,11 @@ namespace ICE.Scheduler.Tasks
                 {
                     if (C.Relic_Stylist)
                     {
-                        P.TaskManager.Enqueue(() => StylistCheck(), "Doing a stylist check", Utils.TaskConfig);
+                        P.TaskManager.Enqueue(() => StylistCheck(), "检查 Stylist", Utils.TaskConfig);
                     }
                     else
                     {
-                        P.TaskManager.Enqueue(() => ReturnBackToJob(), "Returning back to the original job", Utils.TaskConfig);
+                        P.TaskManager.Enqueue(() => ReturnBackToJob(), "返回原始职业", Utils.TaskConfig);
                     }
                 }
                 return true;
@@ -237,7 +237,7 @@ namespace ICE.Scheduler.Tasks
                 Task_TurninMission.ExecuteCommand("/stylist gatherer");
             }
             P.TaskManager.EnqueueDelay(1000);
-            P.TaskManager.Enqueue(() => ReturnBackToJob(), "Returning back to original job", Utils.TaskConfig);
+            P.TaskManager.Enqueue(() => ReturnBackToJob(), "返回原始职业", Utils.TaskConfig);
 
             return true;
         }
