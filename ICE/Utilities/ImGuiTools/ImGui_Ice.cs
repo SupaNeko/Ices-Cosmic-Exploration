@@ -944,7 +944,7 @@ public static partial class ImGui_Ice
             ImGui.Text($"宇宙工具等级 {jobInfo.Stage_Current} / 20");
             foreach (var exp in jobInfo.CurrentExp.Values)
             {
-                ImGui.Text($"Exp {exp.Name}: {exp.Current} / {exp.Needed}");
+                ImGui.Text($"经验 {exp.Name}: {exp.Current} / {exp.Needed}");
                 if (Barsize == null)
                     Draw_XPBar(exp.Current, exp.Needed, exp.Max);
                 else
@@ -953,12 +953,12 @@ public static partial class ImGui_Ice
                 {
                     using (var expTooltip = ImRaii.Tooltip())
                     {
-                        ImGui.Text($"Type: {exp.Name}");
+                        ImGui.Text($"类型: {exp.Name}");
                         ImGui.Separator();
 
-                        ImGui.Text($"Current: {exp.Current}");
-                        ImGui.Text($"Need: {exp.Needed}");
-                        ImGui.Text($"Max: {exp.Max}");
+                        ImGui.Text($"当前: {exp.Current}");
+                        ImGui.Text($"需求: {exp.Needed}");
+                        ImGui.Text($"上限: {exp.Max}");
                     }
                 }
             }

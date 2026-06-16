@@ -256,7 +256,7 @@ namespace ICE.Scheduler.Tasks
             {
                 if (modeSelected == ModeSelect.RelicMode && C.XPRelicOnlyEnabled)
                 {
-                    IceLogging.ChatInfo("\"Only selected missions\" is enabled for Relic Grind, but no selected missions match your current job. Please select missions for this job, switch jobs, or disable the option.", "[I.C.E.]");
+                    IceLogging.ChatInfo("“仅启用选定任务”已开启，但当前职业没有匹配的宇宙工具任务。请为该职业选择任务、切换职业或关闭此选项。", "[I.C.E.]");
                     if (C.PlaySoundAlert)
                     {
                         _ = SoundPlayer.PlaySoundAsync();

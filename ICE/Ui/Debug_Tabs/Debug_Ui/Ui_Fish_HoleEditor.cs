@@ -67,7 +67,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
                 {
                     var exportData = ExportSingleFishingFlag(selectedZone, selectedFlag);
                     ImGui.SetClipboardText(exportData);
-                    Svc.Chat.Print($"Fishing flag data for Zone {selectedZone} at ({selectedFlag.X}, {selectedFlag.Y}) exported to clipboard!");
+                    Svc.Chat.Print($"{selectedZone} 区域钓场标记数据 ({selectedFlag.X}, {selectedFlag.Y}) 已导出到剪贴板！");
                 }
             }
 

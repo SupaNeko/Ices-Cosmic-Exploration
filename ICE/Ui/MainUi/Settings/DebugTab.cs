@@ -30,14 +30,14 @@ namespace ICE.Ui.MainUi.Settings.Settings_Table
 
                 Svc.Chat.Print(new Dalamud.Game.Text.XivChatEntry()
                 {
-                    Message = $"{hubName} Weather - {forecast[0].Name}",
+                    Message = $"{hubName} 天气 - {forecast[0].Name}",
                     Type = Dalamud.Game.Text.XivChatType.Echo,
                 });
                 for (int i = 1; i < forecast.Count; i++)
                 {
                     Svc.Chat.Print(new Dalamud.Game.Text.XivChatEntry()
                     {
-                        Message = $"{forecast[i].Name} In {formatTime(forecast[i])}",
+                        Message = $"{forecast[i].Name} 后 {formatTime(forecast[i])}",
                         Type = Dalamud.Game.Text.XivChatType.Echo,
                     });
                 }

@@ -210,8 +210,8 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
             }
             if (ImGui.Button("测试Toast"))
             {
-                string message = "[I.C.E.] You didn't read the little warning in the mission setup\n" +
-                    "你需要更新 autohook 才能在 Auxesia 上钓鱼。请切换到测试版本";
+                string message = "[I.C.E.] 你没看任务设置里的小警告\n" +
+                    "你需要更新 AutoHook 才能在奥克塞西亚行星钓鱼。请切换到测试版本";
                 Svc.Chat.Print(new()
                 {
                     Type = Dalamud.Game.Text.XivChatType.ErrorMessage,

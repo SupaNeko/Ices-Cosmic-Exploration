@@ -31,9 +31,9 @@ namespace ICE.Scheduler.Tasks
                 {
                     if (notUpdatedFisher && P.AutoHook.Installed)
                     {
-                        string message = $"[I.C.E.] You didn't read the little warning in the mission setup\n" +
-                            "You need to update autohook for you to be able to fish here on Auxesia.\n" +
-                            "Please swap to testing version";
+                        string message = $"[I.C.E.] 你没看任务设置里的小警告\n" +
+                            "你需要更新 AutoHook 才能在奥克塞西亚行星钓鱼。\n" +
+                            "请切换到测试版本";
                         IceLogging.Error($"{message}", "Execute Mission");
                         Svc.Chat.Print(new()
                         {

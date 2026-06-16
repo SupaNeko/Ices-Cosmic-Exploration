@@ -147,8 +147,8 @@ namespace ICE.Scheduler.Tasks
                     PlayerHelper.GetItemCount(itemId, out var credits);
                     if (credits >= C.LunarCreditsCap)
                     {
-                        IceLogging.ChatInfo($"You've either hit the Lunar Credit threshold, or gone above it.\n" +
-                                            $"Stopping I.C.E.", "[I.C.E.]");
+                        IceLogging.ChatInfo($"行星信用点已达到或超过阈值。\n" +
+                                            $"正在停止 I.C.E。", "[I.C.E.]");
                         SchedulerMain.State = IceState.Idle;
                         if (C.PlaySoundAlert)
                         {
@@ -204,8 +204,8 @@ namespace ICE.Scheduler.Tasks
                     if (level >= C.TargetLevel)
                     {
                         SchedulerMain.State = IceState.Idle;
-                        IceLogging.ChatInfo("Stop At Player Level is enabled. \n" +
-                                           $"Your current level is: {Player.Level} and Goal: {C.TargetLevel}", "[I.C.E.]");
+                        IceLogging.ChatInfo("停止于玩家等级已启用。 \n" +
+                                           $"当前等级：{Player.Level}，目标：{C.TargetLevel}", "[I.C.E.]");
                         if (C.PlaySoundAlert)
                         {
                             _ = SoundPlayer.PlaySoundAsync();
@@ -220,8 +220,8 @@ namespace ICE.Scheduler.Tasks
                     if (currentScore >= C.CosmicScoreCap)
                     {
                         SchedulerMain.State = IceState.Idle;
-                        IceLogging.ChatInfo("Stop At Cosmic Score is enabled. \n" +
-                            $"Your current level is: {currentScore} and Goal: {C.CosmicScoreCap}", "[I.C.E.]");
+                        IceLogging.ChatInfo("停止于宇宙分数已启用。 \n" +
+                            $"当前分数：{currentScore}，目标：{C.CosmicScoreCap}", "[I.C.E.]");
                         if (C.PlaySoundAlert)
                         {
                             _ = SoundPlayer.PlaySoundAsync();
@@ -238,8 +238,8 @@ namespace ICE.Scheduler.Tasks
                     PlayerHelper.GetItemCount(itemId, out var credits);
                     if (credits >= C.LunarCreditsCap)
                     {
-                        IceLogging.ChatInfo($"You've either hit the Lunar Credit threshold, or gone above it.\n" +
-                                            $"Stopping I.C.E.", "[I.C.E.]");
+                        IceLogging.ChatInfo($"行星信用点已达到或超过阈值。\n" +
+                                            $"正在停止 I.C.E。", "[I.C.E.]");
                         SchedulerMain.State = IceState.Idle;
                         if (C.PlaySoundAlert)
                         {
@@ -291,7 +291,7 @@ namespace ICE.Scheduler.Tasks
                                 }
                                 else
                                 {
-                                    IceLogging.ChatInfo("We're at the point we can turn in the relic! Please do so, or disable stop when at relic turnin", tag);
+                                    IceLogging.ChatInfo("宇宙工具可以上交了！请手动上交，或禁用“宇宙工具完成时停止”", tag);
                                     SchedulerMain.State = IceState.Idle;
                                     if (C.PlaySoundAlert)
                                     {
@@ -355,7 +355,7 @@ namespace ICE.Scheduler.Tasks
                     // if 15 <= 20
                     if (C.RelicLv <= relicInfo.Stage_Current)
                     {
-                        IceLogging.ChatInfo($"Stopping the plugin as your current tool is at {relicInfo.Stage_Current} and your goal was: {C.RelicLv}");
+                        IceLogging.ChatInfo($"当前宇宙工具等级为 {relicInfo.Stage_Current}，已达到目标等级 {C.RelicLv}，正在停止插件");
                         SchedulerMain.State = IceState.Idle;
                         if (C.PlaySoundAlert)
                         {
