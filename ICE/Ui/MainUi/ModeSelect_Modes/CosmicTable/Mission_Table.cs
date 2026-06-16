@@ -322,9 +322,9 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes.CosmicTable
                         ImGui.BeginTooltip();
                         ImGui.Text($"紧急任务路线: {mission.SheetInfo.Critical_MapKey}");
                         ImGui.Separator();
-                        ImGui.Text($"Map Cordinates: {criticalInfo.X} | {criticalInfo.Y}");
+                        ImGui.Text($"地图坐标: {criticalInfo.X} | {criticalInfo.Y}");
                         ImGui.Separator();
-                        ImGui.Text($"World Position: {criticalInfo.WorldCords.X:N2} | {criticalInfo.WorldCords.Y:N2} | {criticalInfo.WorldCords.Z:N2}");
+                        ImGui.Text($"世界坐标: {criticalInfo.WorldCords.X:N2} | {criticalInfo.WorldCords.Y:N2} | {criticalInfo.WorldCords.Z:N2}");
                         ImGui.EndTooltip();
                     }
 #endif
@@ -856,7 +856,7 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes.CosmicTable
                         ImGui.Text($"[平均] 每分钟奖励");
                         if (C.MissionConfig.TryGetValue(item.Id, out var config))
                         {
-                            ImGui.Text($"Total Completions: {config.TotalCompletions:N0}/{config.TotalAttempts:N0}");
+                            ImGui.Text($"总完成次数: {config.TotalCompletions:N0}/{config.TotalAttempts:N0}");
                         }
                         if (ImGui.BeginTable($"Score Info Table_{item.SheetInfo.MissionId}", 5, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.RowBg | ImGuiTableFlags.Borders))
                         {

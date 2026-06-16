@@ -44,13 +44,13 @@ namespace ICE.Ui.MainUi.HelpFolder
             {
                 FontAwesome.Print(EColor.Green, FontAwesome.Check);
                 ImGui.SameLine();
-                ImGui.Text($"{pluginName} Repo is Installed");
+                ImGui.Text($"{pluginName} 仓库已安装");
             }
             else
             {
                 FontAwesome.Print(EColor.Red, FontAwesome.Cross);
                 ImGui.SameLine();
-                if (ImGui.Button($"Install {pluginName} Repo"))
+                if (ImGui.Button($"安装 {pluginName} 仓库"))
                 {
                     DalamudReflector.AddRepo(repo, true);
                     DalamudReflector.SaveDalamudConfig();
@@ -63,7 +63,7 @@ namespace ICE.Ui.MainUi.HelpFolder
             {
                 FontAwesome.Print(EColor.Green, FontAwesome.Check);
                 ImGui.SameLine();
-                ImGui.Text($"{pluginName} is installed");
+                ImGui.Text($"{pluginName} 已安装");
             }
             else
             {
@@ -71,7 +71,7 @@ namespace ICE.Ui.MainUi.HelpFolder
                 ImGui.SameLine();
                 using (ImRaii.Disabled(installingPlugin))
                 {
-                    if (ImGui.Button($"Install {pluginName}"))
+                    if (ImGui.Button($"安装 {pluginName}"))
                     {
                         _ = InstallPlugin(repo, pluginName);
                     }
