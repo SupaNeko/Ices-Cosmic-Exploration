@@ -531,7 +531,7 @@ public sealed partial class ICE
             }
 
             // Col 3 -> Cosmocredits - Unknown 0
-            // Col 4 -> Lunar Credits - Unknown 1
+            // Col 4 -> Planetary Credits - Unknown 1
             // Col 7 ->  Lv. 1 Type - Unknown 12
             // Col 8 ->  Lv. 1 Exp - Unknown 2
             // Col 10 -> Lv. 2 Type - Unknown 13

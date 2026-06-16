@@ -46,7 +46,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
             if (ImGui.BeginTable("齿轮组查看器", 3, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.RowBg | ImGuiTableFlags.Borders))
             {
                 ImGui.TableSetupColumn("ID");
-                ImGui.TableSetupColumn("姓名");
+                ImGui.TableSetupColumn("名称");
                 ImGui.TableSetupColumn("作业ID");
 
                 ImGui.TableHeadersRow();

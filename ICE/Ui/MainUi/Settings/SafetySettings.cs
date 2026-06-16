@@ -36,9 +36,8 @@ namespace ICE.Ui.MainUi.Settings
                 C.Save();
             }
             ImGuiEx.HelpMarker(
-                "这是为了安全！如果您想减少任务之间的延迟，请成为我的客人。\n" +
-                "安全性约为... 250？如果你有动画锁，你绝对可以把它调高\n" +
-                "上的农场积分或者如果你感觉很勇敢。降低它。我不是你爸爸（不过会讲爸爸笑话。");
+                "这是为了安全！如果你想减少任务之间的延迟，请便。\n" +
+                "安全性约为……250？如果你有动画锁，你完全可以为了刷信用点把它调得更高，或者如果你很勇敢就调低。我不是你爸爸（不过我会讲爸爸笑话）。");
             if (delayGrabMission)
             {
                 ImGui.SetNextItemWidth(150);
@@ -58,9 +57,8 @@ namespace ICE.Ui.MainUi.Settings
                 C.Save();
             }
             ImGuiEx.HelpMarker(
-                "这是为了安全起见！如果您想在成为我的客人之前减少延迟。\n" +
-                "安全性约为... 2500？如果您有动画锁，您绝对可以将其提高更高\n" +
-                "上的农场积分或者如果你感觉很勇敢。降低它。我不是你爸爸（不过会讲爸爸笑话。");
+                "这是为了安全！如果你想减少延迟，请便。\n" +
+                "安全性约为……2500？如果你有动画锁，你完全可以为了刷信用点把它调得更高，或者如果你很勇敢就调低。我不是你爸爸（不过我会讲爸爸笑话）。");
             if (delayCraft)
             {
                 ImGui.SetNextItemWidth(150);
@@ -76,7 +74,7 @@ namespace ICE.Ui.MainUi.Settings
             }
             int delayRelic = C.DelayPostRelic;
             ImGui.SetNextItemWidth(150);
-            if (ImGui.SliderInt("延迟遗物上交后", ref delayRelic, 0, 5000))
+            if (ImGui.SliderInt("延迟宇宙工具上交后", ref delayRelic, 0, 5000))
             {
                 C.DelayPostRelic = delayRelic;
                 C.SaveDebounced();

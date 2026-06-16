@@ -66,17 +66,17 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
                         modeType = "标准";
                     else if (relicMode)
                     {
-                        modeType = "遗物研磨";
+                        modeType = "宇宙工具升级";
                         modeIcon = FontAwesomeIcon.ArrowUpRightDots;
                     }
                     else if (xpLeveling)
                     {
-                        modeType = "调平研磨";
+                        modeType = "练级刷取";
                         modeIcon = FontAwesomeIcon.Leaf;
                     }
                     else if (goldMode)
                     {
-                        modeType = "黄金完成研磨";
+                        modeType = "达成金星";
                         modeIcon = FontAwesomeIcon.Trophy;
                     }
                     else if (agendaMode)
@@ -122,7 +122,7 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
                             if (table)
                             {
                                 ImGui.TableSetupColumn("图标", ImGuiTableColumnFlags.WidthFixed, 24);
-                                ImGui.TableSetupColumn("姓名", ImGuiTableColumnFlags.WidthStretch);
+                                ImGui.TableSetupColumn("名称", ImGuiTableColumnFlags.WidthStretch);
 
                                 foreach (var jobId in JobOptions)
                                 {
@@ -220,7 +220,7 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
                     }
                     if (ImGui.BeginPopup("Agenda信息：配置文件保存"))
                     {
-                        ImGui.InputText("姓名", ref profileName);
+                        ImGui.InputText("名称", ref profileName);
                         ImGui.InputTextMultiline("描述", ref profileDescription);
                         using (ImRaii.Disabled(profileName == string.Empty))
                         {
@@ -415,10 +415,10 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
             return mode switch
             {
                 ModeSelect.Standard => "标准",
-                ModeSelect.RelicMode => "Relic 研磨模式",
-                ModeSelect.LevelMode => "调平模式",
+                ModeSelect.RelicMode => "宇宙工具升级",
+                ModeSelect.LevelMode => "练级模式",
                 // ModeSelect.ScoreMode => "Scoring Mode",
-                ModeSelect.MissionGoldMode => "黄金完成模式",
+                ModeSelect.MissionGoldMode => "达成金星模式",
                 ModeSelect.AgendaMode => "宇宙议程模式",
                 _ => $"??? {mode}"
             };
@@ -478,7 +478,7 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
                             if (ImGui.BeginTable("JobTable", 2, ImGuiTableFlags.BordersInnerV))
                             {
                                 ImGui.TableSetupColumn("图标", ImGuiTableColumnFlags.WidthFixed, 24);
-                                ImGui.TableSetupColumn("姓名", ImGuiTableColumnFlags.WidthStretch);
+                                ImGui.TableSetupColumn("名称", ImGuiTableColumnFlags.WidthStretch);
 
                                 foreach (var jobId in JobOptions)
                                 {
@@ -541,7 +541,7 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
                         if (selectedOption == PlaylistOptions.SelectedRelicLv)
                         {
                             var level = agendaInfo.SelectedRelicLevel;
-                            if (ImGui.InputInt("##Relic Level", ref level))
+                            if (ImGui.InputInt("##宇宙工具等级", ref level))
                             {
                                 agendaInfo.SelectedRelicLevel = level;
                                 C.SaveDebounced();
@@ -647,7 +647,7 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
                                 if (standardCount == 0)
                                 {
                                     var tooltip = "Hey！您似乎没有在当前所在的行星/月球上启用任何标准任务。\n" +
-                                        "如果您不想让这项职业陷入停滞，请务必这样做当没有定时/天气任务时。\n" +
+                                        "如果您不想让这项职业陷入停滞，请务必这样做当没有限时/天气任务时。\n" +
                                         $"Currently enabled on {currentMoon.DisplayName}: {standardCount}";
 
                                     ImGui.SameLine();

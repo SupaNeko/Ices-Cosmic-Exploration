@@ -38,7 +38,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_CS
             {
                 ImGui.TableSetupColumn("作业");
                 ImGui.TableSetupColumn("Id");
-                ImGui.TableSetupColumn("姓名");
+                ImGui.TableSetupColumn("名称");
                 ImGui.TableSetupColumn("旗帜");
 
                 ImGui.TableHeadersRow();

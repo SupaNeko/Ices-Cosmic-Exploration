@@ -300,7 +300,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
             float collectionPointDistance = 0;
             if (collectionPoint is not null)
                 collectionPointDistance = Player.DistanceTo(collectionPoint);
-            if (ImGui.Button("单击最近的收集点"))
+            if (ImGui.Button("单击最近的采集点"))
             {
                 Utils.TargetgameObjectTask(collectionPoint);
                 Utils.InteractWithObject(collectionPoint);
@@ -308,7 +308,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
             ImGui.SameLine();
             ImGui.Text($"Distance to nearest: {collectionPointDistance}");
 
-            if (ImGui.Button("打印收集点信息"))
+            if (ImGui.Button("打印采集点信息"))
             {
                 var gatheringPoint = Player.Object?.TargetObject;
                 if (gatheringPoint is not null)
@@ -343,7 +343,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
             {
                 GearsetHandler.TaskClassChange(Job.MIN);
             }
-            if (ImGui.Button("Relic上交"))
+            if (ImGui.Button("宇宙工具上交"))
             {
                 Task_RelicTurnin.Enqueue();
             }

@@ -61,7 +61,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
 
             var selected = CosmicMoonRegistry.All[_selectedPlanetIndex];
             
-            if (ImGui.BeginTable("收集路线编辑表", 2, ImGuiTableFlags.BordersInnerV | ImGuiTableFlags.BordersOuter | ImGuiTableFlags.SizingFixedFit, ImGui.GetContentRegionAvail()))
+            if (ImGui.BeginTable("采集路线编辑表", 2, ImGuiTableFlags.BordersInnerV | ImGuiTableFlags.BordersOuter | ImGuiTableFlags.SizingFixedFit, ImGui.GetContentRegionAvail()))
             {
                 ImGui.TableSetupColumn("路线选择器", ImGuiTableColumnFlags.WidthFixed, 200);
                 ImGui.TableSetupColumn("路线编辑器", ImGuiTableColumnFlags.WidthStretch);

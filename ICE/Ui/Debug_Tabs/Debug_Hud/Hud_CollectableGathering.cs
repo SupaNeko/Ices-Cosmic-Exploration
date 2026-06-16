@@ -11,7 +11,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Hud
         {
             if (GenericHelpers.TryGetAddonMaster<GatheringMasterpiece>("GatheringMasterpiece", out var gatherCollect) && gatherCollect.IsAddonReady)
             {
-                if (ImGui.Button("尝试收集"))
+                if (ImGui.Button("尝试采集"))
                 {
                     Task_Gather.CollectableGather(gatherCollect);
                 }
@@ -52,7 +52,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Hud
                     // Row 3
                     ImGui.TableNextRow();
                     ImGui.TableSetColumnIndex(0);
-                    ImGui.Text("当前可收集性： ");
+                    ImGui.Text("当前收藏价值： ");
 
                     ImGui.TableNextColumn();
                     ImGui.Text($"{gatherCollect.CurrentCollectability}");
@@ -92,7 +92,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Hud
                     // Row 8
                     ImGui.TableNextRow();
                     ImGui.TableSetColumnIndex(0);
-                    ImGui.Text("最大可收集性： ");
+                    ImGui.Text("最大收藏价值： ");
 
                     ImGui.TableNextColumn();
                     ImGui.Text($"{gatherCollect.MaxCollectability}");
@@ -121,7 +121,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Hud
                     ImGui.EndTable();
                 }
             }
-            else if (GenericHelpers.TryGetAddonMaster<Gathering>("收集", out var gather) && gather.IsAddonReady)
+            else if (GenericHelpers.TryGetAddonMaster<Gathering>("采集", out var gather) && gather.IsAddonReady)
             {
                 if (ImGui.Button("Increase可收藏性"))
                 {
@@ -139,7 +139,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Hud
             }
             else
             {
-                ImGui.Text("等待收集收集窗口可见");
+                ImGui.Text("等待采集窗口可见");
             }
         }
     }

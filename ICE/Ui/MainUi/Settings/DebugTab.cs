@@ -51,7 +51,7 @@ namespace ICE.Ui.MainUi.Settings.Settings_Table
                 }
             }
             bool gatherDebug = C.ShowDebugGatherInfo;
-            if (ImGui.Checkbox("显示收集调试信息", ref gatherDebug))
+            if (ImGui.Checkbox("显示采集调试信息", ref gatherDebug))
             {
                 C.ShowDebugGatherInfo = gatherDebug;
                 C.Save();

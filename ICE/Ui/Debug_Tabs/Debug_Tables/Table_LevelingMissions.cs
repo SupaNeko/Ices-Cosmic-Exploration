@@ -8,7 +8,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
     {
         public static void Draw()
         {
-            if (ImGui.BeginTable("调平表", 14, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingStretchSame))
+            if (ImGui.BeginTable("练级任务表", 14, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingStretchSame))
             {
                 ImGui.TableSetupColumn("行星");
                 ImGui.TableSetupColumn("左");

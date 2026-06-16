@@ -960,7 +960,7 @@ namespace ICE.Ui.MainUi.Settings
             if (ov == null)
             {
                 bool swapJobs = C.Relic_SwapJob;
-                if (ImGui.Checkbox("交回遗物时交换职业", ref swapJobs))
+                if (ImGui.Checkbox("交回宇宙工具时交换职业", ref swapJobs))
                 { 
                     C.Relic_SwapJob = swapJobs; 
                     C.Save(); 
@@ -985,7 +985,7 @@ namespace ICE.Ui.MainUi.Settings
                 }
 
                 bool useStylist = C.Relic_Stylist;
-                if (ImGui.Checkbox("使用造型师重新装备工具", ref useStylist))
+                if (ImGui.Checkbox("使用Stylist重新装备工具", ref useStylist))
                 {
                     C.Relic_Stylist = useStylist;
                     C.Save();
@@ -997,7 +997,7 @@ namespace ICE.Ui.MainUi.Settings
                     v => ov.Relic_SwapJob = v,
                     current => {
                         bool v = current;
-                        if (ImGui.Checkbox("交回遗物时交换职业", ref v) && ov.Relic_SwapJob.HasValue)
+                        if (ImGui.Checkbox("交回宇宙工具时交换职业", ref v) && ov.Relic_SwapJob.HasValue)
                         { 
                             ov.Relic_SwapJob = v; 
                             C.Save(); 
@@ -1030,7 +1030,7 @@ namespace ICE.Ui.MainUi.Settings
                     current =>
                     {
                         bool v = current;
-                        if (ImGui.Checkbox("使用造型师重新装备工具", ref v) && ov.Relic_Stylist.HasValue)
+                        if (ImGui.Checkbox("使用Stylist重新装备工具", ref v) && ov.Relic_Stylist.HasValue)
                         {
                             ov.Relic_Stylist = v;
                             C.Save();

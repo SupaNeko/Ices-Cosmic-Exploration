@@ -37,14 +37,14 @@ namespace ICE.Ui.MainUi.Settings
             if (ImGui.IsItemHovered())
             {
                 ImGui.BeginTooltip();
-                ImGui.Text("这是您可以创建的个性化购物清单，当您达到一定数量的积分时它将运行。");
+                ImGui.Text("这是您可以创建的个性化购物清单，当您达到一定数量的信用点时它将运行。");
                 ImGui.Text("以下是以下各项的作用：");
                 ImGui.BulletText("保持：将购买最多数量的物品，以确保您的库存中有足够的物品。此计数在运行之间不会减少。\n" +
                                  "对于像强心剂之类的东西很有用，你想要手头上总是有一定数量的");
                 ImGui.BulletText("购买：将购买 X 数量的这些物品，当它从供应商处购买时，数量会减少，直到达到 0.\n" +
                                  "适合一次性购买，或者您只需要特定数量的");
-                ImGui.BulletText("保持 Buying：一旦满足其他2个（保留/购买），如果有积分，它将不断购买该物品。\n" +
-                                 "这只能设置为 1 个项目，通常用于您只想花费积分的东西");
+                ImGui.BulletText("保持 Buying：一旦满足其他2个（保留/购买），如果有信用点，它将不断购买该物品。\n" +
+                                 "这只能设置为 1 个项目，通常用于您只想花费信用点的东西");
                 ImGui.EndTooltip();
             }
             ImGui.NewLine();
@@ -60,7 +60,7 @@ namespace ICE.Ui.MainUi.Settings
             }
 
             ImGui.SetNextItemWidth(150);
-            if (ImGui.SliderInt("保留这么多Cosmocredits", ref CosmoKeepAmount, 0, buyAtAmount))
+            if (ImGui.SliderInt("保留这么多宇宙信用点", ref CosmoKeepAmount, 0, buyAtAmount))
             {
                 C.CosmoKeepAmount = CosmoKeepAmount;
                 C.SaveDebounced();
@@ -69,7 +69,7 @@ namespace ICE.Ui.MainUi.Settings
             CheckConfigState();
             if (Task_BuyCosmoItems.CanPurchaseAnyItem())
             {
-                ImGui.Text("您可以从列表中购买宇宙信用项目！");
+                ImGui.Text("您可以从列表中购买宇宙信用点项目！");
             }
             else
             {
@@ -210,7 +210,7 @@ namespace ICE.Ui.MainUi.Settings
             if (ImGui.BeginTable($"Shopping_{tableName}", 10, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.RowBg | ImGuiTableFlags.Borders))
             {
                 ImGui.TableSetupColumn("命令", ImGuiTableColumnFlags.WidthFixed);
-                ImGui.TableSetupColumn("姓名");
+                ImGui.TableSetupColumn("名称");
                 ImGui.TableSetupColumn("有", ImGuiTableColumnFlags.WidthFixed);
                 ImGui.TableSetupColumn("成本", ImGuiTableColumnFlags.WidthFixed);
                 ImGui.TableSetupColumn("种类", ImGuiTableColumnFlags.WidthFixed);

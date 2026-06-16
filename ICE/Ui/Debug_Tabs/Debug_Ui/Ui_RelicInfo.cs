@@ -27,7 +27,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
             if (wksManager == null || wksManager->ResearchModule == null || !wksManager->ResearchModule->IsLoaded)
                 return;
 
-            if (ImGui.BeginTable("文物信息", 15, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders))
+            if (ImGui.BeginTable("宇宙工具信息", 15, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders))
             {
                 ImGui.TableSetupColumn("职业");
                 ImGui.TableSetupColumn("阶段");

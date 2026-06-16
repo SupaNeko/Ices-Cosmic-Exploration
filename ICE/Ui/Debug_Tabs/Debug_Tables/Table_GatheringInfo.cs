@@ -32,7 +32,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
                     ImGui.TableSetupColumn($"Amount [{i}]");
                 }
                 ImGui.TableSetupColumn("任务半径");
-                ImGui.TableSetupColumn("危急地点");
+                ImGui.TableSetupColumn("紧急任务地点");
                 ImGui.TableHeadersRow();
 
                 foreach (var entry in CosmicHelper.SheetMissionDict.Where(x => x.Value.Jobs.Intersect(CosmicHelper.GatheringJobList).Any()))

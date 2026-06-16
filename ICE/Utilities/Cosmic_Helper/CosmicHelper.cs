@@ -19,7 +19,7 @@ public static unsafe partial class CosmicHelper
     // Relic XP bar cap (highest stage across all moons + overcap headroom).
     public static readonly float MaxRelicExpStatus = CosmicMoonRegistry.MaxRelicExpBarCap;
 
-    // Shared cosmo credits (45690) — not the per-planet gamba tokens. Use this instead of hardcoding the ID.
+    // Shared Cosmocredits (45690) — not the per-planet gamba tokens. Use this instead of hardcoding the ID.
     public const uint CosmoCreditItemId = 45690;
 
 

@@ -7,9 +7,9 @@ namespace ICE.Ui.MainUi.Settings;
 public static class Settings_TableColumns
 {
     private static string[] missionSortOptions = 
-        ["Id", "姓名", "Cosmo积分", "月球积分", 
+        ["Id", "名称", "宇宙信用点", "行星信用点", 
         "Exp I", "Exp II", "Exp III", "Exp IV", "Exp V", 
-        "地图位置", "Class分数", "类经验"];
+        "地图位置", "职业分数", "职业经验"];
 
     public static void ColumnSettings()
     {
@@ -51,7 +51,7 @@ public static class Settings_TableColumns
         }
 
         ImGuiEx.HelpMarker("仅当您想自己计划执行任务时才启用此功能。并且不自动化. " +
-                           "或者如果你让一个不同的插件完成所有上交、制作、收集的自动化......而不让 I.C.E. 处理与这些插件的交互");
+                           "或者如果你让一个不同的插件完成所有上交、制作、采集的自动化......而不让 I.C.E. 处理与这些插件的交互");
     }
 
     private static bool ApplyToAllClasses = true;
@@ -69,9 +69,9 @@ public static class Settings_TableColumns
         "Weaver(WVR)",         // 5
         "炼金术士（ALC）",      // 6
         "Culinarian（CUL）",     // 7
-        "矿工(MIN)",          // 8
-        "植物学家 (BTN)",       // 9
-        "费舍尔 (FSH)"          // 10
+        "采矿工 (MIN)",          // 8
+        "园艺工 (BTN)",       // 9
+        "捕鱼人 (FSH)"          // 10
     };
 
     private static readonly int[] classIds = new[]
@@ -121,15 +121,15 @@ public static class Settings_TableColumns
             ImGui.Text("选择上交选项");
             ImGui.Dummy(new Vector2(0, 2));
 
-            if (ImGui.RadioButton("黄金", HighestTurnin is TurninState.Gold))
+            if (ImGui.RadioButton("金星", HighestTurnin is TurninState.Gold))
             {
                 HighestTurnin = TurninState.Gold;
             }
-            if (ImGui.RadioButton("银", HighestTurnin is TurninState.Silver))
+            if (ImGui.RadioButton("银星", HighestTurnin is TurninState.Silver))
             {
                 HighestTurnin = TurninState.Silver;
             }
-            if (ImGui.RadioButton("铜牌", HighestTurnin is TurninState.Bronze))
+            if (ImGui.RadioButton("铜星", HighestTurnin is TurninState.Bronze))
             {
                 HighestTurnin = TurninState.Bronze;
             }

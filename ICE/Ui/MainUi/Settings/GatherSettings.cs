@@ -31,7 +31,7 @@ namespace ICE.Ui.MainUi.Settings
         private static string[] MissionTypes = 
         [
             "有限节点", 
-            "收集x数量", 
+            "采集x数量", 
             "时间攻击", 
             "Chained评分", 
             "恩赐得分", 
@@ -176,7 +176,7 @@ namespace ICE.Ui.MainUi.Settings
             int maxGp = 1200;
 
             bool SelfSpiritbondGather = C.SelfSpiritbondGather;
-            if (ImGui.Checkbox("在收集时提取Spiritbond", ref SelfSpiritbondGather))
+            if (ImGui.Checkbox("在采集时提取精炼度", ref SelfSpiritbondGather))
             {
                 if (C.SelfSpiritbondGather != SelfSpiritbondGather)
                 {
@@ -457,11 +457,11 @@ namespace ICE.Ui.MainUi.Settings
 
                     ImGui.TextWrapped("简答：现在已内置\n" +
                      "Long回答： 老实说，这本身就是一个繁琐的系统。由于 Square 决定不再继续进入第二个月球的双重制作任务，我认为最好将其与评分系统联系起来。您实际上只需要：\n" +
-                     "黄金：3件\n" +
-                     "银：2个项目\n" +
-                     "铜牌：1物品\n" +
+                     "金星：3件\n" +
+                     "银星：2个项目\n" +
+                     "铜星：1物品\n" +
                      "能够达到阈值。即便如此，如果你第一次尝试没有击中它，它就会继续聚集。加。这使得我不必担心钓鱼的配置文件管理...... 4 个任务？在我眼中似乎有点多余。\n" +
-                     "所以现在它会如何职业。选择转交选项（金/任何都职业相同），它现在会收集到必要的数量 -> 准备好后转交。\n" +
+                     "所以现在它会如何运作。选择上交选项（金星/任意都相同），它现在会采集到必要的数量 -> 准备好后转交。\n" +
                      "NOW NONE OF YOU CAN TELL IT TO CRAFT 27 ITEMS. STOP IT. IT SAID CRAFT (╯°Д°)╯︵/(.□ . \\)");
                     ImGui.EndTooltip();
                 }
@@ -611,8 +611,8 @@ namespace ICE.Ui.MainUi.Settings
                     int minUsableDurability = entry.GatherBuffs.Buffs[buffName].MinUsableDurability;
                     int minActionGp = GatheringUtil.GathActionDict[buffName].RequiredGp;
                     int maxActionUsage = entry.GatherBuffs.Buffs[buffName].MaxUse;
-                    string ActionInfo = "收集时获得的项目数增加 2\n" +
-                                        "仅在收集节点具有完全耐久度时适用";
+                    string ActionInfo = "采集时获得的项目数增加 2\n" +
+                                        "仅在采集节点具有完全耐久度时适用";
 
                     ImGui.Text($"动作信息： ");
                     ImGuiEx.HelpMarker(ActionInfo);
@@ -667,8 +667,8 @@ namespace ICE.Ui.MainUi.Settings
                     int minUsableDurability = entry.GatherBuffs.Buffs[buffName].MinUsableDurability;
                     int minActionGp = GatheringUtil.GathActionDict[buffName].RequiredGp;
                     int maxActionUsage = entry.GatherBuffs.Buffs[buffName].MaxUse;
-                    string ActionInfo = "收集时获得的项目数增加 1\n" +
-                                        "仅在收集节点具有完全耐久度时适用";
+                    string ActionInfo = "采集时获得的项目数增加 1\n" +
+                                        "仅在采集节点具有完全耐久度时适用";
 
                     ImGui.Text($"动作信息： ");
                     ImGuiEx.HelpMarker(ActionInfo);
@@ -775,8 +775,8 @@ namespace ICE.Ui.MainUi.Settings
                     int minUseGp = entry.GatherBuffs.Buffs[buffName].MinGp;
                     int minActionGp = GatheringUtil.GathActionDict[buffName].RequiredGp;
                     int maxActionUsage = entry.GatherBuffs.Buffs[buffName].MaxUse;
-                    string ActionInfo = "收集时获得的项目数增加 2\n" +
-                                        "仅在收集节点具有完全耐久度时适用";
+                    string ActionInfo = "采集时获得的项目数增加 2\n" +
+                                        "仅在采集节点具有完全耐久度时适用";
 
                     ImGui.Text($"动作信息： ");
                     ImGuiEx.HelpMarker(ActionInfo);
@@ -803,7 +803,7 @@ namespace ICE.Ui.MainUi.Settings
                     ImGuiEx.HelpMarker("设置为-1以允许无限使用 \n" +
                                        "设置为1-> X以设置每个任务的最大使用量");
 
-                    ImGui.Text("要收集的最小项目");
+                    ImGui.Text("要采集的最小项目");
                     ImGui.SameLine();
                     int minItems = entry.GatherBuffs.BountifulMinItem;
                     if (ImGui.DragInt("##MinItemsGather", ref minItems, 1, 2, 4))
@@ -831,7 +831,7 @@ namespace ICE.Ui.MainUi.Settings
                     int minUseGp = entry.GatherBuffs.Buffs[buffName].MinGp;
                     int minActionGp = GatheringUtil.GathActionDict[buffName].RequiredGp;
                     int maxActionUsage = entry.GatherBuffs.Buffs[buffName].MaxUse;
-                    string ActionInfo = "收集几率增加 50%\n" +
+                    string ActionInfo = "采集几率增加 50%\n" +
                                         "请注意：您可以启用多个，但只能启用最接近的 " +
                                         "100% 最便宜的将被应用";
 

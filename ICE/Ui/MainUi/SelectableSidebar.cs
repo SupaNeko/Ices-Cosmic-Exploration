@@ -95,7 +95,7 @@ namespace ICE.Ui.MainUi
                         }
                     }
                 }
-                if (ImGui_Ice.Sidebar_CollaspableHeader("Hub活动", SidebarTabs.HubActivites, icon: FontAwesomeIcon.Home))
+                if (ImGui_Ice.Sidebar_CollaspableHeader("自动寻路", SidebarTabs.HubActivites, icon: FontAwesomeIcon.Home))
                 {
                     ImGui_Ice.DrawSelectable_Image(65112, "信用购物", WindowSelection.CreditShopping);
                     ImGui_Ice.DrawSelectable_Image(65127, "赌博设置", WindowSelection.GambaShopping);

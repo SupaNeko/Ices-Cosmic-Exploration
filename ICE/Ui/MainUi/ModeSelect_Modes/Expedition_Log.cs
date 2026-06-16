@@ -52,7 +52,7 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
             if (ImGui.BeginTable("Class选择表", 2, ImGuiTableFlags.SizingFixedFit))
             {
                 ImGui.TableSetupColumn("图标");
-                ImGui.TableSetupColumn("姓名");
+                ImGui.TableSetupColumn("名称");
 
                 foreach (var jobInfo in CosmicHelper.ClassInfoDict.OrderBy(x => x.Key))
                 {
@@ -425,11 +425,11 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
                                 }
                             }
 
-                            DrawTurninButton("##Gold", TurninState.Gold, goldEnabled, GoldColor, "黄金");
+                            DrawTurninButton("##Gold", TurninState.Gold, goldEnabled, GoldColor, "金星");
                             ImGui.SameLine();
-                            DrawTurninButton("##Silver", TurninState.Silver, silverEnabled, SilverColor, "银");
+                            DrawTurninButton("##Silver", TurninState.Silver, silverEnabled, SilverColor, "银星");
                             ImGui.SameLine();
-                            DrawTurninButton("##Bronze", TurninState.Bronze, bronzeEnabled, BronzeColor, "铜牌");
+                            DrawTurninButton("##Bronze", TurninState.Bronze, bronzeEnabled, BronzeColor, "铜星");
                             ImGui.SameLine();
                             ImGui.PushStyleColor(ImGuiCol.Text, timeExpired ? GoldColor : DisabledColor);
                             if (ImGuiEx.IconButton(FontAwesomeIcon.Clock, "##TimeExpired", buttonSize))
@@ -439,7 +439,7 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
                             }
                             ImGui.PopStyleColor();
                             if (ImGui.IsItemHovered())
-                                ImGui.SetTooltip("仅在任务计时器到期时交出（继续收集以获得最高分数）.");
+                                ImGui.SetTooltip("仅在任务计时器到期时交出（继续采集以获得最高分数）.");
                         }
 
                         ImGui.TableNextColumn();
@@ -632,7 +632,7 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
                             if (ImGui.IsItemHovered())
                             {
                                 ImGui.BeginTooltip();
-                                ImGui.Text("以下任务需要有金牌才能执行此操作");
+                                ImGui.Text("以下任务需要有金星才能执行此操作");
                                 foreach (var mission in unlock)
                                 {
                                     ImGui_Ice.CompletionStatusIcon(CosmicHelper.SheetMissionDict[mission]);
@@ -725,7 +725,7 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
                 if (ImGui.BeginTable("Class进度：全部", 5, ImGuiTableFlags.RowBg | ImGuiTableFlags.Borders | ImGuiTableFlags.SizingFixedFit))
                 {
                     ImGui.TableSetupColumn("作业");
-                    ImGui.TableSetupColumn("遗迹");
+                    ImGui.TableSetupColumn("宇宙工具");
                     ImGui.TableSetupColumn("##Relic_XPBar");
                     ImGui.TableSetupColumn("分数");
                     ImGui.TableSetupColumn("##Score_XPBar");
@@ -808,7 +808,7 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
 
                     ImGui.TableNextRow();
                     ImGui.TableSetColumnIndex(0);
-                    ImGui_Ice.Table_FullCenterText($"Class分数");
+                    ImGui_Ice.Table_FullCenterText($"职业分数");
 
                     ImGui.TableNextRow();
                     ImGui.TableSetColumnIndex(0);

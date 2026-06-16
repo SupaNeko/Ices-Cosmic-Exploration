@@ -79,17 +79,17 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
                     modeType = "标准";
                 else if (relicMode)
                 {
-                    modeType = "遗物研磨";
+                    modeType = "宇宙工具升级";
                     modeIcon = FontAwesomeIcon.ArrowUpRightDots;
                 }
                 else if (xpLeveling)
                 {
-                    modeType = "调平研磨";
+                    modeType = "练级刷取";
                     modeIcon = FontAwesomeIcon.Leaf;
                 }
                 else if (goldMode)
                 {
-                    modeType = "黄金完成研磨";
+                    modeType = "达成金星";
                     modeIcon = FontAwesomeIcon.Trophy;
                 }
                 else if (agendaMode)
@@ -142,11 +142,11 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
                         if (C.StopWhenLevel)
                             ImGui.BulletText($"Stop When Level [{C.TargetLevel:N0}]");
                         if (C.StopOnceHitCosmoCredits)
-                            ImGui.BulletText($"Stop once cosmo credit hit [{C.CosmoCreditsCap:N0}]");
+                            ImGui.BulletText($"宇宙信用点达到时停止 [{C.CosmoCreditsCap:N0}]");
                         if (C.StopOnceHitLunarCredits)
-                            ImGui.BulletText($"Stop once planetary credit hit [{C.LunarCreditsCap:N0}]");
+                            ImGui.BulletText($"行星信用点达到时停止 [{C.LunarCreditsCap:N0}]");
                         if (C.StopOnceRelicFinished)
-                            ImGui.BulletText($"一旦遗物完成就停止");
+                            ImGui.BulletText($"一旦宇宙工具完成就停止");
 
                         ImGui.Text("所以如果你停下来并且不确定为什么......这可能就是为什么");
 
@@ -250,21 +250,21 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
                         C.GrindAllProvisionals = grindAllProvisionals;
                         C.Save();
                     }
-                    ImGuiEx.HelpMarker("启用此功能将向您显示您可以完成的所有天气/定时/序列任务，\n" +
+                    ImGuiEx.HelpMarker("启用此功能将向您显示您可以完成的所有天气/限时/序列任务，\n" +
                                        "在完成您开始的任何职业的正常任务之上。\n" +
                                        "如果你只想关注一个特定的类，请将其设置为 false");
 
                     bool allowCriticalsAllClass = C.GrindOffClassRedAlert;
-                    if (ImGui.Checkbox("危急：允许所有职业", ref allowCriticalsAllClass))
+                    if (ImGui.Checkbox("紧急任务：允许所有职业", ref allowCriticalsAllClass))
                     {
                         C.GrindOffClassRedAlert = allowCriticalsAllClass;
                         C.Save();
                     }
-                    ImGuiEx.HelpMarker($"这将允许您磨练其他职业的危急/红色警报。 " +
-                        $"（因此，如果您在 crp 上，但弹出 bsm 红色警报）");
+                    ImGuiEx.HelpMarker($"这将允许您磨练其他职业的紧急任务。 " +
+                        $"（因此，如果您在 crp 上，但弹出 bsm 紧急任务）");
 
                     bool removeGold = C.RemoveAfterGold;
-                    if (ImGui.Checkbox("黄金完成后删除任务", ref removeGold))
+                    if (ImGui.Checkbox("达成金星后删除任务", ref removeGold))
                     {
                         C.RemoveAfterGold = removeGold;
                         C.Save();
@@ -281,7 +281,7 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
 
                     ImGui.Checkbox("当前任务后停止", ref Mission_Settings.StopAfterCurrent);
                     bool relicTurnin = C.TurninRelic;
-                    if (ImGui.Checkbox($"如果遗物已完成则上交##RelicTurnin_GeneralSetting", ref relicTurnin))
+                    if (ImGui.Checkbox($"如果宇宙工具已完成则上交##RelicTurnin_GeneralSetting", ref relicTurnin))
                     {
                         C.TurninRelic = relicTurnin;
                         C.Save();
@@ -291,24 +291,24 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
                     if (ImGui.IsItemHovered())
                     {
                         ImGui.SetTooltip("请注意这是如何运作的。如果我将来更改此设置，此工具提示也会更改。\n" +
-                                         "1：这将检查您当前的职业[不是菜单职业，实际当前职业]是否有遗物交接。\n" +
+                                         "1：这将检查您当前的职业[不是菜单职业，实际当前职业]是否有宇宙工具交接。\n" +
                                          "2：您必须没有该工具配备此功能以全自动运行。 \n" +
                                          "\t- 这是因为我此时使用 cba 编码这一事实。（将来可能会改变我的想法*耸耸肩*）\n" +
-                                         "3：这将优先于“停止 @ Relic Turnin”，从某种意义上说，如果您同时启用了两者，它将转入与停止。继续今天的\n" +
+                                         "3：这将优先于“停止 @ 宇宙工具上交”，从某种意义上说，如果您同时启用了两者，它将转入与停止。继续今天的\n" +
                                          "4：如果您正在上制作职业，它会让您回到交接后正在制作的站点。 \n" +
                                          "\t- 这是可选的，您可以随意禁用它，我只是喜欢这样，这样我就可以回到我选择的隔离区域");
                     }
 
                     ImGui.Separator();
                     bool relic_AllowRedAlert = C.Relic_IncludeCriticals;
-                    if (ImGui.Checkbox("Relic 模式：允许红色警报", ref relic_AllowRedAlert))
+                    if (ImGui.Checkbox("宇宙工具模式：允许紧急任务", ref relic_AllowRedAlert))
                     {
                         C.Relic_IncludeCriticals = relic_AllowRedAlert;
                         C.Save();
                     }
 
                     bool OnlySelected = C.XPRelicOnlyEnabled;
-                    if (ImGui.Checkbox("Relic 模式：仅启用", ref OnlySelected))
+                    if (ImGui.Checkbox("宇宙工具模式：仅启用", ref OnlySelected))
                     {
                         C.XPRelicOnlyEnabled = OnlySelected;
                         C.Save();
@@ -364,7 +364,7 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
 
                             if (ImGui.BeginTable($"Preset：TableViewer", 3, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.RowBg | ImGuiTableFlags.Borders))
                             {
-                                ImGui.TableSetupColumn("姓名");
+                                ImGui.TableSetupColumn("名称");
                                 ImGui.TableSetupColumn("启用金额");
 
                                 ImGui.TableHeadersRow();
@@ -448,11 +448,11 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
                     if (!missionButtons.Success)
                         return;
 
-                    ImGui_Ice.DrawRankButton("红色警戒", MissionFilter.RedAlert, MissionTable);
+                    ImGui_Ice.DrawRankButton("紧急任务", MissionFilter.RedAlert, MissionTable);
                     ImGui_Ice.DrawRankButton("Sequence", MissionFilter.Sequence, MissionTable);
                     ImGui_Ice.DrawRankButton("天气", MissionFilter.Weather, MissionTable);
-                    ImGui_Ice.DrawRankButton("定时", MissionFilter.Timed, MissionTable);
-                    ImGui_Ice.DrawRankButton("Master", MissionFilter.Master, MissionTable);
+                    ImGui_Ice.DrawRankButton("限时", MissionFilter.Timed, MissionTable);
+                    ImGui_Ice.DrawRankButton("大师", MissionFilter.Master, MissionTable);
                     ImGui_Ice.DrawRankButton("A Rank", MissionFilter.ARank, MissionTable);
                     ImGui_Ice.DrawRankButton("B Rank", MissionFilter.BRank, MissionTable);
                     ImGui_Ice.DrawRankButton("C Rank", MissionFilter.CRank, MissionTable);

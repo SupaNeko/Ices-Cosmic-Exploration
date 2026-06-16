@@ -91,7 +91,7 @@ namespace ICE.Ui.MainUi.Settings.Settings_Table
 
             int GatherFanRandom = C.GatherFanSectionSize;
             ImGui.SetNextItemWidth(200);
-            if (ImGui.SliderInt("收集粉丝选择", ref GatherFanRandom, 0, 360))
+            if (ImGui.SliderInt("采集扇形选择", ref GatherFanRandom, 0, 360))
             {
                 C.GatherFanSectionSize = GatherFanRandom;
                 C.SaveDebounced();
@@ -103,7 +103,7 @@ namespace ICE.Ui.MainUi.Settings.Settings_Table
                 "除此之外的任何东西都将在该扇形内选择（如果可用）", false);
 
             bool useHubReturn = C.UseHubReturn;
-            if (ImGui.Checkbox("使用集线器返回", ref useHubReturn))
+            if (ImGui.Checkbox("使用中心返回", ref useHubReturn))
             {
                 C.UseHubReturn = useHubReturn;
                 C.Save();
@@ -117,7 +117,7 @@ namespace ICE.Ui.MainUi.Settings.Settings_Table
             }
 
             bool useRedAlertNpc = C.UseRedAlertNpc;
-            if (ImGui.Checkbox("使用红色警报NPC进行旅行", ref useRedAlertNpc))
+            if (ImGui.Checkbox("使用紧急任务NPC进行旅行", ref useRedAlertNpc))
             {
                 C.UseRedAlertNpc = useRedAlertNpc;
                 C.Save();
@@ -139,7 +139,7 @@ namespace ICE.Ui.MainUi.Settings.Settings_Table
             {
                 ImGui.SameLine();
                 bool exceptHub = C.AvoidStellarReturnExceptHub;
-                if (ImGui.Checkbox("中心活动除外", ref exceptHub))
+                if (ImGui.Checkbox("自动寻路除外", ref exceptHub))
                 {
                     C.AvoidStellarReturnExceptHub = exceptHub;
                     C.Save();
@@ -152,21 +152,21 @@ namespace ICE.Ui.MainUi.Settings.Settings_Table
 
             var minHubReturnDistance = C.HubReturn_Distance;
             ImGui.SetNextItemWidth(200);
-            if (ImGui.DragFloat("使用枢纽返回之前的距离（亚尔姆斯）", ref minHubReturnDistance))
+            if (ImGui.DragFloat("使用中心返回之前的距离（亚尔姆斯）", ref minHubReturnDistance))
             {
                 C.HubReturn_Distance = minHubReturnDistance;
                 C.SaveDebounced();
             }
 
             bool DisableRedAlertPathing = C.DisablePathfindingToRedAlert;
-            if (ImGui.Checkbox("禁用红色警报寻路", ref DisableRedAlertPathing))
+            if (ImGui.Checkbox("禁用紧急任务寻路", ref DisableRedAlertPathing))
             {
                 C.DisablePathfindingToRedAlert = DisableRedAlertPathing;
                 C.Save();
             }
 
             bool DisableHubActivies_RE = C.DisableHub_Critical;
-            if (ImGui.Checkbox("红色警报处于活动状态时不执行集线器活动", ref DisableHubActivies_RE))
+            if (ImGui.Checkbox("紧急任务处于活动状态时不执行自动寻路", ref DisableHubActivies_RE))
             {
                 C.DisableHub_Critical = DisableHubActivies_RE;
                 C.Save();
@@ -178,7 +178,7 @@ namespace ICE.Ui.MainUi.Settings.Settings_Table
                 C.Delay_Aethernet = delayAether;
                 C.Save();
             }
-            ImGuiEx.HelpMarker("在与以太碎片/红色警报交互之前添加随机延迟npc旅行.\n" +
+            ImGuiEx.HelpMarker("在与以太碎片/紧急任务交互之前添加随机延迟npc旅行.\n" +
                 "之前会出现延迟，并且在与菜单交互之间会有一点");
         }
         private static void StuckSettings()

@@ -29,7 +29,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
 
                     if (ImGui.BeginTable("NPC 信息调试器", 5, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.RowBg | ImGuiTableFlags.Borders))
                     {
-                        ImGui.TableSetupColumn("姓名");
+                        ImGui.TableSetupColumn("名称");
                         ImGui.TableSetupColumn("位置");
                         ImGui.TableSetupColumn("移动到点");
                         ImGui.TableSetupColumn("移动到");

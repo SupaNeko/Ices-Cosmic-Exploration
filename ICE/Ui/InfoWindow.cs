@@ -42,7 +42,7 @@ namespace ICE.Ui
             ImGui.Text("嗨！欢迎来到 Ice 的宇宙探索 [简写形式，I.C.E.]");
             ImGui.Bullet();
             ImGui.TextWrapped("这个插件旨在帮助您满足宇宙探索需求， " +
-                              "从自动化收集和制作过程，到购买商店物品或花费这些行星积分。");
+                              "从自动化采集和制作过程，到购买商店物品或花费这些行星信用点。");
 
             helpSelect_Required.Draw();
 
@@ -51,7 +51,7 @@ namespace ICE.Ui
             ImGuiEx.IconWithText(FontAwesomeIcon.Feather, "采集设置");
             ImGui.Dummy(new Vector2(0, 5));
 
-            ImGui.Text("如果你想自动设置收集到所有任务都有我推荐的收集增益的地方");
+            ImGui.Text("如果你想自动设置采集到所有任务都有我推荐的采集增益的地方");
 
             if (!HasGatheringSetup)
             {

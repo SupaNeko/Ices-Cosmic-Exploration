@@ -53,7 +53,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Hud
                 }
                 ImGui.SameLine();
 
-                if (ImGui.Button("危急任务"))
+                if (ImGui.Button("紧急任务"))
                 {
                     x.CriticalMissions();
                 }
@@ -162,7 +162,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Hud
                     }
                 }
 
-                ImGui.Text($"Best Relic Mission: {BestMission} | {MissionName}");
+                ImGui.Text($"最佳宇宙工具任务: {BestMission} | {MissionName}");
                 if (ImGui.Button("更新最佳任务"))
                 {
                     BestMission = (int)RelicMissionFinder();

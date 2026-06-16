@@ -125,20 +125,20 @@ namespace ICE.Ui
         {
             if (ImGui.BeginTable("详细的任务信息", 2, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders))
             {
-                ImGui.TableSetupColumn("姓名");
+                ImGui.TableSetupColumn("名称");
                 ImGui.TableSetupColumn("信息");
 
                 // Row 1
                 ImGui.TableNextRow();
                 ImGui.TableSetColumnIndex(0);
-                ImGui.Text("宇宙信用");
+                ImGui.Text("宇宙信用点");
 
                 ImGui.TableNextColumn();
                 ImGui.Text($"{mission.CosmoCredit}");
 
                 ImGui.TableNextRow();
                 ImGui.TableSetColumnIndex(0);
-                ImGui.Text($"行星积分");
+                ImGui.Text($"行星信用点");
 
                 ImGui.TableNextColumn();
                 ImGui.Text($"{mission.LunarCredit}");
@@ -168,7 +168,7 @@ namespace ICE.Ui
 
                 ImGui.TableNextRow();
                 ImGui.TableSetColumnIndex(0);
-                ImGui.Text($"Class分数：");
+                ImGui.Text($"职业分数：");
 
                 ImGui.TableNextColumn();
                 ImGui.Text($"{mission.ClassScore}");
@@ -199,7 +199,7 @@ namespace ICE.Ui
                 {
                     ImGui.TableNextRow();
                     ImGui.TableSetColumnIndex(0);
-                    ImGui.Text($"铜牌要求");
+                    ImGui.Text($"铜星要求");
 
                     ImGui.TableNextColumn();
                     ImGui.Text($"{mission.BronzeScore}");
@@ -208,7 +208,7 @@ namespace ICE.Ui
                 {
                     ImGui.TableNextRow();
                     ImGui.TableSetColumnIndex(0);
-                    ImGui.Text($"银要求");
+                    ImGui.Text($"银星要求");
 
                     ImGui.TableNextColumn();
                     ImGui.Text($"{mission.SilverScore}");
@@ -217,7 +217,7 @@ namespace ICE.Ui
                 {
                     ImGui.TableNextRow();
                     ImGui.TableSetColumnIndex(0);
-                    ImGui.Text("黄金要求");
+                    ImGui.Text("金星要求");
 
                     ImGui.TableNextColumn();
                     ImGui.Text($"{mission.GoldScore}");
@@ -244,7 +244,7 @@ namespace ICE.Ui
                 {
                     ImGui.TableNextRow();
                     ImGui.TableSetColumnIndex(0);
-                    ImGui.Text("危急区域");
+                    ImGui.Text("紧急任务地区");
 
                     ImGui.TableNextColumn();
                     ImGuiEx.Icon(FontAwesomeIcon.Flag);
@@ -261,7 +261,7 @@ namespace ICE.Ui
             {
                 if (ImGui.BeginTable("Exp奖励", 2, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders))
                 {
-                    ImGui.TableSetupColumn("类经验");
+                    ImGui.TableSetupColumn("职业经验");
                     ImGui.TableSetupColumn("水平百分比");
 
                     ImGui.TableHeadersRow();
@@ -444,7 +444,7 @@ namespace ICE.Ui
             return attribute switch
             {
                 MissionAttributes.Craft => "制作",
-                MissionAttributes.Gather => "收集",
+                MissionAttributes.Gather => "采集",
                 MissionAttributes.Fish => "Fishing",
                 MissionAttributes.Limited => "有限供应",
                 MissionAttributes.Collectables => "Collectable",
@@ -452,11 +452,11 @@ namespace ICE.Ui
                 MissionAttributes.ExpertCraft => "专家工艺",
                 MissionAttributes.Score_TimeRemaining => "Timed评分",
                 MissionAttributes.Score_Chain => "连锁聚集得分",
-                MissionAttributes.Score_Boon => "收集者的奖励得分",
+                MissionAttributes.Score_Boon => "采集者的奖励得分",
                 MissionAttributes.Score_LargestSize => "最大鱼得分",
                 MissionAttributes.Score_Variety => "所需的鱼品种",
                 MissionAttributes.Score_MinimumScore => "任务分数要求",
-                MissionAttributes.Critical => "危急任务",
+                MissionAttributes.Critical => "紧急任务",
                 MissionAttributes.ProvisionalTimed => "Time required",
                 MissionAttributes.ProvisionalWeather => "需要天气",
                 MissionAttributes.ProvisionalSequential => "需要序列任务",

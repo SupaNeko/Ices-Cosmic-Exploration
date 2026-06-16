@@ -115,7 +115,7 @@ namespace ICE.Ui
                 C.Save();
             }
             ImGuiEx.HelpMarker(HelpInfoText(ModeSelect.Standard));
-            if (ImGui.RadioButton("辉煌武器刷取", relicMode))
+            if (ImGui.RadioButton("宇宙工具升级", relicMode))
             {
                 C.SelectedMode = ModeSelect.RelicMode;
                 C.Save();
@@ -128,7 +128,7 @@ namespace ICE.Ui
                 C.Save();
             }
             ImGuiEx.HelpMarker(HelpInfoText(ModeSelect.LevelMode));
-            if (ImGui.RadioButton("金牌完成刷取", goldMode))
+            if (ImGui.RadioButton("达成金星", goldMode))
             {
                 C.SelectedMode = ModeSelect.MissionGoldMode;
                 C.Save();
@@ -157,18 +157,18 @@ namespace ICE.Ui
                     "-> 对制作职业来说，是所需进展最少的任务；对采集职业来说，是技能需求最少、最轻松的任务\n" +
                     "**这些会临时自动设置使用这些模式所需的设置**",
                 ModeSelect.RelicMode =>
-                    "辉煌武器刷取\n" +
-                    "-> 自动选择最有利于完成辉煌武器的任务\n" +
+                    "宇宙工具升级\n" +
+                    "-> 自动选择最有利于完成宇宙工具的任务\n" +
                     "-> 这些任务根据完成工具下一阶段所需条件进行权衡\n" +
                     "-> 如果你只想做特定任务，请启用该选项并选择要做的任务",
                 ModeSelect.AgendaMode =>
-                    "如果你想按特定顺序执行一系列操作，请使用此模式。例如，如果你想连续刷取所有职业的辉煌武器\n" +
-                    "或者你想先完成裁衣匠的辉煌武器 -> 然后去园艺工刷分 -> 再去锻铁匠刷信用点\n" +
+                    "如果你想按特定顺序执行一系列操作，请使用此模式。例如，如果你想连续刷取所有职业的宇宙工具\n" +
+                    "或者你想先完成裁衣匠的宇宙工具 -> 然后去园艺工刷分 -> 再去锻铁匠刷信用点\n" +
                     "这本质上就是“我想按这个顺序做事”的模式。\n" +
                     "注意：如果你一直开着它并因此被封号，我不负责。我不是那种会把东西丢在电脑上不管的人，但总会有人盯着。请记住这一点",
                 ModeSelect.MissionGoldMode =>
-                    "金牌完成模式\n" +
-                    "-> 会自动选择你当前尚未获得金牌的所有任务，且只做这些任务。\n" +
+                    "金星完成模式\n" +
+                    "-> 会自动选择你当前尚未获得金星的所有任务，且只做这些任务。\n" +
                     "-> 如果属于连续任务链，它会接取前置任务以帮助完成，必要时也会接取后续任务\n" +
                     "-> 如果没有可刷新的任务，它会不断切换标签页直到任务可用（通过临时或紧急任务）\n" +
                     "**这会尊重你启用跨职业临时任务和紧急任务的设置**",

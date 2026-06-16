@@ -22,7 +22,7 @@ namespace ICE.Ui.MainUi.Settings
             }
             ImGuiEx.HelpMarker("如果您想让它自动选择轮子和 抽奖，请启用此功能。如果你不想在运行赌轮时自动运行，请禁用此功能。");
             ImGui.SetNextItemWidth(150);
-            if (ImGui.SliderInt("要保留的最小积分", ref gambaCreditsMinimum, 0, 10000))
+            if (ImGui.SliderInt("要保留的最小信用点", ref gambaCreditsMinimum, 0, 10000))
             {
                 C.GambaCreditsMinimum = gambaCreditsMinimum;
                 C.SaveDebounced();
@@ -100,7 +100,7 @@ namespace ICE.Ui.MainUi.Settings
             }
             ImGuiEx.HelpMarker("如果您想让它自动选择轮子和 抽奖，请启用此功能。如果你不想在运行赌轮时自动运行，请禁用此功能。");
             ImGui.SetNextItemWidth(150);
-            if (ImGui.SliderInt("要保留的最小积分", ref gambaCreditsMinimum, 0, 10000))
+            if (ImGui.SliderInt("要保留的最小信用点", ref gambaCreditsMinimum, 0, 10000))
             {
                 C.GambaCreditsMinimum = gambaCreditsMinimum;
                 C.SaveDebounced();
@@ -157,7 +157,7 @@ namespace ICE.Ui.MainUi.Settings
                         {
                             ImGui.TableSetupColumn("图标");
                             ImGui.TableSetupColumn("解锁");
-                            ImGui.TableSetupColumn("姓名");
+                            ImGui.TableSetupColumn("名称");
                             ImGui.TableSetupColumn("重量");
 
                             ImGui.TableHeadersRow();

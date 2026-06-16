@@ -72,8 +72,8 @@ namespace ICE.Ui.MainUi.HelpFolder
 
         private static void ScoreMax()
         {
-            ImGui.TextWrapped("每个星球都有一组专门的任务，在农业得分方面被认为是最“最佳”的。" +
-                "\n有某些任务比其他任务更值得磨练。天气/时间也是其中的一部分。以下是我针对每个职业的建议。");
+            ImGui.TextWrapped("每个星球都有一组专门的任务，在刷分方面被认为是最“最佳”的。" +
+                "\n有某些任务比其他任务更值得刷取。天气/限时也是其中的一部分。以下是我针对每个职业的建议。");
             ImGui.TextWrapped("");
         }
     }

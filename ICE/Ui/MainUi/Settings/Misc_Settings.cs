@@ -197,7 +197,7 @@ namespace ICE.Ui.MainUi.Settings
             ImGuiEx.IconWithText(FontAwesomeIcon.Medal, "任务后设置");
 
             bool removeGold = C.RemoveAfterGold;
-            if (ImGui.Checkbox("黄金完成后删除任务", ref removeGold))
+            if (ImGui.Checkbox("达成金星后删除任务", ref removeGold))
             {
                 C.RemoveAfterGold = removeGold;
                 C.Save();

@@ -65,7 +65,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
             {
                 Task_Craft.Enqueue();
             }
-            if (ImGui.Button("测试收集目标"))
+            if (ImGui.Button("测试采集目标"))
             {
                 Task_Gather.Enqueue();
             }

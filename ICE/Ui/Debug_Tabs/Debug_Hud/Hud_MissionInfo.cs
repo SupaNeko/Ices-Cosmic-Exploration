@@ -67,7 +67,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Hud
                     {
                         ImGui.TableNextRow();
                         ImGui.TableSetColumnIndex(0);
-                        ImGui.Text("危急值：");
+                        ImGui.Text("紧急任务值：");
 
                         ImGui.TableNextColumn();
                         ImGui.Text($"{x.CriticalScore}");
@@ -85,13 +85,13 @@ namespace ICE.Ui.Debug_Tabs.Debug_Hud
                     }
                     ImGui.TableNextRow();
                     ImGui.TableSetColumnIndex(0);
-                    ImGui.Text("收集的个体");
+                    ImGui.Text("采集的个体");
                     ImGui.TableNextColumn();
                     ImGui.Text($"{CosmicHelper.CurrentIndividual()}");
 
                     ImGui.TableNextRow();
                     ImGui.TableSetColumnIndex(0);
-                    ImGui.Text($"收集的总计");
+                    ImGui.Text($"采集的总计");
                     ImGui.TableNextColumn();
                     ImGui.Text($"{CosmicHelper.CurrentTotal()}");
                     ImGui.TableNextRow();

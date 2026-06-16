@@ -60,7 +60,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
                     ImGui.TableSetupColumn("作业");
                     ImGui.TableSetupColumn("额外");
                     ImGui.TableSetupColumn("等级");
-                    ImGui.TableSetupColumn("姓名");
+                    ImGui.TableSetupColumn("名称");
 
                     ImGui.TableHeadersRow();
 

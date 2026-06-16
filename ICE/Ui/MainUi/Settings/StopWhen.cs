@@ -22,7 +22,7 @@ namespace ICE.Ui.MainUi.Settings
             #region CosmoCredits
 
             bool stopCosmic = C.StopOnceHitCosmoCredits;
-            if (ImGui.Checkbox($"停止于宇宙积分", ref stopCosmic))
+            if (ImGui.Checkbox($"停止于宇宙信用点", ref stopCosmic))
             {
                 C.StopOnceHitCosmoCredits = stopCosmic;
                 C.Save();
@@ -44,10 +44,10 @@ namespace ICE.Ui.MainUi.Settings
 
             #endregion
 
-            #region Planet Credits
+            #region 行星信用点
 
             bool stopLunar = C.StopOnceHitLunarCredits;
-            if (ImGui.Checkbox($"停止于行星积分金额", ref stopLunar))
+            if (ImGui.Checkbox($"停止于行星信用点金额", ref stopLunar))
             {
                 C.StopOnceHitLunarCredits = stopLunar;
                 C.Save();
@@ -111,7 +111,7 @@ namespace ICE.Ui.MainUi.Settings
             #region Relic Completed
 
             bool relicStop = C.StopOnceRelicFinished;
-            if (ImGui.Checkbox($"停止@遗迹完成", ref relicStop))
+            if (ImGui.Checkbox($"停止@宇宙工具完成", ref relicStop))
             {
                 C.StopOnceRelicFinished = relicStop;
                 C.Save();
@@ -119,10 +119,10 @@ namespace ICE.Ui.MainUi.Settings
 
             #endregion
 
-            #region Relic Level
+            #region 宇宙工具等级
 
             bool stopWhen = C.StopAtRelicLv;
-            if (ImGui.Checkbox("停止于圣物等级", ref stopWhen))
+            if (ImGui.Checkbox("停止于宇宙工具等级", ref stopWhen))
             {
                 C.StopAtRelicLv = stopWhen;
                 C.Save();

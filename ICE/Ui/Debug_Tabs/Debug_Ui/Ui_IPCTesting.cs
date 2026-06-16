@@ -58,7 +58,7 @@ namespace ICE.Ui.Debug_Tabs.Debug_Ui
             }
 
             ImGui.Separator();
-            ImGui.Text("自动挂钩");
+            ImGui.Text("AutoHook");
             ImGui.SetNextItemWidth(150);
             ImGui.InputText("预设字符串", ref importString, 2048);
             if (ImGui.Button("进口"))

@@ -26,6 +26,17 @@
 
 `ID`、`XP`、`NQ`、`HQ`、`NPC`、`GP`、`AP`、`PP`、`CP`、`AF`、`WF`、`LB`、`HP`、`MP`、`TP`、`HUD`、`UI`、`CS`，以及制作/采集职业缩写 `CRP`、`BSM`、`ARM`、`GSM`、`LTW`、`WVR`、`ALC`、`CUL`、`MIN`、`BTN`、`FSH`。
 
+## 纠正指导
+
+1. relic被翻译成了“遗物”，修改为“工具”，比如“遗物研磨 Mode”，修改为“升级工具 Mode”。背景补充：这是一系列升级宇宙工具的任务，有一个relic Lv表示升级阶段，
+2. 所有提到的“辉煌工具”，我没有在该文档中搜索到原文，但应该对应的翻译是“宇宙工具”
+3. "red alert"翻译为“紧急任务”,"timed"通常对应为“限时”任务而非“定时”任务。
+4. “黄金完成”修改为“达成金星”
+5.4个星球的专有名词分别为：“憧憬湾”，“法恩娜行星”，“俄匊斯行星”，“奥克塞西亚行星”
+5. 信用点的专有名词分别为：“宇宙信用点”，“奥克塞西亚信用点”，其它信用点也与行星名称一致（如果英文一致的话）
+6. "Stylist","AutoHook","Artisan"是插件名称，保留英文原文。
+7. 检查所有的“收集”，优化为“采集”，这是游戏专有名词，表示采集植物、矿物等。“植物学家/矿工/渔民”优化为“园艺工/采矿工/捕鱼人”。“自动化中心活动”优化为“自动寻路”
+
 > 共提取 **1377** 条玩家可见英文文本。
 
 | 英文原文 | 中文翻译 | 英文原意/上下文 | 修改意见 |
@@ -35,10 +46,10 @@
 | (It helps if you verbally say it like a pirate) | （如果您像海盗一样口头说出它会有所帮助） | UI string \| ICE\Ui\Window_ExternalDetails.cs:28 |  |
 | (optional custom name) | （可选自定义名称） | UI text (disabled) \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_TestButtons.cs:457 |  |
 | (select to add optional name) | （选择添加可选名称） | UI text (disabled) \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_TestButtons.cs:461 |  |
-| (So if you're on crp, but a bsm red alert pops up) | （因此，如果您在 crp 上，但弹出 bsm 红色警报） | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:264 |  |
+| (So if you're on crp, but a bsm red alert pops up) | （因此，如果您在 crp 上，但弹出 bsm 紧急任务） | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:264 |  |
 | (Sorry for making you start big fish #NotSorry#MuchLove) | （抱歉让您开始大鱼 #NotSorry#MuchLove) | UI string \| ICE\Ui\Window_ExternalDetails.cs:60 |  |
 | **These will automatically set settings for using these modes temporarily** | **这些将自动设置暂时使用这些模式的设置** | UI string \| ICE\Ui\MainWindow.cs:159 |  |
-| **This will respect the want to grind off class provisionals, and criticals if you have those enabled | **如果您启用了这些功能，这将尊重磨掉职业临时条件和危急的愿望 | UI string \| ICE\Ui\MainWindow.cs:175 |  |
+| **This will respect the want to grind off class provisionals, and criticals if you have those enabled | **如果您启用了这些功能，这将尊重磨掉职业临时条件和紧急任务的愿望 | UI string \| ICE\Ui\MainWindow.cs:175 |  |
 | - - - Mission specific - - - | - - - 特定任务 - - - | UI string \| ICE\ICE.cs:311 |  |
 | - - ICE Commands Help - - | - - ICE 命令帮助 - - | UI string \| ICE\ICE.cs:307 |  |
 | - Jump: attempts to jump over the obstacle | - 跳跃：尝试跳过障碍 | UI string \| ICE\Ui\MainUi\Settings\TravelSettings.cs:204 |  |
@@ -46,17 +57,17 @@
 | - This is due to the fact that I cba coding this in at this time. (might change my mind in the future *shrugs*) | - 这是因为我此时使用 cba 编码这一事实。（将来可能会改变我的想法*耸耸肩*） | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:296 |  |
 | - This is optional, you can disable it at your own free will, I just like this so I can just go back to an isolated area of my choosing | - 这是可选的，您可以随意禁用它，我只是喜欢这样，这样我就可以回到我选择的隔离区域 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:299 |  |
 | --> Name: {0} \| ID: {1} | -->名称：{0} \|ID: {1} | UI text \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_TestButtons.cs:276 |  |
-| -> Automatically select which missions that are best to finish up your relic | -> 自动选择最适合完成你的遗物的任务 | UI string \| ICE\Ui\MainWindow.cs:162 |  |
+| -> Automatically select which missions that are best to finish up your relic | -> 自动选择最适合完成你的宇宙工具的任务 | UI string \| ICE\Ui\MainWindow.cs:162 |  |
 | -> For crafters it's whatever missions take the least amount of progress | -> 对于能工巧匠来说，它是进度最少的任务 | UI string \| ICE\Ui\MainWindow.cs:157 |  |
 | -> For gathering, it's whatever is the least pain to do w/ the minimum amount of skills | -> 对于采集来说，它是用最少的技能完成最不痛苦的任务 | UI string \| ICE\Ui\MainWindow.cs:158 |  |
 | -> If it is apart of a sequence chain, it will grab the mission that are needed previously to help complete it, and the missions post if necessary | -> 如果它是序列链的一部分，它将获取之前需要帮助完成它的任务，并且任务发布如果有必要 | UI string \| ICE\Ui\MainWindow.cs:173 |  |
-| -> If it runs out of missions to reroll, it will just continually swap tabs until the mission is available (via provisional or critical) | -> 如果它用完要重新滚动的任务，它将不断交换选项卡，直到任务可用（通过临时或危急） | UI string \| ICE\Ui\MainWindow.cs:174 |  |
+| -> If it runs out of missions to reroll, it will just continually swap tabs until the mission is available (via provisional or critical) | -> 如果它用完要重新滚动的任务，它将不断交换选项卡，直到任务可用（通过临时或紧急任务） | UI string \| ICE\Ui\MainWindow.cs:174 |  |
 | -> If you want to only do certain missions, enable the option and select which ones you want to do | -> 如果您只想执行某些任务，请启用该选项并选择您想要执行的任务 | UI string \| ICE\Ui\MainWindow.cs:164 |  |
 | -> Select which missions you want to do, and go at it. | -> 选择您想要执行的任务，然后继续执行。 | UI string \| ICE\Ui\MainWindow.cs:152 |  |
 | -> These are hand picked by me, and determined by the time it takes to complete it | -> 这些是我亲手挑选的，并由完成它所需的时间决定 | UI string \| ICE\Ui\MainWindow.cs:156 |  |
 | -> These are weighed based on what is needed to complete the tool to the next step | -> 这些是根据完成下一步所需的工具进行权衡 | UI string \| ICE\Ui\MainWindow.cs:163 |  |
 | -> Used to select which missions you want to grind. It'll priortize in the following order: | -> 用于选择您想要完成的任务。它将按以下顺序进行优先级排序： | UI string \| ICE\Ui\MainWindow.cs:150 |  |
-| -> Will automatically pick all the missions that you do not have currently gold, AND ONLY THOSE MISSIONS. | -> 将自动选择您当前没有金牌的所有任务，并且仅选择那些任务。 | UI string \| ICE\Ui\MainWindow.cs:172 |  |
+| -> Will automatically pick all the missions that you do not have currently gold, AND ONLY THOSE MISSIONS. | -> 将自动选择您当前没有金星的所有任务，并且仅选择那些任务。 | UI string \| ICE\Ui\MainWindow.cs:172 |  |
 | -> Will automatically select which mission is the best for leveling your current class based on what level bracket you're in | -> 将根据您所在的等级区间自动选择哪个任务最适合您当前的等级 | UI string \| ICE\Ui\MainWindow.cs:155 |  |
 | /ice | /ice | Command help \| ICE\ICE.cs:91 |  |
 | /ice -> opens the main settings | /ice -> opens the main settings | UI string \| ICE\ICE.cs:309 |  |
@@ -75,7 +86,7 @@
 | 100% the cheapest will be applied | 100% 最便宜的将被应用 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:836; ICE\Ui\MainUi\Settings\GatherSettings.cs:882; ICE\Ui\MainUi\Settings\GatherSettings.cs:928 |  |
 | 1: A position is saved: | 1：保存位置： | UI string \| ICE\Ui\MainUi\Settings\TravelSettings.cs:279 |  |
 | 1: Score that you personally have set has been met | 1：已达到您个人设置的分数 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:991 |  |
-| 1: This will check for your current CLASS [not menu class, actual current class] for relic turnin. | 1：这将检查您当前的职业[不是菜单职业，实际当前职业]是否有遗物交接。 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:294 |  |
+| 1: This will check for your current CLASS [not menu class, actual current class] for relic turnin. | 1：这将检查您当前的职业[不是菜单职业，实际当前职业]是否有宇宙工具上交。 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:294 |  |
 | 1: You have immaculate rng of getting the mission you want every time | 1：您每次都能完美地完成您想要的任务 | UI text \| ICE\Ui\Window_ExternalDetails.cs:374 |  |
 | 2: A random spot even is saved | 2：甚至保存了一个随机点 | UI string \| ICE\Ui\MainUi\Settings\TravelSettings.cs:280 |  |
 | 2: Timer has ran out | 2：计时器已用完 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:992 |  |
@@ -83,13 +94,13 @@
 | 2: You're hitting the threshold every time | 2：您每次都会达到阈值 | UI text \| ICE\Ui\Window_ExternalDetails.cs:375 |  |
 | 2nd Job | 第二职业 | Table column \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:187 |  |
 | 360 = the whole fan will be available for selection | 360 =整个扇形将可供选择 | UI string \| ICE\Ui\MainUi\Settings\TravelSettings.cs:102 |  |
-| 3: This will take prio over "Stop @ Relic Turnin", in the sense that if you have both enabled, it will turnin vs stop. And continue about it's day | 3：这将优先于“停止 @ Relic Turnin”，从某种意义上说，如果您同时启用了两者，它将转入与停止。继续今天的 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:297 |  |
+| 3: This will take prio over "Stop @ Relic Turnin", in the sense that if you have both enabled, it will turnin vs stop. And continue about it's day | 3：这将优先于“停止 @ 宇宙工具 Turnin”，从某种意义上说，如果您同时启用了两者，它将转入与停止。继续今天的 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:297 |  |
 | 4: If you're on a crafting class, it will return you back to the stop you were crafting post turnin. | 4：如果您正在上制作职业，它会让您回到交接后正在制作的站点。 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:298 |  |
 | 50% chance to grant Eureka Moment | 50% 几率获得灵光一现 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:727 |  |
 | ???? For some reason we're missing this. Please Report this to I | ????由于某种原因我们错过了这个。请将此报告给I | UI string \| ICE\Ui\MainWindow.cs:176 |  |
 | A "Doyouthinkheseemesaurs" | A“Doyouthinkheseemesaurs” | UI string \| ICE\Ui\Window_ExternalDetails.cs:54 |  |
 | A and above | A及以上 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:45 |  |
-| A mode designed to automate mission selection for relic progression with minimal intervention. | A模式旨在以最小的干预自动选择遗物进展的任务。 | UI string \| ICE\Ui\MainUi\HelpFolder\Tips_Folder\ModeSelection.cs:61 |  |
+| A mode designed to automate mission selection for relic progression with minimal intervention. | A模式旨在以最小的干预自动选择宇宙工具升级的任务。 | UI string \| ICE\Ui\MainUi\HelpFolder\Tips_Folder\ModeSelection.cs:61 |  |
 | A way for you to save your own positions if you choose to not use a randomized spot that's included in the plugin | 如果您选择不使用插件中包含的随机点，您可以保存自己的位置 | UI string \| ICE\Ui\MainUi\Settings\TravelSettings.cs:277 |  |
 | Abandon | 放弃 | Button \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_MissionInfo.cs:127; ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:417 |  |
 | Abandon Mission | 放弃任务 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_TaskManagerInfo.cs:34 |  |
@@ -112,7 +123,7 @@
 | Add to Cosmic Agenda | 添加到宇宙议程 | Button \| ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:187 |  |
 | Added | 额外 | Table column \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionSelect.cs:61 |  |
 | Addon Ready: {0} | 插件就绪：{0} | UI text \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_MissionInfo.cs:14 |  |
-| Adds a random delay before interacting with the aethershard / red alert npc travel. | 在与以太碎片/红色警报交互之前添加随机延迟npc旅行. | Help marker \| ICE\Ui\MainUi\Settings\TravelSettings.cs:181 |  |
+| Adds a random delay before interacting with the aethershard / red alert npc travel. | 在与以太碎片/紧急任务交互之前添加随机延迟npc旅行. | Help marker \| ICE\Ui\MainUi\Settings\TravelSettings.cs:181 |  |
 | Adds a small random offset to navigation destinations so the character doesn't always follow the exact same path | 向导航目的地添加一个小的随机偏移，以便角色不会总是遵循完全相同的路径 | Tooltip \| ICE\Ui\MainUi\Settings\TravelSettings.cs:72 |  |
 | Adjust | 调整 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_NavmeshTesting.cs:39 |  |
 | Aethernet Test | 以太之光测试 | UI string \| ICE\Ui\DebugWindow.cs:91 |  |
@@ -139,7 +150,7 @@
 | All world timers: | 所有世界计时器： | UI text \| ICE\Ui\Debug_Tabs\Debug_CS\CS_TimerInfo.cs:13 |  |
 | Allow for all Provisional Jobs | 允许所有临时职业 | UI string \| ICE\Ui\MainUi\Settings\Priority_Settings.cs:189 |  |
 | Allows testing to make sure that you have the preset name | 允许测试以确保您拥有预设名称 | Tooltip \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:1289 |  |
-| Always navigate to the closest targetable node instead of following the fixed route order.<br>Useful for timed EX+ missions where speed matters. | 始终导航到最近的目标节点，而不是遵循固定的路线顺序。<br>对于速度快的定时EX+任务很有用事项. | Tooltip \| ICE\Ui\MainUi\Settings\TravelSettings.cs:61 |  |
+| Always navigate to the closest targetable node instead of following the fixed route order.<br>Useful for timed EX+ missions where speed matters. | 始终导航到最近的目标节点，而不是遵循固定的路线顺序。<br>对于速度快的限时EX+任务很有用事项. | Tooltip \| ICE\Ui\MainUi\Settings\TravelSettings.cs:61 |  |
 | Amount | 数量 | Table column \| ICE\Ui\MainUi\Settings\GatherSettings.cs:275 |  |
 | Amount #1 | 金额 #1 | Table column \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:209 |  |
 | Amount #2 | 金额 #2 | Table column \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:211 |  |
@@ -184,11 +195,11 @@
 | Auto-Remove Stellar Status | 自动移除恒星状态 | Checkbox \| ICE\Ui\MainUi\Settings\Misc_Settings.cs:171 |  |
 | Auto-Use | 自动使用 | Section header \| ICE\Ui\MainUi\Settings\Misc_Settings.cs:167 |  |
 | Auto-Use Stellar Sprint | 自动使用恒星冲刺 | Checkbox \| ICE\Ui\MainUi\Settings\TravelSettings.cs:47 |  |
-| AutoHook | 自动挂钩 | UI text \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_IPCTesting.cs:61 |  |
+| AutoHook | AutoHook | UI text \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_IPCTesting.cs:61 |  |
 | Autohook Presets | Autohook预设 | UI string \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_FishPresets.cs:118 |  |
 | Automate cosmodrone | 自动化cosmodrone | Checkbox \| ICE\Ui\MainUi\Settings\Shop_Dronebit.cs:62 |  |
 | Automatically removes the Star Contributor visual effect (the glow you get for being a top contributor). | 自动移除明星贡献者视觉效果（作为顶级贡献者所获得的光芒）. | UI string \| ICE\Ui\MainUi\Settings\Misc_Settings.cs:178 |  |
-| Automating Hub Activities | 自动化中心活动 | Section header \| ICE\Ui\MainUi\HelpFolder\helpSelect_Required.cs:31 |  |
+| Automating Hub Activities | 自动寻路 | Section header \| ICE\Ui\MainUi\HelpFolder\helpSelect_Required.cs:31 |  |
 | Average SPM: {0} | 平均SPM：{0} | UI text \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:1331 |  |
 | Average Time History to keep | 要保留的平均时间历史 | Input label \| ICE\Ui\MainUi\Settings\Misc_Settings.cs:223 |  |
 | Average Time: --:--:-- | 平均时间：--:--:-- | UI text \| ICE\Ui\Window_ExternalDetails.cs:356 |  |
@@ -203,7 +214,7 @@
 | Because they have hallow-eenies | 因为他们有万圣节 | UI string \| ICE\Ui\Window_ExternalDetails.cs:37 |  |
 | Because they start their match at "Love All" | 因为他们在“Love All”开始比赛 | UI string \| ICE\Ui\Window_ExternalDetails.cs:34 |  |
 | Best Mission for leveling: [{0}] | 最佳升级任务：[{0}] | UI text \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_PlayerInfo.cs:106 |  |
-| Best Relic Mission: {0} \| {1} | 最佳遗物任务：{0} \|{1} | UI text \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_Mission.cs:165 |  |
+| Best Relic Mission: {0} \| {1} | 最佳宇宙工具任务：{0} \|{1} | UI text \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_Mission.cs:165 |  |
 | Best Score Per Minute | 每分钟最佳分数 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:1312 |  |
 | Best Time: --:--:-- | 最佳时间：--:--:-- | UI text \| ICE\Ui\Window_ExternalDetails.cs:355 |  |
 | Best Time: {0} | 最佳时间：{0} | UI text \| ICE\Ui\Window_ExternalDetails.cs:350 |  |
@@ -214,12 +225,12 @@
 | Blessed / Kings Yield I | 祝福/国王产量 I | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:659 |  |
 | Blessed / Kings Yield II | 祝福/国王产量 II | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:603 |  |
 | Boon Scoring | 恩赐得分 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:37 |  |
-| Botanist (BTN) | 植物学家 (BTN) | UI string \| ICE\Ui\MainUi\Settings\Settings_TableColumns.cs:73 |  |
+| Botanist (BTN) | 园艺工 (BTN) | UI string \| ICE\Ui\MainUi\Settings\Settings_TableColumns.cs:73 |  |
 | Bountiful Yield II / Bountiful Harvest II | 丰沛产量 II / 丰收 II | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:768 |  |
 | Brazen Power | 黄铜力量 | UI text \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_CollectableGathering.cs:109 |  |
-| Bronze | 铜牌 | Table column \| Radio button \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:190; ICE\Ui\MainUi\Settings\Settings_TableColumns.cs:132 |  |
-| Bronze Requirement | 铜牌要求 | UI text \| ICE\Ui\Window_ExternalDetails.cs:202 |  |
-| Bronze: 1 Item | 铜牌：1物品 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:462 |  |
+| Bronze | 铜星 | Table column \| Radio button \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:190; ICE\Ui\MainUi\Settings\Settings_TableColumns.cs:132 |  |
+| Bronze Requirement | 铜星要求 | UI text \| ICE\Ui\Window_ExternalDetails.cs:202 |  |
+| Bronze: 1 Item | 铜星：1物品 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:462 |  |
 | Browse... | 浏览... | Button \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:131 |  |
 | BSM | BSM | UI string \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:26; ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionSelect.cs:27; ICE\Ui\Debug_Tabs\Debug_Ui\Ui_RelicInfo.cs:12; ICE\Ui\MainUi\Settings\Misc_Settings.cs:128 |  |
 | BTN | BTN | UI string \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:34; ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionSelect.cs:28; ICE\Ui\Debug_Tabs\Debug_Ui\Ui_RelicInfo.cs:20; ICE\Ui\MainUi\Settings\Misc_Settings.cs:130 |  |
@@ -262,12 +273,12 @@
 | Clear shopping list | 清除购物清单 | Button \| ICE\Ui\MainUi\Settings\ShoppingTab.cs:93 |  |
 | Clear stored scores | 清除存储的分数 | Button \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:121 |  |
 | Clear Task | 清除任务 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_TestButtons.cs:256 |  |
-| Click Nearest Collection Point | 单击最近的收集点 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_TestButtons.cs:303 |  |
+| Click Nearest Collection Point | 单击最近的采集点 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_TestButtons.cs:303 |  |
 | Click Nearest EventObject | 单击最近的事件对象 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_TestButtons.cs:291 |  |
 | Click to override mount for this character | 单击以覆盖此角色的安装 | UI string \| ICE\Ui\MainUi\Settings\Character_Settings.cs:803 |  |
 | Click to override this setting for this character | 单击以覆盖此角色的此设置字符 | UI string \| ICE\Ui\MainUi\Settings\Character_Settings.cs:100; ICE\Ui\MainUi\Settings\Character_Settings.cs:122 |  |
-| Collected Individual | 收集的个体 | UI text \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_MissionInfo.cs:88 |  |
-| Collected Total | 收集的总计 | UI text \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_MissionInfo.cs:94 |  |
+| Collected Individual | 采集的个体 | UI text \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_MissionInfo.cs:88 |  |
+| Collected Total | 采集的总计 | UI text \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_MissionInfo.cs:94 |  |
 | Column 0 | 列0 | Table column \| ICE\Ui\DebugWindowTabs\Sheet_MissionRewards.cs:27 |  |
 | Column 1 | 列1 | Table column \| ICE\Ui\DebugWindowTabs\Sheet_MissionRewards.cs:28 |  |
 | Column 10 | 列10 | Table column \| ICE\Ui\DebugWindowTabs\Sheet_MissionRewards.cs:37 |  |
@@ -293,7 +304,7 @@
 | Cone Color Editor | 圆锥颜色编辑器 | UI string \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_Fish_HoleEditor.cs:221 |  |
 | Confirm | 确认 | Button \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_WheelofFortune.cs:30 |  |
 | Copied {0} fishing missions to clipboard! | 已将{0}钓鱼任务复制到剪贴板！ | Tooltip \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:111 |  |
-| Copy Auxesia CSV | 复制Auxesia CSV | Button \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:79 |  |
+| Copy Auxesia CSV | 复制奥克塞西亚行星 CSV | Button \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:79 |  |
 | Copy current set | 复制当前集 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_NpcViewer.cs:65 |  |
 | Copy Flag | 复制标志 | Button \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:366 |  |
 | Copy Ids | 复制ID | Button \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionText.cs:54 |  |
@@ -319,12 +330,12 @@
 | Cosmic Class Info | 宇宙职业信息 | UI string \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_ClassInfo.cs:12 |  |
 | Cosmic Helper | 宇宙助手 | UI string \| ICE\Ui\MainUi\SelectableSidebar.cs:37 |  |
 | Cosmo Crafting Log | Cosmo制作日志 | Button \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_MissionInfo.cs:106 |  |
-| Cosmo Credits | Cosmo积分 | UI string \| ICE\Ui\MainUi\Settings\Settings_TableColumns.cs:10 |  |
+| Cosmo Credits | Cosmo信用点 | UI string \| ICE\Ui\MainUi\Settings\Settings_TableColumns.cs:10 |  |
 | Cosmo Gear Shop | Cosmo装备店 | UI string \| ICE\Ui\MainUi\Settings\ShoppingTab.cs:149 |  |
 | Cosmo Materia Shop | Cosmo材料店 | UI string \| ICE\Ui\MainUi\Settings\ShoppingTab.cs:127 |  |
 | Cosmo Pouch | CosmoPouch | Button \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_MissionInfo.cs:99 |  |
 | CosmocreditMateriaPopup | CosmocreditMateriaPopup | UI string \| ICE\Ui\MainUi\Settings\ShoppingTab.cs:120 |  |
-| Cosmocredits | 宇宙信用 | UI text \| ICE\Ui\Window_ExternalDetails.cs:134 |  |
+| Cosmocredits | 宇宙信用点 | UI text \| ICE\Ui\Window_ExternalDetails.cs:134 |  |
 | Cosmocredit_MountArmorPopup | Cosmocredit_MountArmorPopup | UI string \| ICE\Ui\MainUi\Settings\ShoppingTab.cs:142 |  |
 | Cost | 成本 | Table column \| ICE\Ui\MainUi\Settings\ShoppingTab.cs:215 |  |
 | Could not find a contiguous arc of reachable angles. | 无法找到可到达角度的连续弧。 | UI string \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_GatherEditor.cs:536 |  |
@@ -336,15 +347,15 @@
 | Crafting Return Spot | 制作返回点 | Section header \| ICE\Ui\MainUi\Settings\TravelSettings.cs:237 |  |
 | Create files | 创建文件 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_GatherEditor.cs:367 |  |
 | Create waypoint list | 创建航路点列表 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_TaskManagerInfo.cs:54 |  |
-| Credit / Planetary Credits / Token farming | 信用/行星积分/代币耕作 | UI string \| ICE\Ui\MainUi\HelpFolder\Tips_Folder\ModeSelection.cs:48 |  |
+| Credit / Planetary Credits / Token farming | 信用/行星信用点/代币耕作 | UI string \| ICE\Ui\MainUi\HelpFolder\Tips_Folder\ModeSelection.cs:48 |  |
 | Credit Shopping | 信用购物 | UI string \| ICE\Ui\MainUi\SelectableSidebar.cs:100 |  |
-| Credits | 信用 | Table column \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:865 |  |
-| Critical Area | 危急区域 | UI text \| ICE\Ui\Window_ExternalDetails.cs:247 |  |
-| Critical Location | 危急地点 | Table column \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_GatheringInfo.cs:35 |  |
-| Critical Mission | 危急任务 | UI string \| ICE\Ui\Window_ExternalDetails.cs:459 |  |
-| Critical Missions | 危急任务 | Button \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_Mission.cs:56 |  |
-| Critical Value: | 危急值： | UI text \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_MissionInfo.cs:70 |  |
-| Critical: Allow All Classes | 危急：允许所有职业 | Checkbox \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:258 |  |
+| Credits | 信用点 | Table column \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:865 |  |
+| Critical Area | 紧急任务区域 | UI text \| ICE\Ui\Window_ExternalDetails.cs:247 |  |
+| Critical Location | 紧急任务地点 | Table column \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_GatheringInfo.cs:35 |  |
+| Critical Mission | 紧急任务 | UI string \| ICE\Ui\Window_ExternalDetails.cs:459 |  |
+| Critical Missions | 紧急任务 | Button \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_Mission.cs:56 |  |
+| Critical Value: | 临界值： | UI text \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_MissionInfo.cs:70 |  |
+| Critical: Allow All Classes | 紧急任务：允许所有职业 | Checkbox \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:258 |  |
 | CRP | CRP | UI string \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:25; ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionSelect.cs:27; ICE\Ui\Debug_Tabs\Debug_Ui\Ui_RelicInfo.cs:11; ICE\Ui\MainUi\Settings\Misc_Settings.cs:128 |  |
 | CS: Available Missions | CS：可用任务 | UI string \| ICE\Ui\DebugWindow.cs:74 |  |
 | CS: Missions Avaialble | CS：可用任务 | UI string \| ICE\Ui\Debug_Tabs\Debug_CS\CS_Missions.cs:37 |  |
@@ -355,7 +366,7 @@
 | Current | 当前的 | Table column \| ICE\Ui\OverlayWindow.cs:75 |  |
 | Current Agenda | Current议程 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:48 |  |
 | Current Bait | 当前诱饵 | UI text \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_MissionInfo.cs:80 |  |
-| Current Collectability: | 当前可收集性： | UI text \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_CollectableGathering.cs:55 |  |
+| Current Collectability: | 当前收藏价值： | UI text \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_CollectableGathering.cs:55 |  |
 | Current location: {0} \| Currency Amount: {1} | 当前位置：{0} \|货币金额：{1} | UI text \| ICE\Ui\MainUi\Settings\GambaWheel.cs:58; ICE\Ui\MainUi\Settings\GambaWheel.cs:135 |  |
 | Current Mission: | 当前任务： | UI text \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_MissionInfo.cs:38 |  |
 | Current Mission: {0} | 当前任务：{0} | UI text \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_PlayerInfo.cs:59; ICE\Ui\Debug_Tabs\Debug_Ui\Ui_TestButtons.cs:204 |  |
@@ -381,7 +392,7 @@
 | DEBUG TEST | 调试测试 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:292 |  |
 | Default | 默认 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:1712; ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:1768; ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:1825; ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:1874; ICE\Ui\MainUi\Settings\Character_Settings.cs:472; ICE\Ui\MainUi\Settings\Character_Settings.cs:507; ICE\Ui\MainUi\Settings\Character_Settings.cs:549; ICE\Ui\MainUi\Settings\Character_Settings.cs:584; ICE\Ui\MainUi\Settings\Character_Settings.cs:626; ICE\Ui\MainUi\Settings\Character_Settings.cs:657; ICE\Ui\MainUi\Settings\Character_Settings.cs:695; ICE\Ui\MainUi\Settings\Character_Settings.cs:726 |  |
 | Delay | 延迟 | Table column \| ICE\Ui\MainUi\Settings\Misc_Settings.cs:261 |  |
-| Delay Post Relic Turnin | 延迟遗物上交后 | UI string \| ICE\Ui\MainUi\Settings\SafetySettings.cs:79 |  |
+| Delay Post Relic Turnin | 延迟宇宙工具上交后 | UI string \| ICE\Ui\MainUi\Settings\SafetySettings.cs:79 |  |
 | Delete | 删除 | UI string \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_Fish_HoleEditor.cs:258 |  |
 | Delete Profile | 删除配置文件 | Button \| ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:339 |  |
 | Delete Selected Profile | 删除选定的配置文件 | Button \| ICE\Ui\MainUi\Settings\GatherSettings.cs:357 |  |
@@ -398,7 +409,7 @@
 | Disable Autohook | DisableAutohook | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_IPCTesting.cs:115 |  |
 | Disable Endurance | 禁用耐力 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_IPCTesting.cs:207 |  |
 | Disable HUD Clipping | 禁用HUD剪裁 | Checkbox \| ICE\Ui\MainUi\Settings\Misc_Settings.cs:154 |  |
-| Disable Pathfinding to Red Alerts | 禁用红色警报寻路 | Checkbox \| ICE\Ui\MainUi\Settings\TravelSettings.cs:162 |  |
+| Disable Pathfinding to Red Alerts | 禁用紧急任务寻路 | Checkbox \| ICE\Ui\MainUi\Settings\TravelSettings.cs:162 |  |
 | Dismount Target Range | 卸载目标范围 | UI string \| ICE\Ui\MainUi\Settings\Character_Settings.cs:875; ICE\Ui\MainUi\Settings\Character_Settings.cs:911 |  |
 | Dismount_Radius Circle | 下马_半径圆 | UI string \| ICE\Ui\MainUi\Settings\Character_Settings.cs:931 |  |
 | Distance | 距离 | Table column \| ICE\Ui\MainUi\HelpFolder\helpSelect_Logs.cs:152 |  |
@@ -407,7 +418,7 @@
 | Distance: {0} | 距离：{0} | UI text \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_NpcViewer.cs:46; ICE\Ui\Debug_Tabs\Debug_Ui\Ui_PlayerInfo.cs:76 |  |
 | Do you want to buy drones? If yes, enable this | 您想购买无人机吗？如果是，请启用此 | UI string \| ICE\Ui\MainUi\Settings\Shop_Dronebit.cs:30 |  |
 | Do you want to run the automated drone finding? If yes, enable this | 您想运行自动无人机查找吗？如果是，请启用此 | UI string \| ICE\Ui\MainUi\Settings\Shop_Dronebit.cs:68 |  |
-| Don't do hub activities when a red alert is active | 红色警报处于活动状态时不执行集线器活动 | Checkbox \| ICE\Ui\MainUi\Settings\TravelSettings.cs:169 |  |
+| Don't do hub activities when a red alert is active | 紧急任务处于活动状态时不执行自动寻路 | Checkbox \| ICE\Ui\MainUi\Settings\TravelSettings.cs:169 |  |
 | Drawing Mission Table | 绘制任务表 | UI string \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionsV3.cs:56; ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:489 |  |
 | Drone Ready: {0} | 无人机就绪：{0} | UI text \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_PlayerInfo.cs:118 |  |
 | Drone Search | 无人机搜索 | UI string \| ICE\Ui\MainUi\Settings\Priority_Settings.cs:157 |  |
@@ -418,7 +429,7 @@
 | Dual Class | 双类 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:39 |  |
 | Durability: {0} | 耐用性：{0} | UI text \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:1700 |  |
 | E8 ?? ?? ?? ?? 84 C0 75 58 FF C3 | E8 ????????84 C0 75 58 FF C3 | UI string \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_FishingRaycast.cs:21 |  |
-| Each planet has a dedicated set of missions are deemed the most "Optimal" when it comes to farming score. | 每个星球都有一组专门的任务，在农业得分方面被认为是最“最佳”的。 | UI text (wrapped) \| ICE\Ui\MainUi\HelpFolder\helpSelect_Tips.cs:75 |  |
+| Each planet has a dedicated set of missions are deemed the most "Optimal" when it comes to farming score. | 每个星球都有一组专门的任务，在刷分方面被认为是最“最佳”的。 | UI text (wrapped) \| ICE\Ui\MainUi\HelpFolder\helpSelect_Tips.cs:75 |  |
 | Editing Spot {0}: | 编辑点{0}： | UI text \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_Fish_HoleEditor.cs:273 |  |
 | Enable | 使能够 | Checkbox \| ICE\Ui\MainUi\Settings\GatherSettings.cs:488; ICE\Ui\MainUi\Settings\GatherSettings.cs:530; ICE\Ui\MainUi\Settings\GatherSettings.cs:574; ICE\Ui\MainUi\Settings\GatherSettings.cs:620; ICE\Ui\MainUi\Settings\GatherSettings.cs:676; ICE\Ui\MainUi\Settings\GatherSettings.cs:732; ICE\Ui\MainUi\Settings\GatherSettings.cs:784; ICE\Ui\MainUi\Settings\GatherSettings.cs:841; ICE\Ui\MainUi\Settings\GatherSettings.cs:887; ICE\Ui\MainUi\Settings\GatherSettings.cs:933; ICE\Ui\MainUi\Settings\GatherSettings.cs:978 |  |
 | Enable Auto Gamba | 启用自动抽奖 | Checkbox \| ICE\Ui\MainUi\Settings\GambaWheel.cs:18 |  |
@@ -428,7 +439,7 @@
 | Enabled | 启用 | Table column \| ICE\Ui\MainUi\ModeSelect_Modes\Expedition_Log.cs:252 |  |
 | Enabled Mission Table | 启用任务表 | UI string \| ICE\Ui\OverlayWindow.cs:320 |  |
 | Enabling this will make it to where pandora's cordial feature won't be auto-paused. | 启用此功能将使其到潘多拉的强心剂功能不会自动暂停的位置。 | Help marker \| ICE\Ui\MainUi\Settings\GatherSettings.cs:187 |  |
-| Enabling this will show you all weather/timed/sequence missions that you can grind, | 启用此功能将向您显示您可以完成的所有天气/定时/序列任务， | Help marker \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:253 |  |
+| Enabling this will show you all weather/timed/sequence missions that you can grind, | 启用此功能将向您显示您可以完成的所有天气/限时/序列任务， | Help marker \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:253 |  |
 | End Hour | 结束时间 | Table column \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_TimeWeather.cs:16 |  |
 | Error: Please specify an export path | 错误：请指定导出路径 | UI string \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:506 |  |
 | Estimated Score Per Hour: | 每小时估计分数： | UI text \| ICE\Ui\Window_ExternalDetails.cs:367 |  |
@@ -436,7 +447,7 @@
 | EX and above | EX及以上 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:45 |  |
 | EX. /ice add 10 155 185 | EX。/ice 添加 10 155 185 | UI string \| ICE\ICE.cs:315 |  |
 | Except for hub activities | 中心活动除外 | Checkbox \| ICE\Ui\MainUi\Settings\TravelSettings.cs:142 |  |
-| Exp Grinding | Exp研磨 | UI string \| ICE\Ui\MainUi\HelpFolder\Tips_Folder\ModeSelection.cs:47 |  |
+| Exp Grinding | Exp刷取 | UI string \| ICE\Ui\MainUi\HelpFolder\Tips_Folder\ModeSelection.cs:47 |  |
 | Exp Rewards | Exp奖励 | UI string \| ICE\Ui\Window_ExternalDetails.cs:262 |  |
 | ExpBar | ExpBar | Table column \| ICE\Ui\MainUi\ModeSelect_Modes\Expedition_Log.cs:807 |  |
 | Expected to start with: AH4_ | 预计开始于：AH4_ | UI string \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_FishPresets.cs:105 |  |
@@ -459,7 +470,7 @@
 | Export Selected to Dictionary | 将选定的任务导出到字典 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_TestButtons.cs:397 |  |
 | Export to Clipboard | 导出到剪贴板 | Button \| ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:258 |  |
 | Exported Icon Dictionary | 导出图标字典 | UI string \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_TestButtons.cs:498 |  |
-| Extract Spiritbond on Gather | 在收集时提取Spiritbond | Checkbox \| ICE\Ui\MainUi\Settings\GatherSettings.cs:179 |  |
+| Extract Spiritbond on Gather | 在采集时提取Spiritbond | Checkbox \| ICE\Ui\MainUi\Settings\GatherSettings.cs:179 |  |
 | Face toward spot | 面向点 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_Fish_HoleEditor.cs:190 |  |
 | Failed to deserialize profile | 反序列化失败轮廓 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:86; ICE\Ui\MainUi\Settings\GatherSettings.cs:133 |  |
 | Fan Height | 扇形高度 | UI string \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_GatherEditor.cs:335 |  |
@@ -497,28 +508,28 @@
 | Food Settings | 食物设置 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:232 |  |
 | Food [HQ] | 食物 [HQ] | Button \| ICE\Ui\DebugWindowTabs\Ipc_Artisan.cs:142 |  |
 | Food [NQ] | 食物 [NQ] | Button \| ICE\Ui\DebugWindowTabs\Ipc_Artisan.cs:147 |  |
-| For botanist/miner/fisher | For 植物学家/矿工/渔民 | UI text \| ICE\Ui\MainUi\HelpFolder\helpSelect_Required.cs:24 |  |
-| For BTN/MIN, this will gather the non-collectable item | ForBTN/MIN，这将收集不可收集的物品 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:1014 |  |
-| For fisher only | 仅适用于渔民 | UI text \| ICE\Ui\MainUi\HelpFolder\helpSelect_Required.cs:27 |  |
+| For botanist/miner/fisher | For 园艺工/采矿工/捕鱼人 | UI text \| ICE\Ui\MainUi\HelpFolder\helpSelect_Required.cs:24 |  |
+| For BTN/MIN, this will gather the non-collectable item | ForBTN/MIN，这将采集不可采集的物品 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:1014 |  |
+| For fisher only | 仅适用于捕鱼人 | UI text \| ICE\Ui\MainUi\HelpFolder\helpSelect_Required.cs:27 |  |
 | For most of you this would be fine, this is really only here if you don't know what to apply for each one. | 对于你们大多数人来说这很好，这实际上只是在您不知道要为每件申请什么时才在这里。 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:1048 |  |
 | for your current class — you pick what you want done, and it handles the rest. | 对于您当前的课程 - 您选择您想要完成的事情，它会处理其余的事情。 | UI string \| ICE\Ui\MainUi\HelpFolder\Tips_Folder\ModeSelection.cs:44 |  |
 | Force OOM Main | 强制 OOM 主要 | Checkbox \| ICE\Ui\MainUi\Settings\DebugTab.cs:18 |  |
 | Force OOM Sub | 强制 OOM 子项 | Checkbox \| ICE\Ui\MainUi\Settings\DebugTab.cs:19 |  |
-| from automating the gathering and crafting process, to the buying of shop items or spending those planetary credits away. | 从自动化收集和制作过程，到购买商店物品或花费这些行星积分。 | UI string \| ICE\Ui\InfoWindow.cs:45 |  |
+| from automating the gathering and crafting process, to the buying of shop items or spending those planetary credits away. | 从自动化采集和制作过程，到购买商店物品或花费这些行星信用点。 | UI string \| ICE\Ui\InfoWindow.cs:45 |  |
 | FSH | FSH | UI string \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:35; ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionSelect.cs:28; ICE\Ui\Debug_Tabs\Debug_Ui\Ui_RelicInfo.cs:21; ICE\Ui\MainUi\Settings\Misc_Settings.cs:130 |  |
 | Gamba Delay | 抽奖延迟 | UI string \| ICE\Ui\MainUi\Settings\GambaWheel.cs:39; ICE\Ui\MainUi\Settings\GambaWheel.cs:116 |  |
 | Gamba Item Tabs | 抽奖物品选项卡 | UI string \| ICE\Ui\MainUi\Settings\GambaWheel.cs:147 |  |
 | Gamble Between Runs | 跑步之间的赌博 | Checkbox \| ICE\Ui\MainUi\Settings\GambaWheel.cs:31; ICE\Ui\MainUi\Settings\GambaWheel.cs:109 |  |
 | Gambling Settings | 赌博设置 | UI string \| ICE\Ui\MainUi\SelectableSidebar.cs:101 |  |
 | Gather Fan | Gather粉丝 | UI string \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_GatherEditor.cs:343 |  |
-| Gather Item [{0}] | 收集物品[{0}] | Table column \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_GatheringInfo.cs:31 |  |
+| Gather Item [{0}] | 采集物品[{0}] | Table column \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_GatheringInfo.cs:31 |  |
 | Gather Profiles | 采集配置文件 | UI text \| ICE\Ui\MainUi\Settings\GatherSettings.cs:352 |  |
-| Gather Route Editor Table | 收集路线编辑表 | UI string \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_GatherEditor.cs:64 |  |
-| Gather x Amount | 收集x数量 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:34 |  |
-| Gather [{0}] | 收集[{0}] | Table column \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:219 |  |
-| Gatherer's Boons Scoring | 收集者的奖励得分 | UI string \| ICE\Ui\Window_ExternalDetails.cs:455 |  |
-| Gathering | 收集 | Section header \| ICE\Ui\MainUi\HelpFolder\helpSelect_Required.cs:23 |  |
-| Gathering Fan Selection | 收集粉丝选择 | UI string \| ICE\Ui\MainUi\Settings\TravelSettings.cs:94 |  |
+| Gather Route Editor Table | 采集路线编辑表 | UI string \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_GatherEditor.cs:64 |  |
+| Gather x Amount | 采集x数量 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:34 |  |
+| Gather [{0}] | 采集[{0}] | Table column \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:219 |  |
+| Gatherer's Boons Scoring | 采集者的奖励得分 | UI string \| ICE\Ui\Window_ExternalDetails.cs:455 |  |
+| Gathering | 采集 | Section header \| ICE\Ui\MainUi\HelpFolder\helpSelect_Required.cs:23 |  |
+| Gathering Fan Selection | 采集粉丝选择 | UI string \| ICE\Ui\MainUi\Settings\TravelSettings.cs:94 |  |
 | Gathering Profile | 采集配置文件 | UI string \| ICE\Ui\MainUi\SelectableSidebar.cs:109 |  |
 | Gathering Profile Settings | 采集配置文件设置 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:321 |  |
 | gathering routes | 采集路线 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:200 |  |
@@ -534,12 +545,12 @@
 | Global setting — applies to all characters. | 全局设置-适用于所有角色。 | Tooltip \| ICE\Ui\MainUi\Settings\Character_Settings.cs:890; ICE\Ui\MainUi\Settings\Character_Settings.cs:895; ICE\Ui\MainUi\Settings\Character_Settings.cs:905; ICE\Ui\MainUi\Settings\Character_Settings.cs:917 |  |
 | Go buy items when you reach | 当你购买物品时达到 | UI string \| ICE\Ui\MainUi\Settings\ShoppingTab.cs:56 |  |
 | Goal: {0} | 目标：{0} | UI text \| ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:750 |  |
-| Gold | 黄金 | Table column \| Radio button \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:192; ICE\Ui\MainUi\Settings\Settings_TableColumns.cs:124 |  |
-| Gold Completion Grind | 黄金完成研磨 | UI string \| Radio button \| ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:79; ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:92; ICE\Ui\MainWindow.cs:131; ICE\Ui\OverlayWindow.cs:166 |  |
-| Gold Completion Mode | 黄金完成模式 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:421; ICE\Ui\MainWindow.cs:171 |  |
-| Gold Requirement | 黄金要求 | UI text \| ICE\Ui\Window_ExternalDetails.cs:220 |  |
-| Gold Sequence | 黄金序列 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:809 |  |
-| Gold: 3 Items | 黄金：3件 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:460 |  |
+| Gold | 金星 | Table column \| Radio button \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:192; ICE\Ui\MainUi\Settings\Settings_TableColumns.cs:124 |  |
+| Gold Completion Grind | 达成金星 | UI string \| Radio button \| ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:79; ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:92; ICE\Ui\MainWindow.cs:131; ICE\Ui\OverlayWindow.cs:166 |  |
+| Gold Completion Mode | 达成金星模式 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:421; ICE\Ui\MainWindow.cs:171 |  |
+| Gold Requirement | 金星要求 | UI text \| ICE\Ui\Window_ExternalDetails.cs:220 |  |
+| Gold Sequence | 金星序列 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:809 |  |
+| Gold: 3 Items | 金星：3件 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:460 |  |
 | Goldsmith (GSM) | 金匠（GSM） | UI string \| ICE\Ui\MainUi\Settings\Settings_TableColumns.cs:67 |  |
 | Good for one off buys, or something that you only need a particular amount of | 适合一次性购买，或者您只需要特定数量的 | UI string \| ICE\Ui\MainUi\Settings\ShoppingTab.cs:45 |  |
 | GSM | GSM | UI string \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:28; ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionSelect.cs:27; ICE\Ui\Debug_Tabs\Debug_Ui\Ui_RelicInfo.cs:14; ICE\Ui\MainUi\Settings\Misc_Settings.cs:128 |  |
@@ -568,7 +579,7 @@
 | HQ Regular Cordial | HQ普通强心剂 | UI string \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_PlayerInfo.cs:314 |  |
 | HQ Watered Cordial | HQ 兑水强心剂 | UI string \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_PlayerInfo.cs:316 |  |
 | Hub Activities | Hub活动 | UI string \| ICE\Ui\MainUi\SelectableSidebar.cs:98 |  |
-| Hud: Gather Collectable | Hud：收集收藏品 | UI string \| ICE\Ui\DebugWindow.cs:53 |  |
+| Hud: Gather Collectable | Hud：采集收藏品 | UI string \| ICE\Ui\DebugWindow.cs:53 |  |
 | Hud: Item Exchange | Hud：物品交换 | UI string \| ICE\Ui\DebugWindow.cs:54 |  |
 | Hud: Mission | Hud：任务 | UI string \| ICE\Ui\DebugWindow.cs:49 |  |
 | Hud: Mission Info | Hud：任务信息 | UI string \| ICE\Ui\DebugWindow.cs:50 |  |
@@ -594,7 +605,7 @@
 | If you just want to focus one specific class, set this to false | 如果你只想关注一个特定的类，请将其设置为 false | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:255 |  |
 | If you want something more complex, just make an SND script at that point. And have this run that script post lol. | 如果你想要更复杂的东西，只需在此时创建一个 SND 脚本即可。并让它运行该脚本后哈哈。 | UI string \| ICE\Ui\MainUi\Settings\Misc_Settings.cs:243 |  |
 | If you want to let it auto select the wheels and gamba, enable this. If you want to not auto run when you're running the gamble wheel, disable this. | 如果您想让它自动选择轮子和 抽奖，请启用此功能。如果你不想在运行赌轮时自动运行，请禁用此功能。 | Help marker \| ICE\Ui\MainUi\Settings\GambaWheel.cs:23; ICE\Ui\MainUi\Settings\GambaWheel.cs:101 |  |
-| If you would like to auto setup gathering to where all missions have their gathering buffs to what I would recommend | 如果你想自动设置收集到所有任务都有我推荐的收集增益的地方 | UI text \| ICE\Ui\InfoWindow.cs:54 |  |
+| If you would like to auto setup gathering to where all missions have their gathering buffs to what I would recommend | 如果你想自动设置采集到所有任务都有我推荐的采集增益的地方 | UI text \| ICE\Ui\InfoWindow.cs:54 |  |
 | If you would like to use one that you already have in autohook, you can un-checkmark this and type the name of it below | 如果你想使用自动钩子中已有的一个，你可以取消选中此选项并在下面键入它的名称 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:1273; ICE\Ui\MainUi\ModeSelect_Modes\Expedition_Log.cs:513 |  |
 | If you you uncheck this, YOU WILL JOIN random party invites. | 如果你取消选中此功能，你将加入随机聚会邀请。 | UI string \| ICE\Ui\MainUi\Settings\SafetySettings.cs:30 |  |
 | If you're high enough level to need the next rank category but haven't unlocked it yet | 如果你很高足够级别需要下一个等级职业，但尚未解锁 | UI string \| ICE\Ui\MainUi\HelpFolder\Tips_Folder\ModeSelection.cs:65 |  |
@@ -612,9 +623,9 @@
 | Increases item yield from Gatherer's Boon by 1 | 将采集者恩赐的物品产量提高1 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:569 |  |
 | Increases the gather chance by 15% | 采集几率提高 15% | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:880; ICE\Ui\MainUi\Settings\GatherSettings.cs:972 |  |
 | Increases the gather chance by 5% | 采集几率增加 5% | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:926 |  |
-| Increases the gather chance by 50% | 收集几率增加 50% | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:834 |  |
-| Increases the number of items obtained when gathering by 1 | 收集时获得的项目数增加 1 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:670 |  |
-| Increases the number of items obtained when gathering by 2 | 收集时获得的项目数增加 2 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:614; ICE\Ui\MainUi\Settings\GatherSettings.cs:778 |  |
+| Increases the gather chance by 50% | 采集几率增加 50% | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:834 |  |
+| Increases the number of items obtained when gathering by 1 | 采集时获得的项目数增加 1 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:670 |  |
+| Increases the number of items obtained when gathering by 2 | 采集时获得的项目数增加 2 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:614; ICE\Ui\MainUi\Settings\GatherSettings.cs:778 |  |
 | Info | 信息 | Table column \| ICE\Ui\MainUi\ModeSelect_Modes\Expedition_Log.cs:806; ICE\Ui\Window_ExternalDetails.cs:129 |  |
 | Infrastructor | 基础设施 | Button \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_MainMoon.cs:32 |  |
 | Initiate | 发起 | Button \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_Mission.cs:159; ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:424 |  |
@@ -656,8 +667,8 @@
 | Keep | 保持 | Table column \| ICE\Ui\MainUi\Settings\ShoppingTab.cs:218 |  |
 | Keep "A Rank" missions and below | 保持“A Rank”任务及以下 | Checkbox \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:275; ICE\Ui\MainUi\Settings\Misc_Settings.cs:209 |  |
 | Keep Buying | 继续购买 | Table column \| ICE\Ui\MainUi\Settings\ShoppingTab.cs:220 |  |
-| Keep Buying: Once the other 2 have been met (Keep/Buy), it will constantly buy this item if it has the credits to do so. | 保持 Buying：一旦满足其他2个（保留/购买），如果有积分，它将不断购买该物品。 | UI string \| ICE\Ui\MainUi\Settings\ShoppingTab.cs:46 |  |
-| Keep this much Cosmocredits | 保留这么多Cosmocredits | UI string \| ICE\Ui\MainUi\Settings\ShoppingTab.cs:63 |  |
+| Keep Buying: Once the other 2 have been met (Keep/Buy), it will constantly buy this item if it has the credits to do so. | 保持 Buying：一旦满足其他2个（保留/购买），如果有信用点，它将不断购买该物品。 | UI string \| ICE\Ui\MainUi\Settings\ShoppingTab.cs:46 |  |
+| Keep this much Cosmocredits | 保留这么多宇宙信用点 | UI string \| ICE\Ui\MainUi\Settings\ShoppingTab.cs:63 |  |
 | Keep: Will buy up to that many items to make sure that you have in your inventory. This count doesn't go down between runs. | 保持：将购买最多数量的物品，以确保您的库存中有足够的物品。此计数在运行之间不会减少。 | UI string \| ICE\Ui\MainUi\Settings\ShoppingTab.cs:42 |  |
 | Key | 钥匙 | Table column \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_GatheringInfo.cs:27; ICE\Ui\Debug_Tabs\Debug_Tables\Table_MoonRecipies.cs:23; ICE\Ui\Debug_Tabs\Debug_Tables\Table_TimeWeather.cs:13 |  |
 | Key / RecipeId: {0} | Key / RecipeId：{0} | UI text \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:1617 |  |
@@ -668,9 +679,9 @@
 | Left wheel select | 左轮选择 | Button \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_WheelofFortune.cs:18 |  |
 | Lettuce in | 生菜 | UI string \| ICE\Ui\Window_ExternalDetails.cs:51 |  |
 | Level | 等级 | Table column \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionSelect.cs:62; ICE\Ui\MainUi\HelpFolder\helpSelect_Logs.cs:71 |  |
-| Leveling Grind | 调平研磨 | UI string \| Radio button \| ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:74; ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:87; ICE\Ui\MainWindow.cs:125; ICE\Ui\MainWindow.cs:154; ICE\Ui\OverlayWindow.cs:164 |  |
-| Leveling Mode | 调平模式 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:419 |  |
-| Leveling Table | 调平表 | UI string \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_LevelingMissions.cs:11 |  |
+| Leveling Grind | 练级刷取 | UI string \| Radio button \| ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:74; ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:87; ICE\Ui\MainWindow.cs:125; ICE\Ui\MainWindow.cs:154; ICE\Ui\OverlayWindow.cs:164 |  |
+| Leveling Mode | 练级模式 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:419 |  |
+| Leveling Table | 练级任务表 | UI string \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_LevelingMissions.cs:11 |  |
 | Limited Nodes | 有限节点 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:33 |  |
 | Limited Supplies | 有限供应 | UI string \| ICE\Ui\Window_ExternalDetails.cs:449 |  |
 | List of Visible Missions | 可见任务列表 | UI text \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_Mission.cs:21 |  |
@@ -680,7 +691,7 @@
 | Long answer: Honestly, this was a cumbersome system in itself. And with square deciding to not continue on with dual crafting missions going into the 2nd moon, I figured it would be better to just tie it into the scoring system. You realistically only need: | Long回答： 老实说，这本身就是一个繁琐的系统。由于 Square 决定不再继续进入第二个月球的双重制作任务，我认为最好将其与评分系统联系起来。您实际上只需要： | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:459 |  |
 | Lottery addon is visible! | Lottery 插件可见！ | UI text \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_WheelofFortune.cs:16 |  |
 | LTW | LTW | UI string \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:29; ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionSelect.cs:28; ICE\Ui\Debug_Tabs\Debug_Ui\Ui_RelicInfo.cs:15; ICE\Ui\MainUi\Settings\Misc_Settings.cs:129 |  |
-| Lunar Credits | 月球积分 | UI string \| ICE\Ui\MainUi\Settings\Settings_TableColumns.cs:10 |  |
+| Lunar Credits | 月球信用点 | UI string \| ICE\Ui\MainUi\Settings\Settings_TableColumns.cs:10 |  |
 | Lv | 左 | Table column \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_LevelingMissions.cs:14 |  |
 | Lv. 10-49 | Lv。10-49 | UI text \| ICE\Ui\Window_ExternalDetails.cs:273 |  |
 | Lv. 50-89 | LV。50-89 | UI text \| ICE\Ui\Window_ExternalDetails.cs:283 |  |
@@ -702,7 +713,7 @@
 | Marker move task | 标记移动任务 | UI string \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_OyzinMap.cs:118 |  |
 | Master Settings | 主设置 | Button \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:955 |  |
 | Master Settings: Popup | 主设置：弹出 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:952 |  |
-| Max Collectibility: | 最大可收集性： | UI text \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_CollectableGathering.cs:95 |  |
+| Max Collectibility: | 最大可采集性： | UI text \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_CollectableGathering.cs:95 |  |
 | Max Distance | 最大距离 | UI string \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_GatherEditor.cs:329 |  |
 | Max use | 最大使用 | UI text \| Input label \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:1926; ICE\Ui\MainUi\Settings\GatherSettings.cs:502; ICE\Ui\MainUi\Settings\GatherSettings.cs:544; ICE\Ui\MainUi\Settings\GatherSettings.cs:588; ICE\Ui\MainUi\Settings\GatherSettings.cs:644; ICE\Ui\MainUi\Settings\GatherSettings.cs:700; ICE\Ui\MainUi\Settings\GatherSettings.cs:753; ICE\Ui\MainUi\Settings\GatherSettings.cs:798; ICE\Ui\MainUi\Settings\GatherSettings.cs:855; ICE\Ui\MainUi\Settings\GatherSettings.cs:901; ICE\Ui\MainUi\Settings\GatherSettings.cs:947; ICE\Ui\MainUi\Settings\GatherSettings.cs:992 |  |
 | Max XP | MaxXP | Input label \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_PlayerInfo.cs:30 |  |
@@ -716,14 +727,14 @@
 | Min Distance | Min距离 | UI string \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_GatherEditor.cs:322 |  |
 | Min mission rank for cordials | Min强心剂任务等级 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:201 |  |
 | Min mission rank for food | Min食物任务等级 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:236 |  |
-| Miner (MIN) | 矿工(MIN) | UI string \| ICE\Ui\MainUi\Settings\Settings_TableColumns.cs:72 |  |
+| Miner (MIN) | 采矿工(MIN) | UI string \| ICE\Ui\MainUi\Settings\Settings_TableColumns.cs:72 |  |
 | Minimum Gp for Usage | 使用最低 Gp | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:495; ICE\Ui\MainUi\Settings\GatherSettings.cs:537; ICE\Ui\MainUi\Settings\GatherSettings.cs:581; ICE\Ui\MainUi\Settings\GatherSettings.cs:627; ICE\Ui\MainUi\Settings\GatherSettings.cs:683; ICE\Ui\MainUi\Settings\GatherSettings.cs:739; ICE\Ui\MainUi\Settings\GatherSettings.cs:791; ICE\Ui\MainUi\Settings\GatherSettings.cs:848; ICE\Ui\MainUi\Settings\GatherSettings.cs:894; ICE\Ui\MainUi\Settings\GatherSettings.cs:940; ICE\Ui\MainUi\Settings\GatherSettings.cs:985 |  |
 | Minimum GP to start mission | 开始任务最低 GP | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:442 |  |
 | Minimum Grade 8 Dark Matter | 最低 8 级暗物质 | Input label \| ICE\Ui\MainUi\Settings\Character_Settings.cs:191; ICE\Ui\MainUi\Settings\Character_Settings.cs:256 |  |
 | Minimum Mounting Range | 最小安装范围 | UI string \| ICE\Ui\MainUi\Settings\Character_Settings.cs:868; ICE\Ui\MainUi\Settings\Character_Settings.cs:899 |  |
 | Minimum Node Durability for Usage | 使用的最低节点耐用性 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:746 |  |
-| Mininum credits to keep | 要保留的最小积分 | UI string \| ICE\Ui\MainUi\Settings\GambaWheel.cs:25; ICE\Ui\MainUi\Settings\GambaWheel.cs:103 |  |
-| Minumum Items To Gather | 要收集的最小项目 | UI text \| ICE\Ui\MainUi\Settings\GatherSettings.cs:806 |  |
+| Mininum credits to keep | 要保留的最小信用点 | UI string \| ICE\Ui\MainUi\Settings\GambaWheel.cs:25; ICE\Ui\MainUi\Settings\GambaWheel.cs:103 |  |
+| Minumum Items To Gather | 要采集的最小项目 | UI text \| ICE\Ui\MainUi\Settings\GatherSettings.cs:806 |  |
 | Misc Settings | 杂项设置 | UI string \| ICE\Ui\MainUi\SelectableSidebar.cs:113 |  |
 | Mission | 任务 | Button \| Table column \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_MainMoon.cs:11; ICE\Ui\OverlayWindow.cs:323 |  |
 | Mission Atributes | 任务属性 | UI text \| ICE\Ui\Window_ExternalDetails.cs:303 |  |
@@ -805,7 +816,7 @@
 | No items in {0} shopping list | 没有物品在 {0} 购物清单中 | UI text (disabled) \| ICE\Ui\MainUi\Settings\ShoppingTab.cs:202 |  |
 | No location set | 未设置位置 | UI text \| ICE\Ui\MainUi\Settings\TravelSettings.cs:269 |  |
 | No markers found! | 未找到标记！ | UI text \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_OyzinMap.cs:80 |  |
-| No missing Auxesia MissionScores rows. | 没有丢失 Auxesia MissionScores 行。 | UI string \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:89 |  |
+| No missing Auxesia MissionScores rows. | 没有丢失 奥克塞西亚行星 MissionScores 行。 | UI string \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:89 |  |
 | No missing rows — embedded CSV covers all missions with bronze scores. | 没有丢失行 — 嵌入的 CSV 涵盖了所有具有青铜分数的任务。 | UI string \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:67 |  |
 | No mission | 没有任务 | UI text \| ICE\Ui\OverlayWindow.cs:220 |  |
 | No mission selected currently. Woops [{0}] | 当前没有选择任务。哎呀[{0}] | UI text \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_FishPresets.cs:143 |  |
@@ -831,13 +842,13 @@
 | Number of entries: {0} | Number of items: {0} | UI text \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_ItemExchange.cs:96 |  |
 | Object info | 对象信息 | UI string \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_PlayerInfo.cs:210 |  |
 | Oizyr Map Stuff | 奥伊济尔地图资料 | UI string \| ICE\Ui\DebugWindow.cs:90 |  |
-| Oizys   — Rank VI Max | Oizys— 等级 VI Max | UI string \| ICE\Ui\MainUi\HelpFolder\Tips_Folder\ModeSelection.cs:70 |  |
+| Oizys   — Rank VI Max | 俄匊斯行星— 等级 VI Max | UI string \| ICE\Ui\MainUi\HelpFolder\Tips_Folder\ModeSelection.cs:70 |  |
 | ON TOP OF doing the normal missions for whichever class you start on. | 在完成您开始的任何职业的正常任务之上。 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:254 |  |
 | Only enable this if you want plan on doing missions YOURSELF. AND NOT AUTOMATING IT. | 仅当您想自己计划执行任务时才启用此功能。并且不自动化. | Help marker \| ICE\Ui\MainUi\Settings\Settings_TableColumns.cs:53 |  |
 | Only Enabled Missions | 仅启用任务 | Checkbox \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_Mission.cs:98 |  |
 | Only grab mission | 仅抓取任务 | Checkbox \| ICE\Ui\MainUi\Settings\DebugTab.cs:68 |  |
 | Only Missions Via IPC | 仅通过IPC执行任务 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_IPCTesting.cs:122 |  |
-| Only turn in when the mission timer expires (keep gathering for max score). | 仅在任务计时器到期时交出（继续收集以获得最高分数）. | Tooltip \| ICE\Ui\MainUi\ModeSelect_Modes\Expedition_Log.cs:442 |  |
+| Only turn in when the mission timer expires (keep gathering for max score). | 仅在任务计时器到期时交出（继续采集以获得最高分数）. | Tooltip \| ICE\Ui\MainUi\ModeSelect_Modes\Expedition_Log.cs:442 |  |
 | Open Craft Settings | 打开工艺设置 | UI string \| Button \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:1167; ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:1184; ICE\Ui\MainUi\ModeSelect_Modes\Expedition_Log.cs:530 |  |
 | Open ICE | 打开ICE | UI text \| ICE\Ui\OverlayWindow.cs:120 |  |
 | Open Job Swap Settings | 打开职业交换设置 | Button \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:316 |  |
@@ -845,9 +856,9 @@
 | Open mission details | 打开任务详细信息 | Tooltip \| ICE\Ui\MainUi\ModeSelect_Modes\Expedition_Log.cs:341 |  |
 | Open plugin interface<br>/ice help - shows all commands<br>/ice clear - removes all missions<br>/ice stop - stops ICE<br>/ice start - Starts ICE<br>/ice add \| remove \| toggle \| only <br>/ice flag [id] - Opens the map and marks where the area of gathering is. | 打开插件界面<br>/ice help - 显示所有命令<br>/ice 清除 - 删除所有任务<br>/ice 停止 - 停止 ICE<br>/ice 开始 - 启动 ICE<br>/ice 添加 \|删除\|切换\|仅 <br>/ice flag [id] - 打开地图并标记聚集区域。 | Command help \| ICE\ICE.cs:82 |  |
 | Option to Delete | 删除选项 | UI string \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_Fish_HoleEditor.cs:254; ICE\Ui\Debug_Tabs\Debug_Ui\Ui_Fish_HoleEditor.cs:256 |  |
-| Or if you wanted to do the relic on WVR -> Then farm score on BTN -> Farm credits on BSM | 或者如果你想在 WVR 上做遗物 -> 然后在 BTN 上农场得分 -> BSM | UI string \| ICE\Ui\MainWindow.cs:167 |  |
-| Or if you're feeling daredevil. Lower it. I'm not your dad (will tell dad jokes though. |  上的农场积分或者如果你感觉很勇敢。降低它。我不是你爸爸（不过会讲爸爸笑话。 | UI string \| ICE\Ui\MainUi\Settings\SafetySettings.cs:41; ICE\Ui\MainUi\Settings\SafetySettings.cs:63 |  |
-| Or if you're letting a different plugin do all the automating of turning in, craftings, gathering... and not letting I.C.E. handle interacting with those plugins | 或者如果你让一个不同的插件完成所有上交、制作、收集的自动化......而不让 I.C.E. 处理与这些插件的交互 | UI string \| ICE\Ui\MainUi\Settings\Settings_TableColumns.cs:54 |  |
+| Or if you wanted to do the relic on WVR -> Then farm score on BTN -> Farm credits on BSM | 或者如果你想先完成裁衣匠的宇宙工具 -> 然后去园艺工刷分 -> 再去锻铁匠刷信用点 | UI string \| ICE\Ui\MainWindow.cs:167 |  |
+| Or if you're feeling daredevil. Lower it. I'm not your dad (will tell dad jokes though. | 或者如果你很勇敢就调低。我不是你爸爸（不过我会讲爸爸笑话）。 | UI string \| ICE\Ui\MainUi\Settings\SafetySettings.cs:41; ICE\Ui\MainUi\Settings\SafetySettings.cs:63 |  |
+| Or if you're letting a different plugin do all the automating of turning in, craftings, gathering... and not letting I.C.E. handle interacting with those plugins | 或者如果你让一个不同的插件完成所有上交、制作、采集的自动化......而不让 I.C.E. 处理与这些插件的交互 | UI string \| ICE\Ui\MainUi\Settings\Settings_TableColumns.cs:54 |  |
 | Or just read a specific tab to find out. Probably would answer a lot of questions | 或者只是阅读一个特定的选项卡来找出答案。可能会回答很多问题 | UI text (wrapped) \| ICE\Ui\MainUi\HelpFolder\Tips_Folder\Welcome.cs:18 |  |
 | Order | 命令 | Table column \| ICE\Ui\MainUi\Settings\ShoppingTab.cs:212 |  |
 | Order you would like to do the actions. It will work from the top down. | Order你想要执行的操作。它将从顶部开始职业down. | UI string \| ICE\Ui\MainUi\Settings\Priority_Settings.cs:109 |  |
@@ -865,14 +876,14 @@
 | Pathing to repair NPC | 修复路径NPC | UI string \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_TaskManagerInfo.cs:40 |  |
 | Pause Feature | 暂停功能 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_IPCTesting.cs:55 |  |
 | Personalized Fishing Spots | 个性化钓场 | Section header \| ICE\Ui\MainUi\Settings\TravelSettings.cs:275 |  |
-| Phaenna — Rank V Max | Phaenna — 等级V Max | UI string \| ICE\Ui\MainUi\HelpFolder\Tips_Folder\ModeSelection.cs:69 |  |
+| Phaenna — Rank V Max | 法恩娜行星 — 等级V Max | UI string \| ICE\Ui\MainUi\HelpFolder\Tips_Folder\ModeSelection.cs:69 |  |
 | Pioneer's \| Mountaineer's Gift I | 登山者的礼物I | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:515 |  |
 | Pioneer's \| Mountaineer's Gift II | 登山者的礼物II | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:473 |  |
 | Planet | 行星 | Table column \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_LevelingMissions.cs:13 |  |
 | Planet Selection | 行星选择 | UI string \| ICE\Ui\MainUi\SelectableSidebar.cs:43 |  |
 | Planet: {0} | 行星：{0} | UI text \| ICE\Ui\MainUi\Settings\TravelSettings.cs:287 |  |
 | Planetary | 行星 | Table column \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:866 |  |
-| Planetary Credits | 行星积分 | UI text \| ICE\Ui\Window_ExternalDetails.cs:141 |  |
+| Planetary Credits | 行星信用点 | UI text \| ICE\Ui\Window_ExternalDetails.cs:141 |  |
 | Play Sound Alert on Stop | 停止时播放声音警报 | Checkbox \| ICE\Ui\MainUi\Settings\StopWhen.cs:144 |  |
 | Player Info | 玩家信息 | UI string \| ICE\Ui\DebugWindow.cs:75 |  |
 | Player is busy, skipping cordial check | 玩家正忙，跳过强心剂检查 | UI string \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_PlayerInfo.cs:363 |  |
@@ -883,7 +894,7 @@
 | Playlist Name | 播放列表名称 | Input label \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:328 |  |
 | Please give it time | 请给它时间 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:980 |  |
 | PLEASE MAKE SURE TO CHECK THE REQUIREMENTS SECTION TO SEE WHAT YOU NEED FOR WHAT | 请务必检查要求部分以了解您需要什么 | UI text (wrapped) \| ICE\Ui\MainUi\HelpFolder\Tips_Folder\Welcome.cs:17 |  |
-| Please make sure to do so for this job if you don't want it to stall out when there is no timed/weather missions. | 如果您不想让这项职业陷入停滞，请务必这样做当没有定时/天气任务时。 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:650 |  |
+| Please make sure to do so for this job if you don't want it to stall out when there is no timed/weather missions. | 如果您不想让这项职业陷入停滞，请务必这样做当没有限时/天气任务时。 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:650 |  |
 | PLEASE NOTE. DO. NOT. LEAVE. THIS. ALONE. This is still being worked on heavily | 请不要这样做。 | UI string \| ICE\Ui\MainUi\Settings\Shop_Dronebit.cs:69 |  |
 | PLEASE NOTE: | 请注意： | Help marker \| ICE\Ui\MainUi\Settings\GatherSettings.cs:1046 |  |
 | Please note: You can have multiple enabled, but only the one that will get you the closest to | 请注意：您可以启用多个，但只能启用最接近的 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:835; ICE\Ui\MainUi\Settings\GatherSettings.cs:881; ICE\Ui\MainUi\Settings\GatherSettings.cs:927 |  |
@@ -912,7 +923,7 @@
 | Previous | 以前的 | Button \| ICE\Ui\MainUi\Settings\Character_Settings.cs:844 |  |
 | Previous Missions | 以前的任务 | UI text \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:732; ICE\Ui\MainUi\ModeSelect_Modes\Expedition_Log.cs:576; ICE\Ui\MainUi\ModeSelect_Modes\Expedition_Log.cs:903 |  |
 | Previous Sequence: | Previous序列： | UI text \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:1356 |  |
-| Print GatheringPoint Info | 打印收集点信息 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_TestButtons.cs:311 |  |
+| Print GatheringPoint Info | 打印采集点信息 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_TestButtons.cs:311 |  |
 | Prioritize closest gathering node | 优先考虑最近的聚集节点 | Checkbox \| ICE\Ui\MainUi\Settings\TravelSettings.cs:54 |  |
 | Profile Name: {0} | 配置文件名称：{0} | UI text \| ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:318 |  |
 | Profile Selection | 配置文件选择 | Table column \| ICE\Ui\MainUi\Settings\GatherSettings.cs:323 |  |
@@ -923,7 +934,7 @@
 | Property | 属性 | Table column \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_ClassInfo.cs:28 |  |
 | Provisional Job Priority | 临时职业优先级 | UI text \| ICE\Ui\MainUi\Settings\Priority_Settings.cs:184 |  |
 | Provisional Missions | 临时任务 | Button \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_Mission.cs:50 |  |
-| Provisional missions (Weather, Timed, and Sequence) and Red Alerts will be picked up | 将选择临时任务（天气、定时和顺序）和红色警报 | UI string \| ICE\Ui\MainUi\HelpFolder\Tips_Folder\ModeSelection.cs:51 |  |
+| Provisional missions (Weather, Timed, and Sequence) and Red Alerts will be picked up | 将选择临时任务（天气、限时和顺序）和紧急任务 | UI string \| ICE\Ui\MainUi\HelpFolder\Tips_Folder\ModeSelection.cs:51 |  |
 | Provisional: Allow All Classes | 临时：允许所有类 | Checkbox \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:248 |  |
 | Provisional: Job Order | 临时：职业订单 | UI string \| ICE\Ui\MainUi\Settings\Priority_Settings.cs:27 |  |
 | Provisional: Type Order | 临时：类型订单 | UI string \| ICE\Ui\MainUi\Settings\Priority_Settings.cs:20 |  |
@@ -954,18 +965,18 @@
 | Reducable Items | Reducable项目 | UI string \| ICE\Ui\Window_ExternalDetails.cs:451 |  |
 | Refresh Class info | 刷新类信息 | Icon button \| ICE\Ui\MainUi\SelectableSidebar.cs:169 |  |
 | Refresh Forecast | 刷新预测 | Button \| ICE\Ui\MainUi\Settings\DebugTab.cs:48 |  |
-| Relic | 遗迹 | Table column \| ICE\Ui\MainUi\ModeSelect_Modes\Expedition_Log.cs:728 |  |
-| Relic Grind | 遗物研磨 | UI string \| Section header \| Radio button \| ICE\Ui\MainUi\HelpFolder\Tips_Folder\ModeSelection.cs:23; ICE\Ui\MainUi\HelpFolder\Tips_Folder\ModeSelection.cs:58; ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:69; ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:82; ICE\Ui\MainWindow.cs:118; ICE\Ui\MainWindow.cs:161; ICE\Ui\OverlayWindow.cs:163 |  |
-| Relic Grind Mode | Relic 研磨模式 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:418 |  |
-| Relic Info | 文物信息 | UI string \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_RelicInfo.cs:30; ICE\Ui\DebugWindow.cs:80 |  |
-| Relic Info V2 | 文物信息V2 | UI string \| ICE\Ui\DebugWindow.cs:84 |  |
-| Relic Mode: Allow Red Alerts | Relic 模式：允许红色警报 | Checkbox \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:304 |  |
-| Relic Mode: Only Enabled | Relic 模式：仅启用 | Checkbox \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:311 |  |
-| Relic Tool XP | Relic 工具XP | UI string \| ICE\Ui\OverlayWindow.cs:644 |  |
-| Relic Turnin | Relic上交 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_TestButtons.cs:346 |  |
+| Relic | 宇宙工具 | Table column \| ICE\Ui\MainUi\ModeSelect_Modes\Expedition_Log.cs:728 |  |
+| Relic Grind | 宇宙工具升级 | UI string \| Section header \| Radio button \| ICE\Ui\MainUi\HelpFolder\Tips_Folder\ModeSelection.cs:23; ICE\Ui\MainUi\HelpFolder\Tips_Folder\ModeSelection.cs:58; ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:69; ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:82; ICE\Ui\MainWindow.cs:118; ICE\Ui\MainWindow.cs:161; ICE\Ui\OverlayWindow.cs:163 |  |
+| Relic Grind Mode | 宇宙工具升级模式 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:418 |  |
+| Relic Info | 宇宙工具信息 | UI string \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_RelicInfo.cs:30; ICE\Ui\DebugWindow.cs:80 |  |
+| Relic Info V2 | 宇宙工具信息V2 | UI string \| ICE\Ui\DebugWindow.cs:84 |  |
+| Relic Mode: Allow Red Alerts | 宇宙工具 模式：允许紧急任务 | Checkbox \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:304 |  |
+| Relic Mode: Only Enabled | 宇宙工具 模式：仅启用 | Checkbox \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:311 |  |
+| Relic Tool XP | 宇宙工具XP | UI string \| ICE\Ui\OverlayWindow.cs:644 |  |
+| Relic Turnin | 宇宙工具上交 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_TestButtons.cs:346 |  |
 | Remove | 删除 | Button \| Table column \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_NavmeshTesting.cs:44; ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:448; ICE\Ui\MainUi\Settings\Misc_Settings.cs:262 |  |
 | Remove from list | 从列表中删除 | Tooltip \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:423 |  |
-| Remove Mission Upon Gold Completion | 黄金完成后删除任务 | Checkbox \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:267; ICE\Ui\MainUi\Settings\Misc_Settings.cs:200 |  |
+| Remove Mission Upon Gold Completion | 达成金星后删除任务 | Checkbox \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:267; ICE\Ui\MainUi\Settings\Misc_Settings.cs:200 |  |
 | ReOrder | 重新订购 | Table column \| ICE\Ui\MainUi\Settings\Priority_Settings.cs:52; ICE\Ui\MainUi\Settings\Priority_Settings.cs:122; ICE\Ui\MainUi\Settings\Priority_Settings.cs:205 |  |
 | Repair all gear in bag | 修理包中的所有装备 | Checkbox \| ICE\Ui\MainUi\Settings\Character_Settings.cs:182; ICE\Ui\MainUi\Settings\Character_Settings.cs:238 |  |
 | Repair at Vendor | 在供应商处修理 | Checkbox \| ICE\Ui\MainUi\Settings\Character_Settings.cs:159; ICE\Ui\MainUi\Settings\Character_Settings.cs:201 |  |
@@ -993,8 +1004,8 @@
 | Run Drone Finder | 运行无人机Finder | Button \| UI text \| ICE\Ui\MainUi\Settings\Shop_Dronebit.cs:13; ICE\Ui\OverlayWindow.cs:154 |  |
 | Run Until.. | 运行 直到.. | Table column \| ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:351; ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:446 |  |
 | Running task: {0} \| Amount of queue'd task: {1} | 运行任务：{0} \|排队任务的数量：{1} | UI text \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_TaskManagerInfo.cs:15 |  |
-| Safety is around... 2500? If you're having animation locks you can absolutely increase it higher | 安全性约为... 2500？如果您有动画锁，您绝对可以将其提高更高 | UI string \| ICE\Ui\MainUi\Settings\SafetySettings.cs:62 |  |
-| Safety is around... 250? If you're having animation locks you can absolutely increase it higher | 安全性约为... 250？如果你有动画锁，你绝对可以把它调高 | UI string \| ICE\Ui\MainUi\Settings\SafetySettings.cs:40 |  |
+| Safety is around... 2500? If you're having animation locks you can absolutely increase it higher | 安全性约为……2500？如果你有动画锁，你完全可以为了刷信用点把它调得更高。 | UI string \| ICE\Ui\MainUi\Settings\SafetySettings.cs:62 |  |
+| Safety is around... 250? If you're having animation locks you can absolutely increase it higher | 安全性约为……250？如果你有动画锁，你完全可以为了刷信用点把它调得更高。 | UI string \| ICE\Ui\MainUi\Settings\SafetySettings.cs:40 |  |
 | Safety Settings | 安全设置 | Section header \| ICE\Ui\MainUi\Settings\SafetySettings.cs:20 |  |
 | Save | 节省 | Button \| ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:227 |  |
 | Save Current Mission Preset | 保存当前任务预设 | Button \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:321 |  |
@@ -1004,7 +1015,7 @@
 | Saved Agenda's | 保存议程的 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:253 |  |
 | Score | 分数 | Table column \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:206; ICE\Ui\Debug_Tabs\Debug_Ui\Ui_RelicInfo.cs:40; ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:864; ICE\Ui\MainUi\ModeSelect_Modes\Expedition_Log.cs:730 |  |
 | Score 1 | 得分 1 | UI text \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_MissionInfo.cs:140 |  |
-| Score Farming — select specific high-value missions | Score Farming - 选择特定的高价值任务 | UI string \| ICE\Ui\MainUi\HelpFolder\Tips_Folder\ModeSelection.cs:46 |  |
+| Score Farming — select specific high-value missions | 刷分 - 选择特定的高价值任务 | UI string \| ICE\Ui\MainUi\HelpFolder\Tips_Folder\ModeSelection.cs:46 |  |
 | Score Goal | Score目标 | Radio button \| UI string \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:983; ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:999 |  |
 | Score Info: External Details | 分数信息：外部详细信息 | UI string \| ICE\Ui\Window_ExternalDetails.cs:380 |  |
 | Score: [{0}] | 分数：[{0}] | UI text \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_MissionInfo.cs:148 |  |
@@ -1084,22 +1095,22 @@
 | Show enabled missions on weather hover | 在天气悬停时显示已启用的任务 | Checkbox \| ICE\Ui\MainUi\Settings\Misc_Settings.cs:109 |  |
 | Show Experience Bars on Overlay | 在叠加层上显示经验条 | Checkbox \| ICE\Ui\MainUi\Settings\Misc_Settings.cs:63 |  |
 | Show fishing spot raycast | 显示钓场光线投射 | Checkbox \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_Fish_HoleEditor.cs:74; ICE\Ui\MainUi\Settings\TravelSettings.cs:288 |  |
-| Show Gather Debug Info | 显示收集调试信息 | Checkbox \| ICE\Ui\MainUi\Settings\DebugTab.cs:54 |  |
+| Show Gather Debug Info | 显示采集调试信息 | Checkbox \| ICE\Ui\MainUi\Settings\DebugTab.cs:54 |  |
 | Show Overlay | 显示叠加 | Checkbox \| ICE\Ui\MainUi\Settings\Misc_Settings.cs:42 |  |
 | Show random location debug target | 显示随机位置调试目标 | Checkbox \| ICE\Ui\MainUi\Settings\TravelSettings.cs:85 |  |
 | Show Seconds | 显示秒 | Checkbox \| ICE\Ui\MainUi\Settings\Misc_Settings.cs:56 |  |
 | Show tab list | 显示选项卡列表 | Tooltip \| ICE\Ui\DebugWindow.cs:32 |  |
 | Show Total Score | 显示总分 | Checkbox \| ICE\Ui\MainUi\Settings\Misc_Settings.cs:87 |  |
 | Showing {0} of {1} missions | 显示{1}任务的{0} | UI text \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionText.cs:45 |  |
-| Silver | 银 | Table column \| Radio button \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:191; ICE\Ui\MainUi\Settings\Settings_TableColumns.cs:128 |  |
-| Silver Requirement | 银要求 | UI text \| ICE\Ui\Window_ExternalDetails.cs:211 |  |
-| Silver: 2 Items | 银：2个项目 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:461 |  |
+| Silver | 银星 | Table column \| Radio button \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:191; ICE\Ui\MainUi\Settings\Settings_TableColumns.cs:128 |  |
+| Silver Requirement | 银星要求 | UI text \| ICE\Ui\Window_ExternalDetails.cs:211 |  |
+| Silver: 2 Items | 银星：2个项目 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:461 |  |
 | Sinus   — Rank IV Max | Sinus — Rank IV Max | UI string \| ICE\Ui\MainUi\HelpFolder\Tips_Folder\ModeSelection.cs:68 |  |
 | Skill Status [272]: {0} | 技能状态[272]：{0} | UI text \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_PlayerInfo.cs:165 |  |
 | So get a good couple of runs to get a good feel for the timing | 所以要跑好几次才能获得对时机有很好的感觉 | UI string \| ICE\Ui\Window_ExternalDetails.cs:377 |  |
-| So if you Have Red Arert -> Drone Search, if a red alert isn't available, it will proceed to use a drone box if it can | 所以如果你有红色警戒->无人机搜索，如果红色警报不可用，它会继续使用无人机箱（如果可以的话） | UI string \| ICE\Ui\MainUi\Settings\Priority_Settings.cs:110 |  |
+| So if you Have Red Arert -> Drone Search, if a red alert isn't available, it will proceed to use a drone box if it can | 所以如果你有紧急任务->无人机搜索，如果紧急任务不可用，它会继续使用无人机箱（如果可以的话） | UI string \| ICE\Ui\MainUi\Settings\Priority_Settings.cs:110 |  |
 | So if you stop and you're unsure why... this might be why | 所以如果你停下来并且不确定为什么......这可能就是为什么 | UI text \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:151 |  |
-| So now how it'll work. Select the turnin option (Gold/Any both work the same) and it will now gather up to the necessary amount -> turnin when it's ready. | 所以现在它会如何职业。选择转交选项（金/任何都职业相同），它现在会收集到必要的数量 -> 准备好后转交。 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:464 |  |
+| So now how it'll work. Select the turnin option (Gold/Any both work the same) and it will now gather up to the necessary amount -> turnin when it's ready. | 所以现在它会如何运作。选择上交选项（金星/任意都相同），它现在会采集到必要的数量 -> 准备好后转交。 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:464 |  |
 | So... you're telling me a shrimp fried this rice? | 所以...你是在告诉我这米饭是虾炒的吗？ | UI string \| ICE\Ui\Window_ExternalDetails.cs:56 |  |
 | Solver | 求解器 | UI text \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:1643 |  |
 | Solver Type | 求解器类型 | UI text \| ICE\Ui\MainUi\Settings\Character_Settings.cs:413 |  |
@@ -1126,23 +1137,23 @@
 | Steller Reduction | 斯特勒还原 | Button \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_MissionInfo.cs:113 |  |
 | Still needed: {0}. | 仍然需要：{0}. | UI text \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:202 |  |
 | Stop | 停止 | Button \| UI text \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:230; ICE\Ui\MainUi\Settings\Shop_Dronebit.cs:18; ICE\Ui\OverlayWindow.cs:187 |  |
-| Stop @ Relic Complete | 停止@遗迹完成 | Checkbox \| ICE\Ui\MainUi\Settings\StopWhen.cs:114 |  |
+| Stop @ Relic Complete | 停止@宇宙工具完成 | Checkbox \| ICE\Ui\MainUi\Settings\StopWhen.cs:114 |  |
 | Stop after current mission | 当前任务后停止 | Checkbox \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:282; ICE\Ui\MainUi\Settings\StopWhen.cs:20 |  |
 | Stop after current mission: OFF | 当前任务后停止：OFF | UI text \| ICE\Ui\OverlayWindow.cs:205 |  |
 | Stop after current mission: ON | 当前任务后停止：ON | UI text \| ICE\Ui\OverlayWindow.cs:205 |  |
 | Stop All Task | 停止全部任务 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_Fish_HoleEditor.cs:181 |  |
-| Stop at Cosmic Credits | 停止于宇宙积分 | Checkbox \| ICE\Ui\MainUi\Settings\StopWhen.cs:25 |  |
+| Stop at Cosmic Credits | 停止于宇宙信用点 | Checkbox \| ICE\Ui\MainUi\Settings\StopWhen.cs:25 |  |
 | Stop at Cosmic Score | 停止于宇宙分数 | Checkbox \| ICE\Ui\MainUi\Settings\StopWhen.cs:71 |  |
 | Stop at Cosmic Score [{0}] | 停止于宇宙分数[{0}] | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:141 |  |
 | Stop at Level | 停止于等级 | Checkbox \| ICE\Ui\MainUi\Settings\StopWhen.cs:93 |  |
-| Stop at Planetary Credit Amount | 停止于行星积分金额 | Checkbox \| ICE\Ui\MainUi\Settings\StopWhen.cs:50 |  |
-| Stop At Relic Lv. | 停止于圣物等级 | Checkbox \| ICE\Ui\MainUi\Settings\StopWhen.cs:125; ICE\Ui\OverlayWindow.cs:653 |  |
+| Stop at Planetary Credit Amount | 停止于行星信用点金额 | Checkbox \| ICE\Ui\MainUi\Settings\StopWhen.cs:50 |  |
+| Stop At Relic Lv. | 停止于宇宙工具等级 | Checkbox \| ICE\Ui\MainUi\Settings\StopWhen.cs:125; ICE\Ui\OverlayWindow.cs:653 |  |
 | Stop Current Task | 停止当前任务 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_OyzinMap.cs:84 |  |
 | Stop Drone Finder | 停止无人机探测器 | UI text \| ICE\Ui\OverlayWindow.cs:154 |  |
 | Stop naving | 停止导航 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_Fish_HoleEditor.cs:171 |  |
-| Stop once cosmo credit hit [{0}] | 一旦宇宙信用命中[{0}]就停止 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:145 |  |
-| Stop once planetary credit hit [{0}] | 一旦行星信用命中[{0}] | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:147 |  |
-| Stop once relic completed | 一旦遗物完成就停止 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:149 |  |
+| Stop once cosmo credit hit [{0}] | 一旦宇宙信用点命中[{0}]就停止 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:145 |  |
+| Stop once planetary credit hit [{0}] | 一旦行星信用点命中[{0}] | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:147 |  |
+| Stop once relic completed | 一旦宇宙工具完成就停止 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:149 |  |
 | Stop Task | 停止任务 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_TaskManagerInfo.cs:25 |  |
 | Stop when below x dark matter | 低于x暗物质时停止 | Checkbox \| ICE\Ui\MainUi\Settings\Character_Settings.cs:186 |  |
 | Stop when below x dark matter (Global) | 低于x暗物质时停止（全局） | Checkbox \| ICE\Ui\MainUi\Settings\Character_Settings.cs:246 |  |
@@ -1151,11 +1162,11 @@
 | Strife special shoutout to you for doing what I didn't want to with fishing | Strife 特别感谢你做了我不想钓鱼的事情 | UI string \| ICE\Ui\Window_ExternalDetails.cs:59 |  |
 | Stuck Detection | StuckDetection | Section header \| ICE\Ui\MainUi\Settings\TravelSettings.cs:186 |  |
 | Stupid Test | 愚蠢的测试 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_IPCTesting.cs:95 |  |
-| Stylist | 造型师 | Section header \| ICE\Ui\MainUi\HelpFolder\helpSelect_Required.cs:36 |  |
+| Stylist | Stylist | Section header \| ICE\Ui\MainUi\HelpFolder\helpSelect_Required.cs:36 |  |
 | SubLevel | 子级别 | Table column \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_OyzinMap.cs:98 |  |
 | Swap | 交换 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_IPCTesting.cs:71 |  |
 | Swap Bait... simple | 交换诱饵...简单 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_IPCTesting.cs:86 |  |
-| Swap jobs when turning in relic | 交回遗物时交换职业 | Checkbox \| ICE\Ui\MainUi\Settings\Character_Settings.cs:963; ICE\Ui\MainUi\Settings\Character_Settings.cs:1000 |  |
+| Swap jobs when turning in relic | 上交宇宙工具时交换职业 | Checkbox \| ICE\Ui\MainUi\Settings\Character_Settings.cs:963; ICE\Ui\MainUi\Settings\Character_Settings.cs:1000 |  |
 | Swap to bait | Swap to诱饵 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_IPCTesting.cs:82 |  |
 | Swap to preset | 交换到预设 | Input label \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_IPCTesting.cs:70 |  |
 | Switch class to CRP | 切换职业到CRP | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_TestButtons.cs:338 |  |
@@ -1163,8 +1174,8 @@
 | Synthesize | 合成 | Button \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_MoonRecipe.cs:32 |  |
 | Tab # | 标签# | Input label \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_ItemExchange.cs:75 |  |
 | Table: Fish Info | Table：鱼类信息 | UI string \| ICE\Ui\DebugWindow.cs:62 |  |
-| Table: Gathering Missions | Table：收集任务 | UI string \| ICE\Ui\DebugWindow.cs:58 |  |
-| Table: Leveling Missions | Table：升级任务 | UI string \| ICE\Ui\DebugWindow.cs:88 |  |
+| Table: Gathering Missions | Table：采集任务 | UI string \| ICE\Ui\DebugWindow.cs:58 |  |
+| Table: Leveling Missions | Table：练级任务 | UI string \| ICE\Ui\DebugWindow.cs:88 |  |
 | Table: Mission Info | Table：任务信息 | UI string \| ICE\Ui\DebugWindow.cs:57 |  |
 | Table: Mission Select | Table：任务选择 | UI string \| ICE\Ui\DebugWindow.cs:89 |  |
 | Table: Mission Text | Table：任务文本 | UI string \| ICE\Ui\DebugWindow.cs:60 |  |
@@ -1183,7 +1194,7 @@
 | Test Drone Buy Item | 测试无人机购买物品 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_TaskManagerInfo.cs:77 |  |
 | Test Drone Pathing | 测试无人机路径 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_TaskManagerInfo.cs:81 |  |
 | Test Flag | 测试标志 | Table column \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:204 |  |
-| Test Gather Targeting | 测试收集目标 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_TaskManagerInfo.cs:68 |  |
+| Test Gather Targeting | 测试采集目标 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_TaskManagerInfo.cs:68 |  |
 | Test Glamour | 测试魅力 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_IPCTesting.cs:222 |  |
 | Test Hat | 测试帽子 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_IPCTesting.cs:226 |  |
 | Test Map Marker from coords | 坐标中的测试地图标记 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_MapTesting.cs:44 |  |
@@ -1201,7 +1212,7 @@
 | Thanks for using my plugin though, it means a lot <3 | 不过，感谢使用我的插件，这意味着很多<3 | UI string \| ICE\Ui\MainUi\Settings\Misc_Settings.cs:326 |  |
 | The buff restores itself when you re-enter the zone. | 当您重新进入区域时，buff会自行恢复。 | UI string \| ICE\Ui\MainUi\Settings\Misc_Settings.cs:179 |  |
 | The delays will be before, and a little bit inbetween interacting with menus | 之前会出现延迟，并且在与菜单交互之间会有一点 | UI string \| ICE\Ui\MainUi\Settings\TravelSettings.cs:182 |  |
-| The following missions are required to have gold before you can do this one | 以下任务需要有金牌才能执行此操作 | UI text \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:1384; ICE\Ui\MainUi\ModeSelect_Modes\Expedition_Log.cs:635 |  |
+| The following missions are required to have gold before you can do this one | 以下任务需要有金星才能执行此操作 | UI text \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:1384; ICE\Ui\MainUi\ModeSelect_Modes\Expedition_Log.cs:635 |  |
 | The most straightforward mode. Standard runs only the missions you have enabled | 最简单的模式。标准仅运行您已启用的任务 | UI string \| ICE\Ui\MainUi\HelpFolder\Tips_Folder\ModeSelection.cs:43 |  |
 | The rest of the commands work by doing a single id/multiple in a row | 其余命令通过执行单个id/连续多个 | UI string \| ICE\ICE.cs:314 |  |
 | There is 5 different modes that exist currently (as of writing this) that all serve minorly differently functions. | 当前存在5种不同的模式（截至撰写本文时），所有模式都提供略有不同的功能。 | UI text (wrapped) \| ICE\Ui\MainUi\HelpFolder\Tips_Folder\ModeSelection.cs:12 |  |
@@ -1209,7 +1220,7 @@
 | There's certain missions that are worth grinding more than others. Weather/time also plays a part of it all. Below is what I would recommend on a per class basis. | 有某些任务比其他任务更值得磨练。天气/时间也是其中的一部分。以下是我针对每个职业的建议。 | UI string \| ICE\Ui\MainUi\HelpFolder\helpSelect_Tips.cs:76 |  |
 | These are a list of the following plugins that are required for the plugin to function. If you don't have these installed, it will not function properly | 这些是插件运行所需的以下插件的列表。如果您没有安装这些，它将无法正常运行 | UI text (wrapped) \| ICE\Ui\MainUi\HelpFolder\helpSelect_Required.cs:16 |  |
 | This can be applied with normal field mastery, but will only apply per hit | 这可以应用于正常的领域掌握，但仅适用于每次命中 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:973 |  |
-| This can only be set to 1 item, and gererally used for things you want to just spend your credits on | 这只能设置为 1 个项目，通常用于您只想花费积分的东西 | UI string \| ICE\Ui\MainUi\Settings\ShoppingTab.cs:47 |  |
+| This can only be set to 1 item, and gererally used for things you want to just spend your credits on | 这只能设置为 1 个项目，通常用于您只想花费信用点的东西 | UI string \| ICE\Ui\MainUi\Settings\ShoppingTab.cs:47 |  |
 | This does abosolutely nothing | 这绝对没有任何作用 | Icon tooltip \| ICE\Ui\MainUi\Settings\Misc_Settings.cs:324 |  |
 | This gives you full control over what missions to run, making it ideal for: | 这使您可以完全控制要运行的任务，使其非常适合： | UI text (wrapped) \| ICE\Ui\MainUi\HelpFolder\Tips_Folder\ModeSelection.cs:45 |  |
 | This is ASSUMING: | 这是假设： | UI text \| ICE\Ui\Window_ExternalDetails.cs:373 |  |
@@ -1218,15 +1229,15 @@
 | This is here for safety! If you want to decrease the delay between missions be my guest. | 这是为了安全！如果您想减少任务之间的延迟，请成为我的客人。 | UI string \| ICE\Ui\MainUi\Settings\SafetySettings.cs:39 |  |
 | This is kind of my way of letting you somewhat script/set up a sequence of other things that you would like to do that might not be included in the plugin itself. | 这是我的一种方式，让您编写/设置一系列您想做的其他事情，这些事情可能不包含在插件本身中。 | UI string \| ICE\Ui\MainUi\Settings\Misc_Settings.cs:242 |  |
 | THIS IS YOUR HEADS UP ON HOW THIS WORKS. If I change this in the future, this tooltip will also change. | 请注意这是如何运作的。如果我将来更改此设置，此工具提示也会更改。 | Tooltip \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:293 |  |
-| This is your personalized shopping list that you can create that it will run when you hit a certain amount of credits. | 这是您可以创建的个性化购物清单，当您达到一定数量的积分时它将运行。 | UI text \| ICE\Ui\MainUi\Settings\ShoppingTab.cs:40 |  |
-| This isn't required, but highly recommended for leveling up characters. It will auto equip gear from your armory/inventory, and swap it out when running Leveling Grind Mode | 这不是必需的，但强烈建议用于升级角色。它将自动从你的军械库/库存中装备装备，并在运行练级研磨模式时将其更换 | UI text (wrapped) \| ICE\Ui\MainUi\HelpFolder\helpSelect_Required.cs:35 |  |
+| This is your personalized shopping list that you can create that it will run when you hit a certain amount of credits. | 这是您可以创建的个性化购物清单，当您达到一定数量的信用点时它将运行。 | UI text \| ICE\Ui\MainUi\Settings\ShoppingTab.cs:40 |  |
+| This isn't required, but highly recommended for leveling up characters. It will auto equip gear from your armory/inventory, and swap it out when running Leveling Grind Mode | 这不是必需的，但强烈建议用于升级角色。它将自动从你的军械库/库存中装备装备，并在运行练级刷取模式时将其更换。 | UI text (wrapped) \| ICE\Ui\MainUi\HelpFolder\helpSelect_Required.cs:35 |  |
 | This mission is currently missing stuff to allow it to work. It might be planet locked, or could be just needs mapped out | 此任务目前缺少让它职业的东西。它可能是行星锁定的，或者可能只是需要映射出来 | UI text \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:285 |  |
-| This mode is if you want to do a series of things in a particular order. So for example, if you wanted to grind out all the relics on all the classes back to back | 如果您想按特定顺序执行一系列操作，则可以使用此模式。例如，如果你想背靠背地磨出所有类上的所有遗迹 | UI string \| ICE\Ui\MainWindow.cs:166 |  |
+| This mode is if you want to do a series of things in a particular order. So for example, if you wanted to grind out all the relics on all the classes back to back | 如果你想按特定顺序执行一系列操作，请使用此模式。例如，如果你想连续刷取所有职业的宇宙工具 | UI string \| ICE\Ui\MainWindow.cs:166 |  |
 | This plugin is designed for specifically for the use of Cosmic Exploration, and is kinda hefty. So I'm going to try and go through all the different tips / tricks | 这个插件是专门为宇宙探索的使用而设计的，而且有点重。因此，我将尝试并完成所有不同的提示/技巧 | UI text (wrapped) \| ICE\Ui\MainUi\HelpFolder\Tips_Folder\Welcome.cs:12 |  |
 | This plugin is meant to help you with your cosmic exploration needs, | 这个插件旨在帮助您满足宇宙探索需求， | UI text (wrapped) \| ICE\Ui\InfoWindow.cs:44 |  |
 | This setting is global and shared across all characters.<br>Edit it on the Global tab. | 此设置是全局的，并在所有角色之间共享。<br>在“全局”选项卡上编辑它。 | Tooltip \| ICE\Ui\MainUi\Settings\Character_Settings.cs:249 |  |
 | This will adjust how much of the center point of the fan it will randomize from. | 这将调整扇形中心点的随机数量。 | UI string \| ICE\Ui\MainUi\Settings\TravelSettings.cs:101 |  |
-| This will allow you to grind other classes for criticals/red alerts. | 这将允许您磨练其他职业的危急/红色警报。 | Help marker \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:263 |  |
+| This will allow you to grind other classes for criticals/red alerts. | 这将允许您磨练其他职业的紧急任务/紧急任务。 | Help marker \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:263 |  |
 | This will check to see if you're on a gathering/crafting class upon first entering the moon. | 这将检查是否有第一次进入月球时，你正在参加采集/制作课程。 | UI string \| ICE\Ui\MainUi\Settings\Misc_Settings.cs:189 |  |
 | This will make the Gamba prefer wheels with less items. | 这将使抽奖更喜欢物品较少的轮子。 | Help marker \| ICE\Ui\MainUi\Settings\GambaWheel.cs:50; ICE\Ui\MainUi\Settings\GambaWheel.cs:127 |  |
 | This will ONLY run upon first entry. | 这只会在第一次进入时运行。 | UI string \| ICE\Ui\MainUi\Settings\Misc_Settings.cs:192 |  |
@@ -1235,9 +1246,9 @@
 | Time Attack | 时间攻击 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:35 |  |
 | Time Required | Time required | UI string \| ICE\Ui\Window_ExternalDetails.cs:460 |  |
 | Time Slot | 时隙 | UI text \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:718 |  |
-| Timed | 定时 | UI text \| ICE\Ui\OverlayWindow.cs:510 |  |
+| Timed | 限时 | UI text \| ICE\Ui\OverlayWindow.cs:510 |  |
 | Timed Scoring | Timed评分 | UI string \| ICE\Ui\Window_ExternalDetails.cs:453 |  |
-| Timed Turnin | 定时转向 | Radio button \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:971 |  |
+| Timed Turnin | 限时转向 | Radio button \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:971 |  |
 | Timer: {0} | 计时器：{0} | UI text \| ICE\Ui\Debug_Tabs\Debug_CS\CS_TimerInfo.cs:19 |  |
 | Times Attempted: {0} | 尝试次数：{0} | UI text \| ICE\Ui\Window_ExternalDetails.cs:360 |  |
 | Times Completed: {0} | 完成次数：{0} | UI text \| ICE\Ui\Window_ExternalDetails.cs:359 |  |
@@ -1253,16 +1264,16 @@
 | Total: {0} | 总：{0} | UI text \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_GatherEditor.cs:36 |  |
 | Travel & Pathfinding | 旅行与寻路 | UI string \| ICE\Ui\MainUi\SelectableSidebar.cs:111 |  |
 | Try and apply above profile | 尝试并应用上述配置文件 | Button \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:1283 |  |
-| TryGather | 尝试收集 | Button \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_CollectableGathering.cs:14 |  |
+| TryGather | 尝试采集 | Button \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_CollectableGathering.cs:14 |  |
 | Turn in | 上交 | Button \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_MissionInfo.cs:412 |  |
-| Turnin if relic is complete | 如果遗物已完成则上交 | Checkbox \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:284 |  |
+| Turnin if relic is complete | 如果宇宙工具已完成则上交 | Checkbox \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:284 |  |
 | Turnin Mode | 上交模式 | Table column \| ICE\Ui\MainUi\ModeSelect_Modes\Expedition_Log.cs:258 |  |
 | Type | 类型 | Table column \| ICE\Ui\MainUi\Settings\Priority_Settings.cs:54; ICE\Ui\MainUi\Settings\Priority_Settings.cs:124; ICE\Ui\MainUi\Settings\Priority_Settings.cs:207 |  |
 | Type Priority Table | 类型优先级表 | UI string \| ICE\Ui\MainUi\Settings\Priority_Settings.cs:50 |  |
 | typed in correctly. This is *case* specific so | 正确输入。这是*案例*特定的所以 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:1290 |  |
 | Ui: Fishing Hole Editor | Ui：钓场编辑器 | UI string \| ICE\Ui\DebugWindow.cs:66 |  |
 | Ui: Fishing Preset Editor | Ui：钓鱼预设编辑器 | UI string \| ICE\Ui\DebugWindow.cs:67 |  |
-| Ui: Gather Editor | Ui：收集编辑器 | UI string \| ICE\Ui\DebugWindow.cs:68 |  |
+| Ui: Gather Editor | Ui：采集编辑器 | UI string \| ICE\Ui\DebugWindow.cs:68 |  |
 | Ui: Log Viewer | Ui：日志查看器 | UI string \| ICE\Ui\DebugWindow.cs:69 |  |
 | Ui: Player Gearsets | Ui：玩家齿轮组 | UI string \| ICE\Ui\DebugWindow.cs:70 |  |
 | Ui: Select String | Ui：选择字符串 | UI string \| ICE\Ui\DebugWindow.cs:65 |  |
@@ -1304,19 +1315,19 @@
 | Use food on gathering missions | 在采集任务中使用食物 | Checkbox \| ICE\Ui\MainUi\Settings\GatherSettings.cs:243 |  |
 | Use Gathering Food | 使用采集食物 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_PlayerInfo.cs:85 |  |
 | Use Global Artisan Settings | 使用全局Artisan设置 | Checkbox \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:1513 |  |
-| Use Hub Return | 使用集线器返回 | Checkbox \| ICE\Ui\MainUi\Settings\TravelSettings.cs:106 |  |
+| Use Hub Return | 使用自动寻路返回 | Checkbox \| ICE\Ui\MainUi\Settings\TravelSettings.cs:106 |  |
 | Use mount in mission | 在任务中使用坐骑 | Checkbox \| ICE\Ui\MainUi\Settings\Character_Settings.cs:863; ICE\Ui\MainUi\Settings\Character_Settings.cs:893 |  |
 | Use mount outside mission | 在任务外使用坐骑 | Checkbox \| ICE\Ui\MainUi\Settings\Character_Settings.cs:859; ICE\Ui\MainUi\Settings\Character_Settings.cs:885 |  |
 | Use no gathering food | 不使用采集食物 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:280 |  |
 | Use personal return spots | 使用个人返回点 | Checkbox \| ICE\Ui\MainUi\Settings\TravelSettings.cs:241 |  |
-| Use Red Alert NPC for travel | 使用红色警报NPC进行旅行 | Checkbox \| ICE\Ui\MainUi\Settings\TravelSettings.cs:120 |  |
-| Use Stylist to re-equip tools | 使用造型师重新装备工具 | Checkbox \| ICE\Ui\MainUi\Settings\Character_Settings.cs:988; ICE\Ui\MainUi\Settings\Character_Settings.cs:1033 |  |
+| Use Red Alert NPC for travel | 使用紧急任务NPC进行旅行 | Checkbox \| ICE\Ui\MainUi\Settings\TravelSettings.cs:120 |  |
+| Use Stylist to re-equip tools | 使用Stylist重新装备工具 | Checkbox \| ICE\Ui\MainUi\Settings\Character_Settings.cs:988; ICE\Ui\MainUi\Settings\Character_Settings.cs:1033 |  |
 | Useful for things like cordials where you want to always have a certain amount on hand | 对于像强心剂之类的东西很有用，你想要手头上总是有一定数量的 | UI string \| ICE\Ui\MainUi\Settings\ShoppingTab.cs:43 |  |
 | Valid Moon NPC Info: {0} | 有效月亮NPC信息：{0} | UI text \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_NpcViewer.cs:24 |  |
 | Value | 价值 | Table column \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_ClassInfo.cs:29 |  |
 | Variety of Fish Required | 所需的鱼品种 | UI string \| ICE\Ui\Window_ExternalDetails.cs:457 |  |
 | Variety Req | 品种要求 | Table column \| ICE\Ui\Debug_Tabs\Debug_Tables\Table_FishInfo.cs:22 |  |
-| Very useful for quick score farming, mount tokens. | 非常有用为了快速得分农业，安装令牌。 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:1013 |  |
+| Very useful for quick score farming, mount tokens. | 非常适合快速刷分和兑换坐骑代币。 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:1013 |  |
 | Viable fishing spot: {0} | 可行的钓场：{0} | UI text \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_Fish_HoleEditor.cs:186 |  |
 | View All Presets | 查看所有预设 | Button \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:356 |  |
 | View All SE Custom Fonts (That's known | 查看所有SE自定义字体（这是已知的 | UI string \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_TestButtons.cs:381 |  |
@@ -1331,7 +1342,7 @@
 | Waiting for "WKSMissionInfomation" to be visible | 等待“WKSMissionInfomation”可见 | UI text \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_MissionInfo.cs:169 |  |
 | Waiting for "WKSRecipeNotebook" to be visible | 等待“WKSRecipeNotebook”可见 | UI text \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_MoonRecipe.cs:49 |  |
 | Waiting for a shop exchange window to be open | 等待商店兑换窗口出现打开 | UI text \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_ItemExchange.cs:233 |  |
-| Waiting for Gather Collectable window to be visible | 等待收集收集窗口可见 | UI text \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_CollectableGathering.cs:142 |  |
+| Waiting for Gather Collectable window to be visible | 等待采集采集窗口可见 | UI text \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_CollectableGathering.cs:142 |  |
 | Warning! This is a safety feature to avoid joining random parties! | 警告！这是避免加入随机队伍的安全功能！ | UI string \| ICE\Ui\MainUi\Settings\SafetySettings.cs:29 |  |
 | We're somehow not showing the window, so returning 0. | 我们不知何故没有显示该窗口，因此返回0. | UI string \| ICE\Ui\Debug_Tabs\Debug_Hud\Hud_Mission.cs:282 |  |
 | Weather | 天气 | UI text \| ICE\Ui\OverlayWindow.cs:510 |  |
@@ -1350,14 +1361,14 @@
 | When do you wanna buy drones from the vendor? | 您想从供应商那里购买无人机吗？ | UI string \| ICE\Ui\MainUi\Settings\Shop_Dronebit.cs:42 |  |
 | When enabled, overlays will render over the native UI elements | 启用后，叠加层将在原生 UI 元素上渲染 | Tooltip \| ICE\Ui\MainUi\Settings\Misc_Settings.cs:161 |  |
 | When enabled, Stellar Return will still be used to return to the hub<br>for activities like credit purchases, gambling, drone bits, and repairs. | 启用后，Stellar Return 仍将用于返回中心<br>进行信用购买、赌博、无人机零件和维修等活动。 | Tooltip \| ICE\Ui\MainUi\Settings\TravelSettings.cs:149 |  |
-| When enabled, the pathfinder will not use Stellar Return to travel to gathering nodes.<br>This applies to both Hub Return and Hub + Aethernet travel methods. | 启用后，探路者不会使用恒星返回前往聚集节点。<br>这适用于集线器返回和集线器 + 以太之光旅行方法。 | Tooltip \| ICE\Ui\MainUi\Settings\TravelSettings.cs:136 |  |
+| When enabled, the pathfinder will not use Stellar Return to travel to gathering nodes.<br>This applies to both Hub Return and Hub + Aethernet travel methods. | 启用后，探路者不会使用恒星返回前往聚集节点。<br>这适用于自动寻路返回和自动寻路 + 以太之光旅行方法。 | Tooltip \| ICE\Ui\MainUi\Settings\TravelSettings.cs:136 |  |
 | When stuck during navmesh movement for the configured delay: | 当在导航网移动期间卡住配置的延迟时： | UI string \| ICE\Ui\MainUi\Settings\TravelSettings.cs:203 |  |
 | Where'd the dual craft amount go? | 双工艺量去了哪里？ | UI text \| ICE\Ui\MainUi\Settings\GatherSettings.cs:448 |  |
 | White Mage | 白法师 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:24; ICE\Ui\MainUi\Settings\Character_Settings.cs:1050 |  |
 | Why are tennis pros always hugging each other? | 为什么网球职业选手总是互相拥抱？ | UI string \| ICE\Ui\Window_ExternalDetails.cs:33 |  |
 | Why can't ghost have babies? | 为什么幽灵不能生孩子？ | UI string \| ICE\Ui\Window_ExternalDetails.cs:36 |  |
 | Will also pause pandora cordial usage while on the moon | 在月亮 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:196 |  |
-| Will only apply when the gathering node has full durability | 仅在收集节点具有完全耐久度时适用 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:615; ICE\Ui\MainUi\Settings\GatherSettings.cs:671; ICE\Ui\MainUi\Settings\GatherSettings.cs:779 |  |
+| Will only apply when the gathering node has full durability | 仅在采集节点具有完全耐久度时适用 | UI string \| ICE\Ui\MainUi\Settings\GatherSettings.cs:615; ICE\Ui\MainUi\Settings\GatherSettings.cs:671; ICE\Ui\MainUi\Settings\GatherSettings.cs:779 |  |
 | Will only work while using ICE and not manual mode | 仅在使用ICE时职业，而不是手动模式 | Help marker \| ICE\Ui\MainUi\Settings\GatherSettings.cs:195 |  |
 | Will turnin once the timer runs out | 将在计时器用完后交接 | Tooltip \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:978 |  |
 | Will turnin the mission as soon as it can | 将尽快交接任务 | Tooltip \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:1012 |  |
@@ -1377,7 +1388,7 @@
 | Y Location | Y位置 | Input label \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_IPCTesting.cs:44 |  |
 | Yet | 但是 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:994 |  |
 | yields the most for your current level. | 为您当前的级别提供最大的收益。 | UI string \| ICE\Ui\MainUi\HelpFolder\Tips_Folder\ModeSelection.cs:63 |  |
-| You can buy cosmocredit items from the list! | 您可以从列表中购买宇宙信用项目！ | UI text \| ICE\Ui\MainUi\Settings\ShoppingTab.cs:72 |  |
+| You can buy cosmocredit items from the list! | 您可以从列表中购买宇宙信用点项目！ | UI text \| ICE\Ui\MainUi\Settings\ShoppingTab.cs:72 |  |
 | You can set your score with this mode yourself, due to not knowing the scoring break points | 您可以自己使用此模式设置您的分数，因为不知道评分断点 | UI string \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:993 |  |
 | You can't buy any items with your current credit value/items (tis fine, this just a test) | 您无法使用当前的信用值/项目购买任何项目（很好，这只是一个测试） | UI text \| ICE\Ui\MainUi\Settings\ShoppingTab.cs:76 |  |
 | You currently don't have any profiles saved! Please either make one and save, or import if you would like to populate this listing | 您目前没有保存任何配置文件！请制作一个并保存，或者如果您想填充此列表，请导入 | UI text (wrapped) \| ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:403 |  |
@@ -1387,7 +1398,7 @@
 | You know, I was reading this book about anti-gravity recently, | 你知道，我最近在读这本关于反重力的书， | UI string \| ICE\Ui\Window_ExternalDetails.cs:30 |  |
 | You might thing it's R, but tis first love was the C | 你可能认为它是 R，但它的初恋是 C | UI string \| ICE\Ui\Window_ExternalDetails.cs:27 |  |
 | You need to (currently) be on the testing version to be able fish automated here | 你需要（当前）处于测试版本才能在此处自动化捕鱼 | UI text \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:215 |  |
-| You need to update autohook for you to be able to fish here on Auxesia. Please swap to testing version | 你需要更新 autohook 才能在 Auxesia 上钓鱼。请切换到测试版本 | UI string \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_IPCTesting.cs:214 |  |
+| You need to update autohook for you to be able to fish here on Auxesia. Please swap to testing version | 你需要更新 autohook 才能在 奥克塞西亚行星 上钓鱼。请切换到测试版本 | UI string \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_IPCTesting.cs:214 |  |
 | Zone {0} - X:{1} Z:{2} | 区域 {0} - X:{1} Z:{2} | UI text \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_Fish_HoleEditor.cs:229 |  |
 | Zone: {0} | 区域：{0} | UI text \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_Fish_HoleEditor.cs:95 |  |
 | [Average] Rewards per minute | [平均] 每分钟奖励 | UI text \| ICE\Ui\MainUi\ModeSelect_Modes\CosmicTable\Mission_Table.cs:856 |  |

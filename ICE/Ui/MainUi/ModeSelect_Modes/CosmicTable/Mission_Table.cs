@@ -147,7 +147,7 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes.CosmicTable
         // TODO: Create default width's for all of these...
 
         public readonly EnabledColumn _enabledColumn;
-        public readonly NameColumn _nameColumn = new() { Label = "姓名" };
+        public readonly NameColumn _nameColumn = new() { Label = "名称" };
         public readonly IdColumn _idColumn = new() { Label = "ID" };
         public readonly JobColumn _jobColumn = new() { Label = "作业" };
         public readonly MissionColumn _missionColumn = new() { Label = "秩" };
@@ -314,13 +314,13 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes.CosmicTable
                     ImGui.SameLine();
                     if (ImGuiEx.IconButton(FontAwesomeIcon.FlagCheckered, $"CriticalFlag_{mission.Id}"))
                     {
-                        Utils.SetGatheringRing(mission.SheetInfo.TerritoryId, criticalInfo.X, criticalInfo.Y, criticalInfo.Radius, $"Red Alert: {mission.SheetInfo.Name}", criticalInfo.IconId);
+                        Utils.SetGatheringRing(mission.SheetInfo.TerritoryId, criticalInfo.X, criticalInfo.Y, criticalInfo.Radius, $"紧急任务: {mission.SheetInfo.Name}", criticalInfo.IconId);
                     }
 #if DEBUG
                     if (ImGui.IsItemHovered())
                     {
                         ImGui.BeginTooltip();
-                        ImGui.Text($"Critical Route: {mission.SheetInfo.Critical_MapKey}");
+                        ImGui.Text($"紧急任务路线: {mission.SheetInfo.Critical_MapKey}");
                         ImGui.Separator();
                         ImGui.Text($"Map Cordinates: {criticalInfo.X} | {criticalInfo.Y}");
                         ImGui.Separator();
@@ -354,7 +354,7 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes.CosmicTable
             public CompletionColumn()
             {
                 SetFlags(ItemFilter.NotCompleted, ItemFilter.Completed, ItemFilter.Gold);
-                SetNames("Not已完成", "Completed", "黄金");
+                SetNames("未完成", "已完成", "金星");
             }
             public override float Width => Math.Max(
                 ImGui.CalcTextSize(Label + "xxx").X + ImGui.GetStyle().CellPadding.X * 2,
@@ -669,7 +669,7 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes.CosmicTable
             {
                 Flags = ImGuiTableColumnFlags.NoResize;
                 SetFlags(MissionFilter.RedAlert, MissionFilter.Sequence, MissionFilter.Weather, MissionFilter.Timed, MissionFilter.ARank, MissionFilter.BRank, MissionFilter.CRank, MissionFilter.DRank, MissionFilter.Master);
-                SetNames("红色警戒", "Sequence", "天气", "定时", "A Rank", "B Rank", "C Rank", "D Rank", "Master");
+                SetNames("紧急任务", "Sequence", "天气", "限时", "A Rank", "B Rank", "C Rank", "D Rank", "大师");
             }
             public override float Width => Math.Max(ImGui.CalcTextSize(Label + "XX").X + ImGui.GetStyle().CellPadding.X * 2, ImGui.GetFrameHeight() + ImGui.GetStyle().CellPadding.X * 2);
 
@@ -806,8 +806,8 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes.CosmicTable
             {
                 return state switch
                 {
-                    TurninState.SequenceGold => "黄金序列",
-                    TurninState.Master_Score => "Master",
+                    TurninState.SequenceGold => "金星序列",
+                    TurninState.Master_Score => "大师",
                     _ => state.ToString()
                 };
             }
@@ -911,7 +911,7 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes.CosmicTable
             {
                 Flags = ImGuiTableColumnFlags.NoResize;
                 SetFlags(ItemFilter.TurninGold, ItemFilter.TurninSilver, ItemFilter.TurninBronze);
-                SetNames("黄金", "银", "铜牌");
+                SetNames("金星", "银星", "铜星");
             }
             public override float Width
             {
@@ -968,7 +968,7 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes.CosmicTable
                             var quickTurnin = selectedMode == TurninState.Gold;
 
 
-                            if (ImGui.RadioButton("定时转向##TurninGoalRadio", timeExpired))
+                            if (ImGui.RadioButton("限时转向##TurninGoalRadio", timeExpired))
                             {
                                 configInfo.TurninGoal = TurninState.TimeExpired;
                                 C.SaveDebounced();
@@ -1010,8 +1010,8 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes.CosmicTable
                             if (ImGui.IsItemHovered())
                             {
                                 ImGui.SetTooltip("将尽快交接任务\n" +
-                                    "非常有用为了快速得分农业，安装令牌。\n" +
-                                    "ForBTN/MIN，这将收集不可收集的物品");
+                                    "非常适合快速刷分和兑换坐骑代币。\n" +
+                                    "ForBTN/MIN，这将采集不可采集的物品");
                             }
                         }
 
@@ -1381,7 +1381,7 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes.CosmicTable
                     if (ImGui.IsItemHovered())
                     {
                         ImGui.BeginTooltip();
-                        ImGui.Text("以下任务需要有金牌才能执行此操作");
+                        ImGui.Text("以下任务需要有金星才能执行此操作");
                         foreach (var mission in sheetInfo.MissionUnlock)
                         {
                             ImGui_Ice.CompletionStatusIcon(CosmicHelper.SheetMissionDict[mission]);

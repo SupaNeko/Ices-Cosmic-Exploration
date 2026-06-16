@@ -20,7 +20,7 @@ namespace ICE.Ui.MainUi.HelpFolder.Tips_Folder
                     ImGui.EndTabItem();
                 }
 
-                if (ImGui.BeginTabItem("遗物研磨"))
+                if (ImGui.BeginTabItem("宇宙工具升级"))
                 {
                     RelicGrind();
                     ImGui.EndTabItem();
@@ -43,22 +43,22 @@ namespace ICE.Ui.MainUi.HelpFolder.Tips_Folder
                 "最简单的模式。标准仅运行您已启用的任务 " +
                 "对于您当前的课程 - 您选择您想要完成的事情，它会处理其余的事情。");
             ImGui.TextWrapped("这使您可以完全控制要运行的任务，使其非常适合：");
-            ImGui.BulletText("Score Farming - 选择特定的高价值任务");
-            ImGui.BulletText("Exp研磨");
-            ImGui.BulletText("信用/行星积分/代币耕作");
+            ImGui.BulletText("刷分 - 选择特定的高价值任务");
+            ImGui.BulletText("Exp刷取");
+            ImGui.BulletText("信用/行星信用点/代币耕作");
             ImGui.TextWrapped(
                 "基本任务（等级D→A）只会从您开始的职业中提取。 " +
-                "将选择临时任务（天气、定时和顺序）和红色警报 " +
+                "将选择临时任务（天气、限时和顺序）和紧急任务 " +
                 "任务之间 - 启用多职业设置以允许切换这些职业。");
         }
 
         private static void RelicGrind()
         {
             ImGui.Dummy(new(0, 5));
-            ImGuiEx.IconWithText(FontAwesomeIcon.ArrowUpRightDots, "遗物研磨");
+            ImGuiEx.IconWithText(FontAwesomeIcon.ArrowUpRightDots, "宇宙工具升级");
 
             ImGui.TextWrapped(
-                "A模式旨在以最小的干预自动选择遗物进展的任务。 " +
+                "A模式旨在以最小的干预自动选择宇宙工具进展的任务。 " +
                 "它扫描所有可用任务，评估每个任务提供的经验，并选择其中之一 " +
                 "为您当前的级别提供最大的收益。");
             ImGui.TextWrapped(

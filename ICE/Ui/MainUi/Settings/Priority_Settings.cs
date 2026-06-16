@@ -83,7 +83,7 @@ namespace ICE.Ui.MainUi.Settings
                     ImGui.AlignTextToFramePadding();
                     string type = entry switch
                     {
-                        ProvisionalTypes.ProvisionalTimed => "定时",
+                        ProvisionalTypes.ProvisionalTimed => "限时",
                         ProvisionalTypes.ProvisionalSequential => "Sequence",
                         ProvisionalTypes.ProvisionalWeather => "天气",
                         _ => entry.ToString()
@@ -107,7 +107,7 @@ namespace ICE.Ui.MainUi.Settings
             ImGui_Ice.IconWithTooltip(
                 FontAwesomeIcon.InfoCircle, 
                 "Order你想要执行的操作。它将从顶部开始职业down.\n" +
-                "所以如果你有红色警戒->无人机搜索，如果红色警报不可用，它会继续使用无人机箱（如果可以的话）");
+                "所以如果你有紧急任务->无人机搜索，如果紧急任务不可用，它会继续使用无人机箱（如果可以的话）");
 
             _dragDrop_MissionType ??= new ImGuiEx.RealtimeDragDrop<MissionTypes>(
                 "MissionTypeDragDrop",
@@ -155,7 +155,7 @@ namespace ICE.Ui.MainUi.Settings
                     string name = entry switch
                     {
                         MissionTypes.DroneSearch => "无人机搜索",
-                        MissionTypes.Critical => "红色警戒",
+                        MissionTypes.Critical => "紧急任务",
                         MissionTypes.Provisional => "Provisional Missions [Weather/Timed/Sequence]",
                         MissionTypes.Standard => "Standard Missions [A->D]",
                         _ => $"{entry}"

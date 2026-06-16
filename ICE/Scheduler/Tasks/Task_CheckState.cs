@@ -161,7 +161,7 @@ namespace ICE.Scheduler.Tasks
                 {
                     if (GenericHelpers.TryGetAddonMaster<WKSHud>("WKSHud", out var hud) && hud.IsAddonReady && (hud.CosmoCredit >= C.CosmoCreditsCap))
                     {
-                        IceLogging.ChatInfo($"Stopping the plugin as you have {hud.CosmoCredit} Cosmocredits.", "[I.C.E.]");
+                        IceLogging.ChatInfo($"Stopping the plugin as you have {hud.CosmoCredit} 宇宙信用点.", "[I.C.E.]");
                         SchedulerMain.State = IceState.Idle;
                         if (C.PlaySoundAlert)
                         {
@@ -252,7 +252,7 @@ namespace ICE.Scheduler.Tasks
                 {
                     if (GenericHelpers.TryGetAddonMaster<WKSHud>("WKSHud", out var hud) && hud.IsAddonReady && (hud.CosmoCredit >= C.CosmoCreditsCap))
                     {
-                        IceLogging.ChatInfo($"Stopping the plugin as you have {hud.CosmoCredit} Cosmocredits.", "[I.C.E.]");
+                        IceLogging.ChatInfo($"Stopping the plugin as you have {hud.CosmoCredit} 宇宙信用点.", "[I.C.E.]");
                         SchedulerMain.State = IceState.Idle;
                         if (C.PlaySoundAlert)
                         {

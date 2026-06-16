@@ -160,10 +160,10 @@ namespace ICE.Ui
             var modeName = C.SelectedMode switch
             {
                 ModeSelect.Standard => "标准",
-                ModeSelect.RelicMode => "遗物研磨",
-                ModeSelect.LevelMode => "调平研磨",
+                ModeSelect.RelicMode => "宇宙工具升级",
+                ModeSelect.LevelMode => "练级刷取",
                 ModeSelect.AgendaMode => "宇宙议程",
-                ModeSelect.MissionGoldMode => "黄金完成研磨",
+                ModeSelect.MissionGoldMode => "达成金星",
                 _ => C.SelectedMode.ToString(),
             };
             ImGui.Text($"{modeName} - {SchedulerMain.State}");
@@ -321,7 +321,7 @@ namespace ICE.Ui
                         {
                             ImGui.TableSetupColumn("图标");
                             ImGui.TableSetupColumn("任务");
-                            ImGui.TableSetupColumn("姓名");
+                            ImGui.TableSetupColumn("名称");
                             foreach (var mission in enabledWeathers)
                             {
                                 var sheetInfo = CosmicHelper.SheetMissionDict[mission];
@@ -507,7 +507,7 @@ namespace ICE.Ui
             if (ImGui.IsItemHovered())
             {
                 ImGui.BeginTooltip();
-                ImGui.Text(icon == FontAwesomeIcon.Cloud ? "天气" : "定时");
+                ImGui.Text(icon == FontAwesomeIcon.Cloud ? "天气" : "限时");
                 ImGui.EndTooltip();
             }
         }
@@ -641,7 +641,7 @@ namespace ICE.Ui
             {
                 var currentJobId = (uint)Player.Job;
                 var flags = C.Overlay_RelicXpExpanded ? ImGuiTreeNodeFlags.DefaultOpen : ImGuiTreeNodeFlags.None;
-                var open = ImGui.CollapsingHeader("Relic 工具XP", flags);
+                var open = ImGui.CollapsingHeader("宇宙工具经验", flags);
                 if (open != C.Overlay_RelicXpExpanded)
                 {
                     C.Overlay_RelicXpExpanded = open;
@@ -650,7 +650,7 @@ namespace ICE.Ui
                 if (open)
                 {
                     bool stopWhen = C.StopAtRelicLv;
-                    if (ImGui.Checkbox("停止于圣物等级", ref stopWhen))
+                    if (ImGui.Checkbox("停止于宇宙工具等级", ref stopWhen))
                     {
                         C.StopAtRelicLv = stopWhen;
                         C.Save();

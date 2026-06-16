@@ -187,9 +187,9 @@ namespace ICE.Ui.Debug_Tabs.Debug_Tables
                 ImGui.TableSetupColumn("第二职业");
                 ImGui.TableSetupColumn("秩");
                 ImGui.TableSetupColumn("待办事项 ID");
-                ImGui.TableSetupColumn("铜牌");
-                ImGui.TableSetupColumn("银");
-                ImGui.TableSetupColumn("黄金");
+                ImGui.TableSetupColumn("铜星");
+                ImGui.TableSetupColumn("银星");
+                ImGui.TableSetupColumn("金星");
                 ImGui.TableSetupColumn("属性标志");
 
                 IOrderedEnumerable<KeyValuePair<int, string>> orderedExp = CosmicHelper.ExpDictionary.ToList().OrderBy(exp => exp.Key);

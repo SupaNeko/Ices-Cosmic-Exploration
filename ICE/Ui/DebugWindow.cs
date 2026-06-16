@@ -50,12 +50,12 @@ internal class DebugWindow : Window
         ["Hud：任务信息"] = () => Hud_MissionInfo.Draw(),
         ["Hud：命运之轮！"] = () => Hud_WheelofFortune.Draw(),
         ["Hud：月球食谱"] = () => Hud_MoonRecipe.Draw(),
-        ["Hud：收集收藏品"] = () => Hud_CollectableGathering.Draw(),
+        ["Hud：采集收藏品"] = () => Hud_CollectableGathering.Draw(),
         ["Hud：物品交换"] = () => Hud_ItemExchange.Draw(),
 
         // Table Elements
         ["Table：任务信息"] = () => Table_MissionInfo.Draw(),
-        ["Table：收集任务"] = () => Table_GatheringInfo.Draw(),
+        ["Table：采集任务"] = () => Table_GatheringInfo.Draw(),
         ["表：特殊任务"] = () => Table_TimeWeather.Draw(),
         ["Table：任务文本"] = () => Table_MissionText.Draw(),
         ["表：食谱"] = () => Table_MoonRecipies.Draw(),
@@ -65,7 +65,7 @@ internal class DebugWindow : Window
         ["Ui：选择字符串"] = () => Ui_RedAlertString.Draw(),
         ["Ui：钓场编辑器"] = () => Ui_Fish_HoleEditor.Draw(),
         ["Ui：钓鱼预设编辑器"] = () => Ui_FishPresets.Draw(),
-        ["Ui：收集编辑器"] = () => Ui_GatherEditor.Draw(),
+        ["Ui：采集编辑器"] = () => Ui_GatherEditor.Draw(),
         ["Ui：日志查看器"] = () => helpSelect_Logs.Draw_Debug(),
         ["Ui：玩家齿轮组"] = () => Ui_Gearsets.Draw(),
 
@@ -77,11 +77,11 @@ internal class DebugWindow : Window
         ["IPC 测试"] = () => Ui_IPCTesting.Draw(),
         ["Map Test"] = () => Ui_MapTesting.Draw(),
         ["Navmesh 测试"] = () => Ui_NavmeshTesting.Draw(),
-        ["文物信息"] = () => Ui_RelicInfo.Draw(),
+        ["宇宙工具信息"] = () => Ui_RelicInfo.Draw(),
         ["TaskManager 测试"] = () => Ui_TaskManagerInfo.Draw(),
         ["NPC 盒子查看器"] = () => Ui_NpcViewer.Draw(),
         ["ImGui测试"] = () => UI_Test.Draw(),
-        ["文物信息V2"] = () => Ui_ClassInfo.Draw(),
+        ["宇宙工具信息V2"] = () => Ui_ClassInfo.Draw(),
 
         // Sheet Viewer Info
         ["职业表：任务奖励"] = () => Sheet_MissionRewards.Draw(),
