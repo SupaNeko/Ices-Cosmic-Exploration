@@ -1,5 +1,15 @@
 # Ices Cosmic Exploration (ICE)
 
+> **⚠️ 重要声明 / 免责声明**
+>
+> **本项目仅为个人使用 AI 进行的部分汉化版本，已对部分名词进行校准，但不保证全部 UI 文本均已翻译，不保证翻译内容完全准确，不保证与上游版本同步更新，也不保证随游戏版本更新而及时维护。**
+>
+> **如需获取最新、最可靠的版本，请以 fork 的上游插件仓库为准。**
+>
+> **当前适配游戏版本：7.51**
+>
+> **以下为原仓库 README 内容。**
+
 Repo: `https://puni.sh/api/repository/ice`
 
 Welcome to the moon plugin that makes that dreadful grind of the moon into something that can be automated and made so much simplier.  
