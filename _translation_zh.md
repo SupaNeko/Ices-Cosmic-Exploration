@@ -1028,7 +1028,7 @@
 | Safety is around... 2500? If you're having animation locks you can absolutely increase it higher | 安全性约为……2500？如果你有动画锁，你完全可以为了刷信用点把它调得更高。 | UI string \| ICE\Ui\MainUi\Settings\SafetySettings.cs:62 |  |
 | Safety is around... 250? If you're having animation locks you can absolutely increase it higher | 安全性约为……250？如果你有动画锁，你完全可以为了刷信用点把它调得更高。 | UI string \| ICE\Ui\MainUi\Settings\SafetySettings.cs:40 |  |
 | Safety Settings | 安全设置 | Section header \| ICE\Ui\MainUi\Settings\SafetySettings.cs:20 |  |
-| Save | 节省 | Button \| ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:227 |  |
+| Save | 保存 | Button \| ICE\Ui\MainUi\ModeSelect_Modes\Cosmic_Agenda.cs:227 |  |
 | Save Current Mission Preset | 保存当前任务预设 | Button \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:321 |  |
 | Save New List | 保存新列表 | Button \| ICE\Ui\MainUi\ModeSelect_Modes\Mission_Setup.cs:331 |  |
 | Save Route | 保存路线 | Button \| ICE\Ui\Debug_Tabs\Debug_Ui\Ui_GatherEditor.cs:175 |  |

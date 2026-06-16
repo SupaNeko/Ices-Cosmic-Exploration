@@ -224,7 +224,7 @@ namespace ICE.Ui.MainUi.ModeSelect_Modes
                         ImGui.InputTextMultiline("描述", ref profileDescription);
                         using (ImRaii.Disabled(profileName == string.Empty))
                         {
-                            if (ImGui.Button("节省"))
+                            if (ImGui.Button("保存"))
                             {
                                 AgendaProfileInfo newProfile = new()
                                 {
